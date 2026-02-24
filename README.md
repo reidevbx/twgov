@@ -1,5 +1,7 @@
 # GOV.TW Design System
 
+> **🚧 開發中（Alpha）** — 本專案目前處於早期開發階段，API 與元件介面可能隨時變動。尚未發布至 npm，請勿用於正式環境。歡迎追蹤進度或參與討論。
+
 為台灣政府數位服務打造的設計系統，提供跨部會一致的使用者體驗。
 
 參考 [GOV.UK Design System](https://design-system.service.gov.uk/) 的設計方法論，結合台灣在地需求，以 Web Components 實作框架無關的 UI 元件庫。
@@ -13,6 +15,9 @@
 
 ## 快速開始
 
+> **⚠️ 套件尚未發布** — 以下安裝指令為預定的使用方式，目前套件尚未發布至 npm / CDN。如需試用，請 clone 本 repo 並以本地開發模式執行。
+
+<!--
 ### CDN（免建置工具）
 
 ```html
@@ -45,6 +50,7 @@ import '@gov-tw/web-components/twgov-button'
 ```css
 @import '@gov-tw/tokens/tailwind.css';
 ```
+-->
 
 ## 可用元件
 

@@ -1,6 +1,23 @@
 # 快速開始
 
+::: warning 🚧 開發中
+本專案目前處於早期開發階段，**套件尚未發布至 npm / CDN**。以下安裝指令為預定的使用方式，正式發布前請以本地開發模式試用。
+:::
+
+## 本地開發試用
+
+```bash
+git clone https://github.com/user/twgov.git
+cd twgov
+pnpm install
+pnpm dev
+```
+
 ## CDN 引入（無需建置工具）
+
+::: info 尚未發布
+以下 CDN 路徑將於正式發布後可用。
+:::
 
 最簡單的方式，適合一般政府網站直接使用。一個 `<script>` 即包含所有元件。
 
@@ -17,6 +34,10 @@
 ```
 
 ## npm 安裝（有建置工具的專案）
+
+::: info 尚未發布
+以下套件名稱將於正式發布後可用。
+:::
 
 適用於使用 bundler（Vite、Webpack 等）的前端專案。
 
@@ -41,6 +62,10 @@ import '@gov-tw/web-components/twgov-button'
 
 ## 只用 Token
 
+::: info 尚未發布
+以下套件名稱將於正式發布後可用。
+:::
+
 適用於已有自己 UI 框架、但希望視覺風格一致的服務。
 
 ```bash
@@ -64,6 +89,10 @@ npm install @gov-tw/tokens
 ```
 
 ## Token + Tailwind CSS v4
+
+::: info 尚未發布
+以下套件名稱將於正式發布後可用。
+:::
 
 適用於使用 Tailwind v4 的專案。
 
