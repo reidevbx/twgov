@@ -105,6 +105,10 @@ export default defineConfig({
       },
     ],
 
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/reidevbx/twgov' },
+    ],
+
     search: {
       provider: 'local',
     },
