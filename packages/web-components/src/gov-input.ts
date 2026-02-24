@@ -86,8 +86,9 @@ export class GovInput extends LitElement {
 
     /* ===== Input wrapper (for prefix / suffix) ===== */
     .input-wrapper {
-      display: flex;
+      display: inline-flex;
       align-items: stretch;
+      border-radius: var(--twgov-radius-sm, 4px);
     }
 
     .input-prefix,
@@ -111,6 +112,22 @@ export class GovInput extends LitElement {
     .input-suffix {
       border-left: 0;
       border-radius: 0 var(--twgov-radius-sm, 4px) var(--twgov-radius-sm, 4px) 0;
+    }
+
+    /* 有 prefix/suffix 時，focus 樣式移到 wrapper */
+    .input-wrapper--has-affix {
+      position: relative;
+    }
+
+    .input-wrapper--has-affix:focus-within {
+      outline: 3px solid #fd0;
+      outline-offset: 0;
+      box-shadow: inset 0 0 0 1px var(--twgov-color-text-primary, #1A1A1A);
+    }
+
+    .input-wrapper--has-affix .input:focus {
+      outline: none;
+      box-shadow: none;
     }
 
     /* ===== Input ===== */
@@ -226,7 +243,7 @@ export class GovInput extends LitElement {
         ${hasError
           ? html`<span class="error-message" id=${errorId}>${this.error}</span>`
           : nothing}
-        <div class="input-wrapper">
+        <div class="input-wrapper ${this.prefix || this.suffix ? 'input-wrapper--has-affix' : ''}">
           ${this.prefix
             ? html`<span class="input-prefix" aria-hidden="true">${this.prefix}</span>`
             : nothing}

@@ -22,15 +22,34 @@
 
 ### 固定寬度
 
-根據預期輸入長度設定寬度，幫助使用者判斷該填多少內容。
+根據預期輸入長度設定寬度，幫助使用者判斷該填多少內容。用 `<gov-cluster>` 水平排列，窄螢幕自動換行。
 
 <div class="demo-block demo-vertical">
-  <gov-input label="寬度 20" width="20" hint="寬度 20 字元，適合較長的文字"></gov-input>
-  <gov-input label="寬度 10" width="10" hint="寬度 10 字元，適合電話號碼"></gov-input>
-  <gov-input label="寬度 5" width="5" hint="寬度 5 字元，適合郵遞區號"></gov-input>
-  <gov-input label="寬度 4" width="4" hint="寬度 4 字元，適合年份"></gov-input>
-  <gov-input label="寬度 3" width="3" hint="寬度 3 字元"></gov-input>
-  <gov-input label="寬度 2" width="2" hint="寬度 2 字元，適合月 / 日"></gov-input>
+  <gov-stack space="4">
+    <gov-input label="全寬（預設）" hint="地址、全名等長度不定的文字"></gov-input>
+    <gov-input label="寬度 20" width="20" hint="較長的姓名、帳號"></gov-input>
+    <gov-input label="寬度 10" width="10" hint="電話號碼、身分證字號"></gov-input>
+    <gov-cluster space="4">
+      <gov-input label="寬度 5" width="5" hint="郵遞區號"></gov-input>
+      <gov-input label="寬度 4" width="4" hint="年份"></gov-input>
+      <gov-input label="寬度 3" width="3" hint="區碼"></gov-input>
+      <gov-input label="寬度 2" width="2" hint="月 / 日"></gov-input>
+    </gov-cluster>
+  </gov-stack>
+</div>
+
+### 實際場景：出生日期
+
+短寬度欄位適合用 `<gov-cluster>` 水平排列。
+
+<div class="demo-block demo-vertical">
+  <gov-fieldset legend="出生日期" hint="例如：1990 年 3 月 15 日">
+    <gov-cluster space="3">
+      <gov-input label="年" width="4" inputmode="numeric"></gov-input>
+      <gov-input label="月" width="2" inputmode="numeric"></gov-input>
+      <gov-input label="日" width="2" inputmode="numeric"></gov-input>
+    </gov-cluster>
+  </gov-fieldset>
 </div>
 
 ### Prefix / Suffix
@@ -38,9 +57,13 @@
 用於顯示單位或幣別符號，讓使用者明確知道欄位的語意。
 
 <div class="demo-block demo-vertical">
-  <gov-input label="金額" prefix="NT$" width="10"></gov-input>
-  <gov-input label="重量" suffix="公斤" width="5"></gov-input>
-  <gov-input label="費率" prefix="NT$" suffix="每月" width="10"></gov-input>
+  <gov-stack space="4">
+    <gov-input label="金額" prefix="NT$" width="10"></gov-input>
+    <gov-input label="重量" suffix="公斤" width="5"></gov-input>
+    <gov-cluster space="4">
+      <gov-input label="費率" prefix="NT$" suffix="每月" width="10"></gov-input>
+    </gov-cluster>
+  </gov-stack>
 </div>
 
 ### 錯誤狀態
