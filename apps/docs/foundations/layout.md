@@ -8,27 +8,27 @@
 
 | 元件 | 用途 | 概念 |
 |------|------|------|
-| `<gov-container>` | 頁面容器，限制最大寬度並置中 | 外框 |
-| `<gov-stack>` | 垂直堆疊，控制子元素間距 | 垂直流 |
-| `<gov-sidebar>` | 主內容 + 側邊欄，窄時自動堆疊 | 雙欄 → 單欄 |
-| `<gov-cluster>` | 水平排列，自動換行 | 水平流 |
+| `<twgov-container>` | 頁面容器，限制最大寬度並置中 | 外框 |
+| `<twgov-stack>` | 垂直堆疊，控制子元素間距 | 垂直流 |
+| `<twgov-sidebar>` | 主內容 + 側邊欄，窄時自動堆疊 | 雙欄 → 單欄 |
+| `<twgov-cluster>` | 水平排列，自動換行 | 水平流 |
 
 ## Container 頁面容器
 
 限制內容最大寬度並水平置中。是頁面最外層的佈局元件。
 
 <div class="demo-block">
-  <gov-container max-width="600px" padding="4" style="background: var(--vp-c-bg-soft); border-radius: 4px;">
+  <twgov-container max-width="600px" padding="4" style="background: var(--vp-c-bg-soft); border-radius: 4px;">
     <p style="margin:0;">這段內容被限制在 600px 寬度內，水平置中。</p>
-  </gov-container>
+  </twgov-container>
 </div>
 
 ```html
-<gov-container>
+<twgov-container>
   <!-- 預設最大寬度 1020px -->
   <h1>頁面標題</h1>
   <p>頁面內容</p>
-</gov-container>
+</twgov-container>
 ```
 
 ### 屬性
@@ -43,19 +43,19 @@
 將子元素以垂直方向排列，統一控制間距。是最基本也最常用的佈局原語。
 
 <div class="demo-block">
-  <gov-stack space="4">
+  <twgov-stack space="4">
     <div style="padding: 12px; background: var(--vp-c-bg-soft); border-radius: 4px;">區塊 A</div>
     <div style="padding: 12px; background: var(--vp-c-bg-soft); border-radius: 4px;">區塊 B</div>
     <div style="padding: 12px; background: var(--vp-c-bg-soft); border-radius: 4px;">區塊 C</div>
-  </gov-stack>
+  </twgov-stack>
 </div>
 
 ```html
-<gov-stack space="6">
+<twgov-stack space="6">
   <h1>申辦勞工保險</h1>
   <p>請依照下列步驟完成線上申辦。</p>
-  <gov-button>開始申辦</gov-button>
-</gov-stack>
+  <twgov-button>開始申辦</twgov-button>
+</twgov-stack>
 ```
 
 ### 屬性
@@ -79,18 +79,18 @@
 兩欄佈局：主內容 + 側邊欄。當容器寬度不足時**自動堆疊為單欄**，不需要 media query。
 
 <div class="demo-block">
-  <gov-sidebar side-width="200px" content-min="50" space="4">
+  <twgov-sidebar side-width="200px" content-min="50" space="4">
     <div style="padding: 16px; background: var(--vp-c-bg-soft); border-radius: 4px;">
       <strong>主要內容</strong><br>這裡放主要資訊，會自動佔滿剩餘寬度。
     </div>
     <div style="padding: 16px; background: var(--vp-c-bg-soft); border-radius: 4px;">
       <strong>側邊欄</strong><br>次要資訊、連結等。
     </div>
-  </gov-sidebar>
+  </twgov-sidebar>
 </div>
 
 ```html
-<gov-sidebar side-width="16rem">
+<twgov-sidebar side-width="16rem">
   <main>
     <h1>申辦服務</h1>
     <p>主要內容...</p>
@@ -101,16 +101,16 @@
       <li><a href="#">常見問題</a></li>
     </ul>
   </aside>
-</gov-sidebar>
+</twgov-sidebar>
 ```
 
 ### 側邊欄在左側
 
 ```html
-<gov-sidebar side="left" side-width="240px">
+<twgov-sidebar side="left" side-width="240px">
   <nav>側邊導覽</nav>
   <main>主要內容</main>
-</gov-sidebar>
+</twgov-sidebar>
 ```
 
 ### 屬性
@@ -131,19 +131,19 @@ Sidebar 不使用 media query 判斷螢幕寬度，而是用 CSS flexbox wrap：
 將子元素水平排列，空間不足時自動換行。適用於按鈕群、標籤、麵包屑等。
 
 <div class="demo-block">
-  <gov-cluster space="3">
-    <gov-button variant="primary">送出申請</gov-button>
-    <gov-button variant="secondary">儲存草稿</gov-button>
-    <gov-button variant="secondary">取消</gov-button>
-  </gov-cluster>
+  <twgov-cluster space="3">
+    <twgov-button variant="primary">送出申請</twgov-button>
+    <twgov-button variant="secondary">儲存草稿</twgov-button>
+    <twgov-button variant="secondary">取消</twgov-button>
+  </twgov-cluster>
 </div>
 
 ```html
-<gov-cluster space="3">
-  <gov-button>送出申請</gov-button>
-  <gov-button variant="secondary">儲存草稿</gov-button>
-  <gov-button variant="secondary">取消</gov-button>
-</gov-cluster>
+<twgov-cluster space="3">
+  <twgov-button>送出申請</twgov-button>
+  <twgov-button variant="secondary">儲存草稿</twgov-button>
+  <twgov-button variant="secondary">取消</twgov-button>
+</twgov-cluster>
 ```
 
 ### 屬性
@@ -161,50 +161,50 @@ Sidebar 不使用 media query 判斷螢幕寬度，而是用 CSS flexbox wrap：
 ### 標準服務頁面
 
 ```html
-<gov-container>
-  <gov-stack space="8">
-    <gov-sidebar side-width="16rem">
-      <gov-stack space="6">
+<twgov-container>
+  <twgov-stack space="8">
+    <twgov-sidebar side-width="16rem">
+      <twgov-stack space="6">
         <h1>勞工保險線上申辦</h1>
         <p>本服務提供線上申辦各項勞工保險業務。</p>
-        <gov-fieldset legend="申請人資料">
-          <gov-input label="姓名"></gov-input>
-          <gov-input label="身分證字號" width="10"></gov-input>
-        </gov-fieldset>
-        <gov-cluster space="3">
-          <gov-button>送出</gov-button>
-          <gov-button variant="secondary">取消</gov-button>
-        </gov-cluster>
-      </gov-stack>
+        <twgov-fieldset legend="申請人資料">
+          <twgov-input label="姓名"></twgov-input>
+          <twgov-input label="身分證字號" width="10"></twgov-input>
+        </twgov-fieldset>
+        <twgov-cluster space="3">
+          <twgov-button>送出</twgov-button>
+          <twgov-button variant="secondary">取消</twgov-button>
+        </twgov-cluster>
+      </twgov-stack>
       <aside>
-        <gov-stack space="4">
+        <twgov-stack space="4">
           <h2>相關連結</h2>
           <a href="#">常見問題</a>
           <a href="#">聯絡我們</a>
-        </gov-stack>
+        </twgov-stack>
       </aside>
-    </gov-sidebar>
-  </gov-stack>
-</gov-container>
+    </twgov-sidebar>
+  </twgov-stack>
+</twgov-container>
 ```
 
 ### 表單頁面（全寬單欄）
 
 ```html
-<gov-container max-width="720px">
-  <gov-stack space="8">
+<twgov-container max-width="720px">
+  <twgov-stack space="8">
     <h1>申請表單</h1>
-    <gov-fieldset legend="個人資料">
-      <gov-input label="姓名"></gov-input>
-      <gov-input label="電話" type="tel" width="10"></gov-input>
-      <gov-input label="電子信箱" type="email"></gov-input>
-    </gov-fieldset>
-    <gov-cluster space="3">
-      <gov-button>送出</gov-button>
-      <gov-button variant="secondary">返回</gov-button>
-    </gov-cluster>
-  </gov-stack>
-</gov-container>
+    <twgov-fieldset legend="個人資料">
+      <twgov-input label="姓名"></twgov-input>
+      <twgov-input label="電話" type="tel" width="10"></twgov-input>
+      <twgov-input label="電子信箱" type="email"></twgov-input>
+    </twgov-fieldset>
+    <twgov-cluster space="3">
+      <twgov-button>送出</twgov-button>
+      <twgov-button variant="secondary">返回</twgov-button>
+    </twgov-cluster>
+  </twgov-stack>
+</twgov-container>
 ```
 
 ## 頁面寬度

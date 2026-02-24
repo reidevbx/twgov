@@ -80,10 +80,10 @@ twgov/
 │       └── public/
 │
 ├── packages/
-│   ├── web-components/          # Lit Web Components (gov-*)
+│   ├── web-components/          # Lit Web Components (twgov-*)
 │   │   ├── src/
-│   │   │   ├── gov-button.ts
-│   │   │   ├── gov-input.ts
+│   │   │   ├── twgov-button.ts
+│   │   │   ├── twgov-input.ts
 │   │   │   └── index.ts
 │   │   ├── package.json
 │   │   ├── tsconfig.json
@@ -180,15 +180,15 @@ description: 按鈕元件，用於觸發操作
 
 ## Live Demo
 
-<gov-button client:visible variant="primary">送出</gov-button>
-<gov-button client:visible variant="secondary">取消</gov-button>
+<twgov-button client:visible variant="primary">送出</twgov-button>
+<twgov-button client:visible variant="secondary">取消</twgov-button>
 
 ## 使用方式
 
 \`\`\`html
-<gov-button variant="primary">送出</gov-button>
-<gov-button variant="secondary">取消</gov-button>
-<gov-button disabled>無法操作</gov-button>
+<twgov-button variant="primary">送出</twgov-button>
+<twgov-button variant="secondary">取消</twgov-button>
+<twgov-button disabled>無法操作</twgov-button>
 \`\`\`
 
 ## 變體
@@ -222,7 +222,7 @@ description: 按鈕元件，用於觸發操作
 
 ### 6.1 規範
 
-- Tag prefix: `gov-*`
+- Tag prefix: `twgov-*`
 - Shadow DOM（Lit 預設，樣式隔離）
 - Styling 使用 CSS custom properties（design tokens）
 - TypeScript
@@ -231,11 +231,11 @@ description: 按鈕元件，用於觸發操作
 ### 6.2 範例
 
 ```typescript
-// packages/web-components/src/gov-button.ts
+// packages/web-components/src/twgov-button.ts
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('gov-button')
+@customElement('twgov-button')
 export class GovButton extends LitElement {
   @property({ type: String }) variant: 'primary' | 'secondary' | 'danger' = 'primary';
   @property({ type: Boolean }) disabled = false;
@@ -285,13 +285,13 @@ export class GovButton extends LitElement {
 
 先做最基本的：
 
-1. `gov-button`
-2. `gov-input`
-3. `gov-select`
-4. `gov-textarea`
-5. `gov-tag`
-6. `gov-breadcrumb`
-7. `gov-header`
+1. `twgov-button`
+2. `twgov-input`
+3. `twgov-select`
+4. `twgov-textarea`
+5. `twgov-tag`
+6. `twgov-breadcrumb`
+7. `twgov-header`
 8. `gov-footer`
 
 後續依需求逐步新增。

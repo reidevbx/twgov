@@ -14,7 +14,7 @@ export default defineConfig({
   vue: {
     template: {
       compilerOptions: {
-        isCustomElement: (tag) => tag.startsWith('gov-'),
+        isCustomElement: (tag) => tag.startsWith('twgov-'),
       },
     },
   },

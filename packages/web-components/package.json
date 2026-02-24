@@ -10,45 +10,45 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./gov-button": {
-      "source": "./src/gov-button.ts",
-      "types": "./dist/gov-button.d.ts",
-      "import": "./dist/gov-button.js"
+    "./twgov-button": {
+      "source": "./src/twgov-button.ts",
+      "types": "./dist/twgov-button.d.ts",
+      "import": "./dist/twgov-button.js"
     },
-    "./gov-checkbox": {
-      "source": "./src/gov-checkbox.ts",
-      "types": "./dist/gov-checkbox.d.ts",
-      "import": "./dist/gov-checkbox.js"
+    "./twgov-checkbox": {
+      "source": "./src/twgov-checkbox.ts",
+      "types": "./dist/twgov-checkbox.d.ts",
+      "import": "./dist/twgov-checkbox.js"
     },
-    "./gov-input": {
-      "source": "./src/gov-input.ts",
-      "types": "./dist/gov-input.d.ts",
-      "import": "./dist/gov-input.js"
+    "./twgov-input": {
+      "source": "./src/twgov-input.ts",
+      "types": "./dist/twgov-input.d.ts",
+      "import": "./dist/twgov-input.js"
     },
-    "./gov-fieldset": {
-      "source": "./src/gov-fieldset.ts",
-      "types": "./dist/gov-fieldset.d.ts",
-      "import": "./dist/gov-fieldset.js"
+    "./twgov-fieldset": {
+      "source": "./src/twgov-fieldset.ts",
+      "types": "./dist/twgov-fieldset.d.ts",
+      "import": "./dist/twgov-fieldset.js"
     },
-    "./gov-stack": {
-      "source": "./src/gov-stack.ts",
-      "types": "./dist/gov-stack.d.ts",
-      "import": "./dist/gov-stack.js"
+    "./twgov-stack": {
+      "source": "./src/twgov-stack.ts",
+      "types": "./dist/twgov-stack.d.ts",
+      "import": "./dist/twgov-stack.js"
     },
-    "./gov-sidebar": {
-      "source": "./src/gov-sidebar.ts",
-      "types": "./dist/gov-sidebar.d.ts",
-      "import": "./dist/gov-sidebar.js"
+    "./twgov-sidebar": {
+      "source": "./src/twgov-sidebar.ts",
+      "types": "./dist/twgov-sidebar.d.ts",
+      "import": "./dist/twgov-sidebar.js"
     },
-    "./gov-cluster": {
-      "source": "./src/gov-cluster.ts",
-      "types": "./dist/gov-cluster.d.ts",
-      "import": "./dist/gov-cluster.js"
+    "./twgov-cluster": {
+      "source": "./src/twgov-cluster.ts",
+      "types": "./dist/twgov-cluster.d.ts",
+      "import": "./dist/twgov-cluster.js"
     },
-    "./gov-container": {
-      "source": "./src/gov-container.ts",
-      "types": "./dist/gov-container.d.ts",
-      "import": "./dist/gov-container.js"
+    "./twgov-container": {
+      "source": "./src/twgov-container.ts",
+      "types": "./dist/twgov-container.d.ts",
+      "import": "./dist/twgov-container.js"
     }
   },
   "files": [

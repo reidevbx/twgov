@@ -9,24 +9,24 @@
 試著操作下方按鈕：hover（滑鼠移入）、按下去（active）、用 <kbd>Tab</kbd> 鍵聚焦（focus）。
 
 <div class="demo-block">
-  <gov-button variant="primary">送出</gov-button>
-  <gov-button variant="secondary">取消</gov-button>
-  <gov-button variant="danger">刪除</gov-button>
+  <twgov-button variant="primary">送出</twgov-button>
+  <twgov-button variant="secondary">取消</twgov-button>
+  <twgov-button variant="danger">刪除</twgov-button>
 </div>
 
 ### 尺寸
 
 <div class="demo-block">
-  <gov-button size="sm">小按鈕</gov-button>
-  <gov-button size="md">中按鈕</gov-button>
-  <gov-button size="lg">大按鈕</gov-button>
+  <twgov-button size="sm">小按鈕</twgov-button>
+  <twgov-button size="md">中按鈕</twgov-button>
+  <twgov-button size="lg">大按鈕</twgov-button>
 </div>
 
 ### 停用狀態
 
 <div class="demo-block">
-  <gov-button disabled>停用按鈕</gov-button>
-  <gov-button variant="secondary" disabled>停用次要</gov-button>
+  <twgov-button disabled>停用按鈕</twgov-button>
+  <twgov-button variant="secondary" disabled>停用次要</twgov-button>
 </div>
 
 ## 互動狀態展示
@@ -40,11 +40,11 @@
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">預設</span>
-    <gov-button variant="primary">送出</gov-button>
+    <twgov-button variant="primary">送出</twgov-button>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ Hover</span>
-    <gov-button variant="primary" id="demo-hover">送出</gov-button>
+    <twgov-button variant="primary" id="demo-hover">送出</twgov-button>
   </div>
 </div>
 
@@ -55,11 +55,11 @@
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">預設（有底部陰影）</span>
-    <gov-button variant="primary">送出</gov-button>
+    <twgov-button variant="primary">送出</twgov-button>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ Active（陰影消失）</span>
-    <gov-button variant="primary" id="demo-active">送出</gov-button>
+    <twgov-button variant="primary" id="demo-active">送出</twgov-button>
   </div>
 </div>
 
@@ -70,11 +70,11 @@
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">預設</span>
-    <gov-button variant="primary">送出</gov-button>
+    <twgov-button variant="primary">送出</twgov-button>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ Focus</span>
-    <gov-button variant="primary" id="demo-focus">送出</gov-button>
+    <twgov-button variant="primary" id="demo-focus">送出</twgov-button>
   </div>
 </div>
 
@@ -85,11 +85,11 @@
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">預設</span>
-    <gov-button variant="primary">送出</gov-button>
+    <twgov-button variant="primary">送出</twgov-button>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ Disabled</span>
-    <gov-button variant="primary" disabled>送出</gov-button>
+    <twgov-button variant="primary" disabled>送出</twgov-button>
   </div>
 </div>
 
@@ -155,9 +155,9 @@ onMounted(() => {
 ## 使用方式
 
 ```html
-<gov-button>送出</gov-button>
-<gov-button variant="secondary">取消</gov-button>
-<gov-button variant="danger">刪除</gov-button>
+<twgov-button>送出</twgov-button>
+<twgov-button variant="secondary">取消</twgov-button>
+<twgov-button variant="danger">刪除</twgov-button>
 ```
 
 ## 屬性

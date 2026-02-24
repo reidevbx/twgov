@@ -8,12 +8,12 @@ import { customElement, property } from 'lit/decorators.js';
  * 是最基本的佈局原語，適用於頁面區塊、表單、卡片內容等。
  *
  * @example
- * <gov-stack space="6">
+ * <twgov-stack space="6">
  *   <h1>標題</h1>
  *   <p>內文</p>
- * </gov-stack>
+ * </twgov-stack>
  */
-@customElement('gov-stack')
+@customElement('twgov-stack')
 export class GovStack extends LitElement {
   /** 子元素之間的間距，對應 --twgov-space-{n} token（預設 4 = 16px） */
   @property({ type: String }) space = '4';
@@ -41,6 +41,6 @@ export class GovStack extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'gov-stack': GovStack;
+    'twgov-stack': GovStack;
   }
 }

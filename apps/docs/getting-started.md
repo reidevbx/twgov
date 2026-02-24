@@ -12,8 +12,8 @@
 <script src="https://unpkg.com/@gov-tw/web-components/dist/gov-tw.iife.js"></script>
 
 <!-- 直接使用 -->
-<gov-button>送出</gov-button>
-<gov-checkbox label="我同意服務條款"></gov-checkbox>
+<twgov-button>送出</twgov-button>
+<twgov-checkbox label="我同意服務條款"></twgov-checkbox>
 ```
 
 ## npm 安裝（有建置工具的專案）
@@ -29,14 +29,14 @@ npm install @gov-tw/web-components
 import '@gov-tw/web-components'
 
 // 或只引入需要的元件
-import '@gov-tw/web-components/gov-button'
+import '@gov-tw/web-components/twgov-button'
 ```
 
 安裝後在 HTML 中直接使用，不限框架：
 
 ```html
-<gov-button variant="primary">送出</gov-button>
-<gov-checkbox label="訂閱電子報"></gov-checkbox>
+<twgov-button variant="primary">送出</twgov-button>
+<twgov-checkbox label="訂閱電子報"></twgov-checkbox>
 ```
 
 ## 只用 Token
@@ -74,11 +74,11 @@ npm install @gov-tw/tokens
 ```html
 <div class="bg-twgov-bg-surface p-twgov-6 rounded-twgov-lg">
   <h2 class="text-twgov-text-primary font-twgov-sans text-twgov-xl">標題</h2>
-  <gov-button>送出</gov-button>
+  <twgov-button>送出</twgov-button>
 </div>
 ```
 
-Tailwind utility 與 Web Components 可混合使用——頁面佈局用 Tailwind，互動元件用 `<gov-*>`。
+Tailwind utility 與 Web Components 可混合使用——頁面佈局用 Tailwind，互動元件用 `<twgov-*>`。
 
 ## 客製品牌色
 

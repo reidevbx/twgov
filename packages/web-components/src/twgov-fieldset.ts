@@ -1,7 +1,7 @@
 import { LitElement, html, css, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('gov-fieldset')
+@customElement('twgov-fieldset')
 export class GovFieldset extends LitElement {
   @property({ type: String }) legend = '';
   @property({ type: String, reflect: true }) size: 'xl' | 'l' | 'm' | 's' = 'l';
@@ -122,6 +122,6 @@ export class GovFieldset extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'gov-fieldset': GovFieldset;
+    'twgov-fieldset': GovFieldset;
   }
 }

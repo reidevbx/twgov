@@ -10,10 +10,14 @@ export default defineConfig({
     lib: {
       entry: {
         index: resolve(__dirname, 'src/index.ts'),
-        'gov-button': resolve(__dirname, 'src/gov-button.ts'),
-        'gov-checkbox': resolve(__dirname, 'src/gov-checkbox.ts'),
-        'gov-input': resolve(__dirname, 'src/gov-input.ts'),
-        'gov-fieldset': resolve(__dirname, 'src/gov-fieldset.ts'),
+        'twgov-button': resolve(__dirname, 'src/twgov-button.ts'),
+        'twgov-checkbox': resolve(__dirname, 'src/twgov-checkbox.ts'),
+        'twgov-input': resolve(__dirname, 'src/twgov-input.ts'),
+        'twgov-fieldset': resolve(__dirname, 'src/twgov-fieldset.ts'),
+        'twgov-stack': resolve(__dirname, 'src/twgov-stack.ts'),
+        'twgov-sidebar': resolve(__dirname, 'src/twgov-sidebar.ts'),
+        'twgov-cluster': resolve(__dirname, 'src/twgov-cluster.ts'),
+        'twgov-container': resolve(__dirname, 'src/twgov-container.ts'),
       },
       formats: ['es'],
     },

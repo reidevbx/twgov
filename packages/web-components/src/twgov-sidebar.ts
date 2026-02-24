@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 /**
- * gov-sidebar — 側邊欄佈局
+ * twgov-sidebar — 側邊欄佈局
  *
  * 主內容 + 側邊欄，當容器寬度不足時自動堆疊為單欄。
  * 使用 CSS flexbox wrap 實現，不需要 media query。
@@ -11,10 +11,10 @@ import { customElement, property } from 'lit/decorators.js';
  * 透過 side 屬性可切換側邊欄在左或右。
  *
  * @example
- * <gov-sidebar side-width="300px">
+ * <twgov-sidebar side-width="300px">
  *   <div>主要內容</div>
  *   <div>側邊欄</div>
- * </gov-sidebar>
+ * </twgov-sidebar>
  */
 @customElement('twgov-sidebar')
 export class GovSidebar extends LitElement {

@@ -12,8 +12,8 @@ packages/
 │
 └── web-components/         ← UI 元件庫（Lit Web Components）
     ├── src/                ← TypeScript 原始碼
-    │   ├── gov-button.ts
-    │   ├── gov-checkbox.ts
+    │   ├── twgov-button.ts
+    │   ├── twgov-checkbox.ts
     │   └── index.ts
     └── dist/               ← 建置產出（npm / CDN 使用）
         ├── *.js            ← ESM 模組
@@ -112,7 +112,7 @@ UI 元件以 [Lit](https://lit.dev/) 建構，封裝為標準 Web Components。�
 元件內部透過 `var()` 引用 token，並提供 fallback 值：
 
 ```css
-/* gov-button 內部樣式 */
+/* twgov-button 內部樣式 */
 button {
   font-family: var(--twgov-font-sans, system-ui, sans-serif);
   padding: var(--twgov-spacing-2, 8px) var(--twgov-spacing-4, 16px);
@@ -141,8 +141,8 @@ tokens.json          ← 設計師與開發者共同維護
         │               ├→ dist/*.d.ts        ← TypeScript 型別
         │               └→ dist/gov-tw.iife.js ← IIFE（CDN <script>）
         │
-        ├── <gov-button>
-        ├── <gov-checkbox>
+        ├── <twgov-button>
+        ├── <twgov-checkbox>
         └── ...
 ```
 

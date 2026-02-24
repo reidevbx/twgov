@@ -2,18 +2,18 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 /**
- * gov-container — 頁面容器
+ * twgov-container — 頁面容器
  *
  * 限制內容最大寬度並水平置中，兩側留白。
  * 是頁面最外層的佈局原語。
  *
  * @example
- * <gov-container>
- *   <gov-stack>
+ * <twgov-container>
+ *   <twgov-stack>
  *     <h1>頁面標題</h1>
  *     <p>內容</p>
- *   </gov-stack>
- * </gov-container>
+ *   </twgov-stack>
+ * </twgov-container>
  */
 @customElement('twgov-container')
 export class GovContainer extends LitElement {

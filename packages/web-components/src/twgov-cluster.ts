@@ -2,16 +2,16 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 /**
- * gov-cluster — 水平流式佈局
+ * twgov-cluster — 水平流式佈局
  *
  * 將子元素水平排列，空間不足時自動換行。
  * 適用於按鈕群、標籤列、麵包屑等水平排列的元素。
  *
  * @example
- * <gov-cluster space="3">
- *   <gov-button>送出</gov-button>
- *   <gov-button variant="secondary">取消</gov-button>
- * </gov-cluster>
+ * <twgov-cluster space="3">
+ *   <twgov-button>送出</twgov-button>
+ *   <twgov-button variant="secondary">取消</twgov-button>
+ * </twgov-cluster>
  */
 @customElement('twgov-cluster')
 export class GovCluster extends LitElement {

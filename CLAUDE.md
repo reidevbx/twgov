@@ -20,8 +20,8 @@ pnpm build:tokens    # 重建 token 產出檔
 
 ## 命名規則
 
-- 元件 tag：`gov-<name>`（如 `gov-button`）
-- 元件檔案：`gov-<name>.ts`
+- 元件 tag：`twgov-<name>`（如 `twgov-button`）
+- 元件檔案：`twgov-<name>.ts`
 - CSS token 前綴：`--twgov-`
 - npm scope：`@gov-tw/`
 - 文件頁面：`apps/docs/components/<name>.md`
@@ -50,11 +50,11 @@ pnpm build:tokens    # 重建 token 產出檔
 ### 文件
 - 語言：繁體中文（zh-TW）
 - 每個元件頁面結構：概述 → 互動範例 → 狀態展示 → 使用方式 → 屬性表 → 無障礙 → 設計指引
-- 元件 demo 直接使用 `<gov-*>` 自訂元素，狀態展示透過 Shadow DOM 注入 inline style
+- 元件 demo 直接使用 `<twgov-*>` 自訂元素，狀態展示透過 Shadow DOM 注入 inline style
 
 ## 新增元件步驟
 
-1. `packages/web-components/src/gov-<name>.ts` — 建立元件
+1. `packages/web-components/src/twgov-<name>.ts` — 建立元件
 2. `packages/web-components/src/index.ts` — 加入 export
 3. `packages/web-components/package.json` — 加入 exports entry
 4. `apps/docs/components/<name>.md` — 建立文件頁面
@@ -64,6 +64,6 @@ pnpm build:tokens    # 重建 token 產出檔
 ## 技術約束
 
 - TypeScript：`experimentalDecorators: true`、`useDefineForClassFields: false`（Lit 必需）
-- VitePress 需在 `config.mts` 設定 `isCustomElement: tag => tag.startsWith('gov-')`
+- VitePress 需在 `config.mts` 設定 `isCustomElement: tag => tag.startsWith('twgov-')`
 - Web Components 僅在 client-side 動態 import（SSR 不支援自訂元素）
 - 設計參考：[GOV.UK Design System](https://design-system.service.gov.uk/)

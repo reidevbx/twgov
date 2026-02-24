@@ -9,16 +9,16 @@
 試著點擊勾選、用 <kbd>Tab</kbd> 聚焦、<kbd>Space</kbd> 切換。
 
 <div class="demo-block demo-vertical">
-  <gov-checkbox label="我同意服務條款"></gov-checkbox>
-  <gov-checkbox label="訂閱電子報" checked></gov-checkbox>
-  <gov-checkbox label="無法選取" disabled></gov-checkbox>
-  <gov-checkbox label="已勾選但停用" checked disabled></gov-checkbox>
+  <twgov-checkbox label="我同意服務條款"></twgov-checkbox>
+  <twgov-checkbox label="訂閱電子報" checked></twgov-checkbox>
+  <twgov-checkbox label="無法選取" disabled></twgov-checkbox>
+  <twgov-checkbox label="已勾選但停用" checked disabled></twgov-checkbox>
 </div>
 
 ### 使用 Slot 提供標籤內容
 
 <div class="demo-block demo-vertical">
-  <gov-checkbox>我已閱讀並同意<a href="#">隱私政策</a></gov-checkbox>
+  <twgov-checkbox>我已閱讀並同意<a href="#">隱私政策</a></twgov-checkbox>
 </div>
 
 ## 互動狀態展示
@@ -30,11 +30,11 @@
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">預設</span>
-    <gov-checkbox label="選項"></gov-checkbox>
+    <twgov-checkbox label="選項"></twgov-checkbox>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ Hover</span>
-    <gov-checkbox label="選項" id="demo-hover"></gov-checkbox>
+    <twgov-checkbox label="選項" id="demo-hover"></twgov-checkbox>
   </div>
 </div>
 
@@ -45,11 +45,11 @@ Tab 鍵聚焦時，方塊外圍出現 3px 黃色 `#fd0` focus ring。
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">預設</span>
-    <gov-checkbox label="選項"></gov-checkbox>
+    <twgov-checkbox label="選項"></twgov-checkbox>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ Focus</span>
-    <gov-checkbox label="選項" id="demo-focus"></gov-checkbox>
+    <twgov-checkbox label="選項" id="demo-focus"></twgov-checkbox>
   </div>
 </div>
 
@@ -60,11 +60,11 @@ Tab 鍵聚焦時，方塊外圍出現 3px 黃色 `#fd0` focus ring。
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">未勾選</span>
-    <gov-checkbox label="選項"></gov-checkbox>
+    <twgov-checkbox label="選項"></twgov-checkbox>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ 已勾選</span>
-    <gov-checkbox label="選項" checked></gov-checkbox>
+    <twgov-checkbox label="選項" checked></twgov-checkbox>
   </div>
 </div>
 
@@ -75,11 +75,11 @@ Tab 鍵聚焦時，方塊外圍出現 3px 黃色 `#fd0` focus ring。
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">預設</span>
-    <gov-checkbox label="選項"></gov-checkbox>
+    <twgov-checkbox label="選項"></twgov-checkbox>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ Disabled</span>
-    <gov-checkbox label="選項" disabled></gov-checkbox>
+    <twgov-checkbox label="選項" disabled></twgov-checkbox>
   </div>
 </div>
 
@@ -146,14 +146,14 @@ onMounted(() => {
 
 ```html
 <!-- 使用 label 屬性 -->
-<gov-checkbox label="同意條款"></gov-checkbox>
-<gov-checkbox label="已勾選" checked></gov-checkbox>
-<gov-checkbox label="停用" disabled></gov-checkbox>
+<twgov-checkbox label="同意條款"></twgov-checkbox>
+<twgov-checkbox label="已勾選" checked></twgov-checkbox>
+<twgov-checkbox label="停用" disabled></twgov-checkbox>
 
 <!-- 使用 slot 傳入 HTML 標籤 -->
-<gov-checkbox>
+<twgov-checkbox>
   我同意<a href="#">條款</a>
-</gov-checkbox>
+</twgov-checkbox>
 ```
 
 ## 屬性
