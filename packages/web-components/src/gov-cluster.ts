@@ -13,7 +13,7 @@ import { customElement, property } from 'lit/decorators.js';
  *   <gov-button variant="secondary">取消</gov-button>
  * </gov-cluster>
  */
-@customElement('gov-cluster')
+@customElement('twgov-cluster')
 export class GovCluster extends LitElement {
   /** 子元素之間的間距，對應 --twgov-space-{n} token */
   @property({ type: String }) space = '3';
@@ -69,6 +69,6 @@ export class GovCluster extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'gov-cluster': GovCluster;
+    'twgov-cluster': GovCluster;
   }
 }

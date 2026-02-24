@@ -20,16 +20,16 @@ export class GovFieldset extends LitElement {
      * - error 時左側紅色邊線
      */
 
+    .fieldset-wrapper--error {
+      border-left: 4px solid var(--twgov-color-feedback-error, #C3362B);
+      padding-left: var(--twgov-spacing-4, 16px);
+    }
+
     .fieldset {
       border: none;
       padding: 0;
       margin: 0;
       min-width: 0;
-    }
-
-    .fieldset--error {
-      border-left: 4px solid var(--twgov-color-feedback-error, #C3362B);
-      padding-left: var(--twgov-spacing-4, 16px);
     }
 
     /* ===== Legend ===== */
@@ -94,26 +94,28 @@ export class GovFieldset extends LitElement {
     const hasError = !!this.error;
 
     return html`
-      <fieldset
-        class="fieldset ${hasError ? 'fieldset--error' : ''}"
-        aria-describedby=${[
-          this.hint ? 'fieldset-hint' : '',
-          hasError ? 'fieldset-error' : '',
-        ].filter(Boolean).join(' ') || nothing}
-      >
-        ${this.legend
-          ? html`<legend class="fieldset__legend">${this.legend}</legend>`
-          : nothing}
-        ${this.hint
-          ? html`<span class="fieldset__hint" id="fieldset-hint">${this.hint}</span>`
-          : nothing}
-        ${hasError
-          ? html`<span class="fieldset__error" id="fieldset-error">${this.error}</span>`
-          : nothing}
-        <div class="fieldset__content">
-          <slot></slot>
-        </div>
-      </fieldset>
+      <div class="${hasError ? 'fieldset-wrapper--error' : ''}">
+        <fieldset
+          class="fieldset"
+          aria-describedby=${[
+            this.hint ? 'fieldset-hint' : '',
+            hasError ? 'fieldset-error' : '',
+          ].filter(Boolean).join(' ') || nothing}
+        >
+          ${this.legend
+            ? html`<legend class="fieldset__legend">${this.legend}</legend>`
+            : nothing}
+          ${this.hint
+            ? html`<span class="fieldset__hint" id="fieldset-hint">${this.hint}</span>`
+            : nothing}
+          ${hasError
+            ? html`<span class="fieldset__error" id="fieldset-error">${this.error}</span>`
+            : nothing}
+          <div class="fieldset__content">
+            <slot></slot>
+          </div>
+        </fieldset>
+      </div>
     `;
   }
 }

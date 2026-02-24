@@ -86,9 +86,13 @@ export class GovInput extends LitElement {
 
     /* ===== Input wrapper (for prefix / suffix) ===== */
     .input-wrapper {
-      display: inline-flex;
+      display: flex;
       align-items: stretch;
       border-radius: var(--twgov-radius-sm, 4px);
+    }
+
+    .input-wrapper--has-affix {
+      display: inline-flex;
     }
 
     .input-prefix,
@@ -115,10 +119,6 @@ export class GovInput extends LitElement {
     }
 
     /* 有 prefix/suffix 時，focus 樣式移到 wrapper */
-    .input-wrapper--has-affix {
-      position: relative;
-    }
-
     .input-wrapper--has-affix:focus-within {
       outline: 3px solid #fd0;
       outline-offset: 0;

@@ -1,9 +1,9 @@
 ---
 layout: home
 hero:
-  name: gov.tw
+  name: GOV.TW
   text: Design System
-  tagline: 跨部會一致的數位服務體驗。參考 GOV.UK Design System，為台灣公共服務量身打造。
+  tagline: 為台灣政府數位服務打造的設計系統，提供跨部會一致的使用者體驗。
   actions:
     - theme: brand
       text: 快速開始
@@ -14,7 +14,7 @@ hero:
 features:
   - title: 設計原則
     details: 指導所有設計決策的核心價值
-    link: /principles/user-needs-first
+    link: /principles/
   - title: 服務標準
     details: 數位服務的品質驗收準則
     link: /standards/

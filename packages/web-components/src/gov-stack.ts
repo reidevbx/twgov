@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 /**
- * gov-stack — 垂直堆疊佈局
+ * twgov-stack — 垂直堆疊佈局
  *
  * 將子元素以垂直方向堆疊，控制間距。
  * 是最基本的佈局原語，適用於頁面區塊、表單、卡片內容等。

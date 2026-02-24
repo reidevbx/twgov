@@ -16,7 +16,7 @@ import { customElement, property } from 'lit/decorators.js';
  *   <div>側邊欄</div>
  * </gov-sidebar>
  */
-@customElement('gov-sidebar')
+@customElement('twgov-sidebar')
 export class GovSidebar extends LitElement {
   /** 側邊欄寬度（CSS 長度值） */
   @property({ type: String, attribute: 'side-width' }) sideWidth = '16rem';
@@ -85,6 +85,6 @@ export class GovSidebar extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'gov-sidebar': GovSidebar;
+    'twgov-sidebar': GovSidebar;
   }
 }

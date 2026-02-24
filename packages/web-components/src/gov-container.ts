@@ -15,7 +15,7 @@ import { customElement, property } from 'lit/decorators.js';
  *   </gov-stack>
  * </gov-container>
  */
-@customElement('gov-container')
+@customElement('twgov-container')
 export class GovContainer extends LitElement {
   /** 最大寬度（CSS 長度值） */
   @property({ type: String, attribute: 'max-width' }) maxWidth = '1020px';
@@ -52,6 +52,6 @@ export class GovContainer extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'gov-container': GovContainer;
+    'twgov-container': GovContainer;
   }
 }

@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('gov-button')
+@customElement('twgov-button')
 export class GovButton extends LitElement {
   static shadowRootOptions: ShadowRootInit = {
     ...LitElement.shadowRootOptions,
@@ -143,6 +143,6 @@ export class GovButton extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'gov-button': GovButton;
+    'twgov-button': GovButton;
   }
 }

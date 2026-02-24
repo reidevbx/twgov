@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-TW',
-  title: 'gov.tw Design System',
+  title: 'GOV.TW Design System',
   description: '為台灣政府數位服務打造的設計系統',
 
   vite: {
@@ -38,12 +38,12 @@ export default defineConfig({
         text: '設計原則',
         items: [
           { text: '總覽', link: '/principles/' },
-          { text: '以使用者為中心', link: '/principles/people-first' },
-          { text: '無障礙與包容性', link: '/principles/everyone-counts' },
-          { text: '降低使用者負擔', link: '/principles/simplicity-is-designed' },
-          { text: '一致性與可預期性', link: '/principles/trust-through-consistency' },
-          { text: '資料驅動的持續改善', link: '/principles/keep-improving' },
-          { text: '開放與協作', link: '/principles/work-in-the-open' },
+          { text: '原則一：以使用者為中心', link: '/principles/people-first' },
+          { text: '原則二：無障礙與包容性', link: '/principles/everyone-counts' },
+          { text: '原則三：降低使用者負擔', link: '/principles/simplicity-is-designed' },
+          { text: '原則四：一致性與可預期性', link: '/principles/trust-through-consistency' },
+          { text: '原則五：資料驅動的持續改善', link: '/principles/keep-improving' },
+          { text: '原則六：開放與協作', link: '/principles/work-in-the-open' },
         ],
       },
       {

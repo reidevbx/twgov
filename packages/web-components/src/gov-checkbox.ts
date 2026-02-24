@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('gov-checkbox')
+@customElement('twgov-checkbox')
 export class GovCheckbox extends LitElement {
   static shadowRootOptions: ShadowRootInit = {
     ...LitElement.shadowRootOptions,
@@ -182,6 +182,6 @@ export class GovCheckbox extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'gov-checkbox': GovCheckbox;
+    'twgov-checkbox': GovCheckbox;
   }
 }
