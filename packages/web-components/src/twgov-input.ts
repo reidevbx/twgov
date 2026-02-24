@@ -102,7 +102,7 @@ export class GovInput extends LitElement {
       font-family: var(--twgov-font-sans, system-ui, sans-serif);
       font-size: var(--twgov-font-size-base, 1rem);
       color: var(--twgov-color-text-primary, #1A1A1A);
-      background: var(--twgov-color-bg-surface, #F5F5F5);
+      background: var(--twgov-color-bg-surface, #EAF0F0);
       border: 2px solid var(--twgov-color-text-primary, #1A1A1A);
       padding: var(--twgov-spacing-2, 8px) var(--twgov-spacing-3, 12px);
       white-space: nowrap;
@@ -193,7 +193,7 @@ export class GovInput extends LitElement {
     .input:disabled {
       opacity: 0.5;
       cursor: not-allowed;
-      background: var(--twgov-color-bg-surface, #F5F5F5);
+      background: var(--twgov-color-bg-surface, #EAF0F0);
     }
   `;
 

@@ -120,7 +120,7 @@ export class GovTextarea extends LitElement {
     .textarea:disabled {
       opacity: 0.5;
       cursor: not-allowed;
-      background: var(--twgov-color-bg-surface, #F5F5F5);
+      background: var(--twgov-color-bg-surface, #EAF0F0);
     }
 
     /* ===== 字數計數 ===== */

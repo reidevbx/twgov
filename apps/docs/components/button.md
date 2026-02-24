@@ -108,17 +108,18 @@ onMounted(() => {
     apply()
   }
 
+  // 用 color-mix() 從 token 動態算色，不 hardcode 色碼
   applyStyle('demo-hover', (btn) => {
-    btn.style.background = '#0a6a40'
+    btn.style.background = 'color-mix(in srgb, var(--twgov-color-brand-primary, #2C84B2) 85%, black)'
   })
 
   applyStyle('demo-active', (btn) => {
-    btn.style.background = '#094d2e'
+    btn.style.background = 'color-mix(in srgb, var(--twgov-color-brand-primary, #2C84B2) 65%, black)'
     btn.style.boxShadow = 'none'
   })
 
   applyStyle('demo-focus', (btn) => {
-    btn.style.boxShadow = 'inset 0 -3px 0 #094d2e, 0 0 0 3px #fd0'
+    btn.style.boxShadow = 'inset 0 -3px 0 color-mix(in srgb, var(--twgov-color-brand-primary, #2C84B2) 60%, black), 0 0 0 3px #fd0'
   })
 })
 </script>

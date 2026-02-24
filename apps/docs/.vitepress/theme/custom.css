@@ -1,38 +1,49 @@
-/* gov.tw Design System - Green Theme for VitePress */
+/* gov.tw Design System - Blue Theme for VitePress */
 
-/* ===== Green color palette ===== */
+/* ===== Brand color palette ===== */
+/* 主色: #2C84B2  輔色: #618D90  底色: #EAF0F0 */
 :root {
-  --vp-c-brand-1: #0D7A4A;
-  --vp-c-brand-2: #0a6a40;
-  --vp-c-brand-3: #085a36;
-  --vp-c-brand-soft: rgba(13, 122, 74, 0.14);
+  --vp-c-brand-1: #2C84B2;
+  --vp-c-brand-2: #25719A;
+  --vp-c-brand-3: #1E5E82;
+  --vp-c-brand-soft: rgba(44, 132, 178, 0.14);
 
-  /* Override VitePress green to match our brand */
-  --vp-c-green-1: #0D7A4A;
-  --vp-c-green-2: #0a6a40;
-  --vp-c-green-3: #085a36;
-  --vp-c-green-soft: rgba(13, 122, 74, 0.14);
+  /* Override VitePress default accent */
+  --vp-c-indigo-1: #2C84B2;
+  --vp-c-indigo-2: #25719A;
+  --vp-c-indigo-3: #1E5E82;
+  --vp-c-indigo-soft: rgba(44, 132, 178, 0.14);
+
+  /* gov.tw design tokens - light mode */
+  --twgov-color-brand-primary: #2C84B2;
+  --twgov-color-brand-secondary: #618D90;
+  --twgov-color-text-primary: #1A1A1A;
+  --twgov-color-text-secondary: #595959;
+  --twgov-color-text-on-primary: #FFFFFF;
+  --twgov-color-bg-canvas: #FFFFFF;
+  --twgov-color-bg-surface: #EAF0F0;
+  --twgov-color-border-default: #B0C4C5;
 }
 
 .dark {
-  --vp-c-brand-1: #3dd68c;
-  --vp-c-brand-2: #30c47e;
-  --vp-c-brand-3: #24b270;
-  --vp-c-brand-soft: rgba(61, 214, 140, 0.14);
+  --vp-c-brand-1: #6B9FE8;
+  --vp-c-brand-2: #5A8DD6;
+  --vp-c-brand-3: #4A7DC4;
+  --vp-c-brand-soft: rgba(107, 159, 232, 0.14);
 
   /* gov.tw dark mode token overrides */
-  --twgov-color-brand-primary: #3DD68C;
-  --twgov-color-brand-secondary: #E0E0E0;
+  --twgov-color-brand-primary: #6B9FE8;
+  --twgov-color-brand-secondary: #89B5B8;
   --twgov-color-text-primary: #E8E8E8;
   --twgov-color-text-secondary: #A0A0A0;
   --twgov-color-text-on-primary: #1A1A1A;
   --twgov-color-bg-canvas: #1A1A1A;
-  --twgov-color-bg-surface: #2A2A2A;
-  --twgov-color-border-default: #404040;
+  --twgov-color-bg-surface: #1E2A2A;
+  --twgov-color-border-default: #3A5050;
   --twgov-color-feedback-error: #F87171;
   --twgov-color-feedback-success: #4ADE80;
   --twgov-color-feedback-warning: #FBBF24;
-  --twgov-color-feedback-info: #3DD68C;
+  --twgov-color-feedback-info: #6B9FE8;
 }
 
 /* ===== Typography - CJK optimization ===== */
@@ -67,6 +78,12 @@
 /* ===== Table improvements ===== */
 .vp-doc th {
   background-color: var(--vp-c-brand-soft);
+}
+
+/* ===== Navbar logo ===== */
+.VPNavBarTitle .logo {
+  height: 36px;
+  width: auto;
 }
 
 /* ===== Subtle link underline ===== */

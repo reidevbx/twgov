@@ -61,7 +61,7 @@ export class GovButton extends LitElement {
 
     /* ===== Primary ===== */
     :host([variant="primary"]) button {
-      --_bg: var(--twgov-color-brand-primary, #0D7A4A);
+      --_bg: var(--twgov-color-brand-primary, #2C84B2);
       --_shadow-color: color-mix(in srgb, var(--_bg) 60%, black);
       background: var(--_bg);
       color: var(--twgov-color-text-on-primary, #FFFFFF);
@@ -75,11 +75,11 @@ export class GovButton extends LitElement {
 
     /* ===== Secondary ===== */
     :host([variant="secondary"]) button {
-      --_bg: var(--twgov-color-bg-surface, #F5F5F5);
+      --_bg: var(--twgov-color-bg-surface, #EAF0F0);
       --_shadow-color: color-mix(in srgb, var(--_bg) 40%, black);
       background: var(--_bg);
       color: var(--twgov-color-text-primary, #1A1A1A);
-      border-color: var(--twgov-color-border-default, #D9D9D9);
+      border-color: var(--twgov-color-border-default, #B0C4C5);
     }
     :host([variant="secondary"]) button:hover:not(:disabled) {
       background: color-mix(in srgb, var(--_bg) 80%, black);

@@ -116,7 +116,7 @@ UI 元件以 [Lit](https://lit.dev/) 建構，封裝為標準 Web Components。�
 button {
   font-family: var(--twgov-font-sans, system-ui, sans-serif);
   padding: var(--twgov-spacing-2, 8px) var(--twgov-spacing-4, 16px);
-  background: var(--twgov-color-brand-primary, #0D7A4A);
+  background: var(--twgov-color-brand-primary, #2C84B2);
 }
 ```
 

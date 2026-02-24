@@ -84,15 +84,15 @@ export class GovCheckbox extends LitElement {
       left: 7px;
       width: 20px;
       height: 10px;
-      border-left: 4px solid var(--twgov-color-brand-primary, #0D7A4A);
-      border-bottom: 4px solid var(--twgov-color-brand-primary, #0D7A4A);
+      border-left: 4px solid var(--twgov-color-brand-primary, #2C84B2);
+      border-bottom: 4px solid var(--twgov-color-brand-primary, #2C84B2);
       transform: rotate(-45deg);
       opacity: 0;
     }
 
     /* ===== Checked ===== */
     .checkbox__input:checked + .checkbox__box {
-      border-color: var(--twgov-color-brand-primary, #0D7A4A);
+      border-color: var(--twgov-color-brand-primary, #2C84B2);
     }
 
     .checkbox__input:checked + .checkbox__box::after {

@@ -8,8 +8,8 @@
 
 | Token | 色碼 | 用途 |
 |-------|------|------|
-| `--twgov-color-brand-primary` | `#0D7A4A` | 主要品牌色（綠色） |
-| `--twgov-color-brand-secondary` | `#1A1A1A` | 次要品牌色 |
+| `--twgov-color-brand-primary` | `#2C84B2` | 主要品牌色（藍色） |
+| `--twgov-color-brand-secondary` | `#618D90` | 輔助品牌色（青色） |
 
 ### 文字色
 
@@ -24,7 +24,13 @@
 | Token | 色碼 | 用途 |
 |-------|------|------|
 | `--twgov-color-bg-canvas` | `#FFFFFF` | 頁面背景 |
-| `--twgov-color-bg-surface` | `#F5F5F5` | 區塊背景 |
+| `--twgov-color-bg-surface` | `#EAF0F0` | 區塊背景 |
+
+### 邊框色
+
+| Token | 色碼 | 用途 |
+|-------|------|------|
+| `--twgov-color-border-default` | `#B0C4C5` | 預設邊框 |
 
 ### 回饋色
 
@@ -33,7 +39,7 @@
 | `--twgov-color-feedback-error` | `#C3362B` | 錯誤 |
 | `--twgov-color-feedback-success` | `#00804A` | 成功 |
 | `--twgov-color-feedback-warning` | `#F0AB00` | 警告 |
-| `--twgov-color-feedback-info` | `#0D7A4A` | 資訊 |
+| `--twgov-color-feedback-info` | `#2C84B2` | 資訊 |
 
 ### 使用方式
 

@@ -1,16 +1,16 @@
 :root {
-  --twgov-color-brand-primary: #0D7A4A;
-  --twgov-color-brand-secondary: #1A1A1A;
+  --twgov-color-brand-primary: #2C84B2;
+  --twgov-color-brand-secondary: #618D90;
   --twgov-color-text-primary: #1A1A1A;
   --twgov-color-text-secondary: #595959;
   --twgov-color-text-on-primary: #FFFFFF;
   --twgov-color-bg-canvas: #FFFFFF;
-  --twgov-color-bg-surface: #F5F5F5;
-  --twgov-color-border-default: #D9D9D9;
+  --twgov-color-bg-surface: #EAF0F0;
+  --twgov-color-border-default: #B0C4C5;
   --twgov-color-feedback-error: #C3362B;
   --twgov-color-feedback-success: #00804A;
   --twgov-color-feedback-warning: #F0AB00;
-  --twgov-color-feedback-info: #0D7A4A;
+  --twgov-color-feedback-info: #2C84B2;
   --twgov-spacing-1: 4px;
   --twgov-spacing-2: 8px;
   --twgov-spacing-3: 12px;
@@ -32,17 +32,17 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-  --twgov-color-brand-primary: #3DD68C;
-  --twgov-color-brand-secondary: #E0E0E0;
+  --twgov-color-brand-primary: #6B9FE8;
+  --twgov-color-brand-secondary: #89B5B8;
   --twgov-color-text-primary: #E8E8E8;
   --twgov-color-text-secondary: #A0A0A0;
   --twgov-color-text-on-primary: #1A1A1A;
   --twgov-color-bg-canvas: #1A1A1A;
-  --twgov-color-bg-surface: #2A2A2A;
-  --twgov-color-border-default: #404040;
+  --twgov-color-bg-surface: #1E2A2A;
+  --twgov-color-border-default: #3A5050;
   --twgov-color-feedback-error: #F87171;
   --twgov-color-feedback-success: #4ADE80;
   --twgov-color-feedback-warning: #FBBF24;
-  --twgov-color-feedback-info: #3DD68C;
+  --twgov-color-feedback-info: #6B9FE8;
   }
 }
