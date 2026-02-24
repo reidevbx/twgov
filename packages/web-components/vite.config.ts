@@ -18,6 +18,7 @@ export default defineConfig({
         'twgov-sidebar': resolve(__dirname, 'src/twgov-sidebar.ts'),
         'twgov-cluster': resolve(__dirname, 'src/twgov-cluster.ts'),
         'twgov-container': resolve(__dirname, 'src/twgov-container.ts'),
+        'twgov-textarea': resolve(__dirname, 'src/twgov-textarea.ts'),
       },
       formats: ['es'],
     },

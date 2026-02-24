@@ -6,3 +6,4 @@ export { GovStack } from './twgov-stack.js';
 export { GovSidebar } from './twgov-sidebar.js';
 export { GovCluster } from './twgov-cluster.js';
 export { GovContainer } from './twgov-container.js';
+export { GovTextarea } from './twgov-textarea.js';

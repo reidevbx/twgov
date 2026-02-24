@@ -69,6 +69,7 @@ export default defineConfig({
           { text: 'Checkbox 核取方塊', link: '/components/checkbox' },
           { text: 'Text Input 文字輸入', link: '/components/text-input' },
           { text: 'Fieldset 欄位群組', link: '/components/fieldset' },
+          { text: 'Textarea 多行文字輸入', link: '/components/textarea' },
         ],
       },
       {

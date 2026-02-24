@@ -49,6 +49,11 @@
       "source": "./src/twgov-container.ts",
       "types": "./dist/twgov-container.d.ts",
       "import": "./dist/twgov-container.js"
+    },
+    "./twgov-textarea": {
+      "source": "./src/twgov-textarea.ts",
+      "types": "./dist/twgov-textarea.d.ts",
+      "import": "./dist/twgov-textarea.js"
     }
   },
   "files": [
