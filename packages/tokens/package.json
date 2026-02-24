@@ -1,0 +1,13 @@
+{
+  "name": "@gov-tw/tokens",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    "./tokens.css": "./tokens.css",
+    "./tokens.json": "./tokens.json",
+    "./tailwind.css": "./tailwind.css"
+  },
+  "scripts": {
+    "build": "node build.js"
+  }
+}

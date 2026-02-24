@@ -1,0 +1,76 @@
+/* gov.tw Design System - Green Theme for VitePress */
+
+/* ===== Green color palette ===== */
+:root {
+  --vp-c-brand-1: #0D7A4A;
+  --vp-c-brand-2: #0a6a40;
+  --vp-c-brand-3: #085a36;
+  --vp-c-brand-soft: rgba(13, 122, 74, 0.14);
+
+  /* Override VitePress green to match our brand */
+  --vp-c-green-1: #0D7A4A;
+  --vp-c-green-2: #0a6a40;
+  --vp-c-green-3: #085a36;
+  --vp-c-green-soft: rgba(13, 122, 74, 0.14);
+}
+
+.dark {
+  --vp-c-brand-1: #3dd68c;
+  --vp-c-brand-2: #30c47e;
+  --vp-c-brand-3: #24b270;
+  --vp-c-brand-soft: rgba(61, 214, 140, 0.14);
+
+  /* gov.tw dark mode token overrides */
+  --twgov-color-brand-primary: #3DD68C;
+  --twgov-color-brand-secondary: #E0E0E0;
+  --twgov-color-text-primary: #E8E8E8;
+  --twgov-color-text-secondary: #A0A0A0;
+  --twgov-color-text-on-primary: #1A1A1A;
+  --twgov-color-bg-canvas: #1A1A1A;
+  --twgov-color-bg-surface: #2A2A2A;
+  --twgov-color-border-default: #404040;
+  --twgov-color-feedback-error: #F87171;
+  --twgov-color-feedback-success: #4ADE80;
+  --twgov-color-feedback-warning: #FBBF24;
+  --twgov-color-feedback-info: #3DD68C;
+}
+
+/* ===== Typography - CJK optimization ===== */
+:root {
+  --vp-font-family-base: 'Noto Sans TC', 'Microsoft JhengHei', system-ui,
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --vp-font-family-mono: 'Noto Sans Mono', 'SF Mono', Monaco,
+    'Cascadia Code', Menlo, monospace;
+}
+
+/* CJK line height */
+.vp-doc p,
+.vp-doc li {
+  line-height: 1.8;
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3 {
+  line-height: 1.4;
+}
+
+
+/* ===== Hero section ===== */
+.VPHero .name {
+  background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-3)) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* ===== Table improvements ===== */
+.vp-doc th {
+  background-color: var(--vp-c-brand-soft);
+}
+
+/* ===== Subtle link underline ===== */
+.vp-doc a {
+  text-decoration-thickness: max(0.08em, 1px);
+  text-underline-offset: 0.15em;
+}

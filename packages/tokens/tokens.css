@@ -1,0 +1,48 @@
+:root {
+  --twgov-color-brand-primary: #0D7A4A;
+  --twgov-color-brand-secondary: #1A1A1A;
+  --twgov-color-text-primary: #1A1A1A;
+  --twgov-color-text-secondary: #595959;
+  --twgov-color-text-on-primary: #FFFFFF;
+  --twgov-color-bg-canvas: #FFFFFF;
+  --twgov-color-bg-surface: #F5F5F5;
+  --twgov-color-border-default: #D9D9D9;
+  --twgov-color-feedback-error: #C3362B;
+  --twgov-color-feedback-success: #00804A;
+  --twgov-color-feedback-warning: #F0AB00;
+  --twgov-color-feedback-info: #0D7A4A;
+  --twgov-spacing-1: 4px;
+  --twgov-spacing-2: 8px;
+  --twgov-spacing-3: 12px;
+  --twgov-spacing-4: 16px;
+  --twgov-spacing-6: 24px;
+  --twgov-spacing-8: 32px;
+  --twgov-spacing-12: 48px;
+  --twgov-radius-sm: 4px;
+  --twgov-radius-md: 8px;
+  --twgov-radius-lg: 12px;
+  --twgov-font-sans: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --twgov-font-size-sm: 0.875rem;
+  --twgov-font-size-base: 1rem;
+  --twgov-font-size-lg: 1.125rem;
+  --twgov-font-size-xl: 1.25rem;
+  --twgov-font-size-2xl: 1.5rem;
+  --twgov-font-size-3xl: 1.875rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  --twgov-color-brand-primary: #3DD68C;
+  --twgov-color-brand-secondary: #E0E0E0;
+  --twgov-color-text-primary: #E8E8E8;
+  --twgov-color-text-secondary: #A0A0A0;
+  --twgov-color-text-on-primary: #1A1A1A;
+  --twgov-color-bg-canvas: #1A1A1A;
+  --twgov-color-bg-surface: #2A2A2A;
+  --twgov-color-border-default: #404040;
+  --twgov-color-feedback-error: #F87171;
+  --twgov-color-feedback-success: #4ADE80;
+  --twgov-color-feedback-warning: #FBBF24;
+  --twgov-color-feedback-info: #3DD68C;
+  }
+}

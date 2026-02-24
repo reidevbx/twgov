@@ -1,0 +1,14 @@
+{
+  "name": "docs",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "dependencies": {
+    "@gov-tw/web-components": "workspace:*",
+    "vitepress": "^1.6.3"
+  }
+}

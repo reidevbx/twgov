@@ -1,0 +1,14 @@
+{
+  "name": "twgov",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter docs dev",
+    "build": "pnpm --filter @gov-tw/web-components build && pnpm --filter docs build",
+    "build:tokens": "pnpm --filter @gov-tw/tokens build",
+    "build:components": "pnpm --filter @gov-tw/web-components build"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "sharp"]
+  }
+}

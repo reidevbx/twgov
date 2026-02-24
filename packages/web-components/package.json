@@ -1,0 +1,71 @@
+{
+  "name": "@gov-tw/web-components",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./gov-button": {
+      "source": "./src/gov-button.ts",
+      "types": "./dist/gov-button.d.ts",
+      "import": "./dist/gov-button.js"
+    },
+    "./gov-checkbox": {
+      "source": "./src/gov-checkbox.ts",
+      "types": "./dist/gov-checkbox.d.ts",
+      "import": "./dist/gov-checkbox.js"
+    },
+    "./gov-input": {
+      "source": "./src/gov-input.ts",
+      "types": "./dist/gov-input.d.ts",
+      "import": "./dist/gov-input.js"
+    },
+    "./gov-fieldset": {
+      "source": "./src/gov-fieldset.ts",
+      "types": "./dist/gov-fieldset.d.ts",
+      "import": "./dist/gov-fieldset.js"
+    },
+    "./gov-stack": {
+      "source": "./src/gov-stack.ts",
+      "types": "./dist/gov-stack.d.ts",
+      "import": "./dist/gov-stack.js"
+    },
+    "./gov-sidebar": {
+      "source": "./src/gov-sidebar.ts",
+      "types": "./dist/gov-sidebar.d.ts",
+      "import": "./dist/gov-sidebar.js"
+    },
+    "./gov-cluster": {
+      "source": "./src/gov-cluster.ts",
+      "types": "./dist/gov-cluster.d.ts",
+      "import": "./dist/gov-cluster.js"
+    },
+    "./gov-container": {
+      "source": "./src/gov-container.ts",
+      "types": "./dist/gov-container.d.ts",
+      "import": "./dist/gov-container.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "vite build && vite build --config vite.config.iife.ts",
+    "clean": "rm -rf dist",
+    "prepack": "pnpm run build"
+  },
+  "dependencies": {
+    "lit": "^3.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vite": "^6.4.0",
+    "vite-plugin-dts": "^4.5.0"
+  }
+}
