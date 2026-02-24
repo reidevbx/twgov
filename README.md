@@ -2,7 +2,7 @@
 
 > **🚧 開發中（Alpha）** — 本專案目前處於早期開發階段，API 與元件介面可能隨時變動。尚未發布至 npm，請勿用於正式環境。歡迎追蹤進度或參與討論。
 
-**文件站**: [twgov.vercel.app](https://twgov.vercel.app/) · **原始碼**: [GitHub](https://github.com/reidevbx/twgov)
+**文件站**: [govtw.vercel.app](https://govtw.vercel.app/) · **原始碼**: [GitHub](https://github.com/reidevbx/twgov)
 
 為台灣政府數位服務打造的設計系統，提供跨部會一致的使用者體驗。
 
