@@ -1,2 +1,30 @@
+# Dependencies
 node_modules
+
+# Build outputs
 dist
+
+# VitePress
+apps/docs/.vitepress/cache
+apps/docs/.vitepress/dist
+
+# Astro (legacy)
+apps/docs/.astro
+
+# Logs
+*.log
+
+# Editor
+.vscode
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.*
+!.env.example
