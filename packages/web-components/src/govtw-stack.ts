@@ -2,20 +2,20 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 /**
- * twgov-stack — 垂直堆疊佈局
+ * govtw-stack — 垂直堆疊佈局
  *
  * 將子元素以垂直方向堆疊，控制間距。
  * 是最基本的佈局原語，適用於頁面區塊、表單、卡片內容等。
  *
  * @example
- * <twgov-stack space="6">
+ * <govtw-stack space="6">
  *   <h1>標題</h1>
  *   <p>內文</p>
- * </twgov-stack>
+ * </govtw-stack>
  */
-@customElement('twgov-stack')
+@customElement('govtw-stack')
 export class GovStack extends LitElement {
-  /** 子元素之間的間距，對應 --twgov-space-{n} token（預設 4 = 16px） */
+  /** 子元素之間的間距，對應 --govtw-space-{n} token（預設 4 = 16px） */
   @property({ type: String }) space = '4';
 
   static styles = css`
@@ -32,7 +32,7 @@ export class GovStack extends LitElement {
 
   render() {
     return html`
-      <div class="stack" style="--_stack-space: var(--twgov-space-${this.space}, ${Number(this.space) * 4}px)">
+      <div class="stack" style="--_stack-space: var(--govtw-space-${this.space}, ${Number(this.space) * 4}px)">
         <slot></slot>
       </div>
     `;
@@ -41,6 +41,6 @@ export class GovStack extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'twgov-stack': GovStack;
+    'govtw-stack': GovStack;
   }
 }

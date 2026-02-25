@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('twgov-button')
+@customElement('govtw-button')
 export class GovButton extends LitElement {
   static shadowRootOptions: ShadowRootInit = {
     ...LitElement.shadowRootOptions,
@@ -28,15 +28,15 @@ export class GovButton extends LitElement {
      */
 
     button {
-      font-family: var(--twgov-font-sans, system-ui, sans-serif);
+      font-family: var(--govtw-font-sans, system-ui, sans-serif);
       font-weight: 500;
       border: 2px solid transparent;
-      border-radius: var(--twgov-radius-md, 8px);
+      border-radius: var(--govtw-radius-md, 8px);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: var(--twgov-spacing-2, 8px);
+      gap: var(--govtw-spacing-2, 8px);
       line-height: 1.5;
       box-shadow: inset 0 -3px 0 var(--_shadow-color);
       text-decoration: none;
@@ -45,26 +45,26 @@ export class GovButton extends LitElement {
 
     /* Sizes */
     :host([size="sm"]) button {
-      font-size: var(--twgov-font-size-sm, 0.875rem);
-      padding: var(--twgov-spacing-1, 4px) var(--twgov-spacing-3, 12px);
+      font-size: var(--govtw-font-size-sm, 0.875rem);
+      padding: var(--govtw-spacing-1, 4px) var(--govtw-spacing-3, 12px);
     }
 
     button {
-      font-size: var(--twgov-font-size-base, 1rem);
-      padding: var(--twgov-spacing-2, 8px) var(--twgov-spacing-4, 16px);
+      font-size: var(--govtw-font-size-base, 1rem);
+      padding: var(--govtw-spacing-2, 8px) var(--govtw-spacing-4, 16px);
     }
 
     :host([size="lg"]) button {
-      font-size: var(--twgov-font-size-lg, 1.125rem);
-      padding: var(--twgov-spacing-3, 12px) var(--twgov-spacing-6, 24px);
+      font-size: var(--govtw-font-size-lg, 1.125rem);
+      padding: var(--govtw-spacing-3, 12px) var(--govtw-spacing-6, 24px);
     }
 
     /* ===== Primary ===== */
     :host([variant="primary"]) button {
-      --_bg: var(--twgov-color-brand-primary, #2C84B2);
+      --_bg: var(--govtw-color-brand-primary, #2C84B2);
       --_shadow-color: color-mix(in srgb, var(--_bg) 60%, black);
       background: var(--_bg);
-      color: var(--twgov-color-text-on-primary, #FFFFFF);
+      color: var(--govtw-color-text-on-primary, #FFFFFF);
     }
     :host([variant="primary"]) button:hover:not(:disabled) {
       background: color-mix(in srgb, var(--_bg) 85%, black);
@@ -75,11 +75,11 @@ export class GovButton extends LitElement {
 
     /* ===== Secondary ===== */
     :host([variant="secondary"]) button {
-      --_bg: var(--twgov-color-bg-surface, #EAF0F0);
+      --_bg: var(--govtw-color-bg-surface, #EAF0F0);
       --_shadow-color: color-mix(in srgb, var(--_bg) 40%, black);
       background: var(--_bg);
-      color: var(--twgov-color-text-primary, #1A1A1A);
-      border-color: var(--twgov-color-border-default, #B0C4C5);
+      color: var(--govtw-color-text-primary, #1A1A1A);
+      border-color: var(--govtw-color-border-default, #B0C4C5);
     }
     :host([variant="secondary"]) button:hover:not(:disabled) {
       background: color-mix(in srgb, var(--_bg) 80%, black);
@@ -90,10 +90,10 @@ export class GovButton extends LitElement {
 
     /* ===== Danger ===== */
     :host([variant="danger"]) button {
-      --_bg: var(--twgov-color-feedback-error, #C3362B);
+      --_bg: var(--govtw-color-feedback-error, #C3362B);
       --_shadow-color: color-mix(in srgb, var(--_bg) 60%, black);
       background: var(--_bg);
-      color: var(--twgov-color-text-on-primary, #FFFFFF);
+      color: var(--govtw-color-text-on-primary, #FFFFFF);
     }
     :host([variant="danger"]) button:hover:not(:disabled) {
       background: color-mix(in srgb, var(--_bg) 85%, black);
@@ -143,6 +143,6 @@ export class GovButton extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'twgov-button': GovButton;
+    'govtw-button': GovButton;
   }
 }

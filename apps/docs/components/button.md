@@ -9,24 +9,24 @@
 試著操作下方按鈕：hover（滑鼠移入）、按下去（active）、用 <kbd>Tab</kbd> 鍵聚焦（focus）。
 
 <div class="demo-block">
-  <twgov-button variant="primary">送出</twgov-button>
-  <twgov-button variant="secondary">取消</twgov-button>
-  <twgov-button variant="danger">刪除</twgov-button>
+  <govtw-button variant="primary">送出</govtw-button>
+  <govtw-button variant="secondary">取消</govtw-button>
+  <govtw-button variant="danger">刪除</govtw-button>
 </div>
 
 ### 尺寸
 
 <div class="demo-block">
-  <twgov-button size="sm">小按鈕</twgov-button>
-  <twgov-button size="md">中按鈕</twgov-button>
-  <twgov-button size="lg">大按鈕</twgov-button>
+  <govtw-button size="sm">小按鈕</govtw-button>
+  <govtw-button size="md">中按鈕</govtw-button>
+  <govtw-button size="lg">大按鈕</govtw-button>
 </div>
 
 ### 停用狀態
 
 <div class="demo-block">
-  <twgov-button disabled>停用按鈕</twgov-button>
-  <twgov-button variant="secondary" disabled>停用次要</twgov-button>
+  <govtw-button disabled>停用按鈕</govtw-button>
+  <govtw-button variant="secondary" disabled>停用次要</govtw-button>
 </div>
 
 ## 互動狀態展示
@@ -40,11 +40,11 @@
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">預設</span>
-    <twgov-button variant="primary">送出</twgov-button>
+    <govtw-button variant="primary">送出</govtw-button>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ Hover</span>
-    <twgov-button variant="primary" id="demo-hover">送出</twgov-button>
+    <govtw-button variant="primary" id="demo-hover">送出</govtw-button>
   </div>
 </div>
 
@@ -55,11 +55,11 @@
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">預設（有底部陰影）</span>
-    <twgov-button variant="primary">送出</twgov-button>
+    <govtw-button variant="primary">送出</govtw-button>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ Active（陰影消失）</span>
-    <twgov-button variant="primary" id="demo-active">送出</twgov-button>
+    <govtw-button variant="primary" id="demo-active">送出</govtw-button>
   </div>
 </div>
 
@@ -70,11 +70,11 @@
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">預設</span>
-    <twgov-button variant="primary">送出</twgov-button>
+    <govtw-button variant="primary">送出</govtw-button>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ Focus</span>
-    <twgov-button variant="primary" id="demo-focus">送出</twgov-button>
+    <govtw-button variant="primary" id="demo-focus">送出</govtw-button>
   </div>
 </div>
 
@@ -85,11 +85,11 @@
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">預設</span>
-    <twgov-button variant="primary">送出</twgov-button>
+    <govtw-button variant="primary">送出</govtw-button>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ Disabled</span>
-    <twgov-button variant="primary" disabled>送出</twgov-button>
+    <govtw-button variant="primary" disabled>送出</govtw-button>
   </div>
 </div>
 
@@ -110,16 +110,16 @@ onMounted(() => {
 
   // 用 color-mix() 從 token 動態算色，不 hardcode 色碼
   applyStyle('demo-hover', (btn) => {
-    btn.style.background = 'color-mix(in srgb, var(--twgov-color-brand-primary, #2C84B2) 85%, black)'
+    btn.style.background = 'color-mix(in srgb, var(--govtw-color-brand-primary, #2C84B2) 85%, black)'
   })
 
   applyStyle('demo-active', (btn) => {
-    btn.style.background = 'color-mix(in srgb, var(--twgov-color-brand-primary, #2C84B2) 65%, black)'
+    btn.style.background = 'color-mix(in srgb, var(--govtw-color-brand-primary, #2C84B2) 65%, black)'
     btn.style.boxShadow = 'none'
   })
 
   applyStyle('demo-focus', (btn) => {
-    btn.style.boxShadow = 'inset 0 -3px 0 color-mix(in srgb, var(--twgov-color-brand-primary, #2C84B2) 60%, black), 0 0 0 3px #fd0'
+    btn.style.boxShadow = 'inset 0 -3px 0 color-mix(in srgb, var(--govtw-color-brand-primary, #2C84B2) 60%, black), 0 0 0 3px #fd0'
   })
 })
 </script>
@@ -156,9 +156,9 @@ onMounted(() => {
 ## 使用方式
 
 ```html
-<twgov-button>送出</twgov-button>
-<twgov-button variant="secondary">取消</twgov-button>
-<twgov-button variant="danger">刪除</twgov-button>
+<govtw-button>送出</govtw-button>
+<govtw-button variant="secondary">取消</govtw-button>
+<govtw-button variant="danger">刪除</govtw-button>
 ```
 
 ## 屬性
@@ -175,22 +175,22 @@ onMounted(() => {
 
 用於頁面上最重要的動作，每個頁面區塊建議只有一個主要按鈕。
 
-- 背景色：`--twgov-color-brand-primary`
-- 文字色：`--twgov-color-text-on-primary`
+- 背景色：`--govtw-color-brand-primary`
+- 文字色：`--govtw-color-text-on-primary`
 
 ### Secondary（次要按鈕）
 
 用於次要動作，可與主要按鈕搭配使用。
 
-- 邊框：`--twgov-color-border-default`
-- 文字色：`--twgov-color-text-primary`
+- 邊框：`--govtw-color-border-default`
+- 文字色：`--govtw-color-text-primary`
 
 ### Danger（危險按鈕）
 
 用於刪除、移除等破壞性操作。
 
-- 背景色：`--twgov-color-feedback-error`
-- 文字色：`--twgov-color-text-on-primary`
+- 背景色：`--govtw-color-feedback-error`
+- 文字色：`--govtw-color-text-on-primary`
 
 ## 無障礙
 
@@ -206,5 +206,5 @@ onMounted(() => {
 
 - 按鈕文字應簡潔明確，描述動作（如「送出申請」而非「點擊這裡」）
 - 避免在同一區塊使用過多按鈕
-- 按鈕之間保持 `--twgov-spacing-3` 以上的間距
+- 按鈕之間保持 `--govtw-spacing-3` 以上的間距
 - 危險按鈕不應只靠紅色傳達嚴重性，需搭配文字說明動作後果

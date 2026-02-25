@@ -30,7 +30,7 @@ export default defineConfig({
   vue: {
     template: {
       compilerOptions: {
-        isCustomElement: (tag) => tag.startsWith('twgov-'),
+        isCustomElement: (tag) => tag.startsWith('govtw-'),
       },
     },
   },
@@ -106,7 +106,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/reidevbx/twgov' },
+      { icon: 'github', link: 'https://github.com/reidevbx/govtw' },
     ],
 
     search: {

@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 /**
- * twgov-sidebar — 側邊欄佈局
+ * govtw-sidebar — 側邊欄佈局
  *
  * 主內容 + 側邊欄，當容器寬度不足時自動堆疊為單欄。
  * 使用 CSS flexbox wrap 實現，不需要 media query。
@@ -11,12 +11,12 @@ import { customElement, property } from 'lit/decorators.js';
  * 透過 side 屬性可切換側邊欄在左或右。
  *
  * @example
- * <twgov-sidebar side-width="300px">
+ * <govtw-sidebar side-width="300px">
  *   <div>主要內容</div>
  *   <div>側邊欄</div>
- * </twgov-sidebar>
+ * </govtw-sidebar>
  */
-@customElement('twgov-sidebar')
+@customElement('govtw-sidebar')
 export class GovSidebar extends LitElement {
   /** 側邊欄寬度（CSS 長度值） */
   @property({ type: String, attribute: 'side-width' }) sideWidth = '16rem';
@@ -24,7 +24,7 @@ export class GovSidebar extends LitElement {
   /** 主內容最小寬度百分比，低於此值時堆疊（0-100） */
   @property({ type: String, attribute: 'content-min' }) contentMin = '60';
 
-  /** 間距，對應 --twgov-space-{n} token */
+  /** 間距，對應 --govtw-space-{n} token */
   @property({ type: String }) space = '6';
 
   /** 側邊欄位置 */
@@ -72,7 +72,7 @@ export class GovSidebar extends LitElement {
       <div
         class="sidebar"
         style="
-          --_sidebar-space: var(--twgov-space-${this.space}, ${Number(this.space) * 4}px);
+          --_sidebar-space: var(--govtw-space-${this.space}, ${Number(this.space) * 4}px);
           --_side-width: ${this.sideWidth};
           --_content-min: ${this.contentMin}%;
         "
@@ -85,6 +85,6 @@ export class GovSidebar extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'twgov-sidebar': GovSidebar;
+    'govtw-sidebar': GovSidebar;
   }
 }

@@ -12,8 +12,8 @@ packages/
 │
 └── web-components/         ← UI 元件庫（Lit Web Components）
     ├── src/                ← TypeScript 原始碼
-    │   ├── twgov-button.ts
-    │   ├── twgov-checkbox.ts
+    │   ├── govtw-button.ts
+    │   ├── govtw-checkbox.ts
     │   └── index.ts
     └── dist/               ← 建置產出（npm / CDN 使用）
         ├── *.js            ← ESM 模組
@@ -34,19 +34,19 @@ tokens.json  →  build.js  →  tokens.css       （CSS custom properties）
 
 ### 命名規則
 
-所有 token 以 `--twgov-{類別}-{名稱}` 命名：
+所有 token 以 `--govtw-{類別}-{名稱}` 命名：
 
 | 類別 | 範例 | 說明 |
 |------|------|------|
-| `color` | `--twgov-color-brand-primary` | 色彩 |
-| `spacing` | `--twgov-spacing-4` | 間距（4px 倍數） |
-| `radius` | `--twgov-radius-md` | 圓角 |
-| `font` | `--twgov-font-sans` | 字型與字級 |
+| `color` | `--govtw-color-brand-primary` | 色彩 |
+| `spacing` | `--govtw-spacing-4` | 間距（4px 倍數） |
+| `radius` | `--govtw-radius-md` | 圓角 |
+| `font` | `--govtw-font-sans` | 字型與字級 |
 
 ### Token 分類
 
-- **全域 token**：跨元件共用的基礎值（`--twgov-color-brand-primary`、`--twgov-spacing-4`）
-- **語意 token**：描述用途而非數值（`--twgov-color-text-on-primary`、`--twgov-color-feedback-error`）
+- **全域 token**：跨元件共用的基礎值（`--govtw-color-brand-primary`、`--govtw-spacing-4`）
+- **語意 token**：描述用途而非數值（`--govtw-color-text-on-primary`、`--govtw-color-feedback-error`）
 - **元件 token**：元件內部使用的私有變數（如 `--_shadow-color`，以 `_` 前綴標示）
 
 ### 使用方式
@@ -57,10 +57,10 @@ tokens.json  →  build.js  →  tokens.css       （CSS custom properties）
 @import '@gov-tw/tokens/tokens.css';
 
 .my-element {
-  color: var(--twgov-color-text-primary);
-  padding: var(--twgov-spacing-4);
-  border-radius: var(--twgov-radius-md);
-  font-family: var(--twgov-font-sans);
+  color: var(--govtw-color-text-primary);
+  padding: var(--govtw-spacing-4);
+  border-radius: var(--govtw-radius-md);
+  font-family: var(--govtw-font-sans);
 }
 ```
 
@@ -76,8 +76,8 @@ tokens.json  →  build.js  →  tokens.css       （CSS custom properties）
 引入後即可使用 Tailwind utility class：
 
 ```html
-<button class="bg-twgov-brand-primary text-twgov-text-on-primary
-               px-twgov-4 py-twgov-2 rounded-twgov-md font-twgov-sans">
+<button class="bg-govtw-brand-primary text-govtw-text-on-primary
+               px-govtw-4 py-govtw-2 rounded-govtw-md font-govtw-sans">
   送出
 </button>
 ```
@@ -86,11 +86,11 @@ tokens.json  →  build.js  →  tokens.css       （CSS custom properties）
 
 | Token | Tailwind utility | 範例 |
 |-------|-----------------|------|
-| `--twgov-color-brand-primary` | `bg-twgov-brand-primary` | 背景色 |
-| `--twgov-color-text-on-primary` | `text-twgov-text-on-primary` | 文字色 |
-| `--twgov-spacing-4` | `p-twgov-4`、`m-twgov-4`、`gap-twgov-4` | 間距 |
-| `--twgov-radius-md` | `rounded-twgov-md` | 圓角 |
-| `--twgov-font-sans` | `font-twgov-sans` | 字型 |
+| `--govtw-color-brand-primary` | `bg-govtw-brand-primary` | 背景色 |
+| `--govtw-color-text-on-primary` | `text-govtw-text-on-primary` | 文字色 |
+| `--govtw-spacing-4` | `p-govtw-4`、`m-govtw-4`、`gap-govtw-4` | 間距 |
+| `--govtw-radius-md` | `rounded-govtw-md` | 圓角 |
+| `--govtw-font-sans` | `font-govtw-sans` | 字型 |
 
 `tailwind.css` 內部引入了 `tokens.css`，因此不需要重複引入。
 
@@ -112,11 +112,11 @@ UI 元件以 [Lit](https://lit.dev/) 建構，封裝為標準 Web Components。�
 元件內部透過 `var()` 引用 token，並提供 fallback 值：
 
 ```css
-/* twgov-button 內部樣式 */
+/* govtw-button 內部樣式 */
 button {
-  font-family: var(--twgov-font-sans, system-ui, sans-serif);
-  padding: var(--twgov-spacing-2, 8px) var(--twgov-spacing-4, 16px);
-  background: var(--twgov-color-brand-primary, #2C84B2);
+  font-family: var(--govtw-font-sans, system-ui, sans-serif);
+  padding: var(--govtw-spacing-2, 8px) var(--govtw-spacing-4, 16px);
+  background: var(--govtw-color-brand-primary, #2C84B2);
 }
 ```
 
@@ -141,8 +141,8 @@ tokens.json          ← 設計師與開發者共同維護
         │               ├→ dist/*.d.ts        ← TypeScript 型別
         │               └→ dist/gov-tw.iife.js ← IIFE（CDN <script>）
         │
-        ├── <twgov-button>
-        ├── <twgov-checkbox>
+        ├── <govtw-button>
+        ├── <govtw-checkbox>
         └── ...
 ```
 

@@ -9,16 +9,16 @@
 試著點擊勾選、用 <kbd>Tab</kbd> 聚焦、<kbd>Space</kbd> 切換。
 
 <div class="demo-block demo-vertical">
-  <twgov-checkbox label="我同意服務條款"></twgov-checkbox>
-  <twgov-checkbox label="訂閱電子報" checked></twgov-checkbox>
-  <twgov-checkbox label="無法選取" disabled></twgov-checkbox>
-  <twgov-checkbox label="已勾選但停用" checked disabled></twgov-checkbox>
+  <govtw-checkbox label="我同意服務條款"></govtw-checkbox>
+  <govtw-checkbox label="訂閱電子報" checked></govtw-checkbox>
+  <govtw-checkbox label="無法選取" disabled></govtw-checkbox>
+  <govtw-checkbox label="已勾選但停用" checked disabled></govtw-checkbox>
 </div>
 
 ### 使用 Slot 提供標籤內容
 
 <div class="demo-block demo-vertical">
-  <twgov-checkbox>我已閱讀並同意<a href="#">隱私政策</a></twgov-checkbox>
+  <govtw-checkbox>我已閱讀並同意<a href="#">隱私政策</a></govtw-checkbox>
 </div>
 
 ## 互動狀態展示
@@ -30,11 +30,11 @@
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">預設</span>
-    <twgov-checkbox label="選項"></twgov-checkbox>
+    <govtw-checkbox label="選項"></govtw-checkbox>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ Hover</span>
-    <twgov-checkbox label="選項" id="demo-hover"></twgov-checkbox>
+    <govtw-checkbox label="選項" id="demo-hover"></govtw-checkbox>
   </div>
 </div>
 
@@ -45,11 +45,11 @@ Tab 鍵聚焦時，方塊外圍出現 3px 黃色 `#fd0` focus ring。
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">預設</span>
-    <twgov-checkbox label="選項"></twgov-checkbox>
+    <govtw-checkbox label="選項"></govtw-checkbox>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ Focus</span>
-    <twgov-checkbox label="選項" id="demo-focus"></twgov-checkbox>
+    <govtw-checkbox label="選項" id="demo-focus"></govtw-checkbox>
   </div>
 </div>
 
@@ -60,11 +60,11 @@ Tab 鍵聚焦時，方塊外圍出現 3px 黃色 `#fd0` focus ring。
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">未勾選</span>
-    <twgov-checkbox label="選項"></twgov-checkbox>
+    <govtw-checkbox label="選項"></govtw-checkbox>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ 已勾選</span>
-    <twgov-checkbox label="選項" checked></twgov-checkbox>
+    <govtw-checkbox label="選項" checked></govtw-checkbox>
   </div>
 </div>
 
@@ -75,11 +75,11 @@ Tab 鍵聚焦時，方塊外圍出現 3px 黃色 `#fd0` focus ring。
 <div class="demo-block demo-state">
   <div class="demo-state-item">
     <span class="demo-state-label">預設</span>
-    <twgov-checkbox label="選項"></twgov-checkbox>
+    <govtw-checkbox label="選項"></govtw-checkbox>
   </div>
   <div class="demo-state-item">
     <span class="demo-state-label">→ Disabled</span>
-    <twgov-checkbox label="選項" disabled></twgov-checkbox>
+    <govtw-checkbox label="選項" disabled></govtw-checkbox>
   </div>
 </div>
 
@@ -146,14 +146,14 @@ onMounted(() => {
 
 ```html
 <!-- 使用 label 屬性 -->
-<twgov-checkbox label="同意條款"></twgov-checkbox>
-<twgov-checkbox label="已勾選" checked></twgov-checkbox>
-<twgov-checkbox label="停用" disabled></twgov-checkbox>
+<govtw-checkbox label="同意條款"></govtw-checkbox>
+<govtw-checkbox label="已勾選" checked></govtw-checkbox>
+<govtw-checkbox label="停用" disabled></govtw-checkbox>
 
 <!-- 使用 slot 傳入 HTML 標籤 -->
-<twgov-checkbox>
+<govtw-checkbox>
   我同意<a href="#">條款</a>
-</twgov-checkbox>
+</govtw-checkbox>
 ```
 
 ## 屬性
@@ -180,7 +180,7 @@ onMounted(() => {
 
 - 當選項為 2 個以上時使用核取方塊
 - 單一布林選項（如「同意條款」）也適合使用
-- 每個核取方塊之間保持 `--twgov-spacing-2` 以上的間距
+- 每個核取方塊之間保持 `--govtw-spacing-2` 以上的間距
 - 標籤文字應清楚描述選項內容
 - 預設勾選的項目應有合理原因，避免誤導使用者
 - 若需互斥選擇（只能選一個），應改用 Radio Button

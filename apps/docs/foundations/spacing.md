@@ -8,16 +8,16 @@
 
 | Token | 值 | 用途 |
 |-------|------|------|
-| `--twgov-space-1` | `0.25rem` (4px) | 最小間距 |
-| `--twgov-space-2` | `0.5rem` (8px) | 元素內部間距 |
-| `--twgov-space-3` | `0.75rem` (12px) | 緊湊元素間距 |
-| `--twgov-space-4` | `1rem` (16px) | 預設元素間距 |
-| `--twgov-space-5` | `1.25rem` (20px) | 中等間距 |
-| `--twgov-space-6` | `1.5rem` (24px) | 區塊內部間距 |
-| `--twgov-space-8` | `2rem` (32px) | 區塊之間間距 |
-| `--twgov-space-10` | `2.5rem` (40px) | 大區塊間距 |
-| `--twgov-space-12` | `3rem` (48px) | 頁面段落間距 |
-| `--twgov-space-16` | `4rem` (64px) | 頁面區域間距 |
+| `--govtw-space-1` | `0.25rem` (4px) | 最小間距 |
+| `--govtw-space-2` | `0.5rem` (8px) | 元素內部間距 |
+| `--govtw-space-3` | `0.75rem` (12px) | 緊湊元素間距 |
+| `--govtw-space-4` | `1rem` (16px) | 預設元素間距 |
+| `--govtw-space-5` | `1.25rem` (20px) | 中等間距 |
+| `--govtw-space-6` | `1.5rem` (24px) | 區塊內部間距 |
+| `--govtw-space-8` | `2rem` (32px) | 區塊之間間距 |
+| `--govtw-space-10` | `2.5rem` (40px) | 大區塊間距 |
+| `--govtw-space-12` | `3rem` (48px) | 頁面段落間距 |
+| `--govtw-space-16` | `4rem` (64px) | 頁面區域間距 |
 
 ## 使用原則
 
@@ -30,11 +30,11 @@
 
 ```css
 .card {
-  padding: var(--twgov-space-6);
-  margin-bottom: var(--twgov-space-8);
+  padding: var(--govtw-space-6);
+  margin-bottom: var(--govtw-space-8);
 }
 
 .card-title {
-  margin-bottom: var(--twgov-space-3);
+  margin-bottom: var(--govtw-space-3);
 }
 ```

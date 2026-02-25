@@ -20,9 +20,9 @@ pnpm build:tokens    # 重建 token 產出檔
 
 ## 命名規則
 
-- 元件 tag：`twgov-<name>`（如 `twgov-button`）
-- 元件檔案：`twgov-<name>.ts`
-- CSS token 前綴：`--twgov-`
+- 元件 tag：`govtw-<name>`（如 `govtw-button`）
+- 元件檔案：`govtw-<name>.ts`
+- CSS token 前綴：`--govtw-`
 - npm scope：`@gov-tw/`
 - 文件頁面：`apps/docs/components/<name>.md`
 
@@ -38,23 +38,23 @@ pnpm build:tokens    # 重建 token 產出檔
 - 使用 Lit 3 + TypeScript 裝飾器
 - 含可聚焦元素的元件必須設定 `delegatesFocus: true`
 - 表單元件使用 `formAssociated` + `ElementInternals` 參與原生表單
-- CSS 使用 `--twgov-*` token 並提供 fallback 值
+- CSS 使用 `--govtw-*` token 並提供 fallback 值
 - Focus ring 統一用 `box-shadow`（非 `outline`），顏色 `#fd0`
 - `:host` 加 `outline: none !important` 抑制瀏覽器預設 focus 框
 
 ### Token
 - 唯一來源是 `packages/tokens/tokens.json`
 - 修改後須執行 `pnpm build:tokens`
-- 前綴 `--twgov-`，分類：`color`、`spacing`、`radius`、`font`
+- 前綴 `--govtw-`，分類：`color`、`spacing`、`radius`、`font`
 
 ### 文件
 - 語言：繁體中文（zh-TW）
 - 每個元件頁面結構：概述 → 互動範例 → 狀態展示 → 使用方式 → 屬性表 → 無障礙 → 設計指引
-- 元件 demo 直接使用 `<twgov-*>` 自訂元素，狀態展示透過 Shadow DOM 注入 inline style
+- 元件 demo 直接使用 `<govtw-*>` 自訂元素，狀態展示透過 Shadow DOM 注入 inline style
 
 ## 新增元件步驟
 
-1. `packages/web-components/src/twgov-<name>.ts` — 建立元件
+1. `packages/web-components/src/govtw-<name>.ts` — 建立元件
 2. `packages/web-components/src/index.ts` — 加入 export
 3. `packages/web-components/package.json` — 加入 exports entry
 4. `apps/docs/components/<name>.md` — 建立文件頁面
@@ -64,6 +64,6 @@ pnpm build:tokens    # 重建 token 產出檔
 ## 技術約束
 
 - TypeScript：`experimentalDecorators: true`、`useDefineForClassFields: false`（Lit 必需）
-- VitePress 需在 `config.mts` 設定 `isCustomElement: tag => tag.startsWith('twgov-')`
+- VitePress 需在 `config.mts` 設定 `isCustomElement: tag => tag.startsWith('govtw-')`
 - Web Components 僅在 client-side 動態 import（SSR 不支援自訂元素）
 - 設計參考：[GOV.UK Design System](https://design-system.service.gov.uk/)

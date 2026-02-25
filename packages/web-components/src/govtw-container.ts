@@ -2,25 +2,25 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 /**
- * twgov-container — 頁面容器
+ * govtw-container — 頁面容器
  *
  * 限制內容最大寬度並水平置中，兩側留白。
  * 是頁面最外層的佈局原語。
  *
  * @example
- * <twgov-container>
- *   <twgov-stack>
+ * <govtw-container>
+ *   <govtw-stack>
  *     <h1>頁面標題</h1>
  *     <p>內容</p>
- *   </twgov-stack>
- * </twgov-container>
+ *   </govtw-stack>
+ * </govtw-container>
  */
-@customElement('twgov-container')
+@customElement('govtw-container')
 export class GovContainer extends LitElement {
   /** 最大寬度（CSS 長度值） */
   @property({ type: String, attribute: 'max-width' }) maxWidth = '1020px';
 
-  /** 兩側內距，對應 --twgov-space-{n} token */
+  /** 兩側內距，對應 --govtw-space-{n} token */
   @property({ type: String }) padding = '4';
 
   static styles = css`
@@ -41,7 +41,7 @@ export class GovContainer extends LitElement {
         class="container"
         style="
           --_max-width: ${this.maxWidth};
-          --_padding: var(--twgov-space-${this.padding}, ${Number(this.padding) * 4}px);
+          --_padding: var(--govtw-space-${this.padding}, ${Number(this.padding) * 4}px);
         "
       >
         <slot></slot>
@@ -52,6 +52,6 @@ export class GovContainer extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'twgov-container': GovContainer;
+    'govtw-container': GovContainer;
   }
 }

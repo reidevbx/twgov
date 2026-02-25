@@ -2,7 +2,7 @@
 
 > **🚧 開發中（Alpha）** — 本專案目前處於早期開發階段，API 與元件介面可能隨時變動。尚未發布至 npm，請勿用於正式環境。歡迎追蹤進度或參與討論。
 
-**文件站**: [govtw.vercel.app](https://govtw.vercel.app/) · **原始碼**: [GitHub](https://github.com/reidevbx/twgov)
+**文件站**: [govtw.vercel.app](https://govtw.vercel.app/) · **原始碼**: [GitHub](https://github.com/reidevbx/govtw)
 
 為台灣政府數位服務打造的設計系統，提供跨部會一致的使用者體驗。
 
@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://unpkg.com/@gov-tw/tokens/tokens.css">
 <script src="https://unpkg.com/@gov-tw/web-components/dist/gov-tw.iife.js"></script>
 
-<twgov-button>送出</twgov-button>
+<govtw-button>送出</govtw-button>
 ```
 
 ### npm（搭配打包工具）
@@ -40,7 +40,7 @@ npm install @gov-tw/web-components @gov-tw/tokens
 import '@gov-tw/web-components'
 
 // 或按需載入單一元件
-import '@gov-tw/web-components/twgov-button'
+import '@gov-tw/web-components/govtw-button'
 ```
 
 ```css
@@ -58,20 +58,20 @@ import '@gov-tw/web-components/twgov-button'
 
 | 元件 | 標籤 | 用途 |
 |------|------|------|
-| Button | `<twgov-button>` | 觸發動作，支援 primary / secondary / danger 變體 |
-| Checkbox | `<twgov-checkbox>` | 核取方塊，原生 input 覆蓋確保無障礙 |
-| Text Input | `<twgov-input>` | 單行文字輸入，支援 prefix/suffix、固定寬度 |
-| Textarea | `<twgov-textarea>` | 多行文字輸入，支援字數計數 |
-| Fieldset | `<twgov-fieldset>` | 表單欄位群組，附 legend 和錯誤狀態 |
-| Stack | `<twgov-stack>` | 垂直堆疊佈局，控制子元素間距 |
-| Sidebar | `<twgov-sidebar>` | 雙欄佈局，窄螢幕自動堆疊為單欄 |
-| Cluster | `<twgov-cluster>` | 水平流式佈局，空間不足自動換行 |
-| Container | `<twgov-container>` | 頁面容器，限制最大寬度並置中 |
+| Button | `<govtw-button>` | 觸發動作，支援 primary / secondary / danger 變體 |
+| Checkbox | `<govtw-checkbox>` | 核取方塊，原生 input 覆蓋確保無障礙 |
+| Text Input | `<govtw-input>` | 單行文字輸入，支援 prefix/suffix、固定寬度 |
+| Textarea | `<govtw-textarea>` | 多行文字輸入，支援字數計數 |
+| Fieldset | `<govtw-fieldset>` | 表單欄位群組，附 legend 和錯誤狀態 |
+| Stack | `<govtw-stack>` | 垂直堆疊佈局，控制子元素間距 |
+| Sidebar | `<govtw-sidebar>` | 雙欄佈局，窄螢幕自動堆疊為單欄 |
+| Cluster | `<govtw-cluster>` | 水平流式佈局，空間不足自動換行 |
+| Container | `<govtw-container>` | 頁面容器，限制最大寬度並置中 |
 
 ## 專案結構
 
 ```
-twgov/
+govtw/
 ├── apps/
 │   └── docs/                 # VitePress 文件站
 ├── packages/
@@ -92,9 +92,9 @@ twgov/
 
 ```css
 :root {
-  --twgov-color-brand-primary: #2C84B2;   /* 主要品牌色 */
-  --twgov-color-brand-secondary: #618D90; /* 輔助品牌色 */
-  --twgov-color-bg-surface: #EAF0F0;     /* 區塊背景 */
+  --govtw-color-brand-primary: #2C84B2;   /* 主要品牌色 */
+  --govtw-color-brand-secondary: #618D90; /* 輔助品牌色 */
+  --govtw-color-bg-surface: #EAF0F0;     /* 區塊背景 */
 }
 ```
 
@@ -137,9 +137,9 @@ pnpm build:components
 
 | 類型 | 格式 | 範例 |
 |------|------|------|
-| 元件標籤 | `twgov-<name>` | `<twgov-button>` |
-| 元件檔案 | `twgov-<name>.ts` | `twgov-button.ts` |
-| CSS Token | `--twgov-{category}-{name}` | `--twgov-color-brand-primary` |
+| 元件標籤 | `govtw-<name>` | `<govtw-button>` |
+| 元件檔案 | `govtw-<name>.ts` | `govtw-button.ts` |
+| CSS Token | `--govtw-{category}-{name}` | `--govtw-color-brand-primary` |
 | npm 套件 | `@gov-tw/<package>` | `@gov-tw/web-components` |
 
 ## 授權

@@ -9,7 +9,7 @@
 ### 基本用法
 
 <div class="demo-block demo-vertical">
-  <twgov-textarea label="詳細說明" name="description"></twgov-textarea>
+  <govtw-textarea label="詳細說明" name="description"></govtw-textarea>
 </div>
 
 ### 含提示文字
@@ -17,7 +17,7 @@
 提示文字用於說明欄位的填寫格式或注意事項。
 
 <div class="demo-block demo-vertical">
-  <twgov-textarea label="申請原因" hint="請詳細說明您的申請原因，以利審核人員了解情況。" name="reason"></twgov-textarea>
+  <govtw-textarea label="申請原因" hint="請詳細說明您的申請原因，以利審核人員了解情況。" name="reason"></govtw-textarea>
 </div>
 
 ### 字數限制
@@ -25,7 +25,7 @@
 設定 `maxlength` 後，會顯示剩餘可輸入字數。超過限制時以紅色提示。
 
 <div class="demo-block demo-vertical">
-  <twgov-textarea label="意見回饋" hint="請提供您對本服務的建議" maxlength="200" name="feedback"></twgov-textarea>
+  <govtw-textarea label="意見回饋" hint="請提供您對本服務的建議" maxlength="200" name="feedback"></govtw-textarea>
 </div>
 
 ### 調整行數
@@ -33,10 +33,10 @@
 透過 `rows` 屬性調整預設顯示行數。
 
 <div class="demo-block demo-vertical">
-  <twgov-stack space="4">
-    <twgov-textarea label="簡短備註" rows="3" name="short-note"></twgov-textarea>
-    <twgov-textarea label="詳細描述" rows="8" name="long-note"></twgov-textarea>
-  </twgov-stack>
+  <govtw-stack space="4">
+    <govtw-textarea label="簡短備註" rows="3" name="short-note"></govtw-textarea>
+    <govtw-textarea label="詳細描述" rows="8" name="long-note"></govtw-textarea>
+  </govtw-stack>
 </div>
 
 ### 錯誤狀態
@@ -44,13 +44,13 @@
 當驗證失敗時，顯示錯誤訊息並以紅色邊框和左側紅線標示。
 
 <div class="demo-block demo-vertical">
-  <twgov-textarea label="問題描述" error="請填寫問題描述" name="issue"></twgov-textarea>
+  <govtw-textarea label="問題描述" error="請填寫問題描述" name="issue"></govtw-textarea>
 </div>
 
 ### 停用狀態
 
 <div class="demo-block demo-vertical">
-  <twgov-textarea label="不可編輯" value="此欄位無法修改" disabled></twgov-textarea>
+  <govtw-textarea label="不可編輯" value="此欄位無法修改" disabled></govtw-textarea>
 </div>
 
 <style>
@@ -75,27 +75,27 @@
 
 ```html
 <!-- 基本用法 -->
-<twgov-textarea label="詳細說明" name="description"></twgov-textarea>
+<govtw-textarea label="詳細說明" name="description"></govtw-textarea>
 
 <!-- 含提示 -->
-<twgov-textarea
+<govtw-textarea
   label="申請原因"
   hint="請詳細說明您的申請原因"
   name="reason"
-></twgov-textarea>
+></govtw-textarea>
 
 <!-- 字數限制 -->
-<twgov-textarea
+<govtw-textarea
   label="意見回饋"
   maxlength="200"
   name="feedback"
-></twgov-textarea>
+></govtw-textarea>
 
 <!-- 錯誤狀態 -->
-<twgov-textarea
+<govtw-textarea
   label="問題描述"
   error="請填寫問題描述"
-></twgov-textarea>
+></govtw-textarea>
 ```
 
 ## 屬性

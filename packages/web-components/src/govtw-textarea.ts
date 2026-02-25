@@ -1,7 +1,7 @@
 import { LitElement, html, css, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('twgov-textarea')
+@customElement('govtw-textarea')
 export class GovTextarea extends LitElement {
   static shadowRootOptions: ShadowRootInit = {
     ...LitElement.shadowRootOptions,
@@ -44,53 +44,53 @@ export class GovTextarea extends LitElement {
      */
 
     .form-group {
-      margin-bottom: var(--twgov-spacing-6, 24px);
+      margin-bottom: var(--govtw-spacing-6, 24px);
     }
 
     .form-group--error {
-      border-left: 4px solid var(--twgov-color-feedback-error, #C3362B);
-      padding-left: var(--twgov-spacing-4, 16px);
+      border-left: 4px solid var(--govtw-color-feedback-error, #C3362B);
+      padding-left: var(--govtw-spacing-4, 16px);
     }
 
     /* ===== Label ===== */
     .label {
       display: block;
-      font-family: var(--twgov-font-sans, system-ui, sans-serif);
-      font-size: var(--twgov-font-size-base, 1rem);
+      font-family: var(--govtw-font-sans, system-ui, sans-serif);
+      font-size: var(--govtw-font-size-base, 1rem);
       font-weight: 700;
-      color: var(--twgov-color-text-primary, #1A1A1A);
-      margin-bottom: var(--twgov-spacing-1, 4px);
+      color: var(--govtw-color-text-primary, #1A1A1A);
+      margin-bottom: var(--govtw-spacing-1, 4px);
     }
 
     /* ===== Hint ===== */
     .hint {
       display: block;
-      font-family: var(--twgov-font-sans, system-ui, sans-serif);
-      font-size: var(--twgov-font-size-base, 1rem);
-      color: var(--twgov-color-text-secondary, #595959);
-      margin-bottom: var(--twgov-spacing-2, 8px);
+      font-family: var(--govtw-font-sans, system-ui, sans-serif);
+      font-size: var(--govtw-font-size-base, 1rem);
+      color: var(--govtw-color-text-secondary, #595959);
+      margin-bottom: var(--govtw-spacing-2, 8px);
     }
 
     /* ===== Error message ===== */
     .error-message {
       display: block;
-      font-family: var(--twgov-font-sans, system-ui, sans-serif);
-      font-size: var(--twgov-font-size-base, 1rem);
+      font-family: var(--govtw-font-sans, system-ui, sans-serif);
+      font-size: var(--govtw-font-size-base, 1rem);
       font-weight: 700;
-      color: var(--twgov-color-feedback-error, #C3362B);
-      margin-bottom: var(--twgov-spacing-2, 8px);
+      color: var(--govtw-color-feedback-error, #C3362B);
+      margin-bottom: var(--govtw-spacing-2, 8px);
     }
 
     /* ===== Textarea ===== */
     .textarea {
-      font-family: var(--twgov-font-sans, system-ui, sans-serif);
-      font-size: var(--twgov-font-size-base, 1rem);
+      font-family: var(--govtw-font-sans, system-ui, sans-serif);
+      font-size: var(--govtw-font-size-base, 1rem);
       line-height: 1.5;
-      color: var(--twgov-color-text-primary, #1A1A1A);
-      background: var(--twgov-color-bg-canvas, #FFFFFF);
-      border: 2px solid var(--twgov-color-text-primary, #1A1A1A);
-      border-radius: var(--twgov-radius-sm, 4px);
-      padding: var(--twgov-spacing-2, 8px);
+      color: var(--govtw-color-text-primary, #1A1A1A);
+      background: var(--govtw-color-bg-canvas, #FFFFFF);
+      border: 2px solid var(--govtw-color-text-primary, #1A1A1A);
+      border-radius: var(--govtw-radius-sm, 4px);
+      padding: var(--govtw-spacing-2, 8px);
       width: 100%;
       box-sizing: border-box;
       margin: 0;
@@ -103,36 +103,36 @@ export class GovTextarea extends LitElement {
     .textarea:focus {
       outline: 3px solid #fd0;
       outline-offset: 0;
-      border-color: var(--twgov-color-text-primary, #1A1A1A);
-      box-shadow: inset 0 0 0 1px var(--twgov-color-text-primary, #1A1A1A);
+      border-color: var(--govtw-color-text-primary, #1A1A1A);
+      box-shadow: inset 0 0 0 1px var(--govtw-color-text-primary, #1A1A1A);
     }
 
     /* ===== Error ===== */
     .textarea--error {
-      border-color: var(--twgov-color-feedback-error, #C3362B);
+      border-color: var(--govtw-color-feedback-error, #C3362B);
     }
 
     .textarea--error:focus {
-      border-color: var(--twgov-color-text-primary, #1A1A1A);
+      border-color: var(--govtw-color-text-primary, #1A1A1A);
     }
 
     /* ===== Disabled ===== */
     .textarea:disabled {
       opacity: 0.5;
       cursor: not-allowed;
-      background: var(--twgov-color-bg-surface, #EAF0F0);
+      background: var(--govtw-color-bg-surface, #EAF0F0);
     }
 
     /* ===== 字數計數 ===== */
     .character-count {
-      font-family: var(--twgov-font-sans, system-ui, sans-serif);
-      font-size: var(--twgov-font-size-sm, 0.875rem);
-      color: var(--twgov-color-text-secondary, #595959);
-      margin-top: var(--twgov-spacing-1, 4px);
+      font-family: var(--govtw-font-sans, system-ui, sans-serif);
+      font-size: var(--govtw-font-size-sm, 0.875rem);
+      color: var(--govtw-color-text-secondary, #595959);
+      margin-top: var(--govtw-spacing-1, 4px);
     }
 
     .character-count--over {
-      color: var(--twgov-color-feedback-error, #C3362B);
+      color: var(--govtw-color-feedback-error, #C3362B);
       font-weight: 700;
     }
   `;
@@ -218,6 +218,6 @@ export class GovTextarea extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'twgov-textarea': GovTextarea;
+    'govtw-textarea': GovTextarea;
   }
 }

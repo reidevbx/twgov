@@ -9,7 +9,7 @@
 ### 基本用法
 
 <div class="demo-block demo-vertical">
-  <twgov-input label="全名" name="fullname"></twgov-input>
+  <govtw-input label="全名" name="fullname"></govtw-input>
 </div>
 
 ### 含提示文字
@@ -17,39 +17,39 @@
 提示文字用於說明欄位的填寫格式或條件。
 
 <div class="demo-block demo-vertical">
-  <twgov-input label="身分證字號" hint="英文字母開頭，共 10 碼" width="10"></twgov-input>
+  <govtw-input label="身分證字號" hint="英文字母開頭，共 10 碼" width="10"></govtw-input>
 </div>
 
 ### 固定寬度
 
-根據預期輸入長度設定寬度，幫助使用者判斷該填多少內容。用 `<twgov-cluster>` 水平排列，窄螢幕自動換行。
+根據預期輸入長度設定寬度，幫助使用者判斷該填多少內容。用 `<govtw-cluster>` 水平排列，窄螢幕自動換行。
 
 <div class="demo-block demo-vertical">
-  <twgov-stack space="4">
-    <twgov-input label="全寬（預設）" hint="地址、全名等長度不定的文字"></twgov-input>
-    <twgov-input label="寬度 20" width="20" hint="較長的姓名、帳號"></twgov-input>
-    <twgov-input label="寬度 10" width="10" hint="電話號碼、身分證字號"></twgov-input>
-    <twgov-cluster space="4">
-      <twgov-input label="寬度 5" width="5" hint="郵遞區號"></twgov-input>
-      <twgov-input label="寬度 4" width="4" hint="年份"></twgov-input>
-      <twgov-input label="寬度 3" width="3" hint="區碼"></twgov-input>
-      <twgov-input label="寬度 2" width="2" hint="月 / 日"></twgov-input>
-    </twgov-cluster>
-  </twgov-stack>
+  <govtw-stack space="4">
+    <govtw-input label="全寬（預設）" hint="地址、全名等長度不定的文字"></govtw-input>
+    <govtw-input label="寬度 20" width="20" hint="較長的姓名、帳號"></govtw-input>
+    <govtw-input label="寬度 10" width="10" hint="電話號碼、身分證字號"></govtw-input>
+    <govtw-cluster space="4">
+      <govtw-input label="寬度 5" width="5" hint="郵遞區號"></govtw-input>
+      <govtw-input label="寬度 4" width="4" hint="年份"></govtw-input>
+      <govtw-input label="寬度 3" width="3" hint="區碼"></govtw-input>
+      <govtw-input label="寬度 2" width="2" hint="月 / 日"></govtw-input>
+    </govtw-cluster>
+  </govtw-stack>
 </div>
 
 ### 實際場景：出生日期
 
-短寬度欄位適合用 `<twgov-cluster>` 水平排列。
+短寬度欄位適合用 `<govtw-cluster>` 水平排列。
 
 <div class="demo-block demo-vertical">
-  <twgov-fieldset legend="出生日期" hint="例如：1990 年 3 月 15 日">
-    <twgov-cluster space="3">
-      <twgov-input label="年" width="4" inputmode="numeric"></twgov-input>
-      <twgov-input label="月" width="2" inputmode="numeric"></twgov-input>
-      <twgov-input label="日" width="2" inputmode="numeric"></twgov-input>
-    </twgov-cluster>
-  </twgov-fieldset>
+  <govtw-fieldset legend="出生日期" hint="例如：1990 年 3 月 15 日">
+    <govtw-cluster space="3">
+      <govtw-input label="年" width="4" inputmode="numeric"></govtw-input>
+      <govtw-input label="月" width="2" inputmode="numeric"></govtw-input>
+      <govtw-input label="日" width="2" inputmode="numeric"></govtw-input>
+    </govtw-cluster>
+  </govtw-fieldset>
 </div>
 
 ### Prefix / Suffix
@@ -57,13 +57,13 @@
 用於顯示單位或幣別符號，讓使用者明確知道欄位的語意。
 
 <div class="demo-block demo-vertical">
-  <twgov-stack space="4">
-    <twgov-input label="金額" prefix="NT$" width="10"></twgov-input>
-    <twgov-input label="重量" suffix="公斤" width="5"></twgov-input>
-    <twgov-cluster space="4">
-      <twgov-input label="費率" prefix="NT$" suffix="每月" width="10"></twgov-input>
-    </twgov-cluster>
-  </twgov-stack>
+  <govtw-stack space="4">
+    <govtw-input label="金額" prefix="NT$" width="10"></govtw-input>
+    <govtw-input label="重量" suffix="公斤" width="5"></govtw-input>
+    <govtw-cluster space="4">
+      <govtw-input label="費率" prefix="NT$" suffix="每月" width="10"></govtw-input>
+    </govtw-cluster>
+  </govtw-stack>
 </div>
 
 ### 錯誤狀態
@@ -71,13 +71,13 @@
 當驗證失敗時，顯示錯誤訊息並以紅色邊框和左側紅線標示。
 
 <div class="demo-block demo-vertical">
-  <twgov-input label="電子信箱" type="email" error="請輸入有效的電子信箱地址" value="abc"></twgov-input>
+  <govtw-input label="電子信箱" type="email" error="請輸入有效的電子信箱地址" value="abc"></govtw-input>
 </div>
 
 ### 停用狀態
 
 <div class="demo-block demo-vertical">
-  <twgov-input label="不可編輯" value="此欄位無法修改" disabled></twgov-input>
+  <govtw-input label="不可編輯" value="此欄位無法修改" disabled></govtw-input>
 </div>
 
 <style>
@@ -102,25 +102,25 @@
 
 ```html
 <!-- 基本用法 -->
-<twgov-input label="姓名" name="name"></twgov-input>
+<govtw-input label="姓名" name="name"></govtw-input>
 
 <!-- 含提示 -->
-<twgov-input
+<govtw-input
   label="電話"
   hint="市話請加區碼"
   type="tel"
   width="10"
-></twgov-input>
+></govtw-input>
 
 <!-- 含 prefix / suffix -->
-<twgov-input label="金額" prefix="NT$" width="10"></twgov-input>
+<govtw-input label="金額" prefix="NT$" width="10"></govtw-input>
 
 <!-- 錯誤狀態 -->
-<twgov-input
+<govtw-input
   label="電子信箱"
   type="email"
   error="請輸入有效的電子信箱地址"
-></twgov-input>
+></govtw-input>
 ```
 
 ## 屬性
@@ -164,10 +164,10 @@
 
 ```html
 <!-- 推薦：整數輸入 -->
-<twgov-input label="數量" inputmode="numeric" width="4"></twgov-input>
+<govtw-input label="數量" inputmode="numeric" width="4"></govtw-input>
 
 <!-- 不推薦 -->
-<twgov-input label="數量" type="number"></twgov-input>
+<govtw-input label="數量" type="number"></govtw-input>
 ```
 
 ## 無障礙

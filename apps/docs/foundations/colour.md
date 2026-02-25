@@ -8,44 +8,44 @@
 
 | Token | 色碼 | 用途 |
 |-------|------|------|
-| `--twgov-color-brand-primary` | `#2C84B2` | 主要品牌色（藍色） |
-| `--twgov-color-brand-secondary` | `#618D90` | 輔助品牌色（青色） |
+| `--govtw-color-brand-primary` | `#2C84B2` | 主要品牌色（藍色） |
+| `--govtw-color-brand-secondary` | `#618D90` | 輔助品牌色（青色） |
 
 ### 文字色
 
 | Token | 色碼 | 用途 |
 |-------|------|------|
-| `--twgov-color-text-primary` | `#1A1A1A` | 主要文字 |
-| `--twgov-color-text-secondary` | `#595959` | 次要文字 |
-| `--twgov-color-text-on-primary` | `#FFFFFF` | 品牌色上的文字 |
+| `--govtw-color-text-primary` | `#1A1A1A` | 主要文字 |
+| `--govtw-color-text-secondary` | `#595959` | 次要文字 |
+| `--govtw-color-text-on-primary` | `#FFFFFF` | 品牌色上的文字 |
 
 ### 背景色
 
 | Token | 色碼 | 用途 |
 |-------|------|------|
-| `--twgov-color-bg-canvas` | `#FFFFFF` | 頁面背景 |
-| `--twgov-color-bg-surface` | `#EAF0F0` | 區塊背景 |
+| `--govtw-color-bg-canvas` | `#FFFFFF` | 頁面背景 |
+| `--govtw-color-bg-surface` | `#EAF0F0` | 區塊背景 |
 
 ### 邊框色
 
 | Token | 色碼 | 用途 |
 |-------|------|------|
-| `--twgov-color-border-default` | `#B0C4C5` | 預設邊框 |
+| `--govtw-color-border-default` | `#B0C4C5` | 預設邊框 |
 
 ### 回饋色
 
 | Token | 色碼 | 用途 |
 |-------|------|------|
-| `--twgov-color-feedback-error` | `#C3362B` | 錯誤 |
-| `--twgov-color-feedback-success` | `#00804A` | 成功 |
-| `--twgov-color-feedback-warning` | `#F0AB00` | 警告 |
-| `--twgov-color-feedback-info` | `#2C84B2` | 資訊 |
+| `--govtw-color-feedback-error` | `#C3362B` | 錯誤 |
+| `--govtw-color-feedback-success` | `#00804A` | 成功 |
+| `--govtw-color-feedback-warning` | `#F0AB00` | 警告 |
+| `--govtw-color-feedback-info` | `#2C84B2` | 資訊 |
 
 ### 使用方式
 
 ```css
 .my-element {
-  color: var(--twgov-color-text-primary);
-  background: var(--twgov-color-bg-surface);
+  color: var(--govtw-color-text-primary);
+  background: var(--govtw-color-bg-surface);
 }
 ```

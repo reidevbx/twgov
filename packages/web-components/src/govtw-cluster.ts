@@ -2,20 +2,20 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 /**
- * twgov-cluster — 水平流式佈局
+ * govtw-cluster — 水平流式佈局
  *
  * 將子元素水平排列，空間不足時自動換行。
  * 適用於按鈕群、標籤列、麵包屑等水平排列的元素。
  *
  * @example
- * <twgov-cluster space="3">
- *   <twgov-button>送出</twgov-button>
- *   <twgov-button variant="secondary">取消</twgov-button>
- * </twgov-cluster>
+ * <govtw-cluster space="3">
+ *   <govtw-button>送出</govtw-button>
+ *   <govtw-button variant="secondary">取消</govtw-button>
+ * </govtw-cluster>
  */
-@customElement('twgov-cluster')
+@customElement('govtw-cluster')
 export class GovCluster extends LitElement {
-  /** 子元素之間的間距，對應 --twgov-space-{n} token */
+  /** 子元素之間的間距，對應 --govtw-space-{n} token */
   @property({ type: String }) space = '3';
 
   /** 水平對齊方式 */
@@ -56,7 +56,7 @@ export class GovCluster extends LitElement {
       <div
         class="cluster"
         style="
-          --_cluster-space: var(--twgov-space-${this.space}, ${Number(this.space) * 4}px);
+          --_cluster-space: var(--govtw-space-${this.space}, ${Number(this.space) * 4}px);
           --_justify: ${justifyMap[this.align] || 'flex-start'};
           --_align: ${alignMap[this.verticalAlign] || 'center'};
         "
@@ -69,6 +69,6 @@ export class GovCluster extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'twgov-cluster': GovCluster;
+    'govtw-cluster': GovCluster;
   }
 }

@@ -1,7 +1,7 @@
 import { LitElement, html, css, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('twgov-fieldset')
+@customElement('govtw-fieldset')
 export class GovFieldset extends LitElement {
   @property({ type: String }) legend = '';
   @property({ type: String, reflect: true }) size: 'xl' | 'l' | 'm' | 's' = 'l';
@@ -21,8 +21,8 @@ export class GovFieldset extends LitElement {
      */
 
     .fieldset-wrapper--error {
-      border-left: 4px solid var(--twgov-color-feedback-error, #C3362B);
-      padding-left: var(--twgov-spacing-4, 16px);
+      border-left: 4px solid var(--govtw-color-feedback-error, #C3362B);
+      padding-left: var(--govtw-spacing-4, 16px);
     }
 
     .fieldset {
@@ -34,59 +34,59 @@ export class GovFieldset extends LitElement {
 
     /* ===== Legend ===== */
     .fieldset__legend {
-      font-family: var(--twgov-font-sans, system-ui, sans-serif);
+      font-family: var(--govtw-font-sans, system-ui, sans-serif);
       font-weight: 700;
-      color: var(--twgov-color-text-primary, #1A1A1A);
+      color: var(--govtw-color-text-primary, #1A1A1A);
       padding: 0;
-      margin-bottom: var(--twgov-spacing-4, 16px);
+      margin-bottom: var(--govtw-spacing-4, 16px);
     }
 
     :host([size="xl"]) .fieldset__legend {
-      font-size: var(--twgov-font-size-4xl, 2.25rem);
+      font-size: var(--govtw-font-size-4xl, 2.25rem);
       line-height: 1.2;
-      margin-bottom: var(--twgov-spacing-6, 24px);
+      margin-bottom: var(--govtw-spacing-6, 24px);
     }
 
     :host([size="l"]) .fieldset__legend {
-      font-size: var(--twgov-font-size-3xl, 1.875rem);
+      font-size: var(--govtw-font-size-3xl, 1.875rem);
       line-height: 1.3;
-      margin-bottom: var(--twgov-spacing-6, 24px);
+      margin-bottom: var(--govtw-spacing-6, 24px);
     }
 
     :host([size="m"]) .fieldset__legend {
-      font-size: var(--twgov-font-size-2xl, 1.5rem);
+      font-size: var(--govtw-font-size-2xl, 1.5rem);
       line-height: 1.4;
     }
 
     :host([size="s"]) .fieldset__legend {
-      font-size: var(--twgov-font-size-xl, 1.25rem);
+      font-size: var(--govtw-font-size-xl, 1.25rem);
       line-height: 1.4;
     }
 
     /* ===== Hint ===== */
     .fieldset__hint {
       display: block;
-      font-family: var(--twgov-font-sans, system-ui, sans-serif);
-      font-size: var(--twgov-font-size-base, 1rem);
-      color: var(--twgov-color-text-secondary, #595959);
-      margin-bottom: var(--twgov-spacing-4, 16px);
+      font-family: var(--govtw-font-sans, system-ui, sans-serif);
+      font-size: var(--govtw-font-size-base, 1rem);
+      color: var(--govtw-color-text-secondary, #595959);
+      margin-bottom: var(--govtw-spacing-4, 16px);
     }
 
     /* ===== Error ===== */
     .fieldset__error {
       display: block;
-      font-family: var(--twgov-font-sans, system-ui, sans-serif);
-      font-size: var(--twgov-font-size-base, 1rem);
+      font-family: var(--govtw-font-sans, system-ui, sans-serif);
+      font-size: var(--govtw-font-size-base, 1rem);
       font-weight: 700;
-      color: var(--twgov-color-feedback-error, #C3362B);
-      margin-bottom: var(--twgov-spacing-4, 16px);
+      color: var(--govtw-color-feedback-error, #C3362B);
+      margin-bottom: var(--govtw-spacing-4, 16px);
     }
 
     /* ===== Slot 內容間距 ===== */
     .fieldset__content {
       display: flex;
       flex-direction: column;
-      gap: var(--twgov-spacing-4, 16px);
+      gap: var(--govtw-spacing-4, 16px);
     }
   `;
 
@@ -122,6 +122,6 @@ export class GovFieldset extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'twgov-fieldset': GovFieldset;
+    'govtw-fieldset': GovFieldset;
   }
 }

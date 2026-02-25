@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from 'fs';
 
 const tokens = JSON.parse(readFileSync(new URL('./tokens.json', import.meta.url), 'utf-8'));
 
-const PREFIX = 'twgov';
+const PREFIX = 'govtw';
 
 // ── CSS custom properties ──────────────────────────────
 
@@ -24,7 +24,7 @@ const { colorDark, ...lightTokens } = tokens;
 
 const lightCSS = `:root {\n${flattenCSS(lightTokens).join('\n')}\n}`;
 
-// Dark mode — map colorDark.* → same --twgov-color-* variable names
+// Dark mode — map colorDark.* → same --govtw-color-* variable names
 const darkCSS = `\n\n@media (prefers-color-scheme: dark) {\n  :root {\n${flattenCSS(colorDark, `--${PREFIX}-color`).join('\n')}\n  }\n}`;
 
 const css = lightCSS + darkCSS + '\n';

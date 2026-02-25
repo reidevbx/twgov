@@ -9,21 +9,21 @@ Fieldset 用於將相關的表單欄位組合在一起，讓使用者理解欄�
 ### 基本用法
 
 <div class="demo-block demo-vertical">
-  <twgov-fieldset legend="聯絡資訊" size="l">
-    <twgov-input label="姓名" name="name"></twgov-input>
-    <twgov-input label="電子信箱" name="email" type="email" hint="例如：user@example.gov.tw"></twgov-input>
-    <twgov-input label="電話" name="phone" type="tel" width="10"></twgov-input>
-  </twgov-fieldset>
+  <govtw-fieldset legend="聯絡資訊" size="l">
+    <govtw-input label="姓名" name="name"></govtw-input>
+    <govtw-input label="電子信箱" name="email" type="email" hint="例如：user@example.gov.tw"></govtw-input>
+    <govtw-input label="電話" name="phone" type="tel" width="10"></govtw-input>
+  </govtw-fieldset>
 </div>
 
 ### 含提示文字
 
 <div class="demo-block demo-vertical">
-  <twgov-fieldset legend="寄送地址" hint="請填寫您希望收到文件的地址">
-    <twgov-input label="縣市" width="10"></twgov-input>
-    <twgov-input label="區鄉鎮市" width="10"></twgov-input>
-    <twgov-input label="街道地址"></twgov-input>
-  </twgov-fieldset>
+  <govtw-fieldset legend="寄送地址" hint="請填寫您希望收到文件的地址">
+    <govtw-input label="縣市" width="10"></govtw-input>
+    <govtw-input label="區鄉鎮市" width="10"></govtw-input>
+    <govtw-input label="街道地址"></govtw-input>
+  </govtw-fieldset>
 </div>
 
 ### 錯誤狀態
@@ -31,13 +31,13 @@ Fieldset 用於將相關的表單欄位組合在一起，讓使用者理解欄�
 Fieldset 層級的錯誤訊息會在左側顯示紅色邊線，標示整組欄位有問題。
 
 <div class="demo-block demo-vertical">
-  <twgov-fieldset legend="出生日期" error="請填寫完整的出生日期" hint="例如：1990 年 3 月 15 日">
+  <govtw-fieldset legend="出生日期" error="請填寫完整的出生日期" hint="例如：1990 年 3 月 15 日">
     <div style="display: flex; gap: 12px;">
-      <twgov-input label="年" width="4" error=" "></twgov-input>
-      <twgov-input label="月" width="2" error=" "></twgov-input>
-      <twgov-input label="日" width="2" error=" "></twgov-input>
+      <govtw-input label="年" width="4" error=" "></govtw-input>
+      <govtw-input label="月" width="2" error=" "></govtw-input>
+      <govtw-input label="日" width="2" error=" "></govtw-input>
     </div>
-  </twgov-fieldset>
+  </govtw-fieldset>
 </div>
 
 <style>
@@ -61,23 +61,23 @@ Fieldset 層級的錯誤訊息會在左側顯示紅色邊線，標示整組欄�
 ## 使用方式
 
 ```html
-<twgov-fieldset legend="聯絡資訊">
-  <twgov-input label="姓名" name="name"></twgov-input>
-  <twgov-input label="電子信箱" name="email" type="email"></twgov-input>
-</twgov-fieldset>
+<govtw-fieldset legend="聯絡資訊">
+  <govtw-input label="姓名" name="name"></govtw-input>
+  <govtw-input label="電子信箱" name="email" type="email"></govtw-input>
+</govtw-fieldset>
 ```
 
 ### 搭配提示與錯誤
 
 ```html
-<twgov-fieldset
+<govtw-fieldset
   legend="寄送地址"
   hint="請填寫您希望收到文件的地址"
   error="地址不完整，請檢查"
 >
-  <twgov-input label="縣市"></twgov-input>
-  <twgov-input label="街道地址"></twgov-input>
-</twgov-fieldset>
+  <govtw-input label="縣市"></govtw-input>
+  <govtw-input label="街道地址"></govtw-input>
+</govtw-fieldset>
 ```
 
 ## 屬性
@@ -93,10 +93,10 @@ Fieldset 層級的錯誤訊息會在左側顯示紅色邊線，標示整組欄�
 
 | Size | 字級 | 對應標題 |
 |------|------|----------|
-| `xl` | 36px（`--twgov-font-size-4xl`） | h1 頁面標題 |
-| `l` | 30px（`--twgov-font-size-3xl`） | h1 或 h2 |
-| `m` | 24px（`--twgov-font-size-2xl`） | h2 或 h3 |
-| `s` | 20px（`--twgov-font-size-xl`） | h3 或 h4 |
+| `xl` | 36px（`--govtw-font-size-4xl`） | h1 頁面標題 |
+| `l` | 30px（`--govtw-font-size-3xl`） | h1 或 h2 |
+| `m` | 24px（`--govtw-font-size-2xl`） | h2 或 h3 |
+| `s` | 20px（`--govtw-font-size-xl`） | h3 或 h4 |
 
 ## 何時使用
 
@@ -106,7 +106,7 @@ Fieldset 層級的錯誤訊息會在左側顯示紅色邊線，標示整組欄�
 
 ## 何時不使用
 
-- 單一獨立欄位不需要 fieldset，使用 `<twgov-input>` 即可
+- 單一獨立欄位不需要 fieldset，使用 `<govtw-input>` 即可
 - 欄位之間沒有明確的群組關係
 
 ## 無障礙

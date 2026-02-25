@@ -1,7 +1,7 @@
 import { LitElement, html, css, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('twgov-input')
+@customElement('govtw-input')
 export class GovInput extends LitElement {
   static shadowRootOptions: ShadowRootInit = {
     ...LitElement.shadowRootOptions,
@@ -47,48 +47,48 @@ export class GovInput extends LitElement {
      */
 
     .form-group {
-      margin-bottom: var(--twgov-spacing-6, 24px);
+      margin-bottom: var(--govtw-spacing-6, 24px);
     }
 
     .form-group--error {
-      border-left: 4px solid var(--twgov-color-feedback-error, #C3362B);
-      padding-left: var(--twgov-spacing-4, 16px);
+      border-left: 4px solid var(--govtw-color-feedback-error, #C3362B);
+      padding-left: var(--govtw-spacing-4, 16px);
     }
 
     /* ===== Label ===== */
     .label {
       display: block;
-      font-family: var(--twgov-font-sans, system-ui, sans-serif);
-      font-size: var(--twgov-font-size-base, 1rem);
+      font-family: var(--govtw-font-sans, system-ui, sans-serif);
+      font-size: var(--govtw-font-size-base, 1rem);
       font-weight: 700;
-      color: var(--twgov-color-text-primary, #1A1A1A);
-      margin-bottom: var(--twgov-spacing-1, 4px);
+      color: var(--govtw-color-text-primary, #1A1A1A);
+      margin-bottom: var(--govtw-spacing-1, 4px);
     }
 
     /* ===== Hint ===== */
     .hint {
       display: block;
-      font-family: var(--twgov-font-sans, system-ui, sans-serif);
-      font-size: var(--twgov-font-size-base, 1rem);
-      color: var(--twgov-color-text-secondary, #595959);
-      margin-bottom: var(--twgov-spacing-2, 8px);
+      font-family: var(--govtw-font-sans, system-ui, sans-serif);
+      font-size: var(--govtw-font-size-base, 1rem);
+      color: var(--govtw-color-text-secondary, #595959);
+      margin-bottom: var(--govtw-spacing-2, 8px);
     }
 
     /* ===== Error message ===== */
     .error-message {
       display: block;
-      font-family: var(--twgov-font-sans, system-ui, sans-serif);
-      font-size: var(--twgov-font-size-base, 1rem);
+      font-family: var(--govtw-font-sans, system-ui, sans-serif);
+      font-size: var(--govtw-font-size-base, 1rem);
       font-weight: 700;
-      color: var(--twgov-color-feedback-error, #C3362B);
-      margin-bottom: var(--twgov-spacing-2, 8px);
+      color: var(--govtw-color-feedback-error, #C3362B);
+      margin-bottom: var(--govtw-spacing-2, 8px);
     }
 
     /* ===== Input wrapper (for prefix / suffix) ===== */
     .input-wrapper {
       display: flex;
       align-items: stretch;
-      border-radius: var(--twgov-radius-sm, 4px);
+      border-radius: var(--govtw-radius-sm, 4px);
     }
 
     .input-wrapper--has-affix {
@@ -99,30 +99,30 @@ export class GovInput extends LitElement {
     .input-suffix {
       display: flex;
       align-items: center;
-      font-family: var(--twgov-font-sans, system-ui, sans-serif);
-      font-size: var(--twgov-font-size-base, 1rem);
-      color: var(--twgov-color-text-primary, #1A1A1A);
-      background: var(--twgov-color-bg-surface, #EAF0F0);
-      border: 2px solid var(--twgov-color-text-primary, #1A1A1A);
-      padding: var(--twgov-spacing-2, 8px) var(--twgov-spacing-3, 12px);
+      font-family: var(--govtw-font-sans, system-ui, sans-serif);
+      font-size: var(--govtw-font-size-base, 1rem);
+      color: var(--govtw-color-text-primary, #1A1A1A);
+      background: var(--govtw-color-bg-surface, #EAF0F0);
+      border: 2px solid var(--govtw-color-text-primary, #1A1A1A);
+      padding: var(--govtw-spacing-2, 8px) var(--govtw-spacing-3, 12px);
       white-space: nowrap;
     }
 
     .input-prefix {
       border-right: 0;
-      border-radius: var(--twgov-radius-sm, 4px) 0 0 var(--twgov-radius-sm, 4px);
+      border-radius: var(--govtw-radius-sm, 4px) 0 0 var(--govtw-radius-sm, 4px);
     }
 
     .input-suffix {
       border-left: 0;
-      border-radius: 0 var(--twgov-radius-sm, 4px) var(--twgov-radius-sm, 4px) 0;
+      border-radius: 0 var(--govtw-radius-sm, 4px) var(--govtw-radius-sm, 4px) 0;
     }
 
     /* 有 prefix/suffix 時，focus 樣式移到 wrapper */
     .input-wrapper--has-affix:focus-within {
       outline: 3px solid #fd0;
       outline-offset: 0;
-      box-shadow: inset 0 0 0 1px var(--twgov-color-text-primary, #1A1A1A);
+      box-shadow: inset 0 0 0 1px var(--govtw-color-text-primary, #1A1A1A);
     }
 
     .input-wrapper--has-affix .input:focus {
@@ -132,14 +132,14 @@ export class GovInput extends LitElement {
 
     /* ===== Input ===== */
     .input {
-      font-family: var(--twgov-font-sans, system-ui, sans-serif);
-      font-size: var(--twgov-font-size-base, 1rem);
+      font-family: var(--govtw-font-sans, system-ui, sans-serif);
+      font-size: var(--govtw-font-size-base, 1rem);
       line-height: 1.5;
-      color: var(--twgov-color-text-primary, #1A1A1A);
-      background: var(--twgov-color-bg-canvas, #FFFFFF);
-      border: 2px solid var(--twgov-color-text-primary, #1A1A1A);
-      border-radius: var(--twgov-radius-sm, 4px);
-      padding: var(--twgov-spacing-2, 8px);
+      color: var(--govtw-color-text-primary, #1A1A1A);
+      background: var(--govtw-color-bg-canvas, #FFFFFF);
+      border: 2px solid var(--govtw-color-text-primary, #1A1A1A);
+      border-radius: var(--govtw-radius-sm, 4px);
+      padding: var(--govtw-spacing-2, 8px);
       width: 100%;
       box-sizing: border-box;
       margin: 0;
@@ -153,15 +153,15 @@ export class GovInput extends LitElement {
     }
 
     .input-wrapper .input:first-child {
-      border-radius: var(--twgov-radius-sm, 4px) 0 0 var(--twgov-radius-sm, 4px);
+      border-radius: var(--govtw-radius-sm, 4px) 0 0 var(--govtw-radius-sm, 4px);
     }
 
     .input-wrapper .input:last-child {
-      border-radius: 0 var(--twgov-radius-sm, 4px) var(--twgov-radius-sm, 4px) 0;
+      border-radius: 0 var(--govtw-radius-sm, 4px) var(--govtw-radius-sm, 4px) 0;
     }
 
     .input-wrapper .input:only-child {
-      border-radius: var(--twgov-radius-sm, 4px);
+      border-radius: var(--govtw-radius-sm, 4px);
     }
 
     /* ===== 固定寬度 ===== */
@@ -176,24 +176,24 @@ export class GovInput extends LitElement {
     .input:focus {
       outline: 3px solid #fd0;
       outline-offset: 0;
-      border-color: var(--twgov-color-text-primary, #1A1A1A);
-      box-shadow: inset 0 0 0 1px var(--twgov-color-text-primary, #1A1A1A);
+      border-color: var(--govtw-color-text-primary, #1A1A1A);
+      box-shadow: inset 0 0 0 1px var(--govtw-color-text-primary, #1A1A1A);
     }
 
     /* ===== Error ===== */
     .input--error {
-      border-color: var(--twgov-color-feedback-error, #C3362B);
+      border-color: var(--govtw-color-feedback-error, #C3362B);
     }
 
     .input--error:focus {
-      border-color: var(--twgov-color-text-primary, #1A1A1A);
+      border-color: var(--govtw-color-text-primary, #1A1A1A);
     }
 
     /* ===== Disabled ===== */
     .input:disabled {
       opacity: 0.5;
       cursor: not-allowed;
-      background: var(--twgov-color-bg-surface, #EAF0F0);
+      background: var(--govtw-color-bg-surface, #EAF0F0);
     }
   `;
 
@@ -273,6 +273,6 @@ export class GovInput extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'twgov-input': GovInput;
+    'govtw-input': GovInput;
   }
 }

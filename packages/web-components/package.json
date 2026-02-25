@@ -10,50 +10,50 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./twgov-button": {
-      "source": "./src/twgov-button.ts",
-      "types": "./dist/twgov-button.d.ts",
-      "import": "./dist/twgov-button.js"
+    "./govtw-button": {
+      "source": "./src/govtw-button.ts",
+      "types": "./dist/govtw-button.d.ts",
+      "import": "./dist/govtw-button.js"
     },
-    "./twgov-checkbox": {
-      "source": "./src/twgov-checkbox.ts",
-      "types": "./dist/twgov-checkbox.d.ts",
-      "import": "./dist/twgov-checkbox.js"
+    "./govtw-checkbox": {
+      "source": "./src/govtw-checkbox.ts",
+      "types": "./dist/govtw-checkbox.d.ts",
+      "import": "./dist/govtw-checkbox.js"
     },
-    "./twgov-input": {
-      "source": "./src/twgov-input.ts",
-      "types": "./dist/twgov-input.d.ts",
-      "import": "./dist/twgov-input.js"
+    "./govtw-input": {
+      "source": "./src/govtw-input.ts",
+      "types": "./dist/govtw-input.d.ts",
+      "import": "./dist/govtw-input.js"
     },
-    "./twgov-fieldset": {
-      "source": "./src/twgov-fieldset.ts",
-      "types": "./dist/twgov-fieldset.d.ts",
-      "import": "./dist/twgov-fieldset.js"
+    "./govtw-fieldset": {
+      "source": "./src/govtw-fieldset.ts",
+      "types": "./dist/govtw-fieldset.d.ts",
+      "import": "./dist/govtw-fieldset.js"
     },
-    "./twgov-stack": {
-      "source": "./src/twgov-stack.ts",
-      "types": "./dist/twgov-stack.d.ts",
-      "import": "./dist/twgov-stack.js"
+    "./govtw-stack": {
+      "source": "./src/govtw-stack.ts",
+      "types": "./dist/govtw-stack.d.ts",
+      "import": "./dist/govtw-stack.js"
     },
-    "./twgov-sidebar": {
-      "source": "./src/twgov-sidebar.ts",
-      "types": "./dist/twgov-sidebar.d.ts",
-      "import": "./dist/twgov-sidebar.js"
+    "./govtw-sidebar": {
+      "source": "./src/govtw-sidebar.ts",
+      "types": "./dist/govtw-sidebar.d.ts",
+      "import": "./dist/govtw-sidebar.js"
     },
-    "./twgov-cluster": {
-      "source": "./src/twgov-cluster.ts",
-      "types": "./dist/twgov-cluster.d.ts",
-      "import": "./dist/twgov-cluster.js"
+    "./govtw-cluster": {
+      "source": "./src/govtw-cluster.ts",
+      "types": "./dist/govtw-cluster.d.ts",
+      "import": "./dist/govtw-cluster.js"
     },
-    "./twgov-container": {
-      "source": "./src/twgov-container.ts",
-      "types": "./dist/twgov-container.d.ts",
-      "import": "./dist/twgov-container.js"
+    "./govtw-container": {
+      "source": "./src/govtw-container.ts",
+      "types": "./dist/govtw-container.d.ts",
+      "import": "./dist/govtw-container.js"
     },
-    "./twgov-textarea": {
-      "source": "./src/twgov-textarea.ts",
-      "types": "./dist/twgov-textarea.d.ts",
-      "import": "./dist/twgov-textarea.js"
+    "./govtw-textarea": {
+      "source": "./src/govtw-textarea.ts",
+      "types": "./dist/govtw-textarea.d.ts",
+      "import": "./dist/govtw-textarea.js"
     }
   },
   "files": [

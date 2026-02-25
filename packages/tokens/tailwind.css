@@ -5,39 +5,39 @@
 
 @theme {
   /* Colors */
-  --color-twgov-brand-primary: var(--twgov-color-brand-primary);
-  --color-twgov-brand-secondary: var(--twgov-color-brand-secondary);
-  --color-twgov-text-primary: var(--twgov-color-text-primary);
-  --color-twgov-text-secondary: var(--twgov-color-text-secondary);
-  --color-twgov-text-on-primary: var(--twgov-color-text-on-primary);
-  --color-twgov-bg-canvas: var(--twgov-color-bg-canvas);
-  --color-twgov-bg-surface: var(--twgov-color-bg-surface);
-  --color-twgov-border-default: var(--twgov-color-border-default);
-  --color-twgov-feedback-error: var(--twgov-color-feedback-error);
-  --color-twgov-feedback-success: var(--twgov-color-feedback-success);
-  --color-twgov-feedback-warning: var(--twgov-color-feedback-warning);
-  --color-twgov-feedback-info: var(--twgov-color-feedback-info);
+  --color-govtw-brand-primary: var(--govtw-color-brand-primary);
+  --color-govtw-brand-secondary: var(--govtw-color-brand-secondary);
+  --color-govtw-text-primary: var(--govtw-color-text-primary);
+  --color-govtw-text-secondary: var(--govtw-color-text-secondary);
+  --color-govtw-text-on-primary: var(--govtw-color-text-on-primary);
+  --color-govtw-bg-canvas: var(--govtw-color-bg-canvas);
+  --color-govtw-bg-surface: var(--govtw-color-bg-surface);
+  --color-govtw-border-default: var(--govtw-color-border-default);
+  --color-govtw-feedback-error: var(--govtw-color-feedback-error);
+  --color-govtw-feedback-success: var(--govtw-color-feedback-success);
+  --color-govtw-feedback-warning: var(--govtw-color-feedback-warning);
+  --color-govtw-feedback-info: var(--govtw-color-feedback-info);
 
   /* Spacing */
-  --spacing-twgov-1: var(--twgov-spacing-1);
-  --spacing-twgov-2: var(--twgov-spacing-2);
-  --spacing-twgov-3: var(--twgov-spacing-3);
-  --spacing-twgov-4: var(--twgov-spacing-4);
-  --spacing-twgov-6: var(--twgov-spacing-6);
-  --spacing-twgov-8: var(--twgov-spacing-8);
-  --spacing-twgov-12: var(--twgov-spacing-12);
+  --spacing-govtw-1: var(--govtw-spacing-1);
+  --spacing-govtw-2: var(--govtw-spacing-2);
+  --spacing-govtw-3: var(--govtw-spacing-3);
+  --spacing-govtw-4: var(--govtw-spacing-4);
+  --spacing-govtw-6: var(--govtw-spacing-6);
+  --spacing-govtw-8: var(--govtw-spacing-8);
+  --spacing-govtw-12: var(--govtw-spacing-12);
 
   /* Border radius */
-  --radius-twgov-sm: var(--twgov-radius-sm);
-  --radius-twgov-md: var(--twgov-radius-md);
-  --radius-twgov-lg: var(--twgov-radius-lg);
+  --radius-govtw-sm: var(--govtw-radius-sm);
+  --radius-govtw-md: var(--govtw-radius-md);
+  --radius-govtw-lg: var(--govtw-radius-lg);
 
   /* Font */
-  --font-twgov-sans: var(--twgov-font-sans);
-  --text-twgov-sm: var(--twgov-font-size-sm);
-  --text-twgov-base: var(--twgov-font-size-base);
-  --text-twgov-lg: var(--twgov-font-size-lg);
-  --text-twgov-xl: var(--twgov-font-size-xl);
-  --text-twgov-2xl: var(--twgov-font-size-2xl);
-  --text-twgov-3xl: var(--twgov-font-size-3xl);
+  --font-govtw-sans: var(--govtw-font-sans);
+  --text-govtw-sm: var(--govtw-font-size-sm);
+  --text-govtw-base: var(--govtw-font-size-base);
+  --text-govtw-lg: var(--govtw-font-size-lg);
+  --text-govtw-xl: var(--govtw-font-size-xl);
+  --text-govtw-2xl: var(--govtw-font-size-2xl);
+  --text-govtw-3xl: var(--govtw-font-size-3xl);
 }

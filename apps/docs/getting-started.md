@@ -7,8 +7,8 @@
 ## 本地開發試用
 
 ```bash
-git clone https://github.com/user/twgov.git
-cd twgov
+git clone https://github.com/user/govtw.git
+cd govtw
 pnpm install
 pnpm dev
 ```
@@ -29,8 +29,8 @@ pnpm dev
 <script src="https://unpkg.com/@gov-tw/web-components/dist/gov-tw.iife.js"></script>
 
 <!-- 直接使用 -->
-<twgov-button>送出</twgov-button>
-<twgov-checkbox label="我同意服務條款"></twgov-checkbox>
+<govtw-button>送出</govtw-button>
+<govtw-checkbox label="我同意服務條款"></govtw-checkbox>
 ```
 
 ## npm 安裝（有建置工具的專案）
@@ -50,14 +50,14 @@ npm install @gov-tw/web-components
 import '@gov-tw/web-components'
 
 // 或只引入需要的元件
-import '@gov-tw/web-components/twgov-button'
+import '@gov-tw/web-components/govtw-button'
 ```
 
 安裝後在 HTML 中直接使用，不限框架：
 
 ```html
-<twgov-button variant="primary">送出</twgov-button>
-<twgov-checkbox label="訂閱電子報"></twgov-checkbox>
+<govtw-button variant="primary">送出</govtw-button>
+<govtw-checkbox label="訂閱電子報"></govtw-checkbox>
 ```
 
 ## 只用 Token
@@ -76,9 +76,9 @@ npm install @gov-tw/tokens
 @import '@gov-tw/tokens/tokens.css';
 
 .my-element {
-  background: var(--twgov-color-brand-primary);
-  color: var(--twgov-color-text-on-primary);
-  padding: var(--twgov-spacing-2) var(--twgov-spacing-4);
+  background: var(--govtw-color-brand-primary);
+  color: var(--govtw-color-text-on-primary);
+  padding: var(--govtw-spacing-2) var(--govtw-spacing-4);
 }
 ```
 
@@ -101,13 +101,13 @@ npm install @gov-tw/tokens
 ```
 
 ```html
-<div class="bg-twgov-bg-surface p-twgov-6 rounded-twgov-lg">
-  <h2 class="text-twgov-text-primary font-twgov-sans text-twgov-xl">標題</h2>
-  <twgov-button>送出</twgov-button>
+<div class="bg-govtw-bg-surface p-govtw-6 rounded-govtw-lg">
+  <h2 class="text-govtw-text-primary font-govtw-sans text-govtw-xl">標題</h2>
+  <govtw-button>送出</govtw-button>
 </div>
 ```
 
-Tailwind utility 與 Web Components 可混合使用——頁面佈局用 Tailwind，互動元件用 `<twgov-*>`。
+Tailwind utility 與 Web Components 可混合使用——頁面佈局用 Tailwind，互動元件用 `<govtw-*>`。
 
 ## 客製品牌色
 
@@ -115,7 +115,7 @@ Tailwind utility 與 Web Components 可混合使用——頁面佈局用 Tailwin
 
 ```css
 :root {
-  --twgov-color-brand-primary: #1E3A8A; /* 某機關的藍色主色 */
+  --govtw-color-brand-primary: #1E3A8A; /* 某機關的藍色主色 */
 }
 ```
 
