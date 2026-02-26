@@ -121,6 +121,7 @@ export default defineConfig({
           { text: 'Button 按鈕', link: '/components/button' },
           { text: 'Checkbox 核取方塊', link: '/components/checkbox' },
           { text: 'Link 連結', link: '/components/link' },
+          { text: 'Radio 單選按鈕', link: '/components/radio' },
           { text: 'Text Input 文字輸入', link: '/components/text-input' },
           { text: 'Fieldset 欄位群組', link: '/components/fieldset' },
           { text: 'Textarea 多行文字輸入', link: '/components/textarea' },

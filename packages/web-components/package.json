@@ -59,6 +59,11 @@
       "source": "./src/govtw-link.ts",
       "types": "./dist/govtw-link.d.ts",
       "import": "./dist/govtw-link.js"
+    },
+    "./govtw-radio": {
+      "source": "./src/govtw-radio.ts",
+      "types": "./dist/govtw-radio.d.ts",
+      "import": "./dist/govtw-radio.js"
     }
   },
   "files": [

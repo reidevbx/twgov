@@ -166,6 +166,13 @@
   --govtw-fieldset-legend-color: var(--govtw-color-text-primary);
   --govtw-fieldset-hint-color: var(--govtw-color-text-secondary);
   --govtw-fieldset-error-color: var(--govtw-color-feedback-error);
+  --govtw-radio-size: 40px;
+  --govtw-radio-border-color: var(--govtw-color-text-primary);
+  --govtw-radio-bg: var(--govtw-color-bg-canvas);
+  --govtw-radio-selected-color: var(--govtw-color-brand-primary);
+  --govtw-radio-label-color: var(--govtw-color-text-primary);
+  --govtw-radio-focus-color: var(--govtw-focus-color);
+  --govtw-radio-focus-width: var(--govtw-focus-width);
   --govtw-link-color: var(--govtw-color-link-default);
   --govtw-link-visited-color: var(--govtw-color-link-visited);
   --govtw-link-hover-color: var(--govtw-color-text-primary);
