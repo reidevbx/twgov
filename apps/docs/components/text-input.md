@@ -8,23 +8,39 @@
 
 ### 基本用法
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-input label="全名" name="fullname"></govtw-input>
-</div>
+
+  <template #code>
+
+```html
+<govtw-input label="全名" name="fullname"></govtw-input>
+```
+
+  </template>
+</DemoBlock>
 
 ### 含提示文字
 
 提示文字用於說明欄位的填寫格式或條件。
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-input label="身分證字號" hint="英文字母開頭，共 10 碼" width="10"></govtw-input>
-</div>
+
+  <template #code>
+
+```html
+<govtw-input label="身分證字號" hint="英文字母開頭，共 10 碼" width="10"></govtw-input>
+```
+
+  </template>
+</DemoBlock>
 
 ### 固定寬度
 
 根據預期輸入長度設定寬度，幫助使用者判斷該填多少內容。用 `<govtw-cluster>` 水平排列，窄螢幕自動換行。
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-stack space="4">
     <govtw-input label="全寬（預設）" hint="地址、全名等長度不定的文字"></govtw-input>
     <govtw-input label="寬度 20" width="20" hint="較長的姓名、帳號"></govtw-input>
@@ -36,13 +52,31 @@
       <govtw-input label="寬度 2" width="2" hint="月 / 日"></govtw-input>
     </govtw-cluster>
   </govtw-stack>
-</div>
+
+  <template #code>
+
+```html
+<govtw-stack space="4">
+  <govtw-input label="全寬（預設）" hint="地址、全名等長度不定的文字"></govtw-input>
+  <govtw-input label="寬度 20" width="20" hint="較長的姓名、帳號"></govtw-input>
+  <govtw-input label="寬度 10" width="10" hint="電話號碼、身分證字號"></govtw-input>
+  <govtw-cluster space="4">
+    <govtw-input label="寬度 5" width="5" hint="郵遞區號"></govtw-input>
+    <govtw-input label="寬度 4" width="4" hint="年份"></govtw-input>
+    <govtw-input label="寬度 3" width="3" hint="區碼"></govtw-input>
+    <govtw-input label="寬度 2" width="2" hint="月 / 日"></govtw-input>
+  </govtw-cluster>
+</govtw-stack>
+```
+
+  </template>
+</DemoBlock>
 
 ### 實際場景：出生日期
 
 短寬度欄位適合用 `<govtw-cluster>` 水平排列。
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-fieldset legend="出生日期" hint="例如：1990 年 3 月 15 日">
     <govtw-cluster space="3">
       <govtw-input label="年" width="4" inputmode="numeric"></govtw-input>
@@ -50,13 +84,27 @@
       <govtw-input label="日" width="2" inputmode="numeric"></govtw-input>
     </govtw-cluster>
   </govtw-fieldset>
-</div>
+
+  <template #code>
+
+```html
+<govtw-fieldset legend="出生日期" hint="例如：1990 年 3 月 15 日">
+  <govtw-cluster space="3">
+    <govtw-input label="年" width="4" inputmode="numeric"></govtw-input>
+    <govtw-input label="月" width="2" inputmode="numeric"></govtw-input>
+    <govtw-input label="日" width="2" inputmode="numeric"></govtw-input>
+  </govtw-cluster>
+</govtw-fieldset>
+```
+
+  </template>
+</DemoBlock>
 
 ### Prefix / Suffix
 
 用於顯示單位或幣別符號，讓使用者明確知道欄位的語意。
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-stack space="4">
     <govtw-input label="金額" prefix="NT$" width="10"></govtw-input>
     <govtw-input label="重量" suffix="公斤" width="5"></govtw-input>
@@ -64,39 +112,51 @@
       <govtw-input label="費率" prefix="NT$" suffix="每月" width="10"></govtw-input>
     </govtw-cluster>
   </govtw-stack>
-</div>
+
+  <template #code>
+
+```html
+<govtw-stack space="4">
+  <govtw-input label="金額" prefix="NT$" width="10"></govtw-input>
+  <govtw-input label="重量" suffix="公斤" width="5"></govtw-input>
+  <govtw-cluster space="4">
+    <govtw-input label="費率" prefix="NT$" suffix="每月" width="10"></govtw-input>
+  </govtw-cluster>
+</govtw-stack>
+```
+
+  </template>
+</DemoBlock>
 
 ### 錯誤狀態
 
 當驗證失敗時，顯示錯誤訊息並以紅色邊框和左側紅線標示。
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-input label="電子信箱" type="email" error="請輸入有效的電子信箱地址" value="abc"></govtw-input>
-</div>
+
+  <template #code>
+
+```html
+<govtw-input label="電子信箱" type="email" error="請輸入有效的電子信箱地址" value="abc"></govtw-input>
+```
+
+  </template>
+</DemoBlock>
 
 ### 停用狀態
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-input label="不可編輯" value="此欄位無法修改" disabled></govtw-input>
-</div>
 
-<style>
-.demo-block {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  padding: 24px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  margin: 16px 0;
-}
+  <template #code>
 
-.demo-vertical {
-  flex-direction: column;
-  align-items: stretch;
-}
-</style>
+```html
+<govtw-input label="不可編輯" value="此欄位無法修改" disabled></govtw-input>
+```
+
+  </template>
+</DemoBlock>
 
 ## 使用方式
 

@@ -17,15 +17,20 @@
   --color-govtw-feedback-success: var(--govtw-color-feedback-success);
   --color-govtw-feedback-warning: var(--govtw-color-feedback-warning);
   --color-govtw-feedback-info: var(--govtw-color-feedback-info);
+  --color-govtw-link-default: var(--govtw-color-link-default);
+  --color-govtw-link-visited: var(--govtw-color-link-visited);
 
   /* Spacing */
   --spacing-govtw-1: var(--govtw-spacing-1);
   --spacing-govtw-2: var(--govtw-spacing-2);
   --spacing-govtw-3: var(--govtw-spacing-3);
   --spacing-govtw-4: var(--govtw-spacing-4);
+  --spacing-govtw-5: var(--govtw-spacing-5);
   --spacing-govtw-6: var(--govtw-spacing-6);
   --spacing-govtw-8: var(--govtw-spacing-8);
+  --spacing-govtw-10: var(--govtw-spacing-10);
   --spacing-govtw-12: var(--govtw-spacing-12);
+  --spacing-govtw-16: var(--govtw-spacing-16);
 
   /* Border radius */
   --radius-govtw-sm: var(--govtw-radius-sm);
@@ -34,10 +39,18 @@
 
   /* Font */
   --font-govtw-sans: var(--govtw-font-sans);
+  --font-govtw-mono: var(--govtw-font-mono);
+  --text-govtw-xs: var(--govtw-font-size-xs);
   --text-govtw-sm: var(--govtw-font-size-sm);
   --text-govtw-base: var(--govtw-font-size-base);
   --text-govtw-lg: var(--govtw-font-size-lg);
   --text-govtw-xl: var(--govtw-font-size-xl);
   --text-govtw-2xl: var(--govtw-font-size-2xl);
   --text-govtw-3xl: var(--govtw-font-size-3xl);
+  --text-govtw-4xl: var(--govtw-font-size-4xl);
+
+  /* Font weights */
+  --font-weight-govtw-regular: var(--govtw-font-weight-regular);
+  --font-weight-govtw-medium: var(--govtw-font-weight-medium);
+  --font-weight-govtw-bold: var(--govtw-font-weight-bold);
 }

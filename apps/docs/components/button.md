@@ -8,26 +8,55 @@
 
 試著操作下方按鈕：hover（滑鼠移入）、按下去（active）、用 <kbd>Tab</kbd> 鍵聚焦（focus）。
 
-<div class="demo-block">
+<DemoBlock>
   <govtw-button variant="primary">送出</govtw-button>
   <govtw-button variant="secondary">取消</govtw-button>
   <govtw-button variant="danger">刪除</govtw-button>
-</div>
+
+  <template #code>
+
+```html
+<govtw-button variant="primary">送出</govtw-button>
+<govtw-button variant="secondary">取消</govtw-button>
+<govtw-button variant="danger">刪除</govtw-button>
+```
+
+  </template>
+</DemoBlock>
 
 ### 尺寸
 
-<div class="demo-block">
+<DemoBlock>
   <govtw-button size="sm">小按鈕</govtw-button>
   <govtw-button size="md">中按鈕</govtw-button>
   <govtw-button size="lg">大按鈕</govtw-button>
-</div>
+
+  <template #code>
+
+```html
+<govtw-button size="sm">小按鈕</govtw-button>
+<govtw-button size="md">中按鈕</govtw-button>
+<govtw-button size="lg">大按鈕</govtw-button>
+```
+
+  </template>
+</DemoBlock>
 
 ### 停用狀態
 
-<div class="demo-block">
+<DemoBlock>
   <govtw-button disabled>停用按鈕</govtw-button>
   <govtw-button variant="secondary" disabled>停用次要</govtw-button>
-</div>
+
+  <template #code>
+
+```html
+<govtw-button disabled>停用按鈕</govtw-button>
+<govtw-button variant="secondary" disabled>停用次要</govtw-button>
+```
+
+  </template>
+</DemoBlock>
 
 ## 互動狀態展示
 
@@ -37,121 +66,102 @@
 
 滑鼠移到按鈕上，背景色加深。即使是色覺障礙使用者，也能透過明暗變化感知狀態改變。
 
-<div class="demo-block demo-state">
-  <div class="demo-state-item">
-    <span class="demo-state-label">預設</span>
-    <govtw-button variant="primary">送出</govtw-button>
-  </div>
-  <div class="demo-state-item">
-    <span class="demo-state-label">→ Hover</span>
-    <govtw-button variant="primary" id="demo-hover">送出</govtw-button>
-  </div>
-</div>
+<DemoBlock no-code>
+  <span class="demo-state-label">預設</span>
+  <govtw-button variant="primary">送出</govtw-button>
+  <span class="demo-state-label">→ Hover</span>
+  <govtw-button variant="primary" id="demo-hover">送出</govtw-button>
+</DemoBlock>
 
 ### Active（按壓）
 
 按下按鈕時，底部 inset shadow 消失，視覺上按鈕「扁下去」。這是**不依賴色彩**的物理回饋。
 
-<div class="demo-block demo-state">
-  <div class="demo-state-item">
-    <span class="demo-state-label">預設（有底部陰影）</span>
-    <govtw-button variant="primary">送出</govtw-button>
-  </div>
-  <div class="demo-state-item">
-    <span class="demo-state-label">→ Active（陰影消失）</span>
-    <govtw-button variant="primary" id="demo-active">送出</govtw-button>
-  </div>
-</div>
+<DemoBlock no-code>
+  <span class="demo-state-label">預設（有底部陰影）</span>
+  <govtw-button variant="primary">送出</govtw-button>
+  <span class="demo-state-label">→ Active（陰影消失）</span>
+  <govtw-button variant="primary" id="demo-active">送出</govtw-button>
+</DemoBlock>
 
 ### Focus（聚焦）
 
 用 <kbd>Tab</kbd> 鍵導航時，按鈕外圍出現 3px 黃色 `#fd0` focus ring，貼合圓角。
 
-<div class="demo-block demo-state">
-  <div class="demo-state-item">
-    <span class="demo-state-label">預設</span>
-    <govtw-button variant="primary">送出</govtw-button>
-  </div>
-  <div class="demo-state-item">
-    <span class="demo-state-label">→ Focus</span>
-    <govtw-button variant="primary" id="demo-focus">送出</govtw-button>
-  </div>
-</div>
+<DemoBlock no-code>
+  <span class="demo-state-label">預設</span>
+  <govtw-button variant="primary">送出</govtw-button>
+  <span class="demo-state-label">→ Focus</span>
+  <govtw-button variant="primary" id="demo-focus">送出</govtw-button>
+</DemoBlock>
 
 ### Disabled（停用）
 
 透明度降至 50%，游標變為禁止符號。
 
-<div class="demo-block demo-state">
-  <div class="demo-state-item">
-    <span class="demo-state-label">預設</span>
-    <govtw-button variant="primary">送出</govtw-button>
-  </div>
-  <div class="demo-state-item">
-    <span class="demo-state-label">→ Disabled</span>
-    <govtw-button variant="primary" disabled>送出</govtw-button>
-  </div>
-</div>
+<DemoBlock>
+  <govtw-button variant="primary">預設</govtw-button>
+  <govtw-button variant="primary" disabled>停用</govtw-button>
+
+  <template #code>
+
+```html
+<govtw-button variant="primary">預設</govtw-button>
+<govtw-button variant="primary" disabled>停用</govtw-button>
+```
+
+  </template>
+</DemoBlock>
 
 <script setup>
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  const applyStyle = (id, fn) => {
-    const el = document.getElementById(id)
-    if (!el) return
-    const apply = () => {
-      const btn = el.shadowRoot?.querySelector('button')
-      if (btn) fn(btn)
-      else requestAnimationFrame(apply)
+  // 元素在 DemoBlock 的 Shadow DOM 裡，需要從所有 shadow root 中查找
+  const findInShadowRoots = (id) => {
+    const hosts = document.querySelectorAll('.demo-block-preview')
+    for (const host of hosts) {
+      const shadow = host.shadowRoot
+      if (!shadow) continue
+      const el = shadow.querySelector(`#${id}`)
+      if (el) return el
     }
-    apply()
+    return null
+  }
+
+  const applyStyle = (id, fn) => {
+    const attempt = () => {
+      const el = findInShadowRoots(id)
+      if (!el) {
+        requestAnimationFrame(attempt)
+        return
+      }
+      const apply = () => {
+        const btn = el.shadowRoot?.querySelector('button')
+        if (btn) fn(btn)
+        else requestAnimationFrame(apply)
+      }
+      apply()
+    }
+    // 延遲一下讓 DemoBlock Shadow DOM 先建立
+    setTimeout(attempt, 100)
   }
 
   // 用 color-mix() 從 token 動態算色，不 hardcode 色碼
   applyStyle('demo-hover', (btn) => {
-    btn.style.background = 'color-mix(in srgb, var(--govtw-color-brand-primary, #2C84B2) 85%, black)'
+    btn.style.background = 'color-mix(in srgb, var(--govtw-button-primary-bg) 85%, black)'
   })
 
   applyStyle('demo-active', (btn) => {
-    btn.style.background = 'color-mix(in srgb, var(--govtw-color-brand-primary, #2C84B2) 65%, black)'
+    btn.style.background = 'color-mix(in srgb, var(--govtw-button-primary-bg) 65%, black)'
     btn.style.boxShadow = 'none'
   })
 
   applyStyle('demo-focus', (btn) => {
-    btn.style.boxShadow = 'inset 0 -3px 0 color-mix(in srgb, var(--govtw-color-brand-primary, #2C84B2) 60%, black), 0 0 0 3px #fd0'
+    btn.style.boxShadow = 'inset 0 -3px 0 color-mix(in srgb, var(--govtw-button-primary-bg) 60%, black), 0 0 0 var(--govtw-button-focus-width) var(--govtw-button-focus-color)'
   })
 })
 </script>
-
-<style>
-.demo-block {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  padding: 24px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  margin: 16px 0;
-}
-
-.demo-state {
-  gap: 32px;
-}
-
-.demo-state-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.demo-state-label {
-  font-size: 0.8rem;
-  color: var(--vp-c-text-2);
-}
-</style>
 
 ## 使用方式
 

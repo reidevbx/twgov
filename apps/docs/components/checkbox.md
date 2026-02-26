@@ -8,18 +8,37 @@
 
 試著點擊勾選、用 <kbd>Tab</kbd> 聚焦、<kbd>Space</kbd> 切換。
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-checkbox label="我同意服務條款"></govtw-checkbox>
   <govtw-checkbox label="訂閱電子報" checked></govtw-checkbox>
   <govtw-checkbox label="無法選取" disabled></govtw-checkbox>
   <govtw-checkbox label="已勾選但停用" checked disabled></govtw-checkbox>
-</div>
+
+  <template #code>
+
+```html
+<govtw-checkbox label="我同意服務條款"></govtw-checkbox>
+<govtw-checkbox label="訂閱電子報" checked></govtw-checkbox>
+<govtw-checkbox label="無法選取" disabled></govtw-checkbox>
+<govtw-checkbox label="已勾選但停用" checked disabled></govtw-checkbox>
+```
+
+  </template>
+</DemoBlock>
 
 ### 使用 Slot 提供標籤內容
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-checkbox>我已閱讀並同意<a href="#">隱私政策</a></govtw-checkbox>
-</div>
+
+  <template #code>
+
+```html
+<govtw-checkbox>我已閱讀並同意<a href="#">隱私政策</a></govtw-checkbox>
+```
+
+  </template>
+</DemoBlock>
 
 ## 互動狀態展示
 
@@ -27,75 +46,90 @@
 
 滑鼠移到方塊上，邊框從 2px 加粗至 4px，提供不依賴色彩的觸覺回饋。
 
-<div class="demo-block demo-state">
-  <div class="demo-state-item">
-    <span class="demo-state-label">預設</span>
-    <govtw-checkbox label="選項"></govtw-checkbox>
-  </div>
-  <div class="demo-state-item">
-    <span class="demo-state-label">→ Hover</span>
-    <govtw-checkbox label="選項" id="demo-hover"></govtw-checkbox>
-  </div>
-</div>
+<DemoBlock no-code>
+  <span class="demo-state-label">預設</span>
+  <govtw-checkbox label="選項"></govtw-checkbox>
+  <span class="demo-state-label">→ Hover</span>
+  <govtw-checkbox label="選項" id="demo-hover"></govtw-checkbox>
+</DemoBlock>
 
 ### Focus（聚焦）
 
 Tab 鍵聚焦時，方塊外圍出現 3px 黃色 `#fd0` focus ring。
 
-<div class="demo-block demo-state">
-  <div class="demo-state-item">
-    <span class="demo-state-label">預設</span>
-    <govtw-checkbox label="選項"></govtw-checkbox>
-  </div>
-  <div class="demo-state-item">
-    <span class="demo-state-label">→ Focus</span>
-    <govtw-checkbox label="選項" id="demo-focus"></govtw-checkbox>
-  </div>
-</div>
+<DemoBlock no-code>
+  <span class="demo-state-label">預設</span>
+  <govtw-checkbox label="選項"></govtw-checkbox>
+  <span class="demo-state-label">→ Focus</span>
+  <govtw-checkbox label="選項" id="demo-focus"></govtw-checkbox>
+</DemoBlock>
 
 ### Checked（勾選）
 
 勾選後邊框變為品牌綠色，顯示旋轉邊框勾號。
 
-<div class="demo-block demo-state">
-  <div class="demo-state-item">
-    <span class="demo-state-label">未勾選</span>
-    <govtw-checkbox label="選項"></govtw-checkbox>
-  </div>
-  <div class="demo-state-item">
-    <span class="demo-state-label">→ 已勾選</span>
-    <govtw-checkbox label="選項" checked></govtw-checkbox>
-  </div>
-</div>
+<DemoBlock>
+  <govtw-checkbox label="未勾選"></govtw-checkbox>
+  <govtw-checkbox label="已勾選" checked></govtw-checkbox>
+
+  <template #code>
+
+```html
+<govtw-checkbox label="未勾選"></govtw-checkbox>
+<govtw-checkbox label="已勾選" checked></govtw-checkbox>
+```
+
+  </template>
+</DemoBlock>
 
 ### Disabled（停用）
 
 透明度降至 50%，游標變為禁止符號。
 
-<div class="demo-block demo-state">
-  <div class="demo-state-item">
-    <span class="demo-state-label">預設</span>
-    <govtw-checkbox label="選項"></govtw-checkbox>
-  </div>
-  <div class="demo-state-item">
-    <span class="demo-state-label">→ Disabled</span>
-    <govtw-checkbox label="選項" disabled></govtw-checkbox>
-  </div>
-</div>
+<DemoBlock>
+  <govtw-checkbox label="預設"></govtw-checkbox>
+  <govtw-checkbox label="停用" disabled></govtw-checkbox>
+
+  <template #code>
+
+```html
+<govtw-checkbox label="預設"></govtw-checkbox>
+<govtw-checkbox label="停用" disabled></govtw-checkbox>
+```
+
+  </template>
+</DemoBlock>
 
 <script setup>
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  const applyStyle = (id, fn) => {
-    const el = document.getElementById(id)
-    if (!el) return
-    const apply = () => {
-      const box = el.shadowRoot?.querySelector('.checkbox__box')
-      if (box) fn(box)
-      else requestAnimationFrame(apply)
+  const findInShadowRoots = (id) => {
+    const hosts = document.querySelectorAll('.demo-block-preview')
+    for (const host of hosts) {
+      const shadow = host.shadowRoot
+      if (!shadow) continue
+      const el = shadow.querySelector(`#${id}`)
+      if (el) return el
     }
-    apply()
+    return null
+  }
+
+  const applyStyle = (id, fn) => {
+    const attempt = () => {
+      const el = findInShadowRoots(id)
+      if (!el) {
+        requestAnimationFrame(attempt)
+        return
+      }
+      const apply = () => {
+        const box = el.shadowRoot?.querySelector('.checkbox__box')
+        if (box) fn(box)
+        else requestAnimationFrame(apply)
+      }
+      apply()
+    }
+    setTimeout(attempt, 100)
   }
 
   applyStyle('demo-hover', (box) => {
@@ -103,44 +137,10 @@ onMounted(() => {
   })
 
   applyStyle('demo-focus', (box) => {
-    box.style.boxShadow = '0 0 0 3px #fd0'
+    box.style.boxShadow = '0 0 0 var(--govtw-checkbox-focus-width) var(--govtw-checkbox-focus-color)'
   })
 })
 </script>
-
-<style>
-.demo-block {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  padding: 24px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  margin: 16px 0;
-}
-
-.demo-vertical {
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.demo-state {
-  gap: 32px;
-}
-
-.demo-state-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.demo-state-label {
-  font-size: 0.8rem;
-  color: var(--vp-c-text-2);
-}
-</style>
 
 ## 使用方式
 

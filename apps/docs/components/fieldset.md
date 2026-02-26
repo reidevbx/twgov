@@ -8,29 +8,53 @@ Fieldset 用於將相關的表單欄位組合在一起，讓使用者理解欄�
 
 ### 基本用法
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-fieldset legend="聯絡資訊" size="l">
     <govtw-input label="姓名" name="name"></govtw-input>
     <govtw-input label="電子信箱" name="email" type="email" hint="例如：user@example.gov.tw"></govtw-input>
     <govtw-input label="電話" name="phone" type="tel" width="10"></govtw-input>
   </govtw-fieldset>
-</div>
+
+  <template #code>
+
+```html
+<govtw-fieldset legend="聯絡資訊" size="l">
+  <govtw-input label="姓名" name="name"></govtw-input>
+  <govtw-input label="電子信箱" name="email" type="email" hint="例如：user@example.gov.tw"></govtw-input>
+  <govtw-input label="電話" name="phone" type="tel" width="10"></govtw-input>
+</govtw-fieldset>
+```
+
+  </template>
+</DemoBlock>
 
 ### 含提示文字
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-fieldset legend="寄送地址" hint="請填寫您希望收到文件的地址">
     <govtw-input label="縣市" width="10"></govtw-input>
     <govtw-input label="區鄉鎮市" width="10"></govtw-input>
     <govtw-input label="街道地址"></govtw-input>
   </govtw-fieldset>
-</div>
+
+  <template #code>
+
+```html
+<govtw-fieldset legend="寄送地址" hint="請填寫您希望收到文件的地址">
+  <govtw-input label="縣市" width="10"></govtw-input>
+  <govtw-input label="區鄉鎮市" width="10"></govtw-input>
+  <govtw-input label="街道地址"></govtw-input>
+</govtw-fieldset>
+```
+
+  </template>
+</DemoBlock>
 
 ### 錯誤狀態
 
 Fieldset 層級的錯誤訊息會在左側顯示紅色邊線，標示整組欄位有問題。
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-fieldset legend="出生日期" error="請填寫完整的出生日期" hint="例如：1990 年 3 月 15 日">
     <div style="display: flex; gap: 12px;">
       <govtw-input label="年" width="4" error=" "></govtw-input>
@@ -38,25 +62,21 @@ Fieldset 層級的錯誤訊息會在左側顯示紅色邊線，標示整組欄�
       <govtw-input label="日" width="2" error=" "></govtw-input>
     </div>
   </govtw-fieldset>
-</div>
 
-<style>
-.demo-block {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  padding: 24px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  margin: 16px 0;
-}
+  <template #code>
 
-.demo-vertical {
-  flex-direction: column;
-  align-items: stretch;
-}
-</style>
+```html
+<govtw-fieldset legend="出生日期" error="請填寫完整的出生日期" hint="例如：1990 年 3 月 15 日">
+  <div style="display: flex; gap: 12px;">
+    <govtw-input label="年" width="4" error=" "></govtw-input>
+    <govtw-input label="月" width="2" error=" "></govtw-input>
+    <govtw-input label="日" width="2" error=" "></govtw-input>
+  </div>
+</govtw-fieldset>
+```
+
+  </template>
+</DemoBlock>
 
 ## 使用方式
 

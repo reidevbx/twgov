@@ -10,7 +10,7 @@ export class GovButton extends LitElement {
 
   @property({ type: String, reflect: true }) variant: 'primary' | 'secondary' | 'danger' = 'primary';
   @property({ type: Boolean, reflect: true }) disabled = false;
-  @property({ type: String }) size: 'sm' | 'md' | 'lg' = 'md';
+  @property({ type: String, reflect: true }) size: 'sm' | 'md' | 'lg' = 'md';
 
   static styles = css`
     :host {
@@ -28,10 +28,10 @@ export class GovButton extends LitElement {
      */
 
     button {
-      font-family: var(--govtw-font-sans, system-ui, sans-serif);
-      font-weight: 500;
+      font-family: var(--govtw-button-font-family);
+      font-weight: var(--govtw-button-font-weight);
       border: 2px solid transparent;
-      border-radius: var(--govtw-radius-md, 8px);
+      border-radius: var(--govtw-button-border-radius);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -43,15 +43,15 @@ export class GovButton extends LitElement {
       -webkit-appearance: none;
     }
 
-    /* Sizes */
-    :host([size="sm"]) button {
-      font-size: var(--govtw-font-size-sm, 0.875rem);
-      padding: var(--govtw-spacing-1, 4px) var(--govtw-spacing-3, 12px);
-    }
-
+    /* Sizes — default (md) */
     button {
       font-size: var(--govtw-font-size-base, 1rem);
       padding: var(--govtw-spacing-2, 8px) var(--govtw-spacing-4, 16px);
+    }
+
+    :host([size="sm"]) button {
+      font-size: var(--govtw-font-size-sm, 0.875rem);
+      padding: var(--govtw-spacing-1, 4px) var(--govtw-spacing-3, 12px);
     }
 
     :host([size="lg"]) button {
@@ -61,10 +61,10 @@ export class GovButton extends LitElement {
 
     /* ===== Primary ===== */
     :host([variant="primary"]) button {
-      --_bg: var(--govtw-color-brand-primary, #2C84B2);
+      --_bg: var(--govtw-button-primary-bg);
       --_shadow-color: color-mix(in srgb, var(--_bg) 60%, black);
       background: var(--_bg);
-      color: var(--govtw-color-text-on-primary, #FFFFFF);
+      color: var(--govtw-button-primary-color);
     }
     :host([variant="primary"]) button:hover:not(:disabled) {
       background: color-mix(in srgb, var(--_bg) 85%, black);
@@ -75,11 +75,11 @@ export class GovButton extends LitElement {
 
     /* ===== Secondary ===== */
     :host([variant="secondary"]) button {
-      --_bg: var(--govtw-color-bg-surface, #EAF0F0);
+      --_bg: var(--govtw-button-secondary-bg);
       --_shadow-color: color-mix(in srgb, var(--_bg) 40%, black);
       background: var(--_bg);
-      color: var(--govtw-color-text-primary, #1A1A1A);
-      border-color: var(--govtw-color-border-default, #B0C4C5);
+      color: var(--govtw-button-secondary-color);
+      border-color: var(--govtw-button-secondary-border-color);
     }
     :host([variant="secondary"]) button:hover:not(:disabled) {
       background: color-mix(in srgb, var(--_bg) 80%, black);
@@ -90,10 +90,10 @@ export class GovButton extends LitElement {
 
     /* ===== Danger ===== */
     :host([variant="danger"]) button {
-      --_bg: var(--govtw-color-feedback-error, #C3362B);
+      --_bg: var(--govtw-button-danger-bg);
       --_shadow-color: color-mix(in srgb, var(--_bg) 60%, black);
       background: var(--_bg);
-      color: var(--govtw-color-text-on-primary, #FFFFFF);
+      color: var(--govtw-button-danger-color);
     }
     :host([variant="danger"]) button:hover:not(:disabled) {
       background: color-mix(in srgb, var(--_bg) 85%, black);
@@ -112,7 +112,7 @@ export class GovButton extends LitElement {
       outline: none;
       box-shadow:
         inset 0 -3px 0 var(--_shadow-color),
-        0 0 0 3px #fd0;
+        0 0 0 var(--govtw-button-focus-width) var(--govtw-button-focus-color);
     }
 
     :host(:focus-within) {
@@ -121,7 +121,7 @@ export class GovButton extends LitElement {
 
     /* ===== Disabled ===== */
     button:disabled {
-      opacity: 0.5;
+      opacity: var(--govtw-button-disabled-opacity);
       cursor: not-allowed;
     }
     button:disabled:active {

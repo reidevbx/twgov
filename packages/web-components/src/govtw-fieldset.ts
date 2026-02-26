@@ -21,7 +21,7 @@ export class GovFieldset extends LitElement {
      */
 
     .fieldset-wrapper--error {
-      border-left: 4px solid var(--govtw-color-feedback-error, #C3362B);
+      border-left: 4px solid var(--govtw-fieldset-error-color);
       padding-left: var(--govtw-spacing-4, 16px);
     }
 
@@ -34,51 +34,51 @@ export class GovFieldset extends LitElement {
 
     /* ===== Legend ===== */
     .fieldset__legend {
-      font-family: var(--govtw-font-sans, system-ui, sans-serif);
+      font-family: var(--govtw-font-sans);
       font-weight: 700;
-      color: var(--govtw-color-text-primary, #1A1A1A);
+      color: var(--govtw-fieldset-legend-color);
       padding: 0;
       margin-bottom: var(--govtw-spacing-4, 16px);
     }
 
     :host([size="xl"]) .fieldset__legend {
-      font-size: var(--govtw-font-size-4xl, 2.25rem);
+      font-size: var(--govtw-font-size-4xl);
       line-height: 1.2;
       margin-bottom: var(--govtw-spacing-6, 24px);
     }
 
     :host([size="l"]) .fieldset__legend {
-      font-size: var(--govtw-font-size-3xl, 1.875rem);
+      font-size: var(--govtw-font-size-3xl);
       line-height: 1.3;
       margin-bottom: var(--govtw-spacing-6, 24px);
     }
 
     :host([size="m"]) .fieldset__legend {
-      font-size: var(--govtw-font-size-2xl, 1.5rem);
+      font-size: var(--govtw-font-size-2xl);
       line-height: 1.4;
     }
 
     :host([size="s"]) .fieldset__legend {
-      font-size: var(--govtw-font-size-xl, 1.25rem);
+      font-size: var(--govtw-font-size-xl);
       line-height: 1.4;
     }
 
     /* ===== Hint ===== */
     .fieldset__hint {
       display: block;
-      font-family: var(--govtw-font-sans, system-ui, sans-serif);
-      font-size: var(--govtw-font-size-base, 1rem);
-      color: var(--govtw-color-text-secondary, #595959);
+      font-family: var(--govtw-font-sans);
+      font-size: var(--govtw-font-size-base);
+      color: var(--govtw-fieldset-hint-color);
       margin-bottom: var(--govtw-spacing-4, 16px);
     }
 
     /* ===== Error ===== */
     .fieldset__error {
       display: block;
-      font-family: var(--govtw-font-sans, system-ui, sans-serif);
-      font-size: var(--govtw-font-size-base, 1rem);
+      font-family: var(--govtw-font-sans);
+      font-size: var(--govtw-font-size-base);
       font-weight: 700;
-      color: var(--govtw-color-feedback-error, #C3362B);
+      color: var(--govtw-fieldset-error-color);
       margin-bottom: var(--govtw-spacing-4, 16px);
     }
 

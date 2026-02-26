@@ -8,68 +8,101 @@
 
 ### 基本用法
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-textarea label="詳細說明" name="description"></govtw-textarea>
-</div>
+
+  <template #code>
+
+```html
+<govtw-textarea label="詳細說明" name="description"></govtw-textarea>
+```
+
+  </template>
+</DemoBlock>
 
 ### 含提示文字
 
 提示文字用於說明欄位的填寫格式或注意事項。
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-textarea label="申請原因" hint="請詳細說明您的申請原因，以利審核人員了解情況。" name="reason"></govtw-textarea>
-</div>
+
+  <template #code>
+
+```html
+<govtw-textarea label="申請原因" hint="請詳細說明您的申請原因，以利審核人員了解情況。" name="reason"></govtw-textarea>
+```
+
+  </template>
+</DemoBlock>
 
 ### 字數限制
 
 設定 `maxlength` 後，會顯示剩餘可輸入字數。超過限制時以紅色提示。
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-textarea label="意見回饋" hint="請提供您對本服務的建議" maxlength="200" name="feedback"></govtw-textarea>
-</div>
+
+  <template #code>
+
+```html
+<govtw-textarea label="意見回饋" hint="請提供您對本服務的建議" maxlength="200" name="feedback"></govtw-textarea>
+```
+
+  </template>
+</DemoBlock>
 
 ### 調整行數
 
 透過 `rows` 屬性調整預設顯示行數。
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-stack space="4">
     <govtw-textarea label="簡短備註" rows="3" name="short-note"></govtw-textarea>
     <govtw-textarea label="詳細描述" rows="8" name="long-note"></govtw-textarea>
   </govtw-stack>
-</div>
+
+  <template #code>
+
+```html
+<govtw-stack space="4">
+  <govtw-textarea label="簡短備註" rows="3" name="short-note"></govtw-textarea>
+  <govtw-textarea label="詳細描述" rows="8" name="long-note"></govtw-textarea>
+</govtw-stack>
+```
+
+  </template>
+</DemoBlock>
 
 ### 錯誤狀態
 
 當驗證失敗時，顯示錯誤訊息並以紅色邊框和左側紅線標示。
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-textarea label="問題描述" error="請填寫問題描述" name="issue"></govtw-textarea>
-</div>
+
+  <template #code>
+
+```html
+<govtw-textarea label="問題描述" error="請填寫問題描述" name="issue"></govtw-textarea>
+```
+
+  </template>
+</DemoBlock>
 
 ### 停用狀態
 
-<div class="demo-block demo-vertical">
+<DemoBlock direction="column">
   <govtw-textarea label="不可編輯" value="此欄位無法修改" disabled></govtw-textarea>
-</div>
 
-<style>
-.demo-block {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  padding: 24px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  margin: 16px 0;
-}
+  <template #code>
 
-.demo-vertical {
-  flex-direction: column;
-  align-items: stretch;
-}
-</style>
+```html
+<govtw-textarea label="不可編輯" value="此欄位無法修改" disabled></govtw-textarea>
+```
+
+  </template>
+</DemoBlock>
 
 ## 使用方式
 

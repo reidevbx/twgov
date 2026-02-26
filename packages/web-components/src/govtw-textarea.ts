@@ -48,48 +48,48 @@ export class GovTextarea extends LitElement {
     }
 
     .form-group--error {
-      border-left: 4px solid var(--govtw-color-feedback-error, #C3362B);
+      border-left: 4px solid var(--govtw-textarea-error-color);
       padding-left: var(--govtw-spacing-4, 16px);
     }
 
     /* ===== Label ===== */
     .label {
       display: block;
-      font-family: var(--govtw-font-sans, system-ui, sans-serif);
-      font-size: var(--govtw-font-size-base, 1rem);
+      font-family: var(--govtw-textarea-font-family);
+      font-size: var(--govtw-textarea-font-size);
       font-weight: 700;
-      color: var(--govtw-color-text-primary, #1A1A1A);
+      color: var(--govtw-textarea-color);
       margin-bottom: var(--govtw-spacing-1, 4px);
     }
 
     /* ===== Hint ===== */
     .hint {
       display: block;
-      font-family: var(--govtw-font-sans, system-ui, sans-serif);
-      font-size: var(--govtw-font-size-base, 1rem);
-      color: var(--govtw-color-text-secondary, #595959);
+      font-family: var(--govtw-textarea-font-family);
+      font-size: var(--govtw-textarea-font-size);
+      color: var(--govtw-textarea-hint-color);
       margin-bottom: var(--govtw-spacing-2, 8px);
     }
 
     /* ===== Error message ===== */
     .error-message {
       display: block;
-      font-family: var(--govtw-font-sans, system-ui, sans-serif);
-      font-size: var(--govtw-font-size-base, 1rem);
+      font-family: var(--govtw-textarea-font-family);
+      font-size: var(--govtw-textarea-font-size);
       font-weight: 700;
-      color: var(--govtw-color-feedback-error, #C3362B);
+      color: var(--govtw-textarea-error-color);
       margin-bottom: var(--govtw-spacing-2, 8px);
     }
 
     /* ===== Textarea ===== */
     .textarea {
-      font-family: var(--govtw-font-sans, system-ui, sans-serif);
-      font-size: var(--govtw-font-size-base, 1rem);
+      font-family: var(--govtw-textarea-font-family);
+      font-size: var(--govtw-textarea-font-size);
       line-height: 1.5;
-      color: var(--govtw-color-text-primary, #1A1A1A);
-      background: var(--govtw-color-bg-canvas, #FFFFFF);
-      border: 2px solid var(--govtw-color-text-primary, #1A1A1A);
-      border-radius: var(--govtw-radius-sm, 4px);
+      color: var(--govtw-textarea-color);
+      background: var(--govtw-textarea-bg);
+      border: 2px solid var(--govtw-textarea-border-color);
+      border-radius: var(--govtw-textarea-border-radius);
       padding: var(--govtw-spacing-2, 8px);
       width: 100%;
       box-sizing: border-box;
@@ -101,38 +101,38 @@ export class GovTextarea extends LitElement {
 
     /* ===== Focus — 黃色 ring + 黑色粗邊框 ===== */
     .textarea:focus {
-      outline: 3px solid #fd0;
+      outline: var(--govtw-textarea-focus-width) solid var(--govtw-textarea-focus-color);
       outline-offset: 0;
-      border-color: var(--govtw-color-text-primary, #1A1A1A);
-      box-shadow: inset 0 0 0 1px var(--govtw-color-text-primary, #1A1A1A);
+      border-color: var(--govtw-textarea-border-color);
+      box-shadow: inset 0 0 0 1px var(--govtw-textarea-border-color);
     }
 
     /* ===== Error ===== */
     .textarea--error {
-      border-color: var(--govtw-color-feedback-error, #C3362B);
+      border-color: var(--govtw-textarea-error-color);
     }
 
     .textarea--error:focus {
-      border-color: var(--govtw-color-text-primary, #1A1A1A);
+      border-color: var(--govtw-textarea-border-color);
     }
 
     /* ===== Disabled ===== */
     .textarea:disabled {
       opacity: 0.5;
       cursor: not-allowed;
-      background: var(--govtw-color-bg-surface, #EAF0F0);
+      background: var(--govtw-textarea-disabled-bg);
     }
 
     /* ===== 字數計數 ===== */
     .character-count {
-      font-family: var(--govtw-font-sans, system-ui, sans-serif);
-      font-size: var(--govtw-font-size-sm, 0.875rem);
-      color: var(--govtw-color-text-secondary, #595959);
+      font-family: var(--govtw-textarea-font-family);
+      font-size: var(--govtw-font-size-sm);
+      color: var(--govtw-textarea-hint-color);
       margin-top: var(--govtw-spacing-1, 4px);
     }
 
     .character-count--over {
-      color: var(--govtw-color-feedback-error, #C3362B);
+      color: var(--govtw-textarea-error-color);
       font-weight: 700;
     }
   `;

@@ -1,4 +1,13 @@
 import { defineConfig } from 'vitepress'
+import { readFileSync } from 'node:fs'
+import { resolve, dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const tokensCss = readFileSync(
+  resolve(__dirname, '../../../packages/tokens/tokens.css'),
+  'utf-8'
+)
 
 export default defineConfig({
   lang: 'zh-TW',
@@ -24,6 +33,9 @@ export default defineConfig({
   vite: {
     resolve: {
       conditions: ['source'],
+    },
+    define: {
+      __GOVTW_TOKENS_CSS__: JSON.stringify(tokensCss),
     },
   },
 

@@ -50,8 +50,8 @@ export class GovCheckbox extends LitElement {
     /* ===== 原生 input，不可見但可操作 ===== */
     .checkbox__input {
       position: absolute;
-      width: 40px;
-      height: 40px;
+      width: var(--govtw-checkbox-size);
+      height: var(--govtw-checkbox-size);
       margin: 0;
       opacity: 0;
       cursor: pointer;
@@ -67,11 +67,11 @@ export class GovCheckbox extends LitElement {
       position: relative;
       display: inline-flex;
       flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-      border: 2px solid var(--govtw-color-text-primary, #1A1A1A);
-      border-radius: var(--govtw-radius-sm, 4px);
-      background: var(--govtw-color-bg-canvas, #FFFFFF);
+      width: var(--govtw-checkbox-size);
+      height: var(--govtw-checkbox-size);
+      border: 2px solid var(--govtw-checkbox-border-color);
+      border-radius: var(--govtw-checkbox-border-radius);
+      background: var(--govtw-checkbox-bg);
       box-sizing: border-box;
       transition: border-color 0.15s, border-width 0.1s;
     }
@@ -84,15 +84,15 @@ export class GovCheckbox extends LitElement {
       left: 7px;
       width: 20px;
       height: 10px;
-      border-left: 4px solid var(--govtw-color-brand-primary, #2C84B2);
-      border-bottom: 4px solid var(--govtw-color-brand-primary, #2C84B2);
+      border-left: 4px solid var(--govtw-checkbox-check-color);
+      border-bottom: 4px solid var(--govtw-checkbox-check-color);
       transform: rotate(-45deg);
       opacity: 0;
     }
 
     /* ===== Checked ===== */
     .checkbox__input:checked + .checkbox__box {
-      border-color: var(--govtw-color-brand-primary, #2C84B2);
+      border-color: var(--govtw-checkbox-check-color);
     }
 
     .checkbox__input:checked + .checkbox__box::after {
@@ -112,7 +112,7 @@ export class GovCheckbox extends LitElement {
 
     /* ===== Focus — 黃色 ring ===== */
     .checkbox__input:focus-visible + .checkbox__box {
-      box-shadow: 0 0 0 3px #fd0;
+      box-shadow: 0 0 0 var(--govtw-checkbox-focus-width) var(--govtw-checkbox-focus-color);
     }
 
     :host(:focus-within) {
@@ -135,9 +135,9 @@ export class GovCheckbox extends LitElement {
 
     /* ===== 標籤文字 ===== */
     .checkbox__label {
-      font-family: var(--govtw-font-sans, system-ui, sans-serif);
-      font-size: var(--govtw-font-size-base, 1rem);
-      color: var(--govtw-color-text-primary, #1A1A1A);
+      font-family: var(--govtw-font-sans);
+      font-size: var(--govtw-font-size-base);
+      color: var(--govtw-checkbox-label-color);
       line-height: 1.5;
       padding-top: 8px;
       user-select: none;

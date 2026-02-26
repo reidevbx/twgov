@@ -1,48 +1,206 @@
+/* ==========================================================================
+ * Primitive tokens — 原始設計數值
+ * ========================================================================== */
 :root {
-  --govtw-color-brand-primary: #2C84B2;
-  --govtw-color-brand-secondary: #618D90;
-  --govtw-color-text-primary: #1A1A1A;
-  --govtw-color-text-secondary: #595959;
-  --govtw-color-text-on-primary: #FFFFFF;
-  --govtw-color-bg-canvas: #FFFFFF;
-  --govtw-color-bg-surface: #EAF0F0;
-  --govtw-color-border-default: #B0C4C5;
-  --govtw-color-feedback-error: #C3362B;
-  --govtw-color-feedback-success: #00804A;
-  --govtw-color-feedback-warning: #F0AB00;
-  --govtw-color-feedback-info: #2C84B2;
-  --govtw-spacing-1: 4px;
-  --govtw-spacing-2: 8px;
-  --govtw-spacing-3: 12px;
-  --govtw-spacing-4: 16px;
-  --govtw-spacing-6: 24px;
-  --govtw-spacing-8: 32px;
-  --govtw-spacing-12: 48px;
-  --govtw-radius-sm: 4px;
-  --govtw-radius-md: 8px;
-  --govtw-radius-lg: 12px;
-  --govtw-font-sans: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
-  --govtw-font-size-sm: 0.875rem;
-  --govtw-font-size-base: 1rem;
-  --govtw-font-size-lg: 1.125rem;
-  --govtw-font-size-xl: 1.25rem;
-  --govtw-font-size-2xl: 1.5rem;
-  --govtw-font-size-3xl: 1.875rem;
+  --govtw-primitive-color-blue-500: #2C84B2;
+  --govtw-primitive-color-blue-light-500: #6B9FE8;
+  --govtw-primitive-color-teal-50: #EAF0F0;
+  --govtw-primitive-color-teal-100: #B0C4C5;
+  --govtw-primitive-color-teal-500: #618D90;
+  --govtw-primitive-color-teal-700: #3A5050;
+  --govtw-primitive-color-teal-800: #1E2A2A;
+  --govtw-primitive-color-teal-light-500: #89B5B8;
+  --govtw-primitive-color-neutral-0: #FFFFFF;
+  --govtw-primitive-color-neutral-100: #E8E8E8;
+  --govtw-primitive-color-neutral-400: #A0A0A0;
+  --govtw-primitive-color-neutral-600: #595959;
+  --govtw-primitive-color-neutral-800: #1A1A1A;
+  --govtw-primitive-color-red-300: #F87171;
+  --govtw-primitive-color-red-500: #C3362B;
+  --govtw-primitive-color-green-300: #4ADE80;
+  --govtw-primitive-color-green-500: #00804A;
+  --govtw-primitive-color-yellow-300: #FBBF24;
+  --govtw-primitive-color-yellow-500: #F0AB00;
+  --govtw-primitive-color-yellow-focus: #fd0;
+  --govtw-primitive-color-purple-500: #6B3FA0;
+  --govtw-primitive-space-1: 4px;
+  --govtw-primitive-space-2: 8px;
+  --govtw-primitive-space-3: 12px;
+  --govtw-primitive-space-4: 16px;
+  --govtw-primitive-space-5: 20px;
+  --govtw-primitive-space-6: 24px;
+  --govtw-primitive-space-8: 32px;
+  --govtw-primitive-space-10: 40px;
+  --govtw-primitive-space-12: 48px;
+  --govtw-primitive-space-16: 64px;
+  --govtw-primitive-radius-sm: 4px;
+  --govtw-primitive-radius-md: 8px;
+  --govtw-primitive-radius-lg: 12px;
+  --govtw-primitive-font-family-sans: "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --govtw-primitive-font-family-mono: "Noto Sans Mono", "SF Mono", Monaco, "Cascadia Code", Menlo, monospace;
+  --govtw-primitive-font-size-xs: 0.75rem;
+  --govtw-primitive-font-size-sm: 0.875rem;
+  --govtw-primitive-font-size-base: 1rem;
+  --govtw-primitive-font-size-lg: 1.125rem;
+  --govtw-primitive-font-size-xl: 1.25rem;
+  --govtw-primitive-font-size-2xl: 1.5rem;
+  --govtw-primitive-font-size-3xl: 1.875rem;
+  --govtw-primitive-font-size-4xl: 2.25rem;
+  --govtw-primitive-font-weight-regular: 400;
+  --govtw-primitive-font-weight-medium: 500;
+  --govtw-primitive-font-weight-bold: 700;
+  --govtw-primitive-focus-width: 3px;
 }
 
+/* ==========================================================================
+ * Semantic tokens — 語意層（以用途命名，引用原始層）
+ * ========================================================================== */
+:root {
+  --govtw-color-brand-primary: var(--govtw-primitive-color-blue-500);
+  --govtw-color-brand-secondary: var(--govtw-primitive-color-teal-500);
+  --govtw-color-text-primary: var(--govtw-primitive-color-neutral-800);
+  --govtw-color-text-secondary: var(--govtw-primitive-color-neutral-600);
+  --govtw-color-text-on-primary: var(--govtw-primitive-color-neutral-0);
+  --govtw-color-bg-canvas: var(--govtw-primitive-color-neutral-0);
+  --govtw-color-bg-surface: var(--govtw-primitive-color-teal-50);
+  --govtw-color-border-default: var(--govtw-primitive-color-teal-100);
+  --govtw-color-feedback-error: var(--govtw-primitive-color-red-500);
+  --govtw-color-feedback-success: var(--govtw-primitive-color-green-500);
+  --govtw-color-feedback-warning: var(--govtw-primitive-color-yellow-500);
+  --govtw-color-feedback-info: var(--govtw-primitive-color-blue-500);
+  --govtw-color-link-default: var(--govtw-primitive-color-blue-500);
+  --govtw-color-link-visited: var(--govtw-primitive-color-purple-500);
+  --govtw-spacing-1: var(--govtw-primitive-space-1);
+  --govtw-spacing-2: var(--govtw-primitive-space-2);
+  --govtw-spacing-3: var(--govtw-primitive-space-3);
+  --govtw-spacing-4: var(--govtw-primitive-space-4);
+  --govtw-spacing-5: var(--govtw-primitive-space-5);
+  --govtw-spacing-6: var(--govtw-primitive-space-6);
+  --govtw-spacing-8: var(--govtw-primitive-space-8);
+  --govtw-spacing-10: var(--govtw-primitive-space-10);
+  --govtw-spacing-12: var(--govtw-primitive-space-12);
+  --govtw-spacing-16: var(--govtw-primitive-space-16);
+  --govtw-focus-color: var(--govtw-primitive-color-yellow-focus);
+  --govtw-focus-width: var(--govtw-primitive-focus-width);
+  --govtw-radius-sm: var(--govtw-primitive-radius-sm);
+  --govtw-radius-md: var(--govtw-primitive-radius-md);
+  --govtw-radius-lg: var(--govtw-primitive-radius-lg);
+  --govtw-font-sans: var(--govtw-primitive-font-family-sans);
+  --govtw-font-mono: var(--govtw-primitive-font-family-mono);
+  --govtw-font-family-base: var(--govtw-primitive-font-family-sans);
+  --govtw-font-family-mono: var(--govtw-primitive-font-family-mono);
+  --govtw-font-size-xs: var(--govtw-primitive-font-size-xs);
+  --govtw-font-size-sm: var(--govtw-primitive-font-size-sm);
+  --govtw-font-size-base: var(--govtw-primitive-font-size-base);
+  --govtw-font-size-lg: var(--govtw-primitive-font-size-lg);
+  --govtw-font-size-xl: var(--govtw-primitive-font-size-xl);
+  --govtw-font-size-2xl: var(--govtw-primitive-font-size-2xl);
+  --govtw-font-size-3xl: var(--govtw-primitive-font-size-3xl);
+  --govtw-font-size-4xl: var(--govtw-primitive-font-size-4xl);
+  --govtw-font-weight-regular: var(--govtw-primitive-font-weight-regular);
+  --govtw-font-weight-medium: var(--govtw-primitive-font-weight-medium);
+  --govtw-font-weight-bold: var(--govtw-primitive-font-weight-bold);
+
+  /* Space aliases — 佈局元件使用 --govtw-space-{n} */
+  --govtw-space-1: var(--govtw-spacing-1);
+  --govtw-space-2: var(--govtw-spacing-2);
+  --govtw-space-3: var(--govtw-spacing-3);
+  --govtw-space-4: var(--govtw-spacing-4);
+  --govtw-space-5: var(--govtw-spacing-5);
+  --govtw-space-6: var(--govtw-spacing-6);
+  --govtw-space-8: var(--govtw-spacing-8);
+  --govtw-space-10: var(--govtw-spacing-10);
+  --govtw-space-12: var(--govtw-spacing-12);
+  --govtw-space-16: var(--govtw-spacing-16);
+}
+
+/* ==========================================================================
+ * Component tokens — 元件層（可覆蓋以客製化個別元件）
+ * ========================================================================== */
+:root {
+  --govtw-button-font-family: var(--govtw-font-sans);
+  --govtw-button-font-weight: var(--govtw-primitive-font-weight-medium);
+  --govtw-button-border-radius: var(--govtw-radius-md);
+  --govtw-button-primary-bg: var(--govtw-color-brand-primary);
+  --govtw-button-primary-color: var(--govtw-color-text-on-primary);
+  --govtw-button-secondary-bg: var(--govtw-color-bg-surface);
+  --govtw-button-secondary-color: var(--govtw-color-text-primary);
+  --govtw-button-secondary-border-color: var(--govtw-color-border-default);
+  --govtw-button-danger-bg: var(--govtw-color-feedback-error);
+  --govtw-button-danger-color: var(--govtw-color-text-on-primary);
+  --govtw-button-disabled-opacity: 0.5;
+  --govtw-button-focus-color: var(--govtw-focus-color);
+  --govtw-button-focus-width: var(--govtw-focus-width);
+  --govtw-input-font-family: var(--govtw-font-sans);
+  --govtw-input-font-size: var(--govtw-font-size-base);
+  --govtw-input-color: var(--govtw-color-text-primary);
+  --govtw-input-bg: var(--govtw-color-bg-canvas);
+  --govtw-input-border-color: var(--govtw-color-text-primary);
+  --govtw-input-border-radius: var(--govtw-radius-sm);
+  --govtw-input-hint-color: var(--govtw-color-text-secondary);
+  --govtw-input-error-color: var(--govtw-color-feedback-error);
+  --govtw-input-disabled-bg: var(--govtw-color-bg-surface);
+  --govtw-input-focus-color: var(--govtw-focus-color);
+  --govtw-input-focus-width: var(--govtw-focus-width);
+  --govtw-checkbox-size: 40px;
+  --govtw-checkbox-border-color: var(--govtw-color-text-primary);
+  --govtw-checkbox-border-radius: var(--govtw-radius-sm);
+  --govtw-checkbox-bg: var(--govtw-color-bg-canvas);
+  --govtw-checkbox-check-color: var(--govtw-color-brand-primary);
+  --govtw-checkbox-label-color: var(--govtw-color-text-primary);
+  --govtw-checkbox-focus-color: var(--govtw-focus-color);
+  --govtw-checkbox-focus-width: var(--govtw-focus-width);
+  --govtw-textarea-font-family: var(--govtw-font-sans);
+  --govtw-textarea-font-size: var(--govtw-font-size-base);
+  --govtw-textarea-color: var(--govtw-color-text-primary);
+  --govtw-textarea-bg: var(--govtw-color-bg-canvas);
+  --govtw-textarea-border-color: var(--govtw-color-text-primary);
+  --govtw-textarea-border-radius: var(--govtw-radius-sm);
+  --govtw-textarea-hint-color: var(--govtw-color-text-secondary);
+  --govtw-textarea-error-color: var(--govtw-color-feedback-error);
+  --govtw-textarea-disabled-bg: var(--govtw-color-bg-surface);
+  --govtw-textarea-focus-color: var(--govtw-focus-color);
+  --govtw-textarea-focus-width: var(--govtw-focus-width);
+  --govtw-fieldset-legend-color: var(--govtw-color-text-primary);
+  --govtw-fieldset-hint-color: var(--govtw-color-text-secondary);
+  --govtw-fieldset-error-color: var(--govtw-color-feedback-error);
+}
+
+/* ==========================================================================
+ * Theme: dark — 深色主題（系統偏好自動套用 + data-theme 手動切換）
+ * ========================================================================== */
 @media (prefers-color-scheme: dark) {
-  :root {
-  --govtw-color-brand-primary: #6B9FE8;
-  --govtw-color-brand-secondary: #89B5B8;
-  --govtw-color-text-primary: #E8E8E8;
-  --govtw-color-text-secondary: #A0A0A0;
-  --govtw-color-text-on-primary: #1A1A1A;
-  --govtw-color-bg-canvas: #1A1A1A;
-  --govtw-color-bg-surface: #1E2A2A;
-  --govtw-color-border-default: #3A5050;
-  --govtw-color-feedback-error: #F87171;
-  --govtw-color-feedback-success: #4ADE80;
-  --govtw-color-feedback-warning: #FBBF24;
-  --govtw-color-feedback-info: #6B9FE8;
+  :root:not([data-theme]) {
+  --govtw-color-brand-primary: var(--govtw-primitive-color-blue-light-500);
+  --govtw-color-brand-secondary: var(--govtw-primitive-color-teal-light-500);
+  --govtw-color-text-primary: var(--govtw-primitive-color-neutral-100);
+  --govtw-color-text-secondary: var(--govtw-primitive-color-neutral-400);
+  --govtw-color-text-on-primary: var(--govtw-primitive-color-neutral-800);
+  --govtw-color-bg-canvas: var(--govtw-primitive-color-neutral-800);
+  --govtw-color-bg-surface: var(--govtw-primitive-color-teal-800);
+  --govtw-color-border-default: var(--govtw-primitive-color-teal-700);
+  --govtw-color-feedback-error: var(--govtw-primitive-color-red-300);
+  --govtw-color-feedback-success: var(--govtw-primitive-color-green-300);
+  --govtw-color-feedback-warning: var(--govtw-primitive-color-yellow-300);
+  --govtw-color-feedback-info: var(--govtw-primitive-color-blue-light-500);
+  --govtw-color-link-default: var(--govtw-primitive-color-blue-light-500);
+  --govtw-color-link-visited: var(--govtw-primitive-color-purple-500);
   }
+}
+
+[data-theme="dark"] {
+  --govtw-color-brand-primary: var(--govtw-primitive-color-blue-light-500);
+  --govtw-color-brand-secondary: var(--govtw-primitive-color-teal-light-500);
+  --govtw-color-text-primary: var(--govtw-primitive-color-neutral-100);
+  --govtw-color-text-secondary: var(--govtw-primitive-color-neutral-400);
+  --govtw-color-text-on-primary: var(--govtw-primitive-color-neutral-800);
+  --govtw-color-bg-canvas: var(--govtw-primitive-color-neutral-800);
+  --govtw-color-bg-surface: var(--govtw-primitive-color-teal-800);
+  --govtw-color-border-default: var(--govtw-primitive-color-teal-700);
+  --govtw-color-feedback-error: var(--govtw-primitive-color-red-300);
+  --govtw-color-feedback-success: var(--govtw-primitive-color-green-300);
+  --govtw-color-feedback-warning: var(--govtw-primitive-color-yellow-300);
+  --govtw-color-feedback-info: var(--govtw-primitive-color-blue-light-500);
+  --govtw-color-link-default: var(--govtw-primitive-color-blue-light-500);
+  --govtw-color-link-visited: var(--govtw-primitive-color-purple-500);
 }
