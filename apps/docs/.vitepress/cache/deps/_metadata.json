@@ -1,55 +1,55 @@
 {
-  "hash": "05caf2b8",
-  "configHash": "75a2d25e",
+  "hash": "db39be81",
+  "configHash": "4cee8e01",
   "lockfileHash": "db0451c2",
-  "browserHash": "37217326",
+  "browserHash": "d80ff981",
   "optimized": {
     "vue": {
       "src": "../../../../../node_modules/.pnpm/vue@3.5.28_typescript@5.9.3/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "4ffce967",
+      "fileHash": "657bfa6c",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../../node_modules/.pnpm/@vue+devtools-api@7.7.9/node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "7aab3e93",
+      "fileHash": "e03f2fdc",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../../node_modules/.pnpm/@vueuse+core@12.8.2_typescript@5.9.3/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "6423027a",
+      "fileHash": "f987b6a6",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../../node_modules/.pnpm/@vueuse+integrations@12.8.2_focus-trap@7.8.0_typescript@5.9.3/node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "7ef24112",
+      "fileHash": "14789023",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../../../node_modules/.pnpm/mark.js@8.11.1/node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "a83655c8",
+      "fileHash": "8d9e85a6",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../../../node_modules/.pnpm/minisearch@7.2.0/node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "44e6aac9",
+      "fileHash": "c45f83c7",
       "needsInterop": false
     },
     "lit": {
       "src": "../../../../../node_modules/.pnpm/lit@3.3.2/node_modules/lit/index.js",
       "file": "lit.js",
-      "fileHash": "3695dff6",
+      "fileHash": "f914a7ce",
       "needsInterop": false
     },
     "lit/decorators.js": {
       "src": "../../../../../node_modules/.pnpm/lit@3.3.2/node_modules/lit/decorators.js",
       "file": "lit_decorators__js.js",
-      "fileHash": "44d9069f",
+      "fileHash": "a5d2611f",
       "needsInterop": false
     }
   },

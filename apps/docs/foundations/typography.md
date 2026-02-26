@@ -60,6 +60,21 @@
 
 ## 字重
 
+<DemoBlock direction="column" no-code>
+  <div class="type-sample">
+    <span class="type-sample__label">regular · 400</span>
+    <div class="type-sample__text" style="font-size: var(--govtw-font-size-2xl); font-weight: var(--govtw-font-weight-regular);">一般內文使用 Regular 字重</div>
+  </div>
+  <div class="type-sample">
+    <span class="type-sample__label">medium · 500</span>
+    <div class="type-sample__text" style="font-size: var(--govtw-font-size-2xl); font-weight: var(--govtw-font-weight-medium);">強調文字使用 Medium 字重</div>
+  </div>
+  <div class="type-sample">
+    <span class="type-sample__label">bold · 700</span>
+    <div class="type-sample__text" style="font-size: var(--govtw-font-size-2xl); font-weight: var(--govtw-font-weight-bold);">標題使用 Bold 字重</div>
+  </div>
+</DemoBlock>
+
 | Token | 值 | 用途 |
 |-------|------|------|
 | `--govtw-font-weight-regular` | `400` | 內文 |
@@ -69,6 +84,27 @@
 ## 標題
 
 標題用於建立頁面的資訊層級。使用語意化的 HTML 標題標籤（`<h1>` 到 `<h4>`），搭配對應的 CSS class 控制視覺樣式。
+
+### 標題展示
+
+<DemoBlock direction="column" no-code>
+  <div class="type-sample">
+    <span class="type-sample__label">heading-xl · 36px · Bold</span>
+    <div class="type-sample__text" style="font-size: var(--govtw-font-size-4xl); font-weight: var(--govtw-font-weight-bold); line-height: 1.2;">勞動部線上申辦服務</div>
+  </div>
+  <div class="type-sample">
+    <span class="type-sample__label">heading-l · 30px · Bold</span>
+    <div class="type-sample__text" style="font-size: var(--govtw-font-size-3xl); font-weight: var(--govtw-font-weight-bold); line-height: 1.3;">申請表單</div>
+  </div>
+  <div class="type-sample">
+    <span class="type-sample__label">heading-m · 24px · Bold</span>
+    <div class="type-sample__text" style="font-size: var(--govtw-font-size-2xl); font-weight: var(--govtw-font-weight-bold); line-height: 1.4;">個人資料</div>
+  </div>
+  <div class="type-sample">
+    <span class="type-sample__label">heading-s · 20px · Bold</span>
+    <div class="type-sample__text" style="font-size: var(--govtw-font-size-xl); font-weight: var(--govtw-font-weight-bold); line-height: 1.4;">聯絡方式</div>
+  </div>
+</DemoBlock>
 
 ### 標題層級對照
 
@@ -121,6 +157,23 @@
 
 ## 段落
 
+### 段落展示
+
+<DemoBlock direction="column" no-code>
+  <div class="type-sample">
+    <span class="type-sample__label">body-l · 18px · 前導段落</span>
+    <div class="type-sample__text" style="font-size: var(--govtw-font-size-lg); font-weight: var(--govtw-font-weight-regular); line-height: 1.6;">勞動部提供完整的線上申辦服務，協助勞工朋友便捷處理各項保險業務。</div>
+  </div>
+  <div class="type-sample">
+    <span class="type-sample__label">body · 16px · 預設內文</span>
+    <div class="type-sample__text" style="font-size: var(--govtw-font-size-base); font-weight: var(--govtw-font-weight-regular); line-height: 1.8;">本服務提供線上申辦各項勞工保險業務，包含投保、退保及給付申請。</div>
+  </div>
+  <div class="type-sample">
+    <span class="type-sample__label">body-s · 14px · 小字內文</span>
+    <div class="type-sample__text" style="font-size: var(--govtw-font-size-sm); font-weight: var(--govtw-font-weight-regular); line-height: 1.6;">最後更新日期：2025 年 1 月 15 日</div>
+  </div>
+</DemoBlock>
+
 ### 內文（Body）
 
 預設內文字級為 16px，行高 1.8，適合中文閱讀。
@@ -161,43 +214,178 @@
 
 ## 連結
 
+所有需要連結行為的地方都應使用 `<govtw-link>` 元件，確保連結在所有狀態下都有一致的互動回饋。詳細說明請參閱 [Link 連結元件](/components/link)。
+
 ### 預設樣式
 
 連結預設為藍色加底線，讓使用者能清楚辨識可點擊的文字。
 
+<DemoBlock>
+  <govtw-link href="#">前往申辦</govtw-link>
+  <govtw-link href="#">查看更多資訊</govtw-link>
+  <govtw-link href="#">下載表單</govtw-link>
+
+  <template #code>
+
 ```html
-<a href="/apply" class="govtw-link">前往申辦</a>
+<govtw-link href="/apply">前往申辦</govtw-link>
+<govtw-link href="/info">查看更多資訊</govtw-link>
+<govtw-link href="/form">下載表單</govtw-link>
 ```
 
-### 連結狀態
+  </template>
+</DemoBlock>
+
+### 段落中的行內連結
+
+`<govtw-link>` 以 `display: inline` 呈現，可自然嵌入段落文字中，字體與行高繼承自父層。
+
+<DemoBlock>
+  <p style="max-width: 36em; line-height: 1.8;">
+    您可以至 <govtw-link href="#">線上申辦系統</govtw-link> 完成申請，
+    或參閱 <govtw-link href="#">申請須知</govtw-link> 了解所需文件。
+    如有疑問請 <govtw-link href="#">聯絡我們</govtw-link>。
+  </p>
+
+  <template #code>
+
+```html
+<p>
+  您可以至 <govtw-link href="/apply">線上申辦系統</govtw-link> 完成申請，
+  或參閱 <govtw-link href="/guide">申請須知</govtw-link> 了解所需文件。
+  如有疑問請 <govtw-link href="/contact">聯絡我們</govtw-link>。
+</p>
+```
+
+  </template>
+</DemoBlock>
+
+### 連結互動狀態
+
+連結的互動回饋參考 GOV.UK Design System，核心特色是 **focus 與 active 時以雙色指標**（背景色 + 粗底線）確保在任何背景色上都清晰可辨。
 
 | 狀態 | 樣式 |
 |------|------|
-| 預設 | 藍色（`--govtw-color-link`）加底線 |
-| 已造訪 | 紫色（`--govtw-color-link-visited`） |
-| Hover | 底線加粗，顏色加深 |
-| Focus | 黃色 focus ring（`#fd0`），黑色底線 |
-| Active | 顏色加深 |
+| 預設 | 連結色（`--govtw-link-color`），底線 1px |
+| 已造訪 | 紫色（`--govtw-link-visited-color`） |
+| Hover | 底線加粗至 3px，文字色加深 |
+| Focus / Active | 背景色（`--govtw-focus-color`），文字色（`--govtw-focus-text`），底部 4px 粗線 |
 
-### 連結變體
+<DemoBlock no-code>
+  <span class="demo-state-label">預設</span>
+  <govtw-link href="#">前往申辦</govtw-link>
+  <span class="demo-state-label">→ Hover</span>
+  <govtw-link href="#" id="demo-typo-link-hover">前往申辦</govtw-link>
+  <span class="demo-state-label">→ Focus / Active</span>
+  <govtw-link href="#" id="demo-typo-link-focus">前往申辦</govtw-link>
+</DemoBlock>
 
-| Class | 用途 |
-|-------|------|
-| `.govtw-link` | 預設連結 |
-| `.govtw-link--no-visited` | 不顯示已造訪狀態（適用於導覽連結） |
-| `.govtw-link--inverse` | 深色背景上的白色連結 |
-| `.govtw-link--no-underline` | 無底線連結（謹慎使用） |
+### 不顯示已造訪狀態
+
+導覽連結等不需要顯示已造訪色彩的場景，加上 `no-visited` 屬性：
+
+<DemoBlock>
+  <govtw-link href="#" no-visited>首頁</govtw-link>
+  <govtw-link href="#" no-visited>關於我們</govtw-link>
+  <govtw-link href="#" no-visited>聯絡方式</govtw-link>
+
+  <template #code>
+
+```html
+<govtw-link href="/" no-visited>首頁</govtw-link>
+<govtw-link href="/about" no-visited>關於我們</govtw-link>
+<govtw-link href="/contact" no-visited>聯絡方式</govtw-link>
+```
+
+  </template>
+</DemoBlock>
+
+### 無底線連結
+
+預設不顯示底線，hover 與 focus/active 時才出現。適用於導覽列、頁尾等已有明確視覺區隔的場景。
+
+<DemoBlock>
+  <govtw-link href="#" no-underline>首頁</govtw-link>
+  <govtw-link href="#" no-underline>服務項目</govtw-link>
+  <govtw-link href="#" no-underline>聯絡我們</govtw-link>
+
+  <template #code>
+
+```html
+<govtw-link href="/" no-underline>首頁</govtw-link>
+<govtw-link href="/services" no-underline>服務項目</govtw-link>
+<govtw-link href="/contact" no-underline>聯絡我們</govtw-link>
+```
+
+  </template>
+</DemoBlock>
 
 ### 開新視窗的連結
 
 當連結必須在新視窗開啟時，加入明確的文字提示：
 
+<DemoBlock>
+  <govtw-link href="https://example.gov.tw" target="_blank" rel="noreferrer noopener">外部系統（另開新視窗）</govtw-link>
+
+  <template #code>
+
 ```html
-<a href="https://example.gov.tw" class="govtw-link"
-   target="_blank" rel="noreferrer noopener">
+<govtw-link href="https://example.gov.tw"
+            target="_blank"
+            rel="noreferrer noopener">
   外部系統（另開新視窗）
-</a>
+</govtw-link>
 ```
+
+  </template>
+</DemoBlock>
+
+<script setup>
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  const findInShadowRoots = (id) => {
+    const hosts = document.querySelectorAll('.demo-block-preview')
+    for (const host of hosts) {
+      const shadow = host.shadowRoot
+      if (!shadow) continue
+      const el = shadow.querySelector(`#${id}`)
+      if (el) return el
+    }
+    return null
+  }
+
+  const applyStyle = (id, fn) => {
+    const attempt = () => {
+      const el = findInShadowRoots(id)
+      if (!el) {
+        requestAnimationFrame(attempt)
+        return
+      }
+      const apply = () => {
+        const anchor = el.shadowRoot?.querySelector('a')
+        if (anchor) fn(anchor)
+        else requestAnimationFrame(apply)
+      }
+      apply()
+    }
+    setTimeout(attempt, 100)
+  }
+
+  applyStyle('demo-typo-link-hover', (a) => {
+    a.style.color = 'var(--govtw-link-hover-color)'
+    a.style.textDecorationThickness = 'var(--govtw-link-hover-underline-thickness)'
+  })
+
+  applyStyle('demo-typo-link-focus', (a) => {
+    a.style.outline = 'var(--govtw-focus-width) solid transparent'
+    a.style.backgroundColor = 'var(--govtw-link-focus-bg)'
+    a.style.color = 'var(--govtw-link-focus-color)'
+    a.style.textDecoration = 'none'
+    a.style.boxShadow = '0 -2px var(--govtw-link-focus-bg), 0 4px var(--govtw-link-focus-underline-color)'
+  })
+})
+</script>
 
 ## 列表
 

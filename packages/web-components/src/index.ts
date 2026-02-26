@@ -7,3 +7,4 @@ export { GovSidebar } from './govtw-sidebar.js';
 export { GovCluster } from './govtw-cluster.js';
 export { GovContainer } from './govtw-container.js';
 export { GovTextarea } from './govtw-textarea.js';
+export { GovLink } from './govtw-link.js';

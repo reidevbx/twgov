@@ -54,6 +54,11 @@
       "source": "./src/govtw-textarea.ts",
       "types": "./dist/govtw-textarea.d.ts",
       "import": "./dist/govtw-textarea.js"
+    },
+    "./govtw-link": {
+      "source": "./src/govtw-link.ts",
+      "types": "./dist/govtw-link.d.ts",
+      "import": "./dist/govtw-link.js"
     }
   },
   "files": [

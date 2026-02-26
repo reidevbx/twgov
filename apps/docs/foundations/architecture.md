@@ -32,22 +32,89 @@ tokens.json  →  build.js  →  tokens.css       （CSS custom properties）
 （設計決策）    （轉換器）  └→  tailwind.css    （Tailwind v4 @theme）
 ```
 
-### 命名規則
+### 三層 Token 架構
 
-所有 token 以 `--govtw-{類別}-{名稱}` 命名：
+Token 分為三層，上層引用下層，形成清晰的抽象階梯：
+
+```
+Primitive（原始層）→ Semantic（語意層）→ Component（元件層）
+   原始數值             用途語意             元件客製
+```
+
+#### 1. Primitive（原始層）
+
+原始設計數值，前綴 `--govtw-primitive-`，不直接在元件中使用。
 
 | 類別 | 範例 | 說明 |
 |------|------|------|
-| `color` | `--govtw-color-brand-primary` | 色彩 |
-| `spacing` | `--govtw-spacing-4` | 間距（4px 倍數） |
+| `color` | `--govtw-primitive-color-blue-500` | 色票原始值 |
+| `space` | `--govtw-primitive-space-4` | 間距基礎值 |
+| `radius` | `--govtw-primitive-radius-md` | 圓角基礎值 |
+| `font` | `--govtw-primitive-font-family-sans` | 字型基礎值 |
+
+#### 2. Semantic（語意層）
+
+以用途命名，引用 Primitive 層，前綴 `--govtw-`。這是主題切換的操作層。
+
+| 類別 | 範例 | 說明 |
+|------|------|------|
+| `color` | `--govtw-color-brand-primary` | 品牌主色 |
+| `color` | `--govtw-color-text-primary` | 主要文字色 |
+| `color` | `--govtw-color-bg-canvas` | 頁面背景色 |
+| `spacing` | `--govtw-spacing-4` | 間距 |
 | `radius` | `--govtw-radius-md` | 圓角 |
-| `font` | `--govtw-font-sans` | 字型與字級 |
+| `font` | `--govtw-font-sans` | 字型 |
 
-### Token 分類
+#### 3. Component（元件層）
 
-- **全域 token**：跨元件共用的基礎值（`--govtw-color-brand-primary`、`--govtw-spacing-4`）
-- **語意 token**：描述用途而非數值（`--govtw-color-text-on-primary`、`--govtw-color-feedback-error`）
-- **元件 token**：元件內部使用的私有變數（如 `--_shadow-color`，以 `_` 前綴標示）
+每個元件可單獨覆寫的 token，引用 Semantic 層，前綴 `--govtw-{元件名}-`。
+
+| 元件 | 範例 | 說明 |
+|------|------|------|
+| Button | `--govtw-button-primary-bg` | 主要按鈕背景 |
+| Button | `--govtw-button-focus-color` | 按鈕聚焦色 |
+| Input | `--govtw-input-border-color` | 輸入框邊框色 |
+| Checkbox | `--govtw-checkbox-check-color` | 勾選色 |
+
+#### 層級引用關係
+
+```css
+/* Primitive → 原始值 */
+--govtw-primitive-color-blue-500: #2C84B2;
+
+/* Semantic → 引用 Primitive */
+--govtw-color-brand-primary: var(--govtw-primitive-color-blue-500);
+
+/* Component → 引用 Semantic */
+--govtw-button-primary-bg: var(--govtw-color-brand-primary);
+```
+
+### 主題系統
+
+主題定義在 `tokens.json` 的 `themes` 區塊，覆寫 Semantic 層的變數。Component 層透過 CSS 變數繼承自動生效，不需額外設定。
+
+目前提供 **dark** 主題，產出兩種選擇器：
+
+| 選擇器 | 觸發方式 |
+|--------|---------|
+| `@media (prefers-color-scheme: dark)` | 系統偏好自動套用 |
+| `[data-theme="dark"]` | 手動切換 |
+
+新增主題只需在 `tokens.json` 的 `themes` 下加入新的 key，`build.js` 會自動產生對應的 `[data-theme="<name>"]` 選擇器。
+
+#### 客製品牌範例
+
+各機關只需覆寫 Semantic 層即可套用自有品牌色，所有元件自動生效：
+
+```css
+@import '@gov-tw/tokens/tokens.css';
+
+/* 覆寫語意層 → 所有元件自動更新 */
+:root {
+  --govtw-color-brand-primary: #0062B1;  /* 機關品牌色 */
+  --govtw-color-brand-secondary: #00A67E;
+}
+```
 
 ### 使用方式
 
@@ -109,33 +176,41 @@ UI 元件以 [Lit](https://lit.dev/) 建構，封裝為標準 Web Components。�
 
 ### 元件如何讀取 Token
 
-元件內部透過 `var()` 引用 token，並提供 fallback 值：
+元件內部透過 `var()` 引用 Component token，**不加 fallback 值**，確保未引入 token 時能立即發現問題：
 
 ```css
 /* govtw-button 內部樣式 */
 button {
-  font-family: var(--govtw-font-sans, system-ui, sans-serif);
-  padding: var(--govtw-spacing-2, 8px) var(--govtw-spacing-4, 16px);
-  background: var(--govtw-color-brand-primary, #2C84B2);
+  font-family: var(--govtw-button-font-family);
+  background: var(--govtw-button-primary-bg);
+  color: var(--govtw-button-primary-color);
+  border-radius: var(--govtw-button-border-radius);
 }
 ```
 
 這代表：
-1. 頁面有引入 `tokens.css` 時，元件使用 token 定義的值
-2. 沒有引入時，元件仍能正常運作（使用 fallback 值）
-3. 各機關可以覆寫 token 值來客製品牌色，不需要修改元件程式碼
+1. 元件只依賴 Component token，不直接引用 Semantic 或 Primitive 層
+2. Component token 引用 Semantic token → Semantic 引用 Primitive，形成完整的引用鏈
+3. 主題切換時，只需覆寫 Semantic 層，所有元件透過 CSS 變數繼承自動生效
+4. 各機關覆寫 Semantic 層即可客製品牌色，不需修改元件程式碼
+5. 需要細粒度調整時，可直接覆寫特定 Component token（如只改按鈕圓角）
 
 ---
 
 ## 資料流
 
 ```
-tokens.json          ← 設計師與開發者共同維護
+tokens.json                   ← 設計師與開發者共同維護
   │
-  ├─→ build.js ─┬→ tokens.css      ← 純 CSS custom properties
+  │  ┌─ Primitive  ─→ 原始數值（色票、間距、字型…）
+  ├─ │─ Semantic   ─→ 語意用途（品牌色、文字色、背景色…）
+  │  │─ Component  ─→ 元件客製（按鈕背景、輸入框邊框…）
+  │  └─ Themes     ─→ 主題覆寫（dark 覆寫 Semantic 層）
+  │
+  ├─→ build.js ─┬→ tokens.css      ← 四段式 CSS custom properties
   │             └→ tailwind.css    ← Tailwind v4 @theme 整合
   │
-  └─→ web-components 透過 var() 讀取 token
+  └─→ web-components 透過 var() 讀取 Component token
         │
         ├─→ vite build ─┬→ dist/*.js          ← ESM（npm install）
         │               ├→ dist/*.d.ts        ← TypeScript 型別
@@ -146,7 +221,7 @@ tokens.json          ← 設計師與開發者共同維護
         └── ...
 ```
 
-`@gov-tw/tokens` 沒有程式執行期依賴——產出就是 CSS 檔案。`@gov-tw/web-components` 的 Lit runtime 已打包進產出，使用者不需另外安裝 Lit。在樣式層透過 CSS custom properties 讀取 token（非 npm 依賴關係）。Tailwind 整合同樣是純 CSS，不需要額外的 JavaScript 設定。
+`@gov-tw/tokens` 沒有程式執行期依賴——產出就是 CSS 檔案。`@gov-tw/web-components` 的 Lit runtime 已打包進產出，使用者不需另外安裝 Lit。在樣式層透過 CSS custom properties 讀取 Component token（非 npm 依賴關係）。Tailwind 整合同樣是純 CSS，不需要額外的 JavaScript 設定。
 
 ---
 

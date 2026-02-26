@@ -2,12 +2,28 @@ import { defineConfig } from 'vitepress'
 import { readFileSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import type { Plugin } from 'vite'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const tokensCss = readFileSync(
-  resolve(__dirname, '../../../packages/tokens/tokens.css'),
-  'utf-8'
-)
+const tokensCssPath = resolve(__dirname, '../../../packages/tokens/tokens.css')
+
+function readTokensCss() {
+  return readFileSync(tokensCssPath, 'utf-8')
+}
+
+function govtwTokensPlugin(): Plugin {
+  return {
+    name: 'govtw-tokens-hmr',
+    configureServer(server) {
+      server.watcher.add(tokensCssPath)
+      server.watcher.on('change', (file) => {
+        if (file === tokensCssPath) {
+          server.restart()
+        }
+      })
+    },
+  }
+}
 
 export default defineConfig({
   lang: 'zh-TW',
@@ -31,11 +47,12 @@ export default defineConfig({
   ],
 
   vite: {
+    plugins: [govtwTokensPlugin()],
     resolve: {
       conditions: ['source'],
     },
     define: {
-      __GOVTW_TOKENS_CSS__: JSON.stringify(tokensCss),
+      __GOVTW_TOKENS_CSS__: JSON.stringify(readTokensCss()),
     },
   },
 
@@ -61,12 +78,14 @@ export default defineConfig({
     sidebar: [
       {
         text: '快速開始',
+        collapsed: false,
         items: [
           { text: '安裝與使用', link: '/getting-started' },
         ],
       },
       {
         text: '設計原則',
+        collapsed: false,
         items: [
           { text: '總覽', link: '/principles/' },
           { text: '原則一：以使用者為中心', link: '/principles/people-first' },
@@ -79,12 +98,14 @@ export default defineConfig({
       },
       {
         text: '服務標準',
+        collapsed: false,
         items: [
           { text: '概述', link: '/standards/' },
         ],
       },
       {
         text: '基礎',
+        collapsed: false,
         items: [
           { text: '系統架構', link: '/foundations/architecture' },
           { text: '色彩', link: '/foundations/colour' },
@@ -95,9 +116,11 @@ export default defineConfig({
       },
       {
         text: '元件',
+        collapsed: false,
         items: [
           { text: 'Button 按鈕', link: '/components/button' },
           { text: 'Checkbox 核取方塊', link: '/components/checkbox' },
+          { text: 'Link 連結', link: '/components/link' },
           { text: 'Text Input 文字輸入', link: '/components/text-input' },
           { text: 'Fieldset 欄位群組', link: '/components/fieldset' },
           { text: 'Textarea 多行文字輸入', link: '/components/textarea' },
@@ -105,12 +128,14 @@ export default defineConfig({
       },
       {
         text: '模式',
+        collapsed: false,
         items: [
           { text: '概述', link: '/patterns/' },
         ],
       },
       {
         text: '治理',
+        collapsed: false,
         items: [
           { text: '概述', link: '/governance/' },
         ],

@@ -4,6 +4,7 @@
 :root {
   --govtw-primitive-color-blue-500: #2C84B2;
   --govtw-primitive-color-blue-light-500: #6B9FE8;
+  --govtw-primitive-color-blue-focus: #0055FF;
   --govtw-primitive-color-teal-50: #EAF0F0;
   --govtw-primitive-color-teal-100: #B0C4C5;
   --govtw-primitive-color-teal-500: #618D90;
@@ -81,6 +82,7 @@
   --govtw-spacing-12: var(--govtw-primitive-space-12);
   --govtw-spacing-16: var(--govtw-primitive-space-16);
   --govtw-focus-color: var(--govtw-primitive-color-yellow-focus);
+  --govtw-focus-text: var(--govtw-primitive-color-neutral-800);
   --govtw-focus-width: var(--govtw-primitive-focus-width);
   --govtw-radius-sm: var(--govtw-primitive-radius-sm);
   --govtw-radius-md: var(--govtw-primitive-radius-md);
@@ -164,6 +166,17 @@
   --govtw-fieldset-legend-color: var(--govtw-color-text-primary);
   --govtw-fieldset-hint-color: var(--govtw-color-text-secondary);
   --govtw-fieldset-error-color: var(--govtw-color-feedback-error);
+  --govtw-link-color: var(--govtw-color-link-default);
+  --govtw-link-visited-color: var(--govtw-color-link-visited);
+  --govtw-link-hover-color: var(--govtw-color-text-primary);
+  --govtw-link-active-color: var(--govtw-color-text-primary);
+  --govtw-link-underline-thickness: 1px;
+  --govtw-link-underline-offset: 0.25em;
+  --govtw-link-hover-underline-thickness: 3px;
+  --govtw-link-focus-bg: var(--govtw-focus-color);
+  --govtw-link-focus-color: var(--govtw-focus-text);
+  --govtw-link-focus-underline-thickness: 3px;
+  --govtw-link-focus-underline-color: var(--govtw-focus-text);
 }
 
 /* ==========================================================================
@@ -185,6 +198,8 @@
   --govtw-color-feedback-info: var(--govtw-primitive-color-blue-light-500);
   --govtw-color-link-default: var(--govtw-primitive-color-blue-light-500);
   --govtw-color-link-visited: var(--govtw-primitive-color-purple-500);
+  --govtw-focus-color: var(--govtw-primitive-color-blue-focus);
+  --govtw-focus-text: var(--govtw-primitive-color-neutral-0);
   }
 }
 
@@ -203,4 +218,6 @@
   --govtw-color-feedback-info: var(--govtw-primitive-color-blue-light-500);
   --govtw-color-link-default: var(--govtw-primitive-color-blue-light-500);
   --govtw-color-link-visited: var(--govtw-primitive-color-purple-500);
+  --govtw-focus-color: var(--govtw-primitive-color-blue-focus);
+  --govtw-focus-text: var(--govtw-primitive-color-neutral-0);
 }
