@@ -141,23 +141,22 @@ export class GovRadio extends LitElement {
     }
   `;
 
-  private _handleChange(e: Event) {
-    const input = e.target as HTMLInputElement;
-    if (input.checked) {
-      this.checked = true;
-      this._internals.setFormValue(this.value);
-      // 取消同群組其他 radio 的選取
-      this._uncheckSiblings();
-      this.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
-    }
+  private _select() {
+    if (this.disabled || this.checked) return;
+    // 取消同群組其他 radio
+    this._uncheckSiblings();
+    this.checked = true;
+    this._internals.setFormValue(this.value);
+    this.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
   }
 
   private _uncheckSiblings() {
     if (!this.name) return;
+    // getRootNode() 回傳 host element 所在的 root（document 或外層 Shadow Root）
     const root = this.getRootNode() as Document | ShadowRoot;
     const siblings = root.querySelectorAll<GovRadio>(`govtw-radio[name="${this.name}"]`);
     for (const sibling of siblings) {
-      if (sibling !== this && sibling.checked) {
+      if (sibling !== this) {
         sibling.checked = false;
       }
     }
@@ -166,6 +165,9 @@ export class GovRadio extends LitElement {
   updated(changed: Map<string, unknown>) {
     if (changed.has('checked')) {
       this._internals.setFormValue(this.checked ? this.value : null);
+      // 同步原生 input 狀態
+      const input = this.shadowRoot?.querySelector('input');
+      if (input) input.checked = this.checked;
     }
   }
 
@@ -181,9 +183,9 @@ export class GovRadio extends LitElement {
           class="radio__input"
           .checked=${this.checked}
           ?disabled=${this.disabled}
-          name=${this.name}
-          value=${this.value}
-          @change=${this._handleChange}
+          role="radio"
+          aria-checked=${this.checked ? 'true' : 'false'}
+          @change=${() => this._select()}
         />
         <span class="radio__circle"></span>
         <span class="radio__label">

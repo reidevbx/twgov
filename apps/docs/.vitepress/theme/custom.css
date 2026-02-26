@@ -62,6 +62,12 @@
   width: auto;
 }
 
+@media (max-width: 768px) {
+  .VPNavBarTitle .logo {
+    height: 32px;
+  }
+}
+
 /* ===== Subtle link underline ===== */
 .vp-doc a {
   text-decoration-thickness: max(0.08em, 1px);
