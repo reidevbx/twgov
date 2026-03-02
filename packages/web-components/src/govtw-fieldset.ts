@@ -4,7 +4,6 @@ import { customElement, property } from 'lit/decorators.js';
 @customElement('govtw-fieldset')
 export class GovFieldset extends LitElement {
   @property({ type: String }) legend = '';
-  @property({ type: String, reflect: true }) size: 'xl' | 'l' | 'm' | 's' = 'l';
   @property({ type: String }) hint = '';
   @property({ type: String }) error = '';
 
@@ -22,7 +21,7 @@ export class GovFieldset extends LitElement {
 
     .fieldset-wrapper--error {
       border-left: 4px solid var(--govtw-fieldset-error-color);
-      padding-left: var(--govtw-spacing-4, 16px);
+      padding-left: var(--govtw-spacing-4);
     }
 
     .fieldset {
@@ -34,59 +33,29 @@ export class GovFieldset extends LitElement {
 
     /* ===== Legend ===== */
     .fieldset__legend {
-      font-family: var(--govtw-font-sans);
-      font-weight: 700;
-      color: var(--govtw-fieldset-legend-color);
       padding: 0;
-      margin-bottom: var(--govtw-spacing-4, 16px);
-    }
-
-    :host([size="xl"]) .fieldset__legend {
-      font-size: var(--govtw-font-size-4xl);
-      line-height: 1.2;
-      margin-bottom: var(--govtw-spacing-6, 24px);
-    }
-
-    :host([size="l"]) .fieldset__legend {
-      font-size: var(--govtw-font-size-3xl);
-      line-height: 1.3;
-      margin-bottom: var(--govtw-spacing-6, 24px);
-    }
-
-    :host([size="m"]) .fieldset__legend {
-      font-size: var(--govtw-font-size-2xl);
-      line-height: 1.4;
-    }
-
-    :host([size="s"]) .fieldset__legend {
-      font-size: var(--govtw-font-size-xl);
-      line-height: 1.4;
+      margin-bottom: var(--govtw-spacing-4);
     }
 
     /* ===== Hint ===== */
     .fieldset__hint {
       display: block;
-      font-family: var(--govtw-font-sans);
-      font-size: var(--govtw-font-size-base);
-      color: var(--govtw-fieldset-hint-color);
-      margin-bottom: var(--govtw-spacing-4, 16px);
+      margin-bottom: var(--govtw-spacing-4);
     }
 
     /* ===== Error ===== */
     .fieldset__error {
       display: block;
-      font-family: var(--govtw-font-sans);
-      font-size: var(--govtw-font-size-base);
       font-weight: 700;
       color: var(--govtw-fieldset-error-color);
-      margin-bottom: var(--govtw-spacing-4, 16px);
+      margin-bottom: var(--govtw-spacing-4);
     }
 
     /* ===== Slot 內容間距 ===== */
     .fieldset__content {
       display: flex;
       flex-direction: column;
-      gap: var(--govtw-spacing-4, 16px);
+      gap: var(--govtw-spacing-4);
     }
   `;
 

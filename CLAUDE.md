@@ -41,6 +41,7 @@ pnpm build:tokens    # 重建 token 產出檔
 - CSS 只使用 Component token（`--govtw-<component>-*`），不加 fallback 值
 - Focus ring 統一用 `box-shadow`（非 `outline`），顏色 `#fd0`
 - `:host` 加 `outline: none !important` 抑制瀏覽器預設 focus 框
+- **元件只控制自身職責的樣式**：例如 radio 只管圓形選取器和選擇狀態，不管文字排版；fieldset 只管群組語意和佈局，不管標題/說明的字型大小顏色。文字樣式由外層段落/排版控制，透過繼承生效。
 
 ### Token 架構
 
@@ -73,6 +74,13 @@ pnpm build:tokens    # 重建 token 產出檔
 - `<DemoBlock>` 會監聽 VitePress 的 `.dark` class 變化，同步 `data-theme="dark"` 至 Shadow DOM host
 - 純展示區塊（如互動狀態）使用 `<DemoBlock no-code>` 隱藏原始碼按鈕
 
+### 獨立預覽頁面
+- 每個元件的每個 demo 都要有獨立的 HTML 預覽頁面（參考 GOV.UK「Open this example in a new tab」）
+- 預覽頁面放在 `apps/docs/public/preview/<component>/<variant>.html`（如 `preview/radio/default.html`）
+- 每個 HTML 引用 `/tokens.css` + `/gov-tw.iife.js`，body 樣式用 token 變數（`--govtw-color-text-primary`、`--govtw-color-bg-canvas`），加 `<meta name="color-scheme" content="light dark">`
+- DemoBlock 透過 `preview` prop 指定預覽 URL：`<DemoBlock preview="/preview/radio/default.html">`
+- `apps/docs/public/tokens.css` 和 `apps/docs/public/gov-tw.iife.js` 是從 packages 複製來的，每次 build 後須同步更新
+
 ## 新增元件步驟
 
 1. `packages/web-components/src/govtw-<name>.ts` — 建立元件
@@ -80,7 +88,8 @@ pnpm build:tokens    # 重建 token 產出檔
 3. `packages/web-components/package.json` — 加入 exports entry
 4. `apps/docs/components/<name>.md` — 建立文件頁面
 5. `apps/docs/.vitepress/config.mts` — sidebar 加入連結
-6. `pnpm build` 驗證
+6. 建立 `apps/docs/public/preview/<name>/` 下的獨立預覽 HTML
+7. `pnpm build` 驗證，並複製 IIFE 和 tokens.css 到 `apps/docs/public/`
 
 ## 技術約束
 

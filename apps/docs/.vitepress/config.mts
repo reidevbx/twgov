@@ -25,6 +25,7 @@ function govtwTokensPlugin(): Plugin {
   }
 }
 
+
 export default defineConfig({
   lang: 'zh-TW',
   title: 'GOV.TW Design System',

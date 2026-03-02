@@ -7,7 +7,7 @@
     "vue": {
       "src": "../../../../../node_modules/.pnpm/vue@3.5.28_typescript@5.9.3/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "657bfa6c",
+      "fileHash": "d951dad0",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
@@ -19,13 +19,13 @@
     "vitepress > @vueuse/core": {
       "src": "../../../../../node_modules/.pnpm/@vueuse+core@12.8.2_typescript@5.9.3/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "f987b6a6",
+      "fileHash": "93ac14fe",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../../node_modules/.pnpm/@vueuse+integrations@12.8.2_focus-trap@7.8.0_typescript@5.9.3/node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "14789023",
+      "fileHash": "b6231c49",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
@@ -43,13 +43,13 @@
     "lit": {
       "src": "../../../../../node_modules/.pnpm/lit@3.3.2/node_modules/lit/index.js",
       "file": "lit.js",
-      "fileHash": "f914a7ce",
+      "fileHash": "9c12e637",
       "needsInterop": false
     },
     "lit/decorators.js": {
       "src": "../../../../../node_modules/.pnpm/lit@3.3.2/node_modules/lit/decorators.js",
       "file": "lit_decorators__js.js",
-      "fileHash": "a5d2611f",
+      "fileHash": "c54e4127",
       "needsInterop": false
     }
   },

@@ -19,6 +19,8 @@ export default defineConfig({
         'govtw-cluster': resolve(__dirname, 'src/govtw-cluster.ts'),
         'govtw-container': resolve(__dirname, 'src/govtw-container.ts'),
         'govtw-textarea': resolve(__dirname, 'src/govtw-textarea.ts'),
+        'govtw-link': resolve(__dirname, 'src/govtw-link.ts'),
+        'govtw-radio': resolve(__dirname, 'src/govtw-radio.ts'),
       },
       formats: ['es'],
     },

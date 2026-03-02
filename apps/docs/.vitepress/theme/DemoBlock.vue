@@ -6,8 +6,16 @@
     <div ref="sourceRef" style="display:none">
       <slot />
     </div>
-    <template v-if="!noCode">
-      <div class="demo-block-actions">
+    <div class="demo-block-actions">
+      <a v-if="preview" class="demo-block-toggle" :href="preview" target="_blank" rel="noopener" title="在新分頁中預覽此範例">
+        在新分頁預覽
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <path d="M7 1H11V5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 1L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 7V10C9 10.5523 8.55228 11 8 11H2C1.44772 11 1 10.5523 1 10V4C1 3.44772 1.44772 3 2 3H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <template v-if="!noCode">
         <button class="demo-block-toggle" @click="open = !open">
           {{ open ? '隱藏原始碼' : '查看原始碼' }}
           <svg
@@ -22,11 +30,11 @@
             <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
-      </div>
-      <div v-show="open" class="demo-block-code">
-        <slot name="code" />
-      </div>
-    </template>
+      </template>
+    </div>
+    <div v-if="!noCode" v-show="open" class="demo-block-code">
+      <slot name="code" />
+    </div>
   </div>
 </template>
 
@@ -47,6 +55,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  preview: {
+    type: String,
+    default: '',
+  },
 })
 
 const open = ref(false)
@@ -64,8 +76,6 @@ onMounted(async () => {
   const flexDir = props.direction === 'column' ? 'column' : 'row'
   const alignItems = props.direction === 'column' ? 'stretch' : 'center'
 
-  // 偵測 VitePress dark mode（.dark class on <html>）並同步至 host 的 data-theme
-  // 這樣 tokens.css 中的 [data-theme="dark"] 選擇器才能在 Shadow DOM 內生效
   const syncDarkMode = () => {
     const isDark = document.documentElement.classList.contains('dark')
     if (isDark) {
@@ -82,11 +92,8 @@ onMounted(async () => {
     attributeFilter: ['class'],
   })
 
-  // 建立 Shadow DOM — 外部 CSS 無法穿透
   const shadow = host.attachShadow({ mode: 'open' })
 
-  // 注入乾淨的樣式：只有 design tokens + 基本 reset
-  // 將 :root 替換為 :host，使 token 在 Shadow DOM 內生效
   const style = document.createElement('style')
   style.textContent = `
 ${tokensCss.replace(/:root/g, ':host').replace(/^(\[data-theme="[^"]+"\])/gm, ':host($1)')}
@@ -158,7 +165,6 @@ ${tokensCss.replace(/:root/g, ':host').replace(/^(\[data-theme="[^"]+"\])/gm, ':
   `
   shadow.appendChild(style)
 
-  // 直接移動 DOM 節點（而非 innerHTML 複製），保留已升級的 Web Components 完整狀態
   const container = document.createElement('div')
   container.className = 'demo-layout'
   while (source.firstChild) {
@@ -185,6 +191,7 @@ onUnmounted(() => {
 }
 
 .demo-block-actions {
+  display: flex;
   border-top: 1px solid var(--vp-c-divider);
   padding: 0;
 }
@@ -194,7 +201,7 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  width: 100%;
+  flex: 1;
   padding: 8px;
   background: none;
   border: none;
@@ -207,6 +214,10 @@ onUnmounted(() => {
 .demo-block-toggle:hover {
   color: var(--vp-c-brand-1);
   background: var(--vp-c-bg-soft);
+}
+
+.demo-block-toggle + .demo-block-toggle {
+  border-left: 1px solid var(--vp-c-divider);
 }
 
 .demo-block-arrow {

@@ -10,7 +10,7 @@
 
 試著點擊選取、用 <kbd>Tab</kbd> 聚焦、<kbd>Space</kbd> 或方向鍵切換。
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" preview="/preview/radio.html">
   <govtw-radio name="demo-basic" value="a" label="選項 A" checked></govtw-radio>
   <govtw-radio name="demo-basic" value="b" label="選項 B"></govtw-radio>
   <govtw-radio name="demo-basic" value="c" label="選項 C"></govtw-radio>
@@ -81,6 +81,30 @@
 <govtw-radio name="option" value="a" label="可選取"></govtw-radio>
 <govtw-radio name="option" value="b" label="停用" disabled></govtw-radio>
 <govtw-radio name="option" value="c" label="已選取但停用" checked disabled></govtw-radio>
+```
+
+  </template>
+</DemoBlock>
+
+### 錯誤狀態
+
+未選取任何選項時，透過 `<govtw-fieldset>` 的 `error` 屬性顯示錯誤提示。
+
+<DemoBlock direction="column">
+  <govtw-fieldset legend="您偏好的聯絡方式" hint="請選擇一種聯絡方式" error="請選擇一個選項">
+    <govtw-radio name="demo-error" value="email" label="電子郵件"></govtw-radio>
+    <govtw-radio name="demo-error" value="phone" label="電話"></govtw-radio>
+    <govtw-radio name="demo-error" value="mail" label="郵寄"></govtw-radio>
+  </govtw-fieldset>
+
+  <template #code>
+
+```html
+<govtw-fieldset legend="您偏好的聯絡方式" hint="請選擇一種聯絡方式" error="請選擇一個選項">
+  <govtw-radio name="contact" value="email" label="電子郵件"></govtw-radio>
+  <govtw-radio name="contact" value="phone" label="電話"></govtw-radio>
+  <govtw-radio name="contact" value="mail" label="郵寄"></govtw-radio>
+</govtw-fieldset>
 ```
 
   </template>
@@ -228,7 +252,6 @@ onMounted(() => {
 | `--govtw-radio-border-color` | `--govtw-color-text-primary` | 邊框色 |
 | `--govtw-radio-bg` | `--govtw-color-bg-canvas` | 背景色 |
 | `--govtw-radio-selected-color` | `--govtw-color-brand-primary` | 選取色（邊框 + 圓點） |
-| `--govtw-radio-label-color` | `--govtw-color-text-primary` | 標籤文字色 |
 | `--govtw-radio-focus-color` | `--govtw-focus-color` | Focus ring 色 |
 | `--govtw-radio-focus-width` | `--govtw-focus-width` | Focus ring 寬度 |
 
