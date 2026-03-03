@@ -10,7 +10,7 @@
 
 試著點擊選取、用 <kbd>Tab</kbd> 聚焦、<kbd>Space</kbd> 或方向鍵切換。
 
-<DemoBlock direction="column" preview="/preview/radio.html">
+<DemoBlock direction="column" preview="/preview/radio/default.html">
   <govtw-radio name="demo-basic" value="a" label="選項 A" checked></govtw-radio>
   <govtw-radio name="demo-basic" value="b" label="選項 B"></govtw-radio>
   <govtw-radio name="demo-basic" value="c" label="選項 C"></govtw-radio>
@@ -30,8 +30,10 @@
 
 一組 Radio 應以 `<govtw-fieldset>` 包裹，提供群組標題與說明文字。
 
-<DemoBlock direction="column">
-  <govtw-fieldset legend="您偏好的聯絡方式" hint="請選擇一種聯絡方式">
+<DemoBlock direction="column" preview="/preview/radio/fieldset.html">
+  <govtw-fieldset>
+    <h2 slot="legend">您偏好的聯絡方式</h2>
+    <p slot="hint">請選擇一種聯絡方式</p>
     <govtw-radio name="demo-fieldset" value="email" label="電子郵件"></govtw-radio>
     <govtw-radio name="demo-fieldset" value="phone" label="電話"></govtw-radio>
     <govtw-radio name="demo-fieldset" value="mail" label="郵寄"></govtw-radio>
@@ -40,7 +42,9 @@
   <template #code>
 
 ```html
-<govtw-fieldset legend="您偏好的聯絡方式" hint="請選擇一種聯絡方式">
+<govtw-fieldset>
+  <h2 slot="legend">您偏好的聯絡方式</h2>
+  <p slot="hint">請選擇一種聯絡方式</p>
   <govtw-radio name="contact" value="email" label="電子郵件"></govtw-radio>
   <govtw-radio name="contact" value="phone" label="電話"></govtw-radio>
   <govtw-radio name="contact" value="mail" label="郵寄"></govtw-radio>
@@ -52,7 +56,7 @@
 
 ### 使用 Slot 提供標籤內容
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" preview="/preview/radio/slot.html">
   <govtw-radio name="demo-slot" value="agree">我同意<govtw-link href="#">服務條款</govtw-link>中的所有內容</govtw-radio>
   <govtw-radio name="demo-slot" value="disagree">我不同意</govtw-radio>
 
@@ -70,10 +74,10 @@
 
 ### 停用狀態
 
-<DemoBlock direction="column">
-  <govtw-radio name="demo-disabled" value="a" label="可選取"></govtw-radio>
-  <govtw-radio name="demo-disabled" value="b" label="停用" disabled></govtw-radio>
-  <govtw-radio name="demo-disabled" value="c" label="已選取但停用" checked disabled></govtw-radio>
+<DemoBlock direction="column" preview="/preview/radio/disabled.html">
+  <govtw-radio name="demo-disabled" value="a" label="可選取" checked></govtw-radio>
+  <govtw-radio name="demo-disabled-2" value="b" label="停用" disabled></govtw-radio>
+  <govtw-radio name="demo-disabled-3" value="c" label="已選取但停用" checked disabled></govtw-radio>
 
   <template #code>
 
@@ -90,8 +94,10 @@
 
 未選取任何選項時，透過 `<govtw-fieldset>` 的 `error` 屬性顯示錯誤提示。
 
-<DemoBlock direction="column">
-  <govtw-fieldset legend="您偏好的聯絡方式" hint="請選擇一種聯絡方式" error="請選擇一個選項">
+<DemoBlock direction="column" preview="/preview/radio/error.html">
+  <govtw-fieldset error="請選擇一個選項">
+    <h2 slot="legend">您偏好的聯絡方式</h2>
+    <p slot="hint">請選擇一種聯絡方式</p>
     <govtw-radio name="demo-error" value="email" label="電子郵件"></govtw-radio>
     <govtw-radio name="demo-error" value="phone" label="電話"></govtw-radio>
     <govtw-radio name="demo-error" value="mail" label="郵寄"></govtw-radio>
@@ -100,7 +106,9 @@
   <template #code>
 
 ```html
-<govtw-fieldset legend="您偏好的聯絡方式" hint="請選擇一種聯絡方式" error="請選擇一個選項">
+<govtw-fieldset error="請選擇一個選項">
+  <h2 slot="legend">您偏好的聯絡方式</h2>
+  <p slot="hint">請選擇一種聯絡方式</p>
   <govtw-radio name="contact" value="email" label="電子郵件"></govtw-radio>
   <govtw-radio name="contact" value="phone" label="電話"></govtw-radio>
   <govtw-radio name="contact" value="mail" label="郵寄"></govtw-radio>
@@ -223,7 +231,9 @@ onMounted(() => {
 <govtw-radio name="contact" value="email" label="電子郵件" checked></govtw-radio>
 
 <!-- 搭配 Fieldset -->
-<govtw-fieldset legend="您偏好的聯絡方式">
+<govtw-fieldset>
+  <h2 slot="legend">您偏好的聯絡方式</h2>
+  <p slot="hint">請選擇一種聯絡方式</p>
   <govtw-radio name="contact" value="email" label="電子郵件"></govtw-radio>
   <govtw-radio name="contact" value="phone" label="電話"></govtw-radio>
 </govtw-fieldset>

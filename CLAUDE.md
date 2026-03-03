@@ -42,6 +42,7 @@ pnpm build:tokens    # 重建 token 產出檔
 - Focus ring 統一用 `box-shadow`（非 `outline`），顏色 `#fd0`
 - `:host` 加 `outline: none !important` 抑制瀏覽器預設 focus 框
 - **元件只控制自身職責的樣式**：例如 radio 只管圓形選取器和選擇狀態，不管文字排版；fieldset 只管群組語意和佈局，不管標題/說明的字型大小顏色。文字樣式由外層段落/排版控制，透過繼承生效。
+- **Fieldset 使用 slot 傳入標題與說明**：`<govtw-fieldset>` 的 legend 和 hint 透過 named slot（`slot="legend"`、`slot="hint"`）傳入，使用者自行用 `<h2>`、`<p>` 等標籤控制樣式。`error` 仍為 prop（元件負責錯誤顯示邏輯）。
 
 ### Token 架構
 

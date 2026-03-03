@@ -8,7 +8,7 @@
 
 試著操作下方按鈕：hover（滑鼠移入）、按下去（active）、用 <kbd>Tab</kbd> 鍵聚焦（focus）。
 
-<DemoBlock>
+<DemoBlock preview="/preview/button/default.html">
   <govtw-button variant="primary">送出</govtw-button>
   <govtw-button variant="secondary">取消</govtw-button>
   <govtw-button variant="danger">刪除</govtw-button>
@@ -26,7 +26,7 @@
 
 ### 尺寸
 
-<DemoBlock>
+<DemoBlock preview="/preview/button/sizes.html">
   <govtw-button size="sm">小按鈕</govtw-button>
   <govtw-button size="md">中按鈕</govtw-button>
   <govtw-button size="lg">大按鈕</govtw-button>
@@ -44,7 +44,7 @@
 
 ### 停用狀態
 
-<DemoBlock>
+<DemoBlock preview="/preview/button/disabled.html">
   <govtw-button disabled>停用按鈕</govtw-button>
   <govtw-button variant="secondary" disabled>停用次要</govtw-button>
 
@@ -53,6 +53,26 @@
 ```html
 <govtw-button disabled>停用按鈕</govtw-button>
 <govtw-button variant="secondary" disabled>停用次要</govtw-button>
+```
+
+  </template>
+</DemoBlock>
+
+### 連結按鈕
+
+當按鈕需要導航至其他頁面時，設定 `href` 會將按鈕渲染為 `<a role="button">`，保持按鈕外觀但具備連結行為。
+
+<DemoBlock preview="/preview/button/link.html">
+  <govtw-button href="https://design-system.service.gov.uk/">前往 GOV.UK</govtw-button>
+  <govtw-button href="https://design-system.service.gov.uk/" target="_blank" rel="noreferrer noopener">另開新分頁</govtw-button>
+  <govtw-button href="https://design-system.service.gov.uk/" disabled>停用連結</govtw-button>
+
+  <template #code>
+
+```html
+<govtw-button href="https://design-system.service.gov.uk/">前往 GOV.UK</govtw-button>
+<govtw-button href="https://design-system.service.gov.uk/" target="_blank" rel="noreferrer noopener">另開新分頁</govtw-button>
+<govtw-button href="https://design-system.service.gov.uk/" disabled>停用連結</govtw-button>
 ```
 
   </template>
@@ -166,9 +186,14 @@ onMounted(() => {
 ## 使用方式
 
 ```html
+<!-- 一般按鈕 -->
 <govtw-button>送出</govtw-button>
 <govtw-button variant="secondary">取消</govtw-button>
 <govtw-button variant="danger">刪除</govtw-button>
+
+<!-- 連結按鈕（導航至其他頁面） -->
+<govtw-button href="/next-step">開始申請</govtw-button>
+<govtw-button href="https://example.com" target="_blank" rel="noreferrer noopener">外部連結</govtw-button>
 ```
 
 ## 屬性
@@ -178,6 +203,9 @@ onMounted(() => {
 | `variant` | `'primary' \| 'secondary' \| 'danger'` | `'primary'` | 按鈕樣式 |
 | `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | 按鈕大小 |
 | `disabled` | `boolean` | `false` | 是否停用 |
+| `href` | `string` | `''` | 連結網址，有值時渲染為 `<a>` |
+| `target` | `string` | `''` | 連結目標（如 `_blank`） |
+| `rel` | `string` | `''` | 連結關係（如 `noreferrer noopener`） |
 
 ## 樣式變體
 
@@ -204,11 +232,12 @@ onMounted(() => {
 
 ## 無障礙
 
-- 使用語意化的 `<button>` 元素
-- 確保鍵盤可操作（Enter 和 Space）
+- 無 `href` 時使用語意化的 `<button>` 元素；有 `href` 時渲染為 `<a role="button">`
+- 確保鍵盤可操作（Enter 和 Space 皆可觸發）
 - 焦點狀態以黃色 focus ring 清晰標示，支援鍵盤導航
 - 互動回饋透過 inset shadow 消失傳達按壓感，不僅依靠色彩
 - 停用狀態使用 `aria-disabled` 而非移除元素
+- 連結按鈕停用時移除 `href` 並設定 `tabindex="-1"` 防止聚焦
 - 透明邊框確保 Windows 高對比模式下可見
 - 色彩對比度符合 WCAG 2.2 AA 標準（至少 4.5:1）
 

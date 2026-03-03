@@ -1,11 +1,12 @@
 import { LitElement, html, css, nothing } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, property, state } from 'lit/decorators.js';
 
 @customElement('govtw-fieldset')
 export class GovFieldset extends LitElement {
-  @property({ type: String }) legend = '';
-  @property({ type: String }) hint = '';
   @property({ type: String }) error = '';
+
+  @state() private _hasLegend = false;
+  @state() private _hasHint = false;
 
   static styles = css`
     :host {
@@ -15,7 +16,7 @@ export class GovFieldset extends LitElement {
     /*
      * GOV.UK-inspired fieldset:
      * - 用 <fieldset> + <legend> 組合相關欄位
-     * - legend 可作為頁面標題
+     * - legend / hint 由使用者透過 slot 傳入，樣式自行控制
      * - error 時左側紅色邊線
      */
 
@@ -34,13 +35,31 @@ export class GovFieldset extends LitElement {
     /* ===== Legend ===== */
     .fieldset__legend {
       padding: 0;
-      margin-bottom: var(--govtw-spacing-4);
+      margin-bottom: 0;
+    }
+
+    /* Slotted 標題/段落的 margin 由 fieldset 控制 */
+    .fieldset__legend ::slotted(*) {
+      margin: 0;
+    }
+
+    /* 隱藏空的 legend（沒有 slot 內容時） */
+    .fieldset__legend--empty {
+      display: none;
     }
 
     /* ===== Hint ===== */
     .fieldset__hint {
       display: block;
       margin-bottom: var(--govtw-spacing-4);
+    }
+
+    .fieldset__hint ::slotted(*) {
+      margin: 0;
+    }
+
+    .fieldset__hint--empty {
+      display: none;
     }
 
     /* ===== Error ===== */
@@ -59,6 +78,16 @@ export class GovFieldset extends LitElement {
     }
   `;
 
+  private _onLegendSlotChange(e: Event) {
+    const slot = e.target as HTMLSlotElement;
+    this._hasLegend = slot.assignedNodes({ flatten: true }).length > 0;
+  }
+
+  private _onHintSlotChange(e: Event) {
+    const slot = e.target as HTMLSlotElement;
+    this._hasHint = slot.assignedNodes({ flatten: true }).length > 0;
+  }
+
   render() {
     const hasError = !!this.error;
 
@@ -67,16 +96,19 @@ export class GovFieldset extends LitElement {
         <fieldset
           class="fieldset"
           aria-describedby=${[
-            this.hint ? 'fieldset-hint' : '',
+            this._hasHint ? 'fieldset-hint' : '',
             hasError ? 'fieldset-error' : '',
           ].filter(Boolean).join(' ') || nothing}
         >
-          ${this.legend
-            ? html`<legend class="fieldset__legend">${this.legend}</legend>`
-            : nothing}
-          ${this.hint
-            ? html`<span class="fieldset__hint" id="fieldset-hint">${this.hint}</span>`
-            : nothing}
+          <legend class="fieldset__legend ${this._hasLegend ? '' : 'fieldset__legend--empty'}">
+            <slot name="legend" @slotchange=${this._onLegendSlotChange}></slot>
+          </legend>
+          <div
+            class="fieldset__hint ${this._hasHint ? '' : 'fieldset__hint--empty'}"
+            id="fieldset-hint"
+          >
+            <slot name="hint" @slotchange=${this._onHintSlotChange}></slot>
+          </div>
           ${hasError
             ? html`<span class="fieldset__error" id="fieldset-error">${this.error}</span>`
             : nothing}

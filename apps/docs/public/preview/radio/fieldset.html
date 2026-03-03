@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Radio 搭配 Fieldset — gov.tw Design System</title>
+  <link rel="stylesheet" href="/tokens.css">
+  <script src="/gov-tw.iife.js"></script>
+  <style>
+    body {
+      font-family: var(--govtw-font-sans, system-ui, -apple-system, sans-serif);
+      color: var(--govtw-color-text-primary);
+      background-color: var(--govtw-color-bg-canvas);
+      margin: 0;
+      padding: 40px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <govtw-fieldset>
+    <h2 slot="legend">您偏好的聯絡方式</h2>
+    <p slot="hint">請選擇一種聯絡方式</p>
+    <govtw-radio name="contact" value="email" label="電子郵件"></govtw-radio>
+    <govtw-radio name="contact" value="phone" label="電話"></govtw-radio>
+    <govtw-radio name="contact" value="mail" label="郵寄"></govtw-radio>
+  </govtw-fieldset>
+</body>
+</html>

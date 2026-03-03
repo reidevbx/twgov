@@ -58,13 +58,13 @@
 
 /* ===== Navbar logo ===== */
 .VPNavBarTitle .logo {
-  height: 48px;
+  height: 36px;
   width: auto;
 }
 
 @media (max-width: 768px) {
   .VPNavBarTitle .logo {
-    height: 32px;
+    height: 28px;
   }
 }
 

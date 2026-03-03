@@ -147,6 +147,25 @@ ${themeLines.join('\n')}
   }
 }
 
+// 5. Typography — base element styles
+if (tokens.typography?.elements) {
+  const typoLines = [];
+
+  for (const [selector, props] of Object.entries(tokens.typography.elements)) {
+    const propLines = [];
+    for (const [prop, value] of Object.entries(props)) {
+      propLines.push(`  ${prop}: ${refToCssVar(value)};`);
+    }
+    typoLines.push(`${selector} {\n${propLines.join('\n')}\n}`);
+  }
+
+  sections.push(`
+/* ==========================================================================
+ * Typography — 基礎排版樣式（引用 Semantic token）
+ * ========================================================================== */
+${typoLines.join('\n\n')}`);
+}
+
 const css = sections.join('\n') + '\n';
 writeFileSync(new URL('./tokens.css', import.meta.url), css);
 const themeNames = tokens.themes ? Object.keys(tokens.themes).join(', ') : 'none';
@@ -183,23 +202,11 @@ function generateTailwindTheme() {
     lines.push(`  --radius-${PREFIX}-${key}: var(--${PREFIX}-radius-${key});`);
   }
 
-  // Font
+  // Font family
   lines.push('');
-  lines.push('  /* Font */');
+  lines.push('  /* Font family */');
   lines.push(`  --font-${PREFIX}-sans: var(--${PREFIX}-font-sans);`);
   lines.push(`  --font-${PREFIX}-mono: var(--${PREFIX}-font-mono);`);
-
-  // Font sizes
-  for (const key of Object.keys(semantic.font.size)) {
-    lines.push(`  --text-${PREFIX}-${key}: var(--${PREFIX}-font-size-${key});`);
-  }
-
-  // Font weights
-  lines.push('');
-  lines.push('  /* Font weights */');
-  for (const key of Object.keys(semantic.font.weight)) {
-    lines.push(`  --font-weight-${PREFIX}-${key}: var(--${PREFIX}-font-weight-${key});`);
-  }
 
   return lines.join('\n');
 }

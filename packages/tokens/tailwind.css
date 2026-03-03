@@ -37,20 +37,7 @@
   --radius-govtw-md: var(--govtw-radius-md);
   --radius-govtw-lg: var(--govtw-radius-lg);
 
-  /* Font */
+  /* Font family */
   --font-govtw-sans: var(--govtw-font-sans);
   --font-govtw-mono: var(--govtw-font-mono);
-  --text-govtw-xs: var(--govtw-font-size-xs);
-  --text-govtw-sm: var(--govtw-font-size-sm);
-  --text-govtw-base: var(--govtw-font-size-base);
-  --text-govtw-lg: var(--govtw-font-size-lg);
-  --text-govtw-xl: var(--govtw-font-size-xl);
-  --text-govtw-2xl: var(--govtw-font-size-2xl);
-  --text-govtw-3xl: var(--govtw-font-size-3xl);
-  --text-govtw-4xl: var(--govtw-font-size-4xl);
-
-  /* Font weights */
-  --font-weight-govtw-regular: var(--govtw-font-weight-regular);
-  --font-weight-govtw-medium: var(--govtw-font-weight-medium);
-  --font-weight-govtw-bold: var(--govtw-font-weight-bold);
 }

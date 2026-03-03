@@ -83,75 +83,64 @@
 
 ## 標題
 
-標題用於建立頁面的資訊層級。使用語意化的 HTML 標題標籤（`<h1>` 到 `<h4>`），搭配對應的 CSS class 控制視覺樣式。
+標題用於建立頁面的資訊層級。使用語意化的 HTML 標題標籤（`<h1>` 到 `<h6>`），`tokens.css` 已為每個標題元素定義預設的排版樣式。
 
 ### 標題展示
 
 <DemoBlock direction="column" no-code>
   <div class="type-sample">
-    <span class="type-sample__label">heading-xl · 36px · Bold</span>
+    <span class="type-sample__label">h1 · 36px · Bold</span>
     <div class="type-sample__text" style="font-size: var(--govtw-font-size-4xl); font-weight: var(--govtw-font-weight-bold); line-height: 1.2;">勞動部線上申辦服務</div>
   </div>
   <div class="type-sample">
-    <span class="type-sample__label">heading-l · 30px · Bold</span>
+    <span class="type-sample__label">h2 · 30px · Bold</span>
     <div class="type-sample__text" style="font-size: var(--govtw-font-size-3xl); font-weight: var(--govtw-font-weight-bold); line-height: 1.3;">申請表單</div>
   </div>
   <div class="type-sample">
-    <span class="type-sample__label">heading-m · 24px · Bold</span>
+    <span class="type-sample__label">h3 · 24px · Bold</span>
     <div class="type-sample__text" style="font-size: var(--govtw-font-size-2xl); font-weight: var(--govtw-font-weight-bold); line-height: 1.4;">個人資料</div>
   </div>
   <div class="type-sample">
-    <span class="type-sample__label">heading-s · 20px · Bold</span>
+    <span class="type-sample__label">h4 · 20px · Bold</span>
     <div class="type-sample__text" style="font-size: var(--govtw-font-size-xl); font-weight: var(--govtw-font-weight-bold); line-height: 1.4;">聯絡方式</div>
+  </div>
+  <div class="type-sample">
+    <span class="type-sample__label">h5 · 18px · Bold</span>
+    <div class="type-sample__text" style="font-size: var(--govtw-font-size-lg); font-weight: var(--govtw-font-weight-bold); line-height: 1.4;">注意事項</div>
+  </div>
+  <div class="type-sample">
+    <span class="type-sample__label">h6 · 16px · Bold</span>
+    <div class="type-sample__text" style="font-size: var(--govtw-font-size-base); font-weight: var(--govtw-font-weight-bold); line-height: 1.4;">附註說明</div>
   </div>
 </DemoBlock>
 
 ### 標題層級對照
 
-| Class | HTML 元素 | 大螢幕字級 | 小螢幕字級 | 字重 |
-|-------|-----------|-----------|-----------|------|
-| `.govtw-heading-xl` | `<h1>` | 36px | 27px | 700 |
-| `.govtw-heading-l` | `<h1>` 或 `<h2>` | 30px | 24px | 700 |
-| `.govtw-heading-m` | `<h2>` 或 `<h3>` | 24px | 21px | 700 |
-| `.govtw-heading-s` | `<h3>` 或 `<h4>` | 20px | 19px | 700 |
+`tokens.css` 會為 `<h1>` 到 `<h6>` 元素直接套用對應的排版樣式，使用時不需額外加 class。
+
+| 元素 | 預設字級 | 行高 | 字重 |
+|------|---------|------|------|
+| `<h1>` | 36px (`--govtw-font-size-4xl`) | 1.2 | 700 |
+| `<h2>` | 30px (`--govtw-font-size-3xl`) | 1.3 | 700 |
+| `<h3>` | 24px (`--govtw-font-size-2xl`) | 1.4 | 700 |
+| `<h4>` | 20px (`--govtw-font-size-xl`) | 1.4 | 700 |
+| `<h5>` | 18px (`--govtw-font-size-lg`) | 1.4 | 700 |
+| `<h6>` | 16px (`--govtw-font-size-base`) | 1.4 | 700 |
 
 ### 用法
 
-一般頁面使用 `heading-l` 作為最大標題：
-
 ```html
-<h1 class="govtw-heading-l">申請表單</h1>
-<h2 class="govtw-heading-m">個人資料</h2>
-<h3 class="govtw-heading-s">聯絡方式</h3>
-```
-
-內容較多的頁面，可使用 `heading-xl` 作為最大標題：
-
-```html
-<h1 class="govtw-heading-xl">勞動部線上申辦服務</h1>
-<h2 class="govtw-heading-l">服務項目</h2>
-<h3 class="govtw-heading-m">勞工保險</h3>
-<h4 class="govtw-heading-s">投保申請</h4>
-```
-
-### 標題上方說明（Caption）
-
-在標題上方加入輔助說明，用於標示章節或分類。
-
-| Class | 搭配標題 | 字級 |
-|-------|---------|------|
-| `.govtw-caption-xl` | `.govtw-heading-xl` | 24px |
-| `.govtw-caption-l` | `.govtw-heading-l` | 20px |
-| `.govtw-caption-m` | `.govtw-heading-m` | 18px |
-
-```html
-<span class="govtw-caption-l">勞動部</span>
-<h1 class="govtw-heading-l">勞工保險線上申辦</h1>
+<h1>勞動部線上申辦服務</h1>
+<h2>服務項目</h2>
+<h3>勞工保險</h3>
+<h4>投保申請</h4>
+<h5>注意事項</h5>
+<h6>附註說明</h6>
 ```
 
 ### 標題書寫原則
 
-- 使用語意化的 `<h1>` 至 `<h4>` 標籤，不可跳級
+- 使用語意化的 `<h1>` 至 `<h6>` 標籤，不可跳級
 - 標題應簡潔明確，描述該區塊的內容
 - 每個頁面只有一個 `<h1>`
 
@@ -176,41 +165,19 @@
 
 ### 內文（Body）
 
-預設內文字級為 16px，行高 1.8，適合中文閱讀。
+預設內文字級為 16px，行高 1.8，適合中文閱讀。`tokens.css` 已為 `<body>` 和 `<p>` 設定基礎樣式。
 
 ```html
-<p class="govtw-body">
-  本服務提供線上申辦各項勞工保險業務，包含投保、退保及給付申請。
-</p>
+<p>本服務提供線上申辦各項勞工保險業務，包含投保、退保及給付申請。</p>
 ```
 
-### 前導段落（Lead Paragraph）
+### 段落樣式參考
 
-用於頁面頂端的摘要文字，字級較大，每頁最多使用一次。
-
-```html
-<p class="govtw-body-l">
-  勞動部提供完整的線上申辦服務，協助勞工朋友便捷處理各項保險業務。
-</p>
-```
-
-### 小字內文（Small Body）
-
-用於附註、版權聲明等次要資訊，應少量使用。
-
-```html
-<p class="govtw-body-s">
-  最後更新日期：2025 年 1 月 15 日
-</p>
-```
-
-### 段落樣式對照
-
-| Class | 字級 | 行高 | 用途 |
-|-------|------|------|------|
-| `.govtw-body-l` | 18px | 1.6 | 前導段落 |
-| `.govtw-body` | 16px | 1.8 | 預設內文 |
-| `.govtw-body-s` | 14px | 1.6 | 小字內文 |
+| 用途 | 字級 | 行高 | 說明 |
+|------|------|------|------|
+| 前導段落 | 18px | 1.6 | 頁面頂端摘要文字，每頁最多一次 |
+| 預設內文 | 16px | 1.8 | `<p>` 預設樣式 |
+| 小字內文 | 14px | 1.6 | 附註、版權聲明等次要資訊 |
 
 ## 連結
 
@@ -392,7 +359,7 @@ onMounted(() => {
 ### 項目符號列表
 
 ```html
-<ul class="govtw-list govtw-list--bullet">
+<ul>
   <li>準備身分證正反面影本</li>
   <li>填寫申請書</li>
   <li>至櫃台繳件</li>
@@ -404,72 +371,12 @@ onMounted(() => {
 當項目有順序性時使用：
 
 ```html
-<ol class="govtw-list govtw-list--number">
+<ol>
   <li>登入系統並選擇申辦項目。</li>
   <li>填寫申請表單並上傳文件。</li>
   <li>確認資料無誤後送出。</li>
 </ol>
 ```
-
-### 寬鬆列表
-
-列表項目較長時，加入額外間距提升可讀性：
-
-```html
-<ul class="govtw-list govtw-list--bullet govtw-list--spaced">
-  <li>攜帶國民身分證正本及影本，至戶籍所在地勞保局辦事處辦理。</li>
-  <li>填寫完整申請書，確認所有欄位皆已填寫。</li>
-</ul>
-```
-
-## 字型覆寫 class
-
-當需要在特定元素上覆寫字型樣式時，可使用以下 utility class。
-
-### 字級覆寫
-
-| Class | 效果 |
-|-------|------|
-| `.govtw-!-font-size-36` | 強制字級 36px |
-| `.govtw-!-font-size-30` | 強制字級 30px |
-| `.govtw-!-font-size-24` | 強制字級 24px |
-| `.govtw-!-font-size-20` | 強制字級 20px |
-| `.govtw-!-font-size-18` | 強制字級 18px |
-| `.govtw-!-font-size-16` | 強制字級 16px |
-| `.govtw-!-font-size-14` | 強制字級 14px |
-
-### 字重覆寫
-
-| Class | 效果 |
-|-------|------|
-| `.govtw-!-font-weight-regular` | 字重 400 |
-| `.govtw-!-font-weight-bold` | 字重 700 |
-
-### 文字對齊
-
-| Class | 效果 |
-|-------|------|
-| `.govtw-!-text-align-left` | 靠左對齊 |
-| `.govtw-!-text-align-right` | 靠右對齊 |
-| `.govtw-!-text-align-centre` | 置中對齊 |
-
-### 等寬數字
-
-```html
-<span class="govtw-!-font-tabular-numbers">1,234,567</span>
-```
-
-讓每個數字等寬排列，適用於表格中的數字欄位。
-
-### 長字斷行
-
-```html
-<span class="govtw-!-text-break-word">
-  service@mail.department.gov.tw
-</span>
-```
-
-自動將超長字串（如 email、網址）在容器邊界斷行。
 
 ## CJK 排版注意事項
 
@@ -481,29 +388,21 @@ onMounted(() => {
 
 ## 使用方式
 
-### CSS 自訂屬性
+引用 `tokens.css` 後，`<h1>` 至 `<h6>`、`<body>`、`<p>` 等元素會自動套用設計系統的排版樣式，直接使用語意化 HTML 即可。
+
+```html
+<h1>頁面標題</h1>
+<p>這是一段內文。</p>
+```
+
+若需要自訂樣式，可使用 CSS 自訂屬性：
 
 ```css
 .my-heading {
-  font-family: var(--govtw-font-family-base);
   font-size: var(--govtw-font-size-3xl);
   font-weight: var(--govtw-font-weight-bold);
   line-height: 1.3;
 }
-
-.my-body {
-  font-family: var(--govtw-font-family-base);
-  font-size: var(--govtw-font-size-base);
-  line-height: 1.8;
-}
-```
-
-### CSS Class
-
-```html
-<h1 class="govtw-heading-l">頁面標題</h1>
-<p class="govtw-body">這是一段內文。</p>
-<p class="govtw-body-s">這是附註文字。</p>
 ```
 
 ## 無障礙
