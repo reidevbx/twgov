@@ -8,7 +8,9 @@
 
 <script setup>
 const ministries = [
+  // 行政院
   { id: 'ey', name: '行政院', nameEn: 'Executive Yuan' },
+  // 部（15）
   { id: 'moi', name: '內政部', nameEn: 'Ministry of the Interior' },
   { id: 'mofa', name: '外交部', nameEn: 'Ministry of Foreign Affairs' },
   { id: 'mnd', name: '國防部', nameEn: 'Ministry of National Defense' },
@@ -17,15 +19,32 @@ const ministries = [
   { id: 'moj', name: '法務部', nameEn: 'Ministry of Justice' },
   { id: 'moea', name: '經濟部', nameEn: 'Ministry of Economic Affairs' },
   { id: 'motc', name: '交通部', nameEn: 'Ministry of Transportation and Communications' },
-  { id: 'mohw', name: '衛生福利部', nameEn: 'Ministry of Health and Welfare' },
   { id: 'mol', name: '勞動部', nameEn: 'Ministry of Labor' },
+  { id: 'mohw', name: '衛生福利部', nameEn: 'Ministry of Health and Welfare' },
   { id: 'moa', name: '農業部', nameEn: 'Ministry of Agriculture' },
   { id: 'moc', name: '文化部', nameEn: 'Ministry of Culture' },
   { id: 'moda', name: '數位發展部', nameEn: 'Ministry of Digital Affairs' },
   { id: 'moenv', name: '環境部', nameEn: 'Ministry of Environment' },
+  { id: 'mos', name: '運動部', nameEn: 'Ministry of Sports' },
+  // 委員會（8）
   { id: 'nstc', name: '國家科學及技術委員會', nameEn: 'National Science and Technology Council' },
   { id: 'ndc', name: '國家發展委員會', nameEn: 'National Development Council' },
   { id: 'oac', name: '海洋委員會', nameEn: 'Ocean Affairs Council' },
+  { id: 'mac', name: '大陸委員會', nameEn: 'Mainland Affairs Council' },
+  { id: 'fsc', name: '金融監督管理委員會', nameEn: 'Financial Supervisory Commission' },
+  { id: 'ocac', name: '僑務委員會', nameEn: 'Overseas Community Affairs Council' },
+  { id: 'vac', name: '國軍退除役官兵輔導委員會', nameEn: 'Veterans Affairs Council' },
+  { id: 'cip', name: '原住民族委員會', nameEn: 'Council of Indigenous Peoples' },
+  { id: 'hakka', name: '客家委員會', nameEn: 'Hakka Affairs Council' },
+  { id: 'pcc', name: '公共工程委員會', nameEn: 'Public Construction Commission' },
+  // 獨立機關與其他（6）
+  { id: 'dgbas', name: '行政院主計總處', nameEn: 'Directorate-General of Budget, Accounting and Statistics' },
+  { id: 'dgpa', name: '行政院人事行政總處', nameEn: 'Directorate-General of Personnel Administration' },
+  { id: 'cbc', name: '中央銀行', nameEn: 'Central Bank' },
+  { id: 'npm', name: '國立故宮博物院', nameEn: 'National Palace Museum' },
+  { id: 'cec', name: '中央選舉委員會', nameEn: 'Central Election Commission' },
+  { id: 'ftc', name: '公平交易委員會', nameEn: 'Fair Trade Commission' },
+  { id: 'ncc', name: '國家通訊傳播委員會', nameEn: 'National Communications Commission' },
 ]
 </script>
 
@@ -62,9 +81,16 @@ const ministries = [
 
 ## 檔案命名
 
+### 行政院
+
 | 檔案名稱 | 機關 |
 |----------|------|
 | `ey.svg` | 行政院 |
+
+### 部（15）
+
+| 檔案名稱 | 機關 |
+|----------|------|
 | `moi.svg` | 內政部 |
 | `mofa.svg` | 外交部 |
 | `mnd.svg` | 國防部 |
@@ -73,15 +99,40 @@ const ministries = [
 | `moj.svg` | 法務部 |
 | `moea.svg` | 經濟部 |
 | `motc.svg` | 交通部 |
-| `mohw.svg` | 衛生福利部 |
 | `mol.svg` | 勞動部 |
+| `mohw.svg` | 衛生福利部 |
 | `moa.svg` | 農業部 |
 | `moc.svg` | 文化部 |
 | `moda.svg` | 數位發展部 |
 | `moenv.svg` | 環境部 |
+| `mos.svg` | 運動部 |
+
+### 委員會（8）
+
+| 檔案名稱 | 機關 |
+|----------|------|
 | `nstc.svg` | 國家科學及技術委員會 |
 | `ndc.svg` | 國家發展委員會 |
 | `oac.svg` | 海洋委員會 |
+| `mac.svg` | 大陸委員會 |
+| `fsc.svg` | 金融監督管理委員會 |
+| `ocac.svg` | 僑務委員會 |
+| `vac.svg` | 國軍退除役官兵輔導委員會 |
+| `cip.svg` | 原住民族委員會 |
+| `hakka.svg` | 客家委員會 |
+| `pcc.svg` | 公共工程委員會 |
+
+### 獨立機關與其他（6）
+
+| 檔案名稱 | 機關 |
+|----------|------|
+| `dgbas.svg` | 行政院主計總處 |
+| `dgpa.svg` | 行政院人事行政總處 |
+| `cbc.svg` | 中央銀行 |
+| `npm.svg` | 國立故宮博物院 |
+| `cec.svg` | 中央選舉委員會 |
+| `ftc.svg` | 公平交易委員會 |
+| `ncc.svg` | 國家通訊傳播委員會 |
 
 <style>
 .logo-grid {
