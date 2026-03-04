@@ -136,6 +136,13 @@ export default defineConfig({
         ],
       },
       {
+        text: '資源',
+        collapsed: false,
+        items: [
+          { text: '部會 Logo', link: '/resources/ministry-logos' },
+        ],
+      },
+      {
         text: '治理',
         collapsed: false,
         items: [
