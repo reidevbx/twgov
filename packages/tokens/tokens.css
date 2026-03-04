@@ -89,8 +89,6 @@
   --govtw-radius-lg: var(--govtw-primitive-radius-lg);
   --govtw-font-sans: var(--govtw-primitive-font-family-sans);
   --govtw-font-mono: var(--govtw-primitive-font-family-mono);
-  --govtw-font-family-base: var(--govtw-primitive-font-family-sans);
-  --govtw-font-family-mono: var(--govtw-primitive-font-family-mono);
   --govtw-font-size-xs: var(--govtw-primitive-font-size-xs);
   --govtw-font-size-sm: var(--govtw-primitive-font-size-sm);
   --govtw-font-size-base: var(--govtw-primitive-font-size-base);

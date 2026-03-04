@@ -148,12 +148,13 @@ export class GovRadio extends LitElement {
     radioRegistry.get(this.name)!.add(this);
   }
 
-  private _unregister() {
-    if (!this.name) return;
-    const group = radioRegistry.get(this.name);
+  private _unregister(name?: string) {
+    const n = name ?? this.name;
+    if (!n) return;
+    const group = radioRegistry.get(n);
     if (group) {
       group.delete(this);
-      if (group.size === 0) radioRegistry.delete(this.name);
+      if (group.size === 0) radioRegistry.delete(n);
     }
   }
 
@@ -183,14 +184,7 @@ export class GovRadio extends LitElement {
       if (input) input.checked = this.checked;
     }
     if (changed.has('name')) {
-      const oldName = changed.get('name') as string;
-      if (oldName) {
-        const oldGroup = radioRegistry.get(oldName);
-        if (oldGroup) {
-          oldGroup.delete(this);
-          if (oldGroup.size === 0) radioRegistry.delete(oldName);
-        }
-      }
+      this._unregister(changed.get('name') as string);
       this._register();
     }
   }

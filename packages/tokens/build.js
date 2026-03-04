@@ -44,26 +44,13 @@ function refToCssVar(value) {
 
 // ── Flatten helpers ──────────────────────────────
 
-function flattenWithValues(obj, prefix, lines = []) {
+function flatten(obj, prefix, transform = v => v, lines = []) {
   for (const [key, value] of Object.entries(obj)) {
     const name = `${prefix}-${key}`;
     if (typeof value === 'object' && !Array.isArray(value)) {
-      flattenWithValues(value, name, lines);
+      flatten(value, name, transform, lines);
     } else {
-      lines.push(`  ${name}: ${value};`);
-    }
-  }
-  return lines;
-}
-
-function flattenWithVarRefs(obj, prefix, lines = []) {
-  for (const [key, value] of Object.entries(obj)) {
-    const name = `${prefix}-${key}`;
-    if (typeof value === 'object' && !Array.isArray(value)) {
-      flattenWithVarRefs(value, name, lines);
-    } else {
-      const cssValue = refToCssVar(value);
-      lines.push(`  ${name}: ${cssValue};`);
+      lines.push(`  ${name}: ${transform(value)};`);
     }
   }
   return lines;
@@ -74,7 +61,7 @@ function flattenWithVarRefs(obj, prefix, lines = []) {
 const sections = [];
 
 // 1. Primitive layer — raw values
-const primitiveLines = flattenWithValues(tokens.primitive, `--${PREFIX}-primitive`);
+const primitiveLines = flatten(tokens.primitive, `--${PREFIX}-primitive`);
 sections.push(`/* ==========================================================================
  * Primitive tokens — 原始設計數值
  * ========================================================================== */
@@ -83,7 +70,7 @@ ${primitiveLines.join('\n')}
 }`);
 
 // 2. Semantic layer — usage-based mappings (references to primitives)
-const semanticLines = flattenWithVarRefs(tokens.semantic, `--${PREFIX}`);
+const semanticLines = flatten(tokens.semantic, `--${PREFIX}`, refToCssVar);
 
 // Add --govtw-space-{n} aliases for layout components (they use "space" not "spacing")
 const spaceAliasLines = [];
@@ -103,7 +90,7 @@ ${spaceAliasLines.join('\n')}
 }`);
 
 // 3. Component layer — per-component customization
-const componentLines = flattenWithVarRefs(tokens.component, `--${PREFIX}`);
+const componentLines = flatten(tokens.component, `--${PREFIX}`, refToCssVar);
 sections.push(`
 /* ==========================================================================
  * Component tokens — 元件層（可覆蓋以客製化個別元件）
@@ -117,7 +104,8 @@ ${componentLines.join('\n')}
 // The "dark" theme also gets a @media (prefers-color-scheme: dark) fallback.
 if (tokens.themes) {
   for (const [themeName, themeOverrides] of Object.entries(tokens.themes)) {
-    const themeLines = flattenWithVarRefs(themeOverrides, `--${PREFIX}`);
+    const themeLines = flatten(themeOverrides, `--${PREFIX}`, refToCssVar);
+    const themeCss = themeLines.join('\n');
     const selector = `[data-theme="${themeName}"]`;
 
     if (themeName === 'dark') {
@@ -128,12 +116,12 @@ if (tokens.themes) {
  * ========================================================================== */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-${themeLines.join('\n')}
+${themeCss}
   }
 }
 
 ${selector} {
-${themeLines.join('\n')}
+${themeCss}
 }`);
     } else {
       sections.push(`
@@ -141,7 +129,7 @@ ${themeLines.join('\n')}
  * Theme: ${themeName}
  * ========================================================================== */
 ${selector} {
-${themeLines.join('\n')}
+${themeCss}
 }`);
     }
   }
@@ -179,7 +167,7 @@ function generateTailwindTheme() {
 
   // Colors
   lines.push('  /* Colors */');
-  const colorEntries = flattenWithVarRefs(semantic.color, `--${PREFIX}-color`, []);
+  const colorEntries = flatten(semantic.color, `--${PREFIX}-color`, refToCssVar, []);
   for (const entry of colorEntries) {
     // Extract var name from "  --govtw-color-brand-primary: var(...);"
     const match = entry.match(/^\s+(--govtw-color-(.+)):/);
