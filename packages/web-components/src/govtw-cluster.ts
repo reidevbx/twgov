@@ -1,5 +1,23 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { styleMap } from 'lit/directives/style-map.js';
+
+type ClusterAlign = 'start' | 'center' | 'end' | 'space-between';
+type ClusterVerticalAlign = 'start' | 'center' | 'end' | 'baseline';
+
+const JUSTIFY: Record<ClusterAlign, string> = {
+  start: 'flex-start',
+  center: 'center',
+  end: 'flex-end',
+  'space-between': 'space-between',
+};
+
+const VERTICAL_ALIGN: Record<ClusterVerticalAlign, string> = {
+  start: 'flex-start',
+  center: 'center',
+  end: 'flex-end',
+  baseline: 'baseline',
+};
 
 /**
  * govtw-cluster — 水平流式佈局
@@ -16,13 +34,13 @@ import { customElement, property } from 'lit/decorators.js';
 @customElement('govtw-cluster')
 export class GovCluster extends LitElement {
   /** 子元素之間的間距，對應 --govtw-space-{n} token */
-  @property({ type: String }) space = '3';
+  @property({ type: Number }) space = 3;
 
   /** 水平對齊方式 */
-  @property({ type: String }) align: 'start' | 'center' | 'end' | 'space-between' = 'start';
+  @property({ type: String }) align: ClusterAlign = 'start';
 
   /** 垂直對齊方式 */
-  @property({ type: String, attribute: 'vertical-align' }) verticalAlign: 'start' | 'center' | 'end' | 'baseline' = 'center';
+  @property({ type: String, attribute: 'vertical-align' }) verticalAlign: ClusterVerticalAlign = 'center';
 
   static styles = css`
     :host {
@@ -39,27 +57,14 @@ export class GovCluster extends LitElement {
   `;
 
   render() {
-    const justifyMap: Record<string, string> = {
-      'start': 'flex-start',
-      'center': 'center',
-      'end': 'flex-end',
-      'space-between': 'space-between',
-    };
-    const alignMap: Record<string, string> = {
-      'start': 'flex-start',
-      'center': 'center',
-      'end': 'flex-end',
-      'baseline': 'baseline',
-    };
-
     return html`
       <div
         class="cluster"
-        style="
-          --_cluster-space: var(--govtw-space-${this.space}, ${Number(this.space) * 4}px);
-          --_justify: ${justifyMap[this.align] || 'flex-start'};
-          --_align: ${alignMap[this.verticalAlign] || 'center'};
-        "
+        style=${styleMap({
+          '--_cluster-space': `var(--govtw-space-${this.space})`,
+          '--_justify': JUSTIFY[this.align],
+          '--_align': VERTICAL_ALIGN[this.verticalAlign],
+        })}
       >
         <slot></slot>
       </div>

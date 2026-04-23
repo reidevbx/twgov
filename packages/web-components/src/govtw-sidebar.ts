@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { styleMap } from 'lit/directives/style-map.js';
 
 /**
  * govtw-sidebar — 側邊欄佈局
@@ -22,10 +23,10 @@ export class GovSidebar extends LitElement {
   @property({ type: String, attribute: 'side-width' }) sideWidth = '16rem';
 
   /** 主內容最小寬度百分比，低於此值時堆疊（0-100） */
-  @property({ type: String, attribute: 'content-min' }) contentMin = '60';
+  @property({ type: Number, attribute: 'content-min' }) contentMin = 60;
 
   /** 間距，對應 --govtw-space-{n} token */
-  @property({ type: String }) space = '6';
+  @property({ type: Number }) space = 6;
 
   /** 側邊欄位置 */
   @property({ type: String }) side: 'right' | 'left' = 'right';
@@ -71,11 +72,11 @@ export class GovSidebar extends LitElement {
     return html`
       <div
         class="sidebar"
-        style="
-          --_sidebar-space: var(--govtw-space-${this.space}, ${Number(this.space) * 4}px);
-          --_side-width: ${this.sideWidth};
-          --_content-min: ${this.contentMin}%;
-        "
+        style=${styleMap({
+          '--_sidebar-space': `var(--govtw-space-${this.space})`,
+          '--_side-width': this.sideWidth,
+          '--_content-min': `${this.contentMin}%`,
+        })}
       >
         <slot></slot>
       </div>

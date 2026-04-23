@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { styleMap } from 'lit/directives/style-map.js';
 
 /**
  * govtw-stack — 垂直堆疊佈局
@@ -16,7 +17,7 @@ import { customElement, property } from 'lit/decorators.js';
 @customElement('govtw-stack')
 export class GovStack extends LitElement {
   /** 子元素之間的間距，對應 --govtw-space-{n} token（預設 4 = 16px） */
-  @property({ type: String }) space = '4';
+  @property({ type: Number }) space = 4;
 
   static styles = css`
     :host {
@@ -32,7 +33,10 @@ export class GovStack extends LitElement {
 
   render() {
     return html`
-      <div class="stack" style="--_stack-space: var(--govtw-space-${this.space}, ${Number(this.space) * 4}px)">
+      <div
+        class="stack"
+        style=${styleMap({ '--_stack-space': `var(--govtw-space-${this.space})` })}
+      >
         <slot></slot>
       </div>
     `;

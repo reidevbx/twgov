@@ -11,6 +11,7 @@ export class GovButton extends LitElement {
   @property({ type: String, reflect: true }) variant: 'primary' | 'secondary' | 'danger' = 'primary';
   @property({ type: Boolean, reflect: true }) disabled = false;
   @property({ type: String, reflect: true }) size: 'sm' | 'md' | 'lg' = 'md';
+  @property({ type: String }) type: 'button' | 'submit' | 'reset' = 'button';
   @property({ type: String }) href = '';
   @property({ type: String }) target = '';
   @property({ type: String }) rel = '';
@@ -145,17 +146,22 @@ export class GovButton extends LitElement {
   private _handleLinkKeydown(e: KeyboardEvent) {
     if (e.key === ' ') {
       e.preventDefault();
-      (e.target as HTMLElement).click();
+      (e.currentTarget as HTMLElement).click();
     }
   }
 
   render() {
     if (this.href) {
+      // target="_blank" 時自動補上 rel="noopener noreferrer" 防止反向 tabnabbing
+      const autoRel = this.target === '_blank' && !this.rel
+        ? 'noopener noreferrer'
+        : this.rel;
+
       return html`
         <a
           href=${this.disabled ? nothing : this.href}
           target=${this.target || nothing}
-          rel=${this.rel || nothing}
+          rel=${autoRel || nothing}
           role="button"
           aria-disabled=${this.disabled ? 'true' : 'false'}
           tabindex=${this.disabled ? -1 : 0}
@@ -166,6 +172,7 @@ export class GovButton extends LitElement {
 
     return html`
       <button
+        type=${this.type}
         ?disabled=${this.disabled}
         aria-disabled=${this.disabled ? 'true' : 'false'}
       >

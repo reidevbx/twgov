@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { styleMap } from 'lit/directives/style-map.js';
 
 /**
  * govtw-container — 頁面容器
@@ -21,7 +22,7 @@ export class GovContainer extends LitElement {
   @property({ type: String, attribute: 'max-width' }) maxWidth = '1020px';
 
   /** 兩側內距，對應 --govtw-space-{n} token */
-  @property({ type: String }) padding = '4';
+  @property({ type: Number }) padding = 4;
 
   static styles = css`
     :host {
@@ -39,10 +40,10 @@ export class GovContainer extends LitElement {
     return html`
       <div
         class="container"
-        style="
-          --_max-width: ${this.maxWidth};
-          --_padding: var(--govtw-space-${this.padding}, ${Number(this.padding) * 4}px);
-        "
+        style=${styleMap({
+          '--_max-width': this.maxWidth,
+          '--_padding': `var(--govtw-space-${this.padding})`,
+        })}
       >
         <slot></slot>
       </div>

@@ -85,11 +85,21 @@ export class GovLink extends LitElement {
   `;
 
   render() {
+    // 無 href 時不渲染 anchor，避免 href="#" 這種會捲回頂端的 placeholder 語意
+    if (!this.href) {
+      return html`<slot></slot>`;
+    }
+
+    // target="_blank" 時自動補上 rel="noopener noreferrer" 防止反向 tabnabbing
+    const autoRel = this.target === '_blank' && !this.rel
+      ? 'noopener noreferrer'
+      : this.rel;
+
     return html`
       <a
-        href=${this.href || '#'}
+        href=${this.href}
         target=${this.target || nothing}
-        rel=${this.rel || nothing}
+        rel=${autoRel || nothing}
       ><slot></slot></a>
     `;
   }

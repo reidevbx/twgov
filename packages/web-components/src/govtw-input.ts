@@ -1,4 +1,4 @@
-import { LitElement, html, css, nothing } from 'lit';
+import { LitElement, html, css, nothing, type PropertyValues } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 @customElement('govtw-input')
@@ -211,7 +211,7 @@ export class GovInput extends LitElement {
     this.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
   }
 
-  updated(changed: Map<string, unknown>) {
+  updated(changed: PropertyValues<this>) {
     if (changed.has('value')) {
       this._internals.setFormValue(this.value);
     }
@@ -258,6 +258,7 @@ export class GovInput extends LitElement {
             inputmode=${this.inputmode || nothing}
             ?disabled=${this.disabled}
             .spellcheck=${this.spellcheck}
+            aria-invalid=${hasError ? 'true' : nothing}
             aria-describedby=${describedBy || nothing}
             @input=${this._handleInput}
             @change=${this._handleChange}

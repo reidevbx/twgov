@@ -1,12 +1,15 @@
 import { LitElement, html, css, nothing } from 'lit';
-import { customElement, property, state } from 'lit/decorators.js';
+import { customElement, property, queryAssignedElements } from 'lit/decorators.js';
 
 @customElement('govtw-fieldset')
 export class GovFieldset extends LitElement {
   @property({ type: String }) error = '';
 
-  @state() private _hasLegend = false;
-  @state() private _hasHint = false;
+  @queryAssignedElements({ slot: 'legend', flatten: true })
+  private _legendElements!: Element[];
+
+  @queryAssignedElements({ slot: 'hint', flatten: true })
+  private _hintElements!: Element[];
 
   static styles = css`
     :host {
@@ -78,36 +81,28 @@ export class GovFieldset extends LitElement {
     }
   `;
 
-  private _onLegendSlotChange(e: Event) {
-    const slot = e.target as HTMLSlotElement;
-    this._hasLegend = slot.assignedNodes({ flatten: true }).length > 0;
-  }
-
-  private _onHintSlotChange(e: Event) {
-    const slot = e.target as HTMLSlotElement;
-    this._hasHint = slot.assignedNodes({ flatten: true }).length > 0;
-  }
-
   render() {
     const hasError = !!this.error;
+    const hasLegend = (this._legendElements?.length ?? 0) > 0;
+    const hasHint = (this._hintElements?.length ?? 0) > 0;
 
     return html`
       <div class="${hasError ? 'fieldset-wrapper--error' : ''}">
         <fieldset
           class="fieldset"
           aria-describedby=${[
-            this._hasHint ? 'fieldset-hint' : '',
+            hasHint ? 'fieldset-hint' : '',
             hasError ? 'fieldset-error' : '',
           ].filter(Boolean).join(' ') || nothing}
         >
-          <legend class="fieldset__legend ${this._hasLegend ? '' : 'fieldset__legend--empty'}">
-            <slot name="legend" @slotchange=${this._onLegendSlotChange}></slot>
+          <legend class="fieldset__legend ${hasLegend ? '' : 'fieldset__legend--empty'}">
+            <slot name="legend"></slot>
           </legend>
           <div
-            class="fieldset__hint ${this._hasHint ? '' : 'fieldset__hint--empty'}"
+            class="fieldset__hint ${hasHint ? '' : 'fieldset__hint--empty'}"
             id="fieldset-hint"
           >
-            <slot name="hint" @slotchange=${this._onHintSlotChange}></slot>
+            <slot name="hint"></slot>
           </div>
           ${hasError
             ? html`<span class="fieldset__error" id="fieldset-error">${this.error}</span>`

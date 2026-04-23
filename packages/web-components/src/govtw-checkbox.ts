@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, type PropertyValues } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 @customElement('govtw-checkbox')
@@ -151,8 +151,8 @@ export class GovCheckbox extends LitElement {
     this.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
   }
 
-  updated(changed: Map<string, unknown>) {
-    if (changed.has('checked')) {
+  updated(changed: PropertyValues<this>) {
+    if (changed.has('checked') || changed.has('value')) {
       this._internals.setFormValue(this.checked ? this.value : null);
     }
   }

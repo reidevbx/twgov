@@ -1,11 +1,38 @@
-import { LitElement, html, css } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { LitElement, html, css, type PropertyValues } from 'lit';
+import { customElement, property, state } from 'lit/decorators.js';
 
 /**
- * 全域 radio 註冊表：以 name 為 key，儲存同名 radio 實例。
- * 互斥邏輯不依賴 DOM 查詢，不受 Shadow DOM 限制。
+ * Radio 群組註冊表：以最近的 <form>（或 document）為範圍，name 為 key 管理同群組 radio。
+ * 支援多 form 隔離、shadow DOM 隔離、鍵盤導航（WAI-ARIA radio group pattern）。
  */
-const radioRegistry = new Map<string, Set<GovRadio>>();
+type RadioScope = HTMLFormElement | Document;
+const radioRegistry = new WeakMap<RadioScope, Map<string, Set<GovRadio>>>();
+
+function addToGroup(scope: RadioScope, name: string, radio: GovRadio) {
+  let byName = radioRegistry.get(scope);
+  if (!byName) {
+    byName = new Map();
+    radioRegistry.set(scope, byName);
+  }
+  let group = byName.get(name);
+  if (!group) {
+    group = new Set();
+    byName.set(name, group);
+  }
+  group.add(radio);
+}
+
+function removeFromGroup(scope: RadioScope, name: string, radio: GovRadio) {
+  const byName = radioRegistry.get(scope);
+  const group = byName?.get(name);
+  if (!group) return;
+  group.delete(radio);
+  if (group.size === 0) byName!.delete(name);
+}
+
+function getGroup(scope: RadioScope, name: string): Set<GovRadio> | undefined {
+  return radioRegistry.get(scope)?.get(name);
+}
 
 @customElement('govtw-radio')
 export class GovRadio extends LitElement {
@@ -22,7 +49,12 @@ export class GovRadio extends LitElement {
   @property({ type: String }) name = '';
   @property({ type: String }) label = '';
 
+  /** 由群組集中計算，避免每顆 radio 在 render 時重複迭代整個群組 */
+  @state() private _tabStop = false;
+
   private _internals: ElementInternals;
+  private _currentScope: RadioScope | null = null;
+  private _currentName = '';
 
   constructor() {
     super();
@@ -128,7 +160,9 @@ export class GovRadio extends LitElement {
     }
   `;
 
-  /* ===== 生命週期：註冊 / 取消註冊 ===== */
+  private get _scope(): RadioScope {
+    return this._internals.form ?? document;
+  }
 
   connectedCallback() {
     super.connectedCallback();
@@ -140,25 +174,50 @@ export class GovRadio extends LitElement {
     this._unregister();
   }
 
+  /** 當 form 關聯變動（被移入/移出 form）時，重新註冊至正確 scope */
+  formAssociatedCallback() {
+    if (this.isConnected) {
+      this._unregister();
+      this._register();
+    }
+  }
+
   private _register() {
     if (!this.name) return;
-    if (!radioRegistry.has(this.name)) {
-      radioRegistry.set(this.name, new Set());
-    }
-    radioRegistry.get(this.name)!.add(this);
+    this._currentScope = this._scope;
+    this._currentName = this.name;
+    addToGroup(this._currentScope, this._currentName, this);
+    GovRadio._updateGroupTabStops(this._currentScope, this._currentName);
   }
 
-  private _unregister(name?: string) {
-    const n = name ?? this.name;
-    if (!n) return;
-    const group = radioRegistry.get(n);
-    if (group) {
-      group.delete(this);
-      if (group.size === 0) radioRegistry.delete(n);
-    }
+  private _unregister() {
+    if (!this._currentScope || !this._currentName) return;
+    const scope = this._currentScope;
+    const name = this._currentName;
+    removeFromGroup(scope, name, this);
+    this._currentScope = null;
+    this._currentName = '';
+    this._tabStop = false;
+    GovRadio._updateGroupTabStops(scope, name);
   }
 
-  /* ===== 選取邏輯 ===== */
+  /**
+   * 集中計算一整個群組的 tab stop：每次群組成員增減、checked 或 disabled 變動時呼叫一次，
+   * 而非讓每顆 radio 各自在 render 時去迭代群組（原本的 O(N²) 行為）。
+   */
+  private static _updateGroupTabStops(scope: RadioScope, name: string) {
+    const group = getGroup(scope, name);
+    if (!group) return;
+    const enabled = [...group]
+      .filter(r => r.isConnected && !r.disabled)
+      .sort((a, b) =>
+        a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1
+      );
+    const tabStop = enabled.find(r => r.checked) ?? enabled[0];
+    for (const r of group) {
+      r._tabStop = r === tabStop;
+    }
+  }
 
   private _select() {
     if (this.disabled || this.checked) return;
@@ -169,23 +228,53 @@ export class GovRadio extends LitElement {
   }
 
   private _uncheckSiblings() {
-    if (!this.name) return;
-    const group = radioRegistry.get(this.name);
+    if (!this._currentScope || !this._currentName) return;
+    const group = getGroup(this._currentScope, this._currentName);
     if (!group) return;
     for (const sibling of group) {
       if (sibling !== this) sibling.checked = false;
     }
   }
 
-  updated(changed: Map<string, unknown>) {
+  /** 同群組中已連接且未 disabled 的 radio，依 DOM 順序排序（僅鍵盤導航使用） */
+  private _getGroupRadios(): GovRadio[] {
+    if (!this._currentScope || !this._currentName) return [this];
+    const group = getGroup(this._currentScope, this._currentName);
+    if (!group || group.size === 0) return [this];
+    return [...group]
+      .filter(r => r.isConnected && !r.disabled)
+      .sort((a, b) =>
+        a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1
+      );
+  }
+
+  /** 移動焦點並選取鄰近 radio（ARIA radio group pattern：方向鍵同步選取） */
+  private _focusSibling(delta: number) {
+    const radios = this._getGroupRadios();
+    if (radios.length === 0) return;
+    const currentIndex = radios.indexOf(this);
+    if (currentIndex === -1) return;
+    const next = radios[(currentIndex + delta + radios.length) % radios.length];
+    next._select();
+    next.focus();
+  }
+
+  updated(changed: PropertyValues<this>) {
     if (changed.has('checked')) {
       this._internals.setFormValue(this.checked ? this.value : null);
-      const input = this.shadowRoot?.querySelector('input');
-      if (input) input.checked = this.checked;
+      if (this._currentScope && this._currentName) {
+        GovRadio._updateGroupTabStops(this._currentScope, this._currentName);
+      }
+    }
+    if (changed.has('disabled') && this._currentScope && this._currentName) {
+      GovRadio._updateGroupTabStops(this._currentScope, this._currentName);
     }
     if (changed.has('name')) {
-      this._unregister(changed.get('name') as string);
+      this._unregister();
       this._register();
+    }
+    if (changed.has('value') && this.checked) {
+      this._internals.setFormValue(this.value);
     }
   }
 
@@ -202,6 +291,15 @@ export class GovRadio extends LitElement {
     if (e.key === ' ' || e.key === 'Enter') {
       e.preventDefault();
       this._select();
+      return;
+    }
+
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+      e.preventDefault();
+      this._focusSibling(1);
+    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      this._focusSibling(-1);
     }
   }
 
@@ -213,9 +311,7 @@ export class GovRadio extends LitElement {
           class="radio__input"
           .checked=${this.checked}
           ?disabled=${this.disabled}
-          role="radio"
-          aria-checked=${this.checked ? 'true' : 'false'}
-          tabindex="0"
+          tabindex=${this._tabStop ? 0 : -1}
           @keydown=${this._handleKeydown}
         />
         <span class="radio__circle"></span>
