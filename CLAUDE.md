@@ -113,13 +113,24 @@ pnpm build:tokens    # 重建 token 產出檔
 
 ## 新增元件步驟
 
-1. `packages/web-components/src/govtw-<name>.ts` — 建立元件
-2. `packages/web-components/src/index.ts` — 加入 export
-3. `packages/web-components/package.json` — 加入 exports entry
-4. `apps/docs/components/<name>.md` — 建立文件頁面
-5. `apps/docs/.vitepress/config.mts` — sidebar 加入連結
-6. 建立 `apps/docs/public/preview/<name>/` 下的獨立預覽 HTML
-7. `pnpm build` 驗證，並複製 IIFE 和 tokens.css 到 `apps/docs/public/`
+⚠️ **不要手工建立**，使用 scaffolder：
+
+```bash
+pnpm new:component <name> [--type=basic|form|layout] [--zh-name=中文名]
+```
+
+scaffolder 會自動：
+- 建立 `packages/web-components/src/govtw-<name>.ts`（依 type 套用 basic / form / layout 模板）
+- 建立 `apps/docs/components/<name>.md` 骨架
+- 建立 `apps/docs/public/preview/<name>/default.html`
+- 更新 `index.ts` export、`package.json` exports、VitePress sidebar
+
+產生後的工作：
+1. 填寫元件 `.ts` 中的 TODO 區塊（屬性、樣式、render）
+2. 補 docs 頁的屬性表、事件表、無障礙說明
+3. 調整 preview HTML 的示範內容
+4. `pnpm build`（build 後會自動執行 `sync:public` 同步 dist 到 public）
+5. `pnpm check:components` 稽核所有元件完整性
 
 ## 技術約束
 
