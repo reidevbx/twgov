@@ -12,26 +12,40 @@
  * 回傳 exit code 0（全部通過）或 1（有缺漏）。
  */
 
-import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
-import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { P } from './paths.mjs';
 
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const SOURCE_RE = /^govtw-[a-z][a-z0-9-]*\.ts$/;
 
-const SRC_DIR = resolve(ROOT, 'packages/web-components/src');
-const DOCS_DIR = resolve(ROOT, 'apps/docs/components');
-const PREVIEW_DIR = resolve(ROOT, 'apps/docs/public/preview');
-const INDEX_PATH = resolve(SRC_DIR, 'index.ts');
-const PKG_PATH = resolve(ROOT, 'packages/web-components/package.json');
-const VP_PATH = resolve(ROOT, 'apps/docs/.vitepress/config.mts');
+/** 一次性蒐集 docs 頁面、preview 目錄（含 HTML 的）— 避免每元件重複 syscall。 */
+function buildCaches() {
+  const docs = new Set(
+    readdirSync(P.docs.components)
+      .filter(f => f.endsWith('.md'))
+      .map(f => f.replace(/\.md$/, ''))
+  );
 
-const sourceFiles = readdirSync(SRC_DIR)
-  .filter(f => f.startsWith('govtw-') && f.endsWith('.ts'))
-  .filter(f => !f.endsWith('.test.ts') && !f.endsWith('.d.ts'));
+  const previews = new Set();
+  if (existsSync(P.docs.preview)) {
+    for (const entry of readdirSync(P.docs.preview, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const dir = resolve(P.docs.preview, entry.name);
+      const hasHtml = readdirSync(dir).some(f => f.endsWith('.html'));
+      if (hasHtml) previews.add(entry.name);
+    }
+  }
 
-const indexContent = readFileSync(INDEX_PATH, 'utf-8');
-const pkgExports = JSON.parse(readFileSync(PKG_PATH, 'utf-8')).exports ?? {};
-const vpContent = readFileSync(VP_PATH, 'utf-8');
+  return { docs, previews };
+}
+
+const sourceFiles = readdirSync(P.wc.src)
+  .filter(f => SOURCE_RE.test(f) && !f.endsWith('.test.ts'));
+
+const { docs, previews } = buildCaches();
+const indexContent = readFileSync(P.wc.index, 'utf-8');
+const pkgExports = JSON.parse(readFileSync(P.wc.pkg, 'utf-8')).exports ?? {};
+const vpContent = readFileSync(P.docs.vpConfig, 'utf-8');
 
 const issues = [];
 
@@ -40,38 +54,14 @@ for (const file of sourceFiles) {
   const name = tag.replace(/^govtw-/, '');
   const rowIssues = [];
 
-  if (!existsSync(resolve(DOCS_DIR, `${name}.md`))) {
-    rowIssues.push(`缺 docs: apps/docs/components/${name}.md`);
-  }
+  if (!docs.has(name)) rowIssues.push(`缺 docs: apps/docs/components/${name}.md`);
+  if (!previews.has(name)) rowIssues.push(`缺 preview HTML: apps/docs/public/preview/${name}/`);
+  if (!indexContent.includes(`from './${tag}.js'`)) rowIssues.push(`index.ts 缺 export`);
+  if (!pkgExports[`./${tag}`]) rowIssues.push(`package.json 缺 exports entry`);
+  if (!vpContent.includes(`/components/${name}`)) rowIssues.push(`VitePress sidebar 缺 link`);
 
-  const previewSubdir = resolve(PREVIEW_DIR, name);
-  if (!existsSync(previewSubdir) || !statSync(previewSubdir).isDirectory()) {
-    rowIssues.push(`缺 preview 目錄: apps/docs/public/preview/${name}/`);
-  } else {
-    const htmls = readdirSync(previewSubdir).filter(f => f.endsWith('.html'));
-    if (htmls.length === 0) {
-      rowIssues.push(`preview 目錄內無 HTML: apps/docs/public/preview/${name}/`);
-    }
-  }
-
-  if (!indexContent.includes(`from './${tag}.js'`)) {
-    rowIssues.push(`index.ts 缺 export: from './${tag}.js'`);
-  }
-
-  if (!pkgExports[`./${tag}`]) {
-    rowIssues.push(`package.json 缺 exports entry: ./${tag}`);
-  }
-
-  if (!vpContent.includes(`/components/${name}`)) {
-    rowIssues.push(`VitePress sidebar 缺 link: /components/${name}`);
-  }
-
-  if (rowIssues.length > 0) {
-    issues.push({ tag, rowIssues });
-  }
+  if (rowIssues.length > 0) issues.push({ tag, rowIssues });
 }
-
-/* ===== 報告 ===== */
 
 if (issues.length === 0) {
   console.log(`✅ ${sourceFiles.length} 個元件全部完整。`);
@@ -81,9 +71,7 @@ if (issues.length === 0) {
 console.log(`❌ ${issues.length} / ${sourceFiles.length} 個元件有缺漏：\n`);
 for (const { tag, rowIssues } of issues) {
   console.log(`  ${tag}`);
-  for (const issue of rowIssues) {
-    console.log(`    - ${issue}`);
-  }
+  for (const issue of rowIssues) console.log(`    - ${issue}`);
   console.log('');
 }
 process.exit(1);

@@ -47,12 +47,12 @@ export class GovInput extends LitElement {
      */
 
     .form-group {
-      margin-bottom: var(--govtw-spacing-6, 24px);
+      margin-bottom: var(--govtw-spacing-6);
     }
 
     .form-group--error {
       border-left: 4px solid var(--govtw-input-error-color);
-      padding-left: var(--govtw-spacing-4, 16px);
+      padding-left: var(--govtw-spacing-4);
     }
 
     /* ===== Label ===== */
@@ -62,7 +62,7 @@ export class GovInput extends LitElement {
       font-size: var(--govtw-input-font-size);
       font-weight: 700;
       color: var(--govtw-input-color);
-      margin-bottom: var(--govtw-spacing-1, 4px);
+      margin-bottom: var(--govtw-spacing-1);
     }
 
     /* ===== Hint ===== */
@@ -71,7 +71,7 @@ export class GovInput extends LitElement {
       font-family: var(--govtw-input-font-family);
       font-size: var(--govtw-input-font-size);
       color: var(--govtw-input-hint-color);
-      margin-bottom: var(--govtw-spacing-2, 8px);
+      margin-bottom: var(--govtw-spacing-2);
     }
 
     /* ===== Error message ===== */
@@ -81,7 +81,7 @@ export class GovInput extends LitElement {
       font-size: var(--govtw-input-font-size);
       font-weight: 700;
       color: var(--govtw-input-error-color);
-      margin-bottom: var(--govtw-spacing-2, 8px);
+      margin-bottom: var(--govtw-spacing-2);
     }
 
     /* ===== Input wrapper (for prefix / suffix) ===== */
@@ -104,7 +104,7 @@ export class GovInput extends LitElement {
       color: var(--govtw-input-color);
       background: var(--govtw-input-disabled-bg);
       border: 2px solid var(--govtw-input-border-color);
-      padding: var(--govtw-spacing-2, 8px) var(--govtw-spacing-3, 12px);
+      padding: var(--govtw-spacing-2) var(--govtw-spacing-3);
       white-space: nowrap;
     }
 
@@ -139,7 +139,7 @@ export class GovInput extends LitElement {
       background: var(--govtw-input-bg);
       border: 2px solid var(--govtw-input-border-color);
       border-radius: var(--govtw-input-border-radius);
-      padding: var(--govtw-spacing-2, 8px);
+      padding: var(--govtw-spacing-2);
       width: 100%;
       box-sizing: border-box;
       margin: 0;

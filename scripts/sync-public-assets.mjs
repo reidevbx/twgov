@@ -8,19 +8,17 @@
 
 import { copyFileSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+import { P } from './paths.mjs';
 
 const ASSETS = [
   {
-    from: resolve(ROOT, 'packages/tokens/tokens.css'),
-    to: resolve(ROOT, 'apps/docs/public/tokens.css'),
+    from: P.tokens.css,
+    to: resolve(P.docs.public, 'tokens.css'),
     label: 'tokens.css',
   },
   {
-    from: resolve(ROOT, 'packages/web-components/dist/gov-tw.iife.js'),
-    to: resolve(ROOT, 'apps/docs/public/gov-tw.iife.js'),
+    from: P.wc.iife,
+    to: resolve(P.docs.public, 'gov-tw.iife.js'),
     label: 'gov-tw.iife.js',
   },
 ];

@@ -1,0 +1,11 @@
+{
+  "packages/web-components/src/**/*.ts": [
+    "eslint --fix"
+  ],
+  "scripts/**/*.mjs": [
+    "eslint --fix"
+  ],
+  "eslint-rules/**/*.js": [
+    "eslint --fix"
+  ]
+}

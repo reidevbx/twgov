@@ -9,9 +9,23 @@
     "build:components": "pnpm --filter @gov-tw/web-components build",
     "new:component": "node scripts/new-component.mjs",
     "check:components": "node scripts/check-components.mjs",
-    "sync:public": "node scripts/sync-public-assets.mjs"
+    "sync:public": "node scripts/sync-public-assets.mjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["esbuild", "sharp"]
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "eslint": "^9.39.4",
+    "eslint-plugin-lit": "^2.2.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "typescript-eslint": "^8.59.0"
   }
 }

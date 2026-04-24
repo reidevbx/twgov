@@ -44,12 +44,12 @@ export class GovTextarea extends LitElement {
      */
 
     .form-group {
-      margin-bottom: var(--govtw-spacing-6, 24px);
+      margin-bottom: var(--govtw-spacing-6);
     }
 
     .form-group--error {
       border-left: 4px solid var(--govtw-textarea-error-color);
-      padding-left: var(--govtw-spacing-4, 16px);
+      padding-left: var(--govtw-spacing-4);
     }
 
     /* ===== Label ===== */
@@ -59,7 +59,7 @@ export class GovTextarea extends LitElement {
       font-size: var(--govtw-textarea-font-size);
       font-weight: 700;
       color: var(--govtw-textarea-color);
-      margin-bottom: var(--govtw-spacing-1, 4px);
+      margin-bottom: var(--govtw-spacing-1);
     }
 
     /* ===== Hint ===== */
@@ -68,7 +68,7 @@ export class GovTextarea extends LitElement {
       font-family: var(--govtw-textarea-font-family);
       font-size: var(--govtw-textarea-font-size);
       color: var(--govtw-textarea-hint-color);
-      margin-bottom: var(--govtw-spacing-2, 8px);
+      margin-bottom: var(--govtw-spacing-2);
     }
 
     /* ===== Error message ===== */
@@ -78,7 +78,7 @@ export class GovTextarea extends LitElement {
       font-size: var(--govtw-textarea-font-size);
       font-weight: 700;
       color: var(--govtw-textarea-error-color);
-      margin-bottom: var(--govtw-spacing-2, 8px);
+      margin-bottom: var(--govtw-spacing-2);
     }
 
     /* ===== Textarea ===== */
@@ -90,7 +90,7 @@ export class GovTextarea extends LitElement {
       background: var(--govtw-textarea-bg);
       border: 2px solid var(--govtw-textarea-border-color);
       border-radius: var(--govtw-textarea-border-radius);
-      padding: var(--govtw-spacing-2, 8px);
+      padding: var(--govtw-spacing-2);
       width: 100%;
       box-sizing: border-box;
       margin: 0;
@@ -128,7 +128,7 @@ export class GovTextarea extends LitElement {
       font-family: var(--govtw-textarea-font-family);
       font-size: var(--govtw-font-size-sm);
       color: var(--govtw-textarea-hint-color);
-      margin-top: var(--govtw-spacing-1, 4px);
+      margin-top: var(--govtw-spacing-1);
     }
 
     .character-count--over {

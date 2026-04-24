@@ -40,11 +40,11 @@ export class GovCheckbox extends LitElement {
     .checkbox {
       display: flex;
       align-items: flex-start;
-      gap: var(--govtw-spacing-3, 12px);
+      gap: var(--govtw-spacing-3);
       cursor: pointer;
       position: relative;
       min-height: 44px;
-      padding: var(--govtw-spacing-1, 4px) 0;
+      padding: var(--govtw-spacing-1) 0;
     }
 
     /* ===== 原生 input，不可見但可操作 ===== */
