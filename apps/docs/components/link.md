@@ -10,7 +10,7 @@
 
 試著操作下方連結：hover（滑鼠移入會加粗底線）、用 <kbd>Tab</kbd> 鍵聚焦（黃底黑字）。
 
-<DemoBlock>
+<DemoBlock variant="default">
   <govtw-link href="#">前往申辦</govtw-link>
   <govtw-link href="#">查看更多資訊</govtw-link>
   <govtw-link href="#">下載表單</govtw-link>
@@ -30,7 +30,7 @@
 
 `<govtw-link>` 以 `display: inline` 呈現，可自然嵌入段落文字中，字體與行高繼承自父層。
 
-<DemoBlock>
+<DemoBlock variant="paragraph">
   <p style="max-width: 36em; line-height: 1.6;">
     您可以至 <govtw-link href="#">線上申辦系統</govtw-link> 完成申請，
     或參閱 <govtw-link href="#">申請須知</govtw-link> 了解所需文件。
@@ -54,7 +54,7 @@
 
 導覽連結等不需要顯示已造訪色彩的場景，加上 `no-visited` 屬性：
 
-<DemoBlock>
+<DemoBlock variant="no-visited">
   <govtw-link href="#" no-visited>首頁</govtw-link>
   <govtw-link href="#" no-visited>關於我們</govtw-link>
   <govtw-link href="#" no-visited>聯絡方式</govtw-link>
@@ -74,7 +74,7 @@
 
 預設不顯示底線，hover 與 focus/active 時才出現底線。適用於導覽列、頁尾連結等已有明確視覺區隔的場景。
 
-<DemoBlock>
+<DemoBlock variant="no-underline">
   <govtw-link href="#" no-underline>首頁</govtw-link>
   <govtw-link href="#" no-underline>服務項目</govtw-link>
   <govtw-link href="#" no-underline>聯絡我們</govtw-link>
@@ -92,7 +92,7 @@
 
 ### 開新視窗的連結
 
-<DemoBlock>
+<DemoBlock variant="new-tab">
   <govtw-link href="https://example.gov.tw" target="_blank" rel="noreferrer noopener">外部系統（另開新視窗）</govtw-link>
 
   <template #code>

@@ -8,7 +8,7 @@
 
 ### 基本用法
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" variant="default">
   <govtw-textarea label="詳細說明" name="description"></govtw-textarea>
 
   <template #code>
@@ -24,7 +24,7 @@
 
 提示文字用於說明欄位的填寫格式或注意事項。
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" variant="hint">
   <govtw-textarea label="申請原因" hint="請詳細說明您的申請原因，以利審核人員了解情況。" name="reason"></govtw-textarea>
 
   <template #code>
@@ -40,7 +40,7 @@
 
 設定 `maxlength` 後，會顯示剩餘可輸入字數。超過限制時以紅色提示。
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" variant="character-count">
   <govtw-textarea label="意見回饋" hint="請提供您對本服務的建議" maxlength="200" name="feedback"></govtw-textarea>
 
   <template #code>
@@ -56,7 +56,7 @@
 
 透過 `rows` 屬性調整預設顯示行數。
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" variant="rows">
   <govtw-stack space="4">
     <govtw-textarea label="簡短備註" rows="3" name="short-note"></govtw-textarea>
     <govtw-textarea label="詳細描述" rows="8" name="long-note"></govtw-textarea>
@@ -78,7 +78,7 @@
 
 當驗證失敗時，顯示錯誤訊息並以紅色邊框和左側紅線標示。
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" variant="error">
   <govtw-textarea label="問題描述" error="請填寫問題描述" name="issue"></govtw-textarea>
 
   <template #code>
@@ -92,7 +92,7 @@
 
 ### 停用狀態
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" variant="disabled">
   <govtw-textarea label="不可編輯" value="此欄位無法修改" disabled></govtw-textarea>
 
   <template #code>

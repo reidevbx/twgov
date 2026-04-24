@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Radio 單選按鈕 — gov.tw Design System</title>
+  <title>Link 連結 — gov.tw Design System</title>
   <link rel="stylesheet" href="/tokens.css">
   <script src="/gov-tw.iife.js"></script>
   <style>
@@ -19,18 +19,18 @@
     }
     .demo-layout {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       flex-wrap: wrap;
-      align-items: stretch;
+      align-items: center;
       gap: 12px;
     }
   </style>
 </head>
 <body>
   <div class="demo-layout">
-    <govtw-radio name="demo-basic" value="a" label="選項 A" checked></govtw-radio>
-    <govtw-radio name="demo-basic" value="b" label="選項 B"></govtw-radio>
-    <govtw-radio name="demo-basic" value="c" label="選項 C"></govtw-radio>
+    <govtw-link href="#" no-underline>首頁</govtw-link>
+    <govtw-link href="#" no-underline>服務項目</govtw-link>
+    <govtw-link href="#" no-underline>聯絡我們</govtw-link>
   </div>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Radio 單選按鈕 — gov.tw Design System</title>
+  <title>Text Input 文字輸入 — gov.tw Design System</title>
   <link rel="stylesheet" href="/tokens.css">
   <script src="/gov-tw.iife.js"></script>
   <style>
@@ -28,9 +28,13 @@
 </head>
 <body>
   <div class="demo-layout">
-    <govtw-radio name="demo-basic" value="a" label="選項 A" checked></govtw-radio>
-    <govtw-radio name="demo-basic" value="b" label="選項 B"></govtw-radio>
-    <govtw-radio name="demo-basic" value="c" label="選項 C"></govtw-radio>
+    <govtw-stack space="4">
+      <govtw-input label="金額" prefix="NT$" width="10"></govtw-input>
+      <govtw-input label="重量" suffix="公斤" width="5"></govtw-input>
+      <govtw-cluster space="4">
+        <govtw-input label="費率" prefix="NT$" suffix="每月" width="10"></govtw-input>
+      </govtw-cluster>
+    </govtw-stack>
   </div>
 </body>
 </html>

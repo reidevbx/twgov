@@ -8,7 +8,7 @@
 
 ### 基本用法
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" variant="default">
   <govtw-input label="全名" name="fullname"></govtw-input>
 
   <template #code>
@@ -24,7 +24,7 @@
 
 提示文字用於說明欄位的填寫格式或條件。
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" variant="hint">
   <govtw-input label="身分證字號" hint="英文字母開頭，共 10 碼" width="10"></govtw-input>
 
   <template #code>
@@ -40,7 +40,7 @@
 
 根據預期輸入長度設定寬度，幫助使用者判斷該填多少內容。用 `<govtw-cluster>` 水平排列，窄螢幕自動換行。
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" variant="width">
   <govtw-stack space="4">
     <govtw-input label="全寬（預設）" hint="地址、全名等長度不定的文字"></govtw-input>
     <govtw-input label="寬度 20" width="20" hint="較長的姓名、帳號"></govtw-input>
@@ -76,8 +76,10 @@
 
 短寬度欄位適合用 `<govtw-cluster>` 水平排列。
 
-<DemoBlock direction="column">
-  <govtw-fieldset legend="出生日期" hint="例如：1990 年 3 月 15 日">
+<DemoBlock direction="column" variant="date-fields">
+  <govtw-fieldset>
+    <h2 slot="legend">出生日期</h2>
+    <p slot="hint">例如：1990 年 3 月 15 日</p>
     <govtw-cluster space="3">
       <govtw-input label="年" width="4" inputmode="numeric"></govtw-input>
       <govtw-input label="月" width="2" inputmode="numeric"></govtw-input>
@@ -88,7 +90,9 @@
   <template #code>
 
 ```html
-<govtw-fieldset legend="出生日期" hint="例如：1990 年 3 月 15 日">
+<govtw-fieldset>
+  <h2 slot="legend">出生日期</h2>
+  <p slot="hint">例如：1990 年 3 月 15 日</p>
   <govtw-cluster space="3">
     <govtw-input label="年" width="4" inputmode="numeric"></govtw-input>
     <govtw-input label="月" width="2" inputmode="numeric"></govtw-input>
@@ -104,7 +108,7 @@
 
 用於顯示單位或幣別符號，讓使用者明確知道欄位的語意。
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" variant="prefix-suffix">
   <govtw-stack space="4">
     <govtw-input label="金額" prefix="NT$" width="10"></govtw-input>
     <govtw-input label="重量" suffix="公斤" width="5"></govtw-input>
@@ -132,7 +136,7 @@
 
 當驗證失敗時，顯示錯誤訊息並以紅色邊框和左側紅線標示。
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" variant="error">
   <govtw-input label="電子信箱" type="email" error="請輸入有效的電子信箱地址" value="abc"></govtw-input>
 
   <template #code>
@@ -146,7 +150,7 @@
 
 ### 停用狀態
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" variant="disabled">
   <govtw-input label="不可編輯" value="此欄位無法修改" disabled></govtw-input>
 
   <template #code>

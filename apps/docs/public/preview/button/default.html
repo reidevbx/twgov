@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/tokens.css">
   <script src="/gov-tw.iife.js"></script>
   <style>
+    *, *::before, *::after { box-sizing: border-box; }
     body {
       font-family: var(--govtw-font-sans, system-ui, -apple-system, sans-serif);
       color: var(--govtw-color-text-primary);
@@ -16,11 +17,20 @@
       padding: 40px;
       line-height: 1.6;
     }
+    .demo-layout {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
   </style>
 </head>
 <body>
-  <govtw-button variant="primary">送出</govtw-button>
-  <govtw-button variant="secondary">取消</govtw-button>
-  <govtw-button variant="danger">刪除</govtw-button>
+  <div class="demo-layout">
+    <govtw-button variant="primary">送出</govtw-button>
+    <govtw-button variant="secondary">取消</govtw-button>
+    <govtw-button variant="danger">刪除</govtw-button>
+  </div>
 </body>
 </html>

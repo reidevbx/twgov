@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Radio 錯誤狀態 — gov.tw Design System</title>
+  <title>Radio 單選按鈕 — gov.tw Design System</title>
   <link rel="stylesheet" href="/tokens.css">
   <script src="/gov-tw.iife.js"></script>
   <style>
+    *, *::before, *::after { box-sizing: border-box; }
     body {
       font-family: var(--govtw-font-sans, system-ui, -apple-system, sans-serif);
       color: var(--govtw-color-text-primary);
@@ -16,15 +17,24 @@
       padding: 40px;
       line-height: 1.6;
     }
+    .demo-layout {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 12px;
+    }
   </style>
 </head>
 <body>
-  <govtw-fieldset error="請選擇一個選項">
-    <h2 slot="legend">您偏好的聯絡方式</h2>
-    <p slot="hint">請選擇一種聯絡方式</p>
-    <govtw-radio name="contact" value="email" label="電子郵件"></govtw-radio>
-    <govtw-radio name="contact" value="phone" label="電話"></govtw-radio>
-    <govtw-radio name="contact" value="mail" label="郵寄"></govtw-radio>
-  </govtw-fieldset>
+  <div class="demo-layout">
+    <govtw-fieldset error="請選擇一個選項">
+      <h2 slot="legend">您偏好的聯絡方式</h2>
+      <p slot="hint">請選擇一種聯絡方式</p>
+      <govtw-radio name="demo-error" value="email" label="電子郵件"></govtw-radio>
+      <govtw-radio name="demo-error" value="phone" label="電話"></govtw-radio>
+      <govtw-radio name="demo-error" value="mail" label="郵寄"></govtw-radio>
+    </govtw-fieldset>
+  </div>
 </body>
 </html>

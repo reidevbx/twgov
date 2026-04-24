@@ -4,9 +4,10 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm --filter docs dev",
-    "build": "pnpm --filter @gov-tw/web-components build && pnpm sync:public && pnpm --filter docs build",
+    "build": "pnpm --filter @gov-tw/web-components build && pnpm sync:public && pnpm build:previews && pnpm --filter docs build",
     "build:tokens": "pnpm --filter @gov-tw/tokens build",
     "build:components": "pnpm --filter @gov-tw/web-components build",
+    "build:previews": "node scripts/build-previews.mjs",
     "new:component": "node scripts/new-component.mjs",
     "check:components": "node scripts/check-components.mjs",
     "sync:public": "node scripts/sync-public-assets.mjs",

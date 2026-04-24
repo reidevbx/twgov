@@ -7,7 +7,7 @@
       <slot />
     </div>
     <div class="demo-block-actions">
-      <a v-if="preview" class="demo-block-toggle" :href="preview" target="_blank" rel="noopener" title="在新分頁中預覽此範例">
+      <a v-if="previewUrl" class="demo-block-toggle" :href="previewUrl" target="_blank" rel="noopener" title="在新分頁中預覽此範例">
         在新分頁預覽
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
           <path d="M7 1H11V5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -39,7 +39,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
+import { useRoute } from 'vitepress'
 
 declare const __GOVTW_TOKENS_CSS__: string
 const tokensCss: string = typeof __GOVTW_TOKENS_CSS__ !== 'undefined'
@@ -59,6 +60,20 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  variant: {
+    type: String,
+    default: '',
+  },
+})
+
+const route = useRoute()
+
+// preview prop 優先；否則從 route 推 /preview/<component>/<variant>.html
+const previewUrl = computed(() => {
+  if (props.preview) return props.preview
+  if (!props.variant) return ''
+  const m = route.path.match(/\/components\/([^/]+?)(?:\.html)?\/?$/)
+  return m ? `/preview/${m[1]}/${props.variant}.html` : ''
 })
 
 const open = ref(false)

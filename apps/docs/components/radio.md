@@ -10,7 +10,7 @@
 
 試著點擊選取、用 <kbd>Tab</kbd> 聚焦、<kbd>Space</kbd> 或方向鍵切換。
 
-<DemoBlock direction="column" preview="/preview/radio/default.html">
+<DemoBlock direction="column" variant="default">
   <govtw-radio name="demo-basic" value="a" label="選項 A" checked></govtw-radio>
   <govtw-radio name="demo-basic" value="b" label="選項 B"></govtw-radio>
   <govtw-radio name="demo-basic" value="c" label="選項 C"></govtw-radio>
@@ -30,7 +30,7 @@
 
 一組 Radio 應以 `<govtw-fieldset>` 包裹，提供群組標題與說明文字。
 
-<DemoBlock direction="column" preview="/preview/radio/fieldset.html">
+<DemoBlock direction="column" variant="fieldset">
   <govtw-fieldset>
     <h2 slot="legend">您偏好的聯絡方式</h2>
     <p slot="hint">請選擇一種聯絡方式</p>
@@ -56,7 +56,7 @@
 
 ### 使用 Slot 提供標籤內容
 
-<DemoBlock direction="column" preview="/preview/radio/slot.html">
+<DemoBlock direction="column" variant="slot">
   <govtw-radio name="demo-slot" value="agree">我同意<govtw-link href="#">服務條款</govtw-link>中的所有內容</govtw-radio>
   <govtw-radio name="demo-slot" value="disagree">我不同意</govtw-radio>
 
@@ -74,7 +74,7 @@
 
 ### 停用狀態
 
-<DemoBlock direction="column" preview="/preview/radio/disabled.html">
+<DemoBlock direction="column" variant="disabled">
   <govtw-radio name="demo-disabled" value="a" label="可選取" checked></govtw-radio>
   <govtw-radio name="demo-disabled-2" value="b" label="停用" disabled></govtw-radio>
   <govtw-radio name="demo-disabled-3" value="c" label="已選取但停用" checked disabled></govtw-radio>
@@ -94,7 +94,7 @@
 
 未選取任何選項時，透過 `<govtw-fieldset>` 的 `error` 屬性顯示錯誤提示。
 
-<DemoBlock direction="column" preview="/preview/radio/error.html">
+<DemoBlock direction="column" variant="error">
   <govtw-fieldset error="請選擇一個選項">
     <h2 slot="legend">您偏好的聯絡方式</h2>
     <p slot="hint">請選擇一種聯絡方式</p>

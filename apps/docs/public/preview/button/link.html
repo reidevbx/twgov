@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Button 連結按鈕 — gov.tw Design System</title>
+  <title>Button 按鈕 — gov.tw Design System</title>
   <link rel="stylesheet" href="/tokens.css">
   <script src="/gov-tw.iife.js"></script>
   <style>
+    *, *::before, *::after { box-sizing: border-box; }
     body {
       font-family: var(--govtw-font-sans, system-ui, -apple-system, sans-serif);
       color: var(--govtw-color-text-primary);
@@ -16,11 +17,20 @@
       padding: 40px;
       line-height: 1.6;
     }
+    .demo-layout {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
   </style>
 </head>
 <body>
-  <govtw-button href="https://design-system.service.gov.uk/">前往 GOV.UK</govtw-button>
-  <govtw-button href="https://design-system.service.gov.uk/" target="_blank" rel="noreferrer noopener">另開新分頁</govtw-button>
-  <govtw-button href="https://design-system.service.gov.uk/" disabled>停用連結</govtw-button>
+  <div class="demo-layout">
+    <govtw-button href="https://design-system.service.gov.uk/">前往 GOV.UK</govtw-button>
+    <govtw-button href="https://design-system.service.gov.uk/" target="_blank" rel="noreferrer noopener">另開新分頁</govtw-button>
+    <govtw-button href="https://design-system.service.gov.uk/" disabled>停用連結</govtw-button>
+  </div>
 </body>
 </html>

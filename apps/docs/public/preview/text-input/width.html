@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Radio 單選按鈕 — gov.tw Design System</title>
+  <title>Text Input 文字輸入 — gov.tw Design System</title>
   <link rel="stylesheet" href="/tokens.css">
   <script src="/gov-tw.iife.js"></script>
   <style>
@@ -28,9 +28,17 @@
 </head>
 <body>
   <div class="demo-layout">
-    <govtw-radio name="demo-basic" value="a" label="選項 A" checked></govtw-radio>
-    <govtw-radio name="demo-basic" value="b" label="選項 B"></govtw-radio>
-    <govtw-radio name="demo-basic" value="c" label="選項 C"></govtw-radio>
+    <govtw-stack space="4">
+      <govtw-input label="全寬（預設）" hint="地址、全名等長度不定的文字"></govtw-input>
+      <govtw-input label="寬度 20" width="20" hint="較長的姓名、帳號"></govtw-input>
+      <govtw-input label="寬度 10" width="10" hint="電話號碼、身分證字號"></govtw-input>
+      <govtw-cluster space="4">
+        <govtw-input label="寬度 5" width="5" hint="郵遞區號"></govtw-input>
+        <govtw-input label="寬度 4" width="4" hint="年份"></govtw-input>
+        <govtw-input label="寬度 3" width="3" hint="區碼"></govtw-input>
+        <govtw-input label="寬度 2" width="2" hint="月 / 日"></govtw-input>
+      </govtw-cluster>
+    </govtw-stack>
   </div>
 </body>
 </html>

@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Radio 停用狀態 — gov.tw Design System</title>
+  <title>Radio 單選按鈕 — gov.tw Design System</title>
   <link rel="stylesheet" href="/tokens.css">
   <script src="/gov-tw.iife.js"></script>
   <style>
+    *, *::before, *::after { box-sizing: border-box; }
     body {
       font-family: var(--govtw-font-sans, system-ui, -apple-system, sans-serif);
       color: var(--govtw-color-text-primary);
@@ -16,11 +17,20 @@
       padding: 40px;
       line-height: 1.6;
     }
+    .demo-layout {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 12px;
+    }
   </style>
 </head>
 <body>
-  <govtw-radio name="option" value="a" label="可選取" checked></govtw-radio>
-  <govtw-radio name="option-2" value="b" label="停用" disabled></govtw-radio>
-  <govtw-radio name="option-3" value="c" label="已選取但停用" checked disabled></govtw-radio>
+  <div class="demo-layout">
+    <govtw-radio name="demo-disabled" value="a" label="可選取" checked></govtw-radio>
+    <govtw-radio name="demo-disabled-2" value="b" label="停用" disabled></govtw-radio>
+    <govtw-radio name="demo-disabled-3" value="c" label="已選取但停用" checked disabled></govtw-radio>
+  </div>
 </body>
 </html>

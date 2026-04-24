@@ -8,7 +8,7 @@
 
 試著點擊勾選、用 <kbd>Tab</kbd> 聚焦、<kbd>Space</kbd> 切換。
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" variant="default">
   <govtw-checkbox label="我同意服務條款"></govtw-checkbox>
   <govtw-checkbox label="訂閱電子報" checked></govtw-checkbox>
   <govtw-checkbox label="無法選取" disabled></govtw-checkbox>
@@ -28,7 +28,7 @@
 
 ### 使用 Slot 提供標籤內容
 
-<DemoBlock direction="column">
+<DemoBlock direction="column" variant="slot">
   <govtw-checkbox>我已閱讀並同意<a href="#">隱私政策</a></govtw-checkbox>
 
   <template #code>

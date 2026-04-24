@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Radio 單選按鈕 — gov.tw Design System</title>
+  <title>Text Input 文字輸入 — gov.tw Design System</title>
   <link rel="stylesheet" href="/tokens.css">
   <script src="/gov-tw.iife.js"></script>
   <style>
@@ -28,9 +28,15 @@
 </head>
 <body>
   <div class="demo-layout">
-    <govtw-radio name="demo-basic" value="a" label="選項 A" checked></govtw-radio>
-    <govtw-radio name="demo-basic" value="b" label="選項 B"></govtw-radio>
-    <govtw-radio name="demo-basic" value="c" label="選項 C"></govtw-radio>
+    <govtw-fieldset>
+      <h2 slot="legend">出生日期</h2>
+      <p slot="hint">例如：1990 年 3 月 15 日</p>
+      <govtw-cluster space="3">
+        <govtw-input label="年" width="4" inputmode="numeric"></govtw-input>
+        <govtw-input label="月" width="2" inputmode="numeric"></govtw-input>
+        <govtw-input label="日" width="2" inputmode="numeric"></govtw-input>
+      </govtw-cluster>
+    </govtw-fieldset>
   </div>
 </body>
 </html>

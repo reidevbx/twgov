@@ -8,7 +8,7 @@
 
 試著操作下方按鈕：hover（滑鼠移入）、按下去（active）、用 <kbd>Tab</kbd> 鍵聚焦（focus）。
 
-<DemoBlock preview="/preview/button/default.html">
+<DemoBlock variant="default">
   <govtw-button variant="primary">送出</govtw-button>
   <govtw-button variant="secondary">取消</govtw-button>
   <govtw-button variant="danger">刪除</govtw-button>
@@ -26,7 +26,7 @@
 
 ### 尺寸
 
-<DemoBlock preview="/preview/button/sizes.html">
+<DemoBlock variant="sizes">
   <govtw-button size="sm">小按鈕</govtw-button>
   <govtw-button size="md">中按鈕</govtw-button>
   <govtw-button size="lg">大按鈕</govtw-button>
@@ -44,7 +44,7 @@
 
 ### 停用狀態
 
-<DemoBlock preview="/preview/button/disabled.html">
+<DemoBlock variant="disabled">
   <govtw-button disabled>停用按鈕</govtw-button>
   <govtw-button variant="secondary" disabled>停用次要</govtw-button>
 
@@ -62,7 +62,7 @@
 
 當按鈕需要導航至其他頁面時，設定 `href` 會將按鈕渲染為 `<a role="button">`，保持按鈕外觀但具備連結行為。
 
-<DemoBlock preview="/preview/button/link.html">
+<DemoBlock variant="link">
   <govtw-button href="https://design-system.service.gov.uk/">前往 GOV.UK</govtw-button>
   <govtw-button href="https://design-system.service.gov.uk/" target="_blank" rel="noreferrer noopener">另開新分頁</govtw-button>
   <govtw-button href="https://design-system.service.gov.uk/" disabled>停用連結</govtw-button>
