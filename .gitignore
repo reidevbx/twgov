@@ -4,6 +4,10 @@ node_modules
 # Build outputs
 dist
 
+# Build outputs synced to docs/public by pnpm sync:public
+apps/docs/public/gov-tw.iife.js
+apps/docs/public/tokens.css
+
 # VitePress
 apps/docs/.vitepress/cache
 apps/docs/.vitepress/dist
