@@ -20,10 +20,10 @@
       "types": "./dist/govtw-checkbox.d.ts",
       "import": "./dist/govtw-checkbox.js"
     },
-    "./govtw-input": {
-      "source": "./src/govtw-input.ts",
-      "types": "./dist/govtw-input.d.ts",
-      "import": "./dist/govtw-input.js"
+    "./govtw-text-input": {
+      "source": "./src/govtw-text-input.ts",
+      "types": "./dist/govtw-text-input.d.ts",
+      "import": "./dist/govtw-text-input.js"
     },
     "./govtw-fieldset": {
       "source": "./src/govtw-fieldset.ts",

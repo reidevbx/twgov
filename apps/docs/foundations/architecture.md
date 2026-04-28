@@ -73,7 +73,7 @@ Primitive（原始層）→ Semantic（語意層）→ Component（元件層）
 |------|------|------|
 | Button | `--govtw-button-primary-bg` | 主要按鈕背景 |
 | Button | `--govtw-button-focus-color` | 按鈕聚焦色 |
-| Input | `--govtw-input-border-color` | 輸入框邊框色 |
+| Text Input | `--govtw-text-input-border-color` | 輸入框邊框色 |
 | Checkbox | `--govtw-checkbox-check-color` | 勾選色 |
 
 #### 層級引用關係

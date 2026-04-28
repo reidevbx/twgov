@@ -1,6 +1,6 @@
 export { GovButton } from './govtw-button.js';
 export { GovCheckbox } from './govtw-checkbox.js';
-export { GovInput } from './govtw-input.js';
+export { GovTextInput } from './govtw-text-input.js';
 export { GovFieldset } from './govtw-fieldset.js';
 export { GovStack } from './govtw-stack.js';
 export { GovSidebar } from './govtw-sidebar.js';

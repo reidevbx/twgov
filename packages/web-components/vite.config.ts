@@ -12,7 +12,7 @@ export default defineConfig({
         index: resolve(__dirname, 'src/index.ts'),
         'govtw-button': resolve(__dirname, 'src/govtw-button.ts'),
         'govtw-checkbox': resolve(__dirname, 'src/govtw-checkbox.ts'),
-        'govtw-input': resolve(__dirname, 'src/govtw-input.ts'),
+        'govtw-text-input': resolve(__dirname, 'src/govtw-text-input.ts'),
         'govtw-fieldset': resolve(__dirname, 'src/govtw-fieldset.ts'),
         'govtw-stack': resolve(__dirname, 'src/govtw-stack.ts'),
         'govtw-sidebar': resolve(__dirname, 'src/govtw-sidebar.ts'),

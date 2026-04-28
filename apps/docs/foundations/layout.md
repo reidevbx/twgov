@@ -168,8 +168,8 @@ Sidebar 不使用 media query 判斷螢幕寬度，而是用 CSS flexbox wrap：
         <h1>勞工保險線上申辦</h1>
         <p>本服務提供線上申辦各項勞工保險業務。</p>
         <govtw-fieldset legend="申請人資料">
-          <govtw-input label="姓名"></govtw-input>
-          <govtw-input label="身分證字號" width="10"></govtw-input>
+          <govtw-text-input label="姓名"></govtw-text-input>
+          <govtw-text-input label="身分證字號" width="10"></govtw-text-input>
         </govtw-fieldset>
         <govtw-cluster space="3">
           <govtw-button>送出</govtw-button>
@@ -195,9 +195,9 @@ Sidebar 不使用 media query 判斷螢幕寬度，而是用 CSS flexbox wrap：
   <govtw-stack space="8">
     <h1>申請表單</h1>
     <govtw-fieldset legend="個人資料">
-      <govtw-input label="姓名"></govtw-input>
-      <govtw-input label="電話" type="tel" width="10"></govtw-input>
-      <govtw-input label="電子信箱" type="email"></govtw-input>
+      <govtw-text-input label="姓名"></govtw-text-input>
+      <govtw-text-input label="電話" type="tel" width="10"></govtw-text-input>
+      <govtw-text-input label="電子信箱" type="email"></govtw-text-input>
     </govtw-fieldset>
     <govtw-cluster space="3">
       <govtw-button>送出</govtw-button>

@@ -212,7 +212,7 @@ export class ${className} extends LitElement {
     const hasError = !!this.error;
 
     return html\`
-      <!-- TODO: 實作表單 UI，參考 govtw-input.ts 的結構 -->
+      <!-- TODO: 實作表單 UI，參考 govtw-text-input.ts 的結構 -->
       \${this.label ? html\`<label>\${this.label}</label>\` : nothing}
       <input
         .value=\${this.value}

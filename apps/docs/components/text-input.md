@@ -9,12 +9,12 @@
 ### 基本用法
 
 <DemoBlock direction="column" variant="default">
-  <govtw-input label="全名" name="fullname"></govtw-input>
+  <govtw-text-input label="全名" name="fullname"></govtw-text-input>
 
   <template #code>
 
 ```html
-<govtw-input label="全名" name="fullname"></govtw-input>
+<govtw-text-input label="全名" name="fullname"></govtw-text-input>
 ```
 
   </template>
@@ -25,12 +25,12 @@
 提示文字用於說明欄位的填寫格式或條件。
 
 <DemoBlock direction="column" variant="hint">
-  <govtw-input label="身分證字號" hint="英文字母開頭，共 10 碼" width="10"></govtw-input>
+  <govtw-text-input label="身分證字號" hint="英文字母開頭，共 10 碼" width="10"></govtw-text-input>
 
   <template #code>
 
 ```html
-<govtw-input label="身分證字號" hint="英文字母開頭，共 10 碼" width="10"></govtw-input>
+<govtw-text-input label="身分證字號" hint="英文字母開頭，共 10 碼" width="10"></govtw-text-input>
 ```
 
   </template>
@@ -42,14 +42,14 @@
 
 <DemoBlock direction="column" variant="width">
   <govtw-stack space="4">
-    <govtw-input label="全寬（預設）" hint="地址、全名等長度不定的文字"></govtw-input>
-    <govtw-input label="寬度 20" width="20" hint="較長的姓名、帳號"></govtw-input>
-    <govtw-input label="寬度 10" width="10" hint="電話號碼、身分證字號"></govtw-input>
+    <govtw-text-input label="全寬（預設）" hint="地址、全名等長度不定的文字"></govtw-text-input>
+    <govtw-text-input label="寬度 20" width="20" hint="較長的姓名、帳號"></govtw-text-input>
+    <govtw-text-input label="寬度 10" width="10" hint="電話號碼、身分證字號"></govtw-text-input>
     <govtw-cluster space="4">
-      <govtw-input label="寬度 5" width="5" hint="郵遞區號"></govtw-input>
-      <govtw-input label="寬度 4" width="4" hint="年份"></govtw-input>
-      <govtw-input label="寬度 3" width="3" hint="區碼"></govtw-input>
-      <govtw-input label="寬度 2" width="2" hint="月 / 日"></govtw-input>
+      <govtw-text-input label="寬度 5" width="5" hint="郵遞區號"></govtw-text-input>
+      <govtw-text-input label="寬度 4" width="4" hint="年份"></govtw-text-input>
+      <govtw-text-input label="寬度 3" width="3" hint="區碼"></govtw-text-input>
+      <govtw-text-input label="寬度 2" width="2" hint="月 / 日"></govtw-text-input>
     </govtw-cluster>
   </govtw-stack>
 
@@ -57,14 +57,14 @@
 
 ```html
 <govtw-stack space="4">
-  <govtw-input label="全寬（預設）" hint="地址、全名等長度不定的文字"></govtw-input>
-  <govtw-input label="寬度 20" width="20" hint="較長的姓名、帳號"></govtw-input>
-  <govtw-input label="寬度 10" width="10" hint="電話號碼、身分證字號"></govtw-input>
+  <govtw-text-input label="全寬（預設）" hint="地址、全名等長度不定的文字"></govtw-text-input>
+  <govtw-text-input label="寬度 20" width="20" hint="較長的姓名、帳號"></govtw-text-input>
+  <govtw-text-input label="寬度 10" width="10" hint="電話號碼、身分證字號"></govtw-text-input>
   <govtw-cluster space="4">
-    <govtw-input label="寬度 5" width="5" hint="郵遞區號"></govtw-input>
-    <govtw-input label="寬度 4" width="4" hint="年份"></govtw-input>
-    <govtw-input label="寬度 3" width="3" hint="區碼"></govtw-input>
-    <govtw-input label="寬度 2" width="2" hint="月 / 日"></govtw-input>
+    <govtw-text-input label="寬度 5" width="5" hint="郵遞區號"></govtw-text-input>
+    <govtw-text-input label="寬度 4" width="4" hint="年份"></govtw-text-input>
+    <govtw-text-input label="寬度 3" width="3" hint="區碼"></govtw-text-input>
+    <govtw-text-input label="寬度 2" width="2" hint="月 / 日"></govtw-text-input>
   </govtw-cluster>
 </govtw-stack>
 ```
@@ -81,9 +81,9 @@
     <h2 slot="legend">出生日期</h2>
     <p slot="hint">例如：1990 年 3 月 15 日</p>
     <govtw-cluster space="3">
-      <govtw-input label="年" width="4" inputmode="numeric"></govtw-input>
-      <govtw-input label="月" width="2" inputmode="numeric"></govtw-input>
-      <govtw-input label="日" width="2" inputmode="numeric"></govtw-input>
+      <govtw-text-input label="年" width="4" inputmode="numeric"></govtw-text-input>
+      <govtw-text-input label="月" width="2" inputmode="numeric"></govtw-text-input>
+      <govtw-text-input label="日" width="2" inputmode="numeric"></govtw-text-input>
     </govtw-cluster>
   </govtw-fieldset>
 
@@ -94,9 +94,9 @@
   <h2 slot="legend">出生日期</h2>
   <p slot="hint">例如：1990 年 3 月 15 日</p>
   <govtw-cluster space="3">
-    <govtw-input label="年" width="4" inputmode="numeric"></govtw-input>
-    <govtw-input label="月" width="2" inputmode="numeric"></govtw-input>
-    <govtw-input label="日" width="2" inputmode="numeric"></govtw-input>
+    <govtw-text-input label="年" width="4" inputmode="numeric"></govtw-text-input>
+    <govtw-text-input label="月" width="2" inputmode="numeric"></govtw-text-input>
+    <govtw-text-input label="日" width="2" inputmode="numeric"></govtw-text-input>
   </govtw-cluster>
 </govtw-fieldset>
 ```
@@ -110,10 +110,10 @@
 
 <DemoBlock direction="column" variant="prefix-suffix">
   <govtw-stack space="4">
-    <govtw-input label="金額" prefix="NT$" width="10"></govtw-input>
-    <govtw-input label="重量" suffix="公斤" width="5"></govtw-input>
+    <govtw-text-input label="金額" prefix="NT$" width="10"></govtw-text-input>
+    <govtw-text-input label="重量" suffix="公斤" width="5"></govtw-text-input>
     <govtw-cluster space="4">
-      <govtw-input label="費率" prefix="NT$" suffix="每月" width="10"></govtw-input>
+      <govtw-text-input label="費率" prefix="NT$" suffix="每月" width="10"></govtw-text-input>
     </govtw-cluster>
   </govtw-stack>
 
@@ -121,10 +121,10 @@
 
 ```html
 <govtw-stack space="4">
-  <govtw-input label="金額" prefix="NT$" width="10"></govtw-input>
-  <govtw-input label="重量" suffix="公斤" width="5"></govtw-input>
+  <govtw-text-input label="金額" prefix="NT$" width="10"></govtw-text-input>
+  <govtw-text-input label="重量" suffix="公斤" width="5"></govtw-text-input>
   <govtw-cluster space="4">
-    <govtw-input label="費率" prefix="NT$" suffix="每月" width="10"></govtw-input>
+    <govtw-text-input label="費率" prefix="NT$" suffix="每月" width="10"></govtw-text-input>
   </govtw-cluster>
 </govtw-stack>
 ```
@@ -137,12 +137,12 @@
 當驗證失敗時，顯示錯誤訊息並以紅色邊框和左側紅線標示。
 
 <DemoBlock direction="column" variant="error">
-  <govtw-input label="電子信箱" type="email" error="請輸入有效的電子信箱地址" value="abc"></govtw-input>
+  <govtw-text-input label="電子信箱" type="email" error="請輸入有效的電子信箱地址" value="abc"></govtw-text-input>
 
   <template #code>
 
 ```html
-<govtw-input label="電子信箱" type="email" error="請輸入有效的電子信箱地址" value="abc"></govtw-input>
+<govtw-text-input label="電子信箱" type="email" error="請輸入有效的電子信箱地址" value="abc"></govtw-text-input>
 ```
 
   </template>
@@ -151,12 +151,12 @@
 ### 停用狀態
 
 <DemoBlock direction="column" variant="disabled">
-  <govtw-input label="不可編輯" value="此欄位無法修改" disabled></govtw-input>
+  <govtw-text-input label="不可編輯" value="此欄位無法修改" disabled></govtw-text-input>
 
   <template #code>
 
 ```html
-<govtw-input label="不可編輯" value="此欄位無法修改" disabled></govtw-input>
+<govtw-text-input label="不可編輯" value="此欄位無法修改" disabled></govtw-text-input>
 ```
 
   </template>
@@ -166,25 +166,25 @@
 
 ```html
 <!-- 基本用法 -->
-<govtw-input label="姓名" name="name"></govtw-input>
+<govtw-text-input label="姓名" name="name"></govtw-text-input>
 
 <!-- 含提示 -->
-<govtw-input
+<govtw-text-input
   label="電話"
   hint="市話請加區碼"
   type="tel"
   width="10"
-></govtw-input>
+></govtw-text-input>
 
 <!-- 含 prefix / suffix -->
-<govtw-input label="金額" prefix="NT$" width="10"></govtw-input>
+<govtw-text-input label="金額" prefix="NT$" width="10"></govtw-text-input>
 
 <!-- 錯誤狀態 -->
-<govtw-input
+<govtw-text-input
   label="電子信箱"
   type="email"
   error="請輸入有效的電子信箱地址"
-></govtw-input>
+></govtw-text-input>
 ```
 
 ## 屬性
@@ -228,10 +228,10 @@
 
 ```html
 <!-- 推薦：整數輸入 -->
-<govtw-input label="數量" inputmode="numeric" width="4"></govtw-input>
+<govtw-text-input label="數量" inputmode="numeric" width="4"></govtw-text-input>
 
 <!-- 不推薦 -->
-<govtw-input label="數量" type="number"></govtw-input>
+<govtw-text-input label="數量" type="number"></govtw-text-input>
 ```
 
 ## 無障礙

@@ -49,6 +49,6 @@ description: 建立新的 govtw-* Lit 元件（scaffolder-backed）
 
 ## 參考
 
-- 既有最佳實踐範例：`packages/web-components/src/govtw-button.ts`（basic）、`govtw-input.ts`（form）、`govtw-stack.ts`（layout）
+- 既有最佳實踐範例：`packages/web-components/src/govtw-button.ts`（basic）、`govtw-text-input.ts`（form）、`govtw-stack.ts`（layout）
 - 完整工作守則：`CLAUDE.md` 的「工作守則」區段
 - 任務文件規範：`tasks/README.md`

@@ -60,7 +60,7 @@ import '@gov-tw/web-components/govtw-button'
 |------|------|------|
 | Button | `<govtw-button>` | 觸發動作，支援 primary / secondary / danger 變體 |
 | Checkbox | `<govtw-checkbox>` | 核取方塊，原生 input 覆蓋確保無障礙 |
-| Text Input | `<govtw-input>` | 單行文字輸入，支援 prefix/suffix、固定寬度 |
+| Text Input | `<govtw-text-input>` | 單行文字輸入，支援 prefix/suffix、固定寬度 |
 | Textarea | `<govtw-textarea>` | 多行文字輸入，支援字數計數 |
 | Fieldset | `<govtw-fieldset>` | 表單欄位群組，附 legend 和錯誤狀態 |
 | Stack | `<govtw-stack>` | 垂直堆疊佈局，控制子元素間距 |
