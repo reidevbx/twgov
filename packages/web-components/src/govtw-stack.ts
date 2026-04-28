@@ -15,7 +15,7 @@ import { styleMap } from 'lit/directives/style-map.js';
  * </govtw-stack>
  */
 @customElement('govtw-stack')
-export class GovStack extends LitElement {
+export class GovtwStack extends LitElement {
   /** 子元素之間的間距，對應 --govtw-space-{n} token（預設 4 = 16px） */
   @property({ type: Number }) space = 4;
 
@@ -45,6 +45,6 @@ export class GovStack extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'govtw-stack': GovStack;
+    'govtw-stack': GovtwStack;
   }
 }

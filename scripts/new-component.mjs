@@ -82,7 +82,7 @@ function deriveIdentifiers({ name, zhName }) {
     name,
     zhName,
     tag: `govtw-${name}`,
-    className: `Gov${pascalName}`,
+    className: `Govtw${pascalName}`,
     pascalName,
   };
 }

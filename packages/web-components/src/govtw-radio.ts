@@ -6,9 +6,9 @@ import { customElement, property, state } from 'lit/decorators.js';
  * 支援多 form 隔離、shadow DOM 隔離、鍵盤導航（WAI-ARIA radio group pattern）。
  */
 type RadioScope = HTMLFormElement | Document;
-const radioRegistry = new WeakMap<RadioScope, Map<string, Set<GovRadio>>>();
+const radioRegistry = new WeakMap<RadioScope, Map<string, Set<GovtwRadio>>>();
 
-function addToGroup(scope: RadioScope, name: string, radio: GovRadio) {
+function addToGroup(scope: RadioScope, name: string, radio: GovtwRadio) {
   let byName = radioRegistry.get(scope);
   if (!byName) {
     byName = new Map();
@@ -22,7 +22,7 @@ function addToGroup(scope: RadioScope, name: string, radio: GovRadio) {
   group.add(radio);
 }
 
-function removeFromGroup(scope: RadioScope, name: string, radio: GovRadio) {
+function removeFromGroup(scope: RadioScope, name: string, radio: GovtwRadio) {
   const byName = radioRegistry.get(scope);
   const group = byName?.get(name);
   if (!group) return;
@@ -30,12 +30,12 @@ function removeFromGroup(scope: RadioScope, name: string, radio: GovRadio) {
   if (group.size === 0) byName!.delete(name);
 }
 
-function getGroup(scope: RadioScope, name: string): Set<GovRadio> | undefined {
+function getGroup(scope: RadioScope, name: string): Set<GovtwRadio> | undefined {
   return radioRegistry.get(scope)?.get(name);
 }
 
 @customElement('govtw-radio')
-export class GovRadio extends LitElement {
+export class GovtwRadio extends LitElement {
   static shadowRootOptions: ShadowRootInit = {
     ...LitElement.shadowRootOptions,
     delegatesFocus: true,
@@ -187,7 +187,7 @@ export class GovRadio extends LitElement {
     this._currentScope = this._scope;
     this._currentName = this.name;
     addToGroup(this._currentScope, this._currentName, this);
-    GovRadio._updateGroupTabStops(this._currentScope, this._currentName);
+    GovtwRadio._updateGroupTabStops(this._currentScope, this._currentName);
   }
 
   private _unregister() {
@@ -198,7 +198,7 @@ export class GovRadio extends LitElement {
     this._currentScope = null;
     this._currentName = '';
     this._tabStop = false;
-    GovRadio._updateGroupTabStops(scope, name);
+    GovtwRadio._updateGroupTabStops(scope, name);
   }
 
   /**
@@ -223,7 +223,6 @@ export class GovRadio extends LitElement {
     if (this.disabled || this.checked) return;
     this._uncheckSiblings();
     this.checked = true;
-    this._internals.setFormValue(this.value);
     this.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
   }
 
@@ -237,7 +236,7 @@ export class GovRadio extends LitElement {
   }
 
   /** 同群組中已連接且未 disabled 的 radio，依 DOM 順序排序（僅鍵盤導航使用） */
-  private _getGroupRadios(): GovRadio[] {
+  private _getGroupRadios(): GovtwRadio[] {
     if (!this._currentScope || !this._currentName) return [this];
     const group = getGroup(this._currentScope, this._currentName);
     if (!group || group.size === 0) return [this];
@@ -263,17 +262,17 @@ export class GovRadio extends LitElement {
     if (changed.has('checked')) {
       this._internals.setFormValue(this.checked ? this.value : null);
       if (this._currentScope && this._currentName) {
-        GovRadio._updateGroupTabStops(this._currentScope, this._currentName);
+        GovtwRadio._updateGroupTabStops(this._currentScope, this._currentName);
       }
     }
     if (changed.has('disabled') && this._currentScope && this._currentName) {
-      GovRadio._updateGroupTabStops(this._currentScope, this._currentName);
+      GovtwRadio._updateGroupTabStops(this._currentScope, this._currentName);
     }
     if (changed.has('name')) {
       this._unregister();
       this._register();
     }
-    if (changed.has('value') && this.checked) {
+    if (changed.has('value') && this.checked && !changed.has('checked')) {
       this._internals.setFormValue(this.value);
     }
   }
@@ -325,6 +324,6 @@ export class GovRadio extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'govtw-radio': GovRadio;
+    'govtw-radio': GovtwRadio;
   }
 }

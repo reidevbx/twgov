@@ -2,7 +2,7 @@ import { LitElement, html, css, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 @customElement('govtw-link')
-export class GovLink extends LitElement {
+export class GovtwLink extends LitElement {
   static shadowRootOptions: ShadowRootInit = {
     ...LitElement.shadowRootOptions,
     delegatesFocus: true,
@@ -107,6 +107,6 @@ export class GovLink extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'govtw-link': GovLink;
+    'govtw-link': GovtwLink;
   }
 }

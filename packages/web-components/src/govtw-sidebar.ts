@@ -18,7 +18,7 @@ import { styleMap } from 'lit/directives/style-map.js';
  * </govtw-sidebar>
  */
 @customElement('govtw-sidebar')
-export class GovSidebar extends LitElement {
+export class GovtwSidebar extends LitElement {
   /** 側邊欄寬度（CSS 長度值） */
   @property({ type: String, attribute: 'side-width' }) sideWidth = '16rem';
 
@@ -86,6 +86,6 @@ export class GovSidebar extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'govtw-sidebar': GovSidebar;
+    'govtw-sidebar': GovtwSidebar;
   }
 }

@@ -2,7 +2,7 @@ import { LitElement, html, css, nothing, type PropertyValues } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 @customElement('govtw-text-input')
-export class GovTextInput extends LitElement {
+export class GovtwTextInput extends LitElement {
   static shadowRootOptions: ShadowRootInit = {
     ...LitElement.shadowRootOptions,
     delegatesFocus: true,
@@ -198,16 +198,12 @@ export class GovTextInput extends LitElement {
   `;
 
   private _handleInput(e: Event) {
-    const input = e.target as HTMLInputElement;
-    this.value = input.value;
-    this._internals.setFormValue(this.value);
+    this.value = (e.target as HTMLInputElement).value;
     this.dispatchEvent(new Event('input', { bubbles: true, composed: true }));
   }
 
   private _handleChange(e: Event) {
-    const input = e.target as HTMLInputElement;
-    this.value = input.value;
-    this._internals.setFormValue(this.value);
+    this.value = (e.target as HTMLInputElement).value;
     this.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
   }
 
@@ -274,6 +270,6 @@ export class GovTextInput extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'govtw-text-input': GovTextInput;
+    'govtw-text-input': GovtwTextInput;
   }
 }

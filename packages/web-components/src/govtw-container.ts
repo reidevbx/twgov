@@ -17,7 +17,7 @@ import { styleMap } from 'lit/directives/style-map.js';
  * </govtw-container>
  */
 @customElement('govtw-container')
-export class GovContainer extends LitElement {
+export class GovtwContainer extends LitElement {
   /** 最大寬度（CSS 長度值） */
   @property({ type: String, attribute: 'max-width' }) maxWidth = '1020px';
 
@@ -53,6 +53,6 @@ export class GovContainer extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'govtw-container': GovContainer;
+    'govtw-container': GovtwContainer;
   }
 }

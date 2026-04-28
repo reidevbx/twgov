@@ -2,7 +2,7 @@ import { LitElement, html, css, nothing } from 'lit';
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js';
 
 @customElement('govtw-fieldset')
-export class GovFieldset extends LitElement {
+export class GovtwFieldset extends LitElement {
   @property({ type: String }) error = '';
 
   @queryAssignedElements({ slot: 'legend', flatten: true })
@@ -118,6 +118,6 @@ export class GovFieldset extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'govtw-fieldset': GovFieldset;
+    'govtw-fieldset': GovtwFieldset;
   }
 }

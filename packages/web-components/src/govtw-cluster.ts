@@ -32,7 +32,7 @@ const VERTICAL_ALIGN: Record<ClusterVerticalAlign, string> = {
  * </govtw-cluster>
  */
 @customElement('govtw-cluster')
-export class GovCluster extends LitElement {
+export class GovtwCluster extends LitElement {
   /** 子元素之間的間距，對應 --govtw-space-{n} token */
   @property({ type: Number }) space = 3;
 
@@ -74,6 +74,6 @@ export class GovCluster extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'govtw-cluster': GovCluster;
+    'govtw-cluster': GovtwCluster;
   }
 }

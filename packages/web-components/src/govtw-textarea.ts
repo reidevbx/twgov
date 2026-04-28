@@ -2,7 +2,7 @@ import { LitElement, html, css, nothing, type PropertyValues } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 @customElement('govtw-textarea')
-export class GovTextarea extends LitElement {
+export class GovtwTextarea extends LitElement {
   static shadowRootOptions: ShadowRootInit = {
     ...LitElement.shadowRootOptions,
     delegatesFocus: true,
@@ -138,16 +138,12 @@ export class GovTextarea extends LitElement {
   `;
 
   private _handleInput(e: Event) {
-    const textarea = e.target as HTMLTextAreaElement;
-    this.value = textarea.value;
-    this._internals.setFormValue(this.value);
+    this.value = (e.target as HTMLTextAreaElement).value;
     this.dispatchEvent(new Event('input', { bubbles: true, composed: true }));
   }
 
   private _handleChange(e: Event) {
-    const textarea = e.target as HTMLTextAreaElement;
-    this.value = textarea.value;
-    this._internals.setFormValue(this.value);
+    this.value = (e.target as HTMLTextAreaElement).value;
     this.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
   }
 
@@ -219,6 +215,6 @@ export class GovTextarea extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'govtw-textarea': GovTextarea;
+    'govtw-textarea': GovtwTextarea;
   }
 }

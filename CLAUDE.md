@@ -65,6 +65,7 @@ pnpm new:component   # 建立新元件（見「新增元件步驟」）
 
 - 元件 tag：`govtw-<name>`（如 `govtw-button`）
 - 元件檔案：`govtw-<name>.ts`
+- TS class：`Govtw<PascalName>`（如 `GovtwButton`、`GovtwTextInput`）
 - CSS token 前綴：`--govtw-`
 - npm scope：`@gov-tw/`
 - 文件頁面：`apps/docs/components/<name>.md`

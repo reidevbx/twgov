@@ -2,7 +2,7 @@ import { LitElement, html, css, type PropertyValues } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 @customElement('govtw-checkbox')
-export class GovCheckbox extends LitElement {
+export class GovtwCheckbox extends LitElement {
   static shadowRootOptions: ShadowRootInit = {
     ...LitElement.shadowRootOptions,
     delegatesFocus: true,
@@ -145,9 +145,7 @@ export class GovCheckbox extends LitElement {
   `;
 
   private _handleChange(e: Event) {
-    const input = e.target as HTMLInputElement;
-    this.checked = input.checked;
-    this._internals.setFormValue(this.checked ? this.value : null);
+    this.checked = (e.target as HTMLInputElement).checked;
     this.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
   }
 
@@ -182,6 +180,6 @@ export class GovCheckbox extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'govtw-checkbox': GovCheckbox;
+    'govtw-checkbox': GovtwCheckbox;
   }
 }
