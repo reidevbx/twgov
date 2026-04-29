@@ -120,7 +120,7 @@
  * Semantic tokens — 語意層（以用途命名，引用原始層）
  * ========================================================================== */
 :root {
-  --govtw-color-brand-primary: var(--govtw-primitive-color-blue-12);
+  --govtw-color-brand-primary: var(--govtw-primitive-color-blue-9);
   --govtw-color-brand-secondary: var(--govtw-primitive-color-teal-8);
   --govtw-color-text-primary: var(--govtw-primitive-color-neutral-12);
   --govtw-color-text-secondary: var(--govtw-primitive-color-neutral-7);
@@ -128,12 +128,12 @@
   --govtw-color-bg-canvas: var(--govtw-primitive-color-neutral-1);
   --govtw-color-bg-surface: var(--govtw-primitive-color-blue-2);
   --govtw-color-border-default: var(--govtw-primitive-color-blue-4);
-  --govtw-color-border-subtle: var(--govtw-primitive-color-neutral-4);
+  --govtw-color-border-subtle: var(--govtw-primitive-color-neutral-3);
   --govtw-color-feedback-error: var(--govtw-primitive-color-red-8);
   --govtw-color-feedback-success: var(--govtw-primitive-color-green-8);
   --govtw-color-feedback-warning: var(--govtw-primitive-color-yellow-8);
   --govtw-color-feedback-info: var(--govtw-primitive-color-blue-6);
-  --govtw-color-link-default: var(--govtw-primitive-color-blue-7);
+  --govtw-color-link-default: var(--govtw-primitive-color-blue-9);
   --govtw-color-link-visited: var(--govtw-primitive-color-purple-8);
   --govtw-spacing-1: var(--govtw-primitive-space-1);
   --govtw-spacing-2: var(--govtw-primitive-space-2);

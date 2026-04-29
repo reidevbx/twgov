@@ -70,8 +70,8 @@ p {
 
 /* ===== Link colors =====
  * VitePress 預設將 markdown 連結與 chrome active state 都綁到 --vp-c-brand-1（=品牌色）。
- * 為了滿足 WCAG AA 對比，文章內連結與 TOC 改用 --govtw-color-link-default（blue-700, ~5:1）。
- * 品牌色（hero/button bg/badge）維持原 brand-1，不受影響。 */
+ * 文章內連結與 TOC 改用 --govtw-color-link-default（blue.9，與 brand.primary 同色）。
+ * hover/focus/visited 維持 VitePress 預設行為，不替元件 chrome 套狀態樣式。 */
 .vp-doc a:not(.header-anchor),
 .outline-link,
 .VPSidebarItem.is-link.is-active > .item .link {
