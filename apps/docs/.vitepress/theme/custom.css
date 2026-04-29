@@ -81,6 +81,15 @@ p {
   color: color-mix(in oklab, var(--govtw-color-link-default), black 15%);
 }
 
+/* DemoBlock 的工具列 button/link：不套連結藍色與底線，保持工具列觀感 */
+.vp-doc a.demo-block-toggle {
+  color: var(--vp-c-text-2);
+  text-decoration: none;
+}
+.vp-doc a.demo-block-toggle:hover {
+  color: var(--vp-c-brand-1);
+}
+
 /* ===== Hero section ===== */
 .VPHero .name {
   background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-3)) !important;
@@ -92,6 +101,19 @@ p {
 /* ===== Table improvements ===== */
 .vp-doc th {
   background-color: var(--vp-c-brand-soft);
+}
+
+/* ===== Sidebar：chevron 移到左 + 子項目縮排 ===== */
+.VPSidebarItem.collapsible > .item {
+  gap: 8px;
+}
+.VPSidebarItem.collapsible > .item > .caret {
+  order: -1;
+  margin-right: 0;  /* 抵消 VitePress 預設 -7px，避免 chevron 貼太近 */
+}
+/* 子項目左緣對齊標題文字起點：chevron 寬 32 + gap 8 = 40px */
+.VPSidebarItem.level-0 > .items {
+  padding-left: 40px;
 }
 
 /* ===== Navbar logo ===== */
