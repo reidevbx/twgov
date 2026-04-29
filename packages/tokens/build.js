@@ -109,13 +109,16 @@ if (tokens.themes) {
     const selector = `[data-theme="${themeName}"]`;
 
     if (themeName === 'dark') {
-      // Dark theme: @media fallback + data attribute + .dark class（VitePress 慣例）
+      // Dark theme: @media fallback（須 opt-in via data-theme="auto"）+ data attribute + .dark class（VitePress 慣例）
+      // 注意：@media 預設不對 :root 生效，避免與 VitePress 等自帶 theme 控制（用 .dark class）的宿主衝突。
+      // 想吃系統偏好的獨立頁面（如 preview HTML），html 加 data-theme="auto"。
       sections.push(`
 /* ==========================================================================
- * Theme: dark — 深色主題（系統偏好自動套用 + data-theme / .dark 手動切換）
+ * Theme: dark — 深色主題
+ *   觸發：[data-theme="dark"] / .dark 手動；data-theme="auto" + 系統偏好自動
  * ========================================================================== */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
+  :root[data-theme="auto"] {
 ${themeCss}
   }
 }

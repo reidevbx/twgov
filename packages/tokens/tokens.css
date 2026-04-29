@@ -128,6 +128,7 @@
   --govtw-color-bg-canvas: var(--govtw-primitive-color-neutral-1);
   --govtw-color-bg-surface: var(--govtw-primitive-color-blue-2);
   --govtw-color-border-default: var(--govtw-primitive-color-blue-4);
+  --govtw-color-border-subtle: var(--govtw-primitive-color-neutral-4);
   --govtw-color-feedback-error: var(--govtw-primitive-color-red-8);
   --govtw-color-feedback-success: var(--govtw-primitive-color-green-8);
   --govtw-color-feedback-warning: var(--govtw-primitive-color-yellow-8);
@@ -245,10 +246,11 @@
 }
 
 /* ==========================================================================
- * Theme: dark — 深色主題（系統偏好自動套用 + data-theme / .dark 手動切換）
+ * Theme: dark — 深色主題
+ *   觸發：[data-theme="dark"] / .dark 手動；data-theme="auto" + 系統偏好自動
  * ========================================================================== */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
+  :root[data-theme="auto"] {
   --govtw-color-brand-primary: var(--govtw-primitive-color-blue-6);
   --govtw-color-brand-secondary: var(--govtw-primitive-color-teal-6);
   --govtw-color-text-primary: var(--govtw-primitive-color-neutral-2);
@@ -257,6 +259,7 @@
   --govtw-color-bg-canvas: var(--govtw-primitive-color-neutral-12);
   --govtw-color-bg-surface: var(--govtw-primitive-color-neutral-11);
   --govtw-color-border-default: var(--govtw-primitive-color-neutral-9);
+  --govtw-color-border-subtle: var(--govtw-primitive-color-neutral-10);
   --govtw-color-feedback-error: var(--govtw-primitive-color-red-5);
   --govtw-color-feedback-success: var(--govtw-primitive-color-green-5);
   --govtw-color-feedback-warning: var(--govtw-primitive-color-yellow-5);
@@ -278,6 +281,7 @@
   --govtw-color-bg-canvas: var(--govtw-primitive-color-neutral-12);
   --govtw-color-bg-surface: var(--govtw-primitive-color-neutral-11);
   --govtw-color-border-default: var(--govtw-primitive-color-neutral-9);
+  --govtw-color-border-subtle: var(--govtw-primitive-color-neutral-10);
   --govtw-color-feedback-error: var(--govtw-primitive-color-red-5);
   --govtw-color-feedback-success: var(--govtw-primitive-color-green-5);
   --govtw-color-feedback-warning: var(--govtw-primitive-color-yellow-5);

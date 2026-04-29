@@ -14,166 +14,139 @@ Primitive（原始色票）→ Semantic（語意用途）→ Component（元件�
 
 ## Primitive 色票
 
-原始設計數值，不直接在元件中使用，前綴 `--govtw-primitive-color-`。
+原始設計數值，**不直接在元件中使用**。前綴 `--govtw-primitive-color-`。
 
-### Blue
+7 個色家族各 12 階，套用統一 OKLCH 曲線：
+
+| 階 | L | C | 用途 |
+|---|---|---|---|
+| 1-2 | 0.985 / 0.965 | 0.005 / 0.015 | 極淺背景 |
+| 3-4 | 0.93 / 0.875 | 0.035 / 0.060 | 淺底、淺邊框 |
+| 5-6 | 0.79 / 0.69 | 0.090 / 0.115 | 標準邊框 |
+| 7-8 | 0.58 / 0.48 | 0.135 / 0.145（峰）| 連結、按鈕 bg |
+| 9-10 | 0.38 / 0.30 | 0.135 / 0.105 | 深強調 |
+| 11-12 | 0.25 / 0.21 | 0.085 / 0.070 | 接近最深 |
+
+色家族 hue：blue 240、teal 170、red 25、green 145、yellow 85、purple 300、neutral 240（chroma ≈ 0.005-0.008，淡 tint 灰）。
+
+### Blue（hue 240）
 
 <DemoBlock no-code>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-blue-500)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>blue-500</code>
-      <span class="color-swatch__hex">#2C84B2</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-blue-light-500)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>blue-light-500</code>
-      <span class="color-swatch__hex">#6B9FE8</span>
-    </div>
-  </div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-blue-1)"><div class="color-swatch__preview" style="border: 1px solid #ccc"></div><div class="color-swatch__info"><code>blue-1</code><span class="color-swatch__desc">L 0.985</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-blue-2)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>blue-2</code><span class="color-swatch__desc">L 0.965</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-blue-3)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>blue-3</code><span class="color-swatch__desc">L 0.93</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-blue-4)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>blue-4</code><span class="color-swatch__desc">L 0.875</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-blue-5)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>blue-5</code><span class="color-swatch__desc">L 0.79</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-blue-6)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>blue-6</code><span class="color-swatch__desc">L 0.69</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-blue-7)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>blue-7</code><span class="color-swatch__desc">L 0.58 ← link</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-blue-8)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>blue-8</code><span class="color-swatch__desc">L 0.48 ← button</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-blue-9)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>blue-9</code><span class="color-swatch__desc">L 0.38</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-blue-10)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>blue-10</code><span class="color-swatch__desc">L 0.30</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-blue-11)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>blue-11</code><span class="color-swatch__desc">L 0.25</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-blue-12)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>blue-12</code><span class="color-swatch__desc">L 0.21 ← anchor</span></div></div>
 </DemoBlock>
 
-### Teal
+### Teal（hue 170）
 
 <DemoBlock no-code>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-50)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>teal-50</code>
-      <span class="color-swatch__hex">#EAF0F0</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-100)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>teal-100</code>
-      <span class="color-swatch__hex">#B0C4C5</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-500)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>teal-500</code>
-      <span class="color-swatch__hex">#618D90</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-700)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>teal-700</code>
-      <span class="color-swatch__hex">#3A5050</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-800)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>teal-800</code>
-      <span class="color-swatch__hex">#1E2A2A</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-light-500)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>teal-light-500</code>
-      <span class="color-swatch__hex">#89B5B8</span>
-    </div>
-  </div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-1)"><div class="color-swatch__preview" style="border: 1px solid #ccc"></div><div class="color-swatch__info"><code>teal-1</code><span class="color-swatch__desc">L 0.985</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-2)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>teal-2</code><span class="color-swatch__desc">L 0.965</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-3)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>teal-3</code><span class="color-swatch__desc">L 0.93</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-4)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>teal-4</code><span class="color-swatch__desc">L 0.875</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-5)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>teal-5</code><span class="color-swatch__desc">L 0.79</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-6)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>teal-6</code><span class="color-swatch__desc">L 0.69</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-7)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>teal-7</code><span class="color-swatch__desc">L 0.58</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-8)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>teal-8</code><span class="color-swatch__desc">L 0.48 ← secondary</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-9)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>teal-9</code><span class="color-swatch__desc">L 0.38</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-10)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>teal-10</code><span class="color-swatch__desc">L 0.30</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-11)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>teal-11</code><span class="color-swatch__desc">L 0.25</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-teal-12)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>teal-12</code><span class="color-swatch__desc">L 0.21</span></div></div>
 </DemoBlock>
 
-### Neutral
+### Red（hue 25）
 
 <DemoBlock no-code>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-0)">
-    <div class="color-swatch__preview" style="border: 1px solid #ccc"></div>
-    <div class="color-swatch__info">
-      <code>neutral-0</code>
-      <span class="color-swatch__hex">#FFFFFF</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-100)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>neutral-100</code>
-      <span class="color-swatch__hex">#E8E8E8</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-400)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>neutral-400</code>
-      <span class="color-swatch__hex">#A0A0A0</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-600)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>neutral-600</code>
-      <span class="color-swatch__hex">#595959</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-800)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>neutral-800</code>
-      <span class="color-swatch__hex">#1A1A1A</span>
-    </div>
-  </div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-red-1)"><div class="color-swatch__preview" style="border: 1px solid #ccc"></div><div class="color-swatch__info"><code>red-1</code><span class="color-swatch__desc">L 0.985</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-red-2)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>red-2</code><span class="color-swatch__desc">L 0.965</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-red-3)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>red-3</code><span class="color-swatch__desc">L 0.93</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-red-4)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>red-4</code><span class="color-swatch__desc">L 0.875</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-red-5)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>red-5</code><span class="color-swatch__desc">L 0.79</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-red-6)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>red-6</code><span class="color-swatch__desc">L 0.69</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-red-7)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>red-7</code><span class="color-swatch__desc">L 0.58</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-red-8)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>red-8</code><span class="color-swatch__desc">L 0.48 ← error</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-red-9)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>red-9</code><span class="color-swatch__desc">L 0.38</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-red-10)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>red-10</code><span class="color-swatch__desc">L 0.30</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-red-11)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>red-11</code><span class="color-swatch__desc">L 0.25</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-red-12)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>red-12</code><span class="color-swatch__desc">L 0.21</span></div></div>
 </DemoBlock>
 
-### 回饋色
+### Green（hue 145）
 
 <DemoBlock no-code>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-red-500)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>red-500</code>
-      <span class="color-swatch__hex">#C3362B</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-red-300)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>red-300</code>
-      <span class="color-swatch__hex">#F87171</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-green-500)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>green-500</code>
-      <span class="color-swatch__hex">#00804A</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-green-300)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>green-300</code>
-      <span class="color-swatch__hex">#4ADE80</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-500)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>yellow-500</code>
-      <span class="color-swatch__hex">#F0AB00</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-focus)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>yellow-focus</code>
-      <span class="color-swatch__hex">#fd0</span>
-    </div>
-  </div>
-  <div class="color-swatch" style="--c: var(--govtw-primitive-color-purple-500)">
-    <div class="color-swatch__preview"></div>
-    <div class="color-swatch__info">
-      <code>purple-500</code>
-      <span class="color-swatch__hex">#6B3FA0</span>
-    </div>
-  </div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-green-1)"><div class="color-swatch__preview" style="border: 1px solid #ccc"></div><div class="color-swatch__info"><code>green-1</code><span class="color-swatch__desc">L 0.985</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-green-2)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>green-2</code><span class="color-swatch__desc">L 0.965</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-green-3)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>green-3</code><span class="color-swatch__desc">L 0.93</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-green-4)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>green-4</code><span class="color-swatch__desc">L 0.875</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-green-5)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>green-5</code><span class="color-swatch__desc">L 0.79</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-green-6)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>green-6</code><span class="color-swatch__desc">L 0.69</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-green-7)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>green-7</code><span class="color-swatch__desc">L 0.58</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-green-8)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>green-8</code><span class="color-swatch__desc">L 0.48 ← success</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-green-9)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>green-9</code><span class="color-swatch__desc">L 0.38</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-green-10)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>green-10</code><span class="color-swatch__desc">L 0.30</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-green-11)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>green-11</code><span class="color-swatch__desc">L 0.25</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-green-12)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>green-12</code><span class="color-swatch__desc">L 0.21</span></div></div>
+</DemoBlock>
+
+### Yellow（hue 85）
+
+<DemoBlock no-code>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-1)"><div class="color-swatch__preview" style="border: 1px solid #ccc"></div><div class="color-swatch__info"><code>yellow-1</code><span class="color-swatch__desc">L 0.985</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-2)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>yellow-2</code><span class="color-swatch__desc">L 0.965</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-3)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>yellow-3</code><span class="color-swatch__desc">L 0.93</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-4)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>yellow-4</code><span class="color-swatch__desc">L 0.875</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-5)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>yellow-5</code><span class="color-swatch__desc">L 0.79</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-6)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>yellow-6</code><span class="color-swatch__desc">L 0.69</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-7)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>yellow-7</code><span class="color-swatch__desc">L 0.58</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-8)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>yellow-8</code><span class="color-swatch__desc">L 0.48 ← warning</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-9)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>yellow-9</code><span class="color-swatch__desc">L 0.38</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-10)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>yellow-10</code><span class="color-swatch__desc">L 0.30</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-11)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>yellow-11</code><span class="color-swatch__desc">L 0.25</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-12)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>yellow-12</code><span class="color-swatch__desc">L 0.21</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-yellow-focus)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>yellow-focus</code><span class="color-swatch__desc">#fd0 ← 特例 (focus)</span></div></div>
+</DemoBlock>
+
+### Purple（hue 300）
+
+<DemoBlock no-code>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-purple-1)"><div class="color-swatch__preview" style="border: 1px solid #ccc"></div><div class="color-swatch__info"><code>purple-1</code><span class="color-swatch__desc">L 0.985</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-purple-2)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>purple-2</code><span class="color-swatch__desc">L 0.965</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-purple-3)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>purple-3</code><span class="color-swatch__desc">L 0.93</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-purple-4)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>purple-4</code><span class="color-swatch__desc">L 0.875</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-purple-5)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>purple-5</code><span class="color-swatch__desc">L 0.79</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-purple-6)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>purple-6</code><span class="color-swatch__desc">L 0.69</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-purple-7)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>purple-7</code><span class="color-swatch__desc">L 0.58</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-purple-8)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>purple-8</code><span class="color-swatch__desc">L 0.48 ← visited</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-purple-9)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>purple-9</code><span class="color-swatch__desc">L 0.38</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-purple-10)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>purple-10</code><span class="color-swatch__desc">L 0.30</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-purple-11)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>purple-11</code><span class="color-swatch__desc">L 0.25</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-purple-12)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>purple-12</code><span class="color-swatch__desc">L 0.21</span></div></div>
+</DemoBlock>
+
+### Neutral（hue 240，極低 chroma）
+
+<DemoBlock no-code>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-1)"><div class="color-swatch__preview" style="border: 1px solid #ccc"></div><div class="color-swatch__info"><code>neutral-1</code><span class="color-swatch__desc">L 0.99 ← bg-canvas</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-2)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>neutral-2</code><span class="color-swatch__desc">L 0.97</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-3)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>neutral-3</code><span class="color-swatch__desc">L 0.94</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-4)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>neutral-4</code><span class="color-swatch__desc">L 0.88 ← divider</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-5)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>neutral-5</code><span class="color-swatch__desc">L 0.78</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-6)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>neutral-6</code><span class="color-swatch__desc">L 0.66</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-7)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>neutral-7</code><span class="color-swatch__desc">L 0.55 ← text-secondary</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-8)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>neutral-8</code><span class="color-swatch__desc">L 0.45</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-9)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>neutral-9</code><span class="color-swatch__desc">L 0.35</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-10)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>neutral-10</code><span class="color-swatch__desc">L 0.27</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-11)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>neutral-11</code><span class="color-swatch__desc">L 0.22</span></div></div>
+  <div class="color-swatch" style="--c: var(--govtw-primitive-color-neutral-12)"><div class="color-swatch__preview"></div><div class="color-swatch__info"><code>neutral-12</code><span class="color-swatch__desc">L 0.18 ← text-primary</span></div></div>
 </DemoBlock>
 
 ---

@@ -1,11 +1,11 @@
 /* gov.tw Design System - VitePress chrome 樣式覆寫
  *
- * 品牌色綁定到 govtw token（--govtw-color-brand-primary）；
+ * VitePress 的 chrome 變數（--vp-*）全綁到 govtw token，整站視覺與元件 demo 一致。
  * dark mode 由 tokens.css 的 .dark 規則自動覆寫，本檔不必再寫一次。
- * 中性色 / 文字色 / divider 保留 VitePress 預設（針對長閱讀調過對比度）。
  */
 
 :root {
+  /* 品牌色（hero / accent / button 等） */
   --vp-c-brand-1: var(--govtw-color-brand-primary);
   --vp-c-brand-2: color-mix(in oklab, var(--govtw-color-brand-primary), black 10%);
   --vp-c-brand-3: color-mix(in oklab, var(--govtw-color-brand-primary), black 20%);
@@ -15,6 +15,13 @@
   --vp-c-indigo-2: var(--vp-c-brand-2);
   --vp-c-indigo-3: var(--vp-c-brand-3);
   --vp-c-indigo-soft: var(--vp-c-brand-soft);
+
+  /* 中性色（頁面 bg / 文字 / divider） */
+  --vp-c-bg: var(--govtw-color-bg-canvas);
+  --vp-c-bg-soft: var(--govtw-color-bg-surface);
+  --vp-c-text-1: var(--govtw-color-text-primary);
+  --vp-c-text-2: var(--govtw-color-text-secondary);
+  --vp-c-divider: var(--govtw-color-border-subtle);
 }
 
 /* tokens.css 的裸標籤排版（body / h1-h6 / p）會污染 VitePress chrome —
