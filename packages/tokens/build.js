@@ -136,14 +136,7 @@ ${themeCss}
   }
 }
 
-const css = sections.join('\n') + '\n';
-writeFileSync(new URL('./tokens.css', import.meta.url), css);
-const themeNames = tokens.themes ? Object.keys(tokens.themes).join(', ') : 'none';
-console.log(`✓ tokens.css generated (primitive + semantic + component + themes: ${themeNames})`);
-
-// Typography → 獨立檔案 typography.css
-// 裸標籤選擇器（body / h1-h6 / p）會污染整站，僅供 preview HTML 等獨立場景 opt-in 載入；
-// 站台根層（VitePress chrome）不該 import 此檔。
+// 5. Typography — base element styles
 if (tokens.typography?.elements) {
   const typoLines = [];
 
@@ -155,16 +148,17 @@ if (tokens.typography?.elements) {
     typoLines.push(`${selector} {\n${propLines.join('\n')}\n}`);
   }
 
-  const typographyCss = `/* gov.tw Typography — 基礎排版樣式（引用 Semantic token）
- *
- * 此檔含裸標籤選擇器（body / h1-h6 / p）。
- * 僅供獨立 preview HTML 與 Shadow DOM 場景使用；不要在 VitePress 等已有自身排版的站台引入。
- */
-${typoLines.join('\n\n')}
-`;
-  writeFileSync(new URL('./typography.css', import.meta.url), typographyCss);
-  console.log(`✓ typography.css generated`);
+  sections.push(`
+/* ==========================================================================
+ * Typography — 基礎排版樣式（引用 Semantic token）
+ * ========================================================================== */
+${typoLines.join('\n\n')}`);
 }
+
+const css = sections.join('\n') + '\n';
+writeFileSync(new URL('./tokens.css', import.meta.url), css);
+const themeNames = tokens.themes ? Object.keys(tokens.themes).join(', ') : 'none';
+console.log(`✓ tokens.css generated (primitive + semantic + component + themes: ${themeNames})`);
 
 // ── Tailwind v4 CSS theme ──────────────────────────────
 

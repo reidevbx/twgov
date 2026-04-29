@@ -108,9 +108,9 @@ pnpm new:component   # 建立新元件（見「新增元件步驟」）
 - dark 主題只覆寫 Semantic 層，Component 層透過 CSS 變數繼承自動生效
 
 **產出檔案**：
-- `tokens.css` — 四段式：Primitive `:root` → Semantic `:root` → Component `:root` → Themes（**只有 CSS 變數**，無裸標籤選擇器，可安全載入到任何站台根層）
-- `typography.css` — 裸標籤排版（`body / h1-h6 / p`）。**Opt-in**：僅獨立 preview HTML 或無自身排版的容器需要時才載入；VitePress 等已有自身排版的站台**不要載入**，會污染 chrome 行高
+- `tokens.css` — 五段式：Primitive `:root` → Semantic `:root` → Component `:root` → Themes → Typography（裸標籤）。單檔可用，多數消費者直接 import 即可
 - `tailwind.css` — Tailwind v4 `@theme` 整合，`@import './tokens.css'` 後映射至 Tailwind namespace
+- VitePress 等有自身 chrome 的站台 import `tokens.css` 後，需在自家 CSS 加 `body { line-height: 1.5 }` 等覆寫，吸收裸 `body` 排版的繼承污染（見 `apps/docs/.vitepress/theme/custom.css`）
 
 ### 文件
 - 語言：繁體中文（zh-TW）
@@ -146,7 +146,7 @@ pnpm new:component   # 建立新元件（見「新增元件步驟」）
 - 改 md 的 demo 內容後執行 `pnpm build:previews` 重新生成；`pnpm build` 會自動前置跑一次
 - 生成流程：`scripts/build-previews.mjs` + `scripts/preview-template.html`（統一 boilerplate 與 `.demo-layout` flex 版型）
 - preview HTML 是 build 產物但**有 commit**（方便 dev 啟動立即可用、PR 可 review）；編輯器看到它們即可視為「不要手改」
-- `apps/docs/public/tokens.css`、`typography.css`、`gov-tw.iife.js` 是從 packages 複製來的，每次 build 後由 `sync:public` 同步更新
+- `apps/docs/public/tokens.css` 與 `gov-tw.iife.js` 是從 packages 複製來的，每次 build 後由 `sync:public` 同步更新
 
 ## 新增元件步驟
 

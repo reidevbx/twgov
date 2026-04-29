@@ -17,6 +17,29 @@
   --vp-c-indigo-soft: var(--vp-c-brand-soft);
 }
 
+/* tokens.css 的裸標籤排版（body / h1-h6 / p）會污染 VitePress chrome —
+ * 例如 sidebar 群組標題（<h2>）會吃到 24px margin、標題色被改、line-height 變鬆。
+ * VitePress 的 prose（.vp-doc h1 等）與 chrome（.VPxxx）都用 class selector，
+ * 把 bare 標籤 reset 為繼承/0 不會影響它們。 */
+body {
+  font-family: var(--vp-font-family-base);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--vp-c-text-1);
+}
+h1, h2, h3, h4, h5, h6 {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+
 /* ===== Typography - CJK optimization ===== */
 :root {
   --vp-font-family-base: 'Noto Sans TC', 'Microsoft JhengHei', system-ui,
@@ -37,6 +60,19 @@
   line-height: 1.4;
 }
 
+
+/* ===== Link colors =====
+ * VitePress 預設將 markdown 連結與 chrome active state 都綁到 --vp-c-brand-1（=品牌色）。
+ * 為了滿足 WCAG AA 對比，文章內連結與 TOC 改用 --govtw-color-link-default（blue-700, ~5:1）。
+ * 品牌色（hero/button bg/badge）維持原 brand-1，不受影響。 */
+.vp-doc a:not(.header-anchor),
+.outline-link,
+.VPSidebarItem.is-link.is-active > .item .link {
+  color: var(--govtw-color-link-default);
+}
+.vp-doc a:not(.header-anchor):hover {
+  color: color-mix(in oklab, var(--govtw-color-link-default), black 15%);
+}
 
 /* ===== Hero section ===== */
 .VPHero .name {

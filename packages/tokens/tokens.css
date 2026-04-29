@@ -3,6 +3,7 @@
  * ========================================================================== */
 :root {
   --govtw-primitive-color-blue-500: #2C84B2;
+  --govtw-primitive-color-blue-700: #1d70b8;
   --govtw-primitive-color-blue-light-500: #6B9FE8;
   --govtw-primitive-color-blue-focus: #0055FF;
   --govtw-primitive-color-teal-50: #EAF0F0;
@@ -69,7 +70,7 @@
   --govtw-color-feedback-success: var(--govtw-primitive-color-green-500);
   --govtw-color-feedback-warning: var(--govtw-primitive-color-yellow-500);
   --govtw-color-feedback-info: var(--govtw-primitive-color-blue-500);
-  --govtw-color-link-default: var(--govtw-primitive-color-blue-500);
+  --govtw-color-link-default: var(--govtw-primitive-color-blue-700);
   --govtw-color-link-visited: var(--govtw-primitive-color-purple-500);
   --govtw-spacing-1: var(--govtw-primitive-space-1);
   --govtw-spacing-2: var(--govtw-primitive-space-2);
@@ -223,4 +224,63 @@
   --govtw-color-link-visited: var(--govtw-primitive-color-purple-500);
   --govtw-focus-color: var(--govtw-primitive-color-blue-focus);
   --govtw-focus-text: var(--govtw-primitive-color-neutral-0);
+}
+
+/* ==========================================================================
+ * Typography — 基礎排版樣式（引用 Semantic token）
+ * ========================================================================== */
+body {
+  font-family: var(--govtw-font-sans);
+  font-size: var(--govtw-font-size-base);
+  font-weight: var(--govtw-font-weight-regular);
+  line-height: 1.8;
+  color: var(--govtw-color-text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--govtw-font-sans);
+  font-weight: var(--govtw-font-weight-bold);
+  color: var(--govtw-color-text-primary);
+  margin-top: 0;
+}
+
+h1 {
+  font-size: var(--govtw-font-size-4xl);
+  line-height: 1.2;
+  margin-bottom: var(--govtw-spacing-8);
+}
+
+h2 {
+  font-size: var(--govtw-font-size-3xl);
+  line-height: 1.3;
+  margin-bottom: var(--govtw-spacing-6);
+}
+
+h3 {
+  font-size: var(--govtw-font-size-2xl);
+  line-height: 1.4;
+  margin-bottom: var(--govtw-spacing-4);
+}
+
+h4 {
+  font-size: var(--govtw-font-size-xl);
+  line-height: 1.4;
+  margin-bottom: var(--govtw-spacing-4);
+}
+
+h5 {
+  font-size: var(--govtw-font-size-lg);
+  line-height: 1.4;
+  margin-bottom: var(--govtw-spacing-3);
+}
+
+h6 {
+  font-size: var(--govtw-font-size-base);
+  line-height: 1.4;
+  margin-bottom: var(--govtw-spacing-2);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--govtw-spacing-4);
 }

@@ -90,28 +90,17 @@ Primitive（原始層）→ Semantic（語意層）→ Component（元件層）
 
 主題定義在 `tokens.json` 的 `themes` 區塊，覆寫 Semantic 層的變數。Component 層透過 CSS 變數繼承自動生效，不需額外設定。
 
-目前提供 **dark** 主題，產出兩種選擇器：
+目前提供 **dark** 主題，產出三種選擇器：
 
 | 選擇器 | 觸發方式 |
 |--------|---------|
 | `@media (prefers-color-scheme: dark)` | 系統偏好自動套用 |
-| `[data-theme="dark"]` | 手動切換 |
+| `[data-theme="dark"]` | 手動切換（資料屬性） |
+| `.dark` | 手動切換（class，與 VitePress 等慣例對齊） |
 
 新增主題只需在 `tokens.json` 的 `themes` 下加入新的 key，`build.js` 會自動產生對應的 `[data-theme="<name>"]` 選擇器。
 
-#### 客製品牌範例
-
-各機關只需覆寫 Semantic 層即可套用自有品牌色，所有元件自動生效：
-
-```css
-@import '@gov-tw/tokens/tokens.css';
-
-/* 覆寫語意層 → 所有元件自動更新 */
-:root {
-  --govtw-color-brand-primary: #0062B1;  /* 機關品牌色 */
-  --govtw-color-brand-secondary: #00A67E;
-}
-```
+> 機關自有品牌色客製範例請見 [色彩 — 使用方式](/foundations/colour#使用方式)。
 
 ### 使用方式
 
