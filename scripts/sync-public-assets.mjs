@@ -17,6 +17,11 @@ const ASSETS = [
     label: 'tokens.css',
   },
   {
+    from: P.tokens.typography,
+    to: resolve(P.docs.public, 'typography.css'),
+    label: 'typography.css',
+  },
+  {
     from: P.wc.iife,
     to: resolve(P.docs.public, 'gov-tw.iife.js'),
     label: 'gov-tw.iife.js',

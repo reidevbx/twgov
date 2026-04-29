@@ -4,6 +4,7 @@
   "type": "module",
   "exports": {
     "./tokens.css": "./tokens.css",
+    "./typography.css": "./typography.css",
     "./tokens.json": "./tokens.json",
     "./tailwind.css": "./tailwind.css"
   },

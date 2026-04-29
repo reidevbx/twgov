@@ -22,6 +22,7 @@ export const P = {
   },
   tokens: {
     css: resolve(ROOT, 'packages/tokens/tokens.css'),
+    typography: resolve(ROOT, 'packages/tokens/typography.css'),
   },
 };
 

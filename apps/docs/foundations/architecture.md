@@ -4,21 +4,18 @@
 
 ```
 packages/
-├── tokens/                 ← Design Token（JSON → CSS）
-│   ├── tokens.json         ← 唯一的設計決策來源
-│   ├── build.js            ← JSON → CSS custom properties + Tailwind theme
-│   ├── tokens.css          ← 產出的 CSS 變數
-│   └── tailwind.css        ← Tailwind v4 theme 整合
+├── tokens/                ← Design Token（JSON → CSS）
+│   ├── tokens.json        ← 唯一的設計決策來源
+│   ├── tokens.css         ← 產出的 CSS 變數
+│   └── tailwind.css       ← Tailwind v4 theme 整合
 │
-└── web-components/         ← UI 元件庫（Lit Web Components）
-    ├── src/                ← TypeScript 原始碼
-    │   ├── govtw-button.ts
-    │   ├── govtw-checkbox.ts
+└── web-components/        ← UI 元件庫（Lit Web Components）
+    ├── src/               ← TypeScript 原始碼，每元件一個檔
+    │   ├── govtw-*.ts
     │   └── index.ts
-    └── dist/               ← 建置產出（npm / CDN 使用）
-        ├── *.js            ← ESM 模組
-        ├── *.d.ts          ← TypeScript 型別宣告
-        └── gov-tw.iife.js  ← CDN 用單一打包檔
+    └── dist/              ← 建置產出
+        ├── *.js           ← ESM 模組（npm install 使用）
+        └── gov-tw.iife.js ← CDN 用單一打包檔
 ```
 
 ---

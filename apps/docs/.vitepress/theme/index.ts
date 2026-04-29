@@ -2,6 +2,7 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
 import DemoBlock from './DemoBlock.vue'
+import '@gov-tw/tokens/tokens.css'
 import './custom.css'
 
 export default {

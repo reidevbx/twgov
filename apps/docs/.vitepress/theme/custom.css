@@ -1,25 +1,20 @@
-/* gov.tw Design System - Blue Theme for VitePress */
+/* gov.tw Design System - VitePress chrome 樣式覆寫
+ *
+ * 品牌色綁定到 govtw token（--govtw-color-brand-primary）；
+ * dark mode 由 tokens.css 的 .dark 規則自動覆寫，本檔不必再寫一次。
+ * 中性色 / 文字色 / divider 保留 VitePress 預設（針對長閱讀調過對比度）。
+ */
 
-/* ===== Brand color palette ===== */
-/* 主色: #2C84B2  輔色: #618D90  底色: #EAF0F0 */
 :root {
-  --vp-c-brand-1: #2C84B2;
-  --vp-c-brand-2: #25719A;
-  --vp-c-brand-3: #1E5E82;
-  --vp-c-brand-soft: rgba(44, 132, 178, 0.14);
+  --vp-c-brand-1: var(--govtw-color-brand-primary);
+  --vp-c-brand-2: color-mix(in oklab, var(--govtw-color-brand-primary), black 10%);
+  --vp-c-brand-3: color-mix(in oklab, var(--govtw-color-brand-primary), black 20%);
+  --vp-c-brand-soft: color-mix(in oklab, var(--govtw-color-brand-primary), transparent 86%);
 
-  /* Override VitePress default accent */
-  --vp-c-indigo-1: #2C84B2;
-  --vp-c-indigo-2: #25719A;
-  --vp-c-indigo-3: #1E5E82;
-  --vp-c-indigo-soft: rgba(44, 132, 178, 0.14);
-}
-
-.dark {
-  --vp-c-brand-1: #6B9FE8;
-  --vp-c-brand-2: #5A8DD6;
-  --vp-c-brand-3: #4A7DC4;
-  --vp-c-brand-soft: rgba(107, 159, 232, 0.14);
+  --vp-c-indigo-1: var(--vp-c-brand-1);
+  --vp-c-indigo-2: var(--vp-c-brand-2);
+  --vp-c-indigo-3: var(--vp-c-brand-3);
+  --vp-c-indigo-soft: var(--vp-c-brand-soft);
 }
 
 /* ===== Typography - CJK optimization ===== */

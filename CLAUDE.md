@@ -108,7 +108,8 @@ pnpm new:component   # 建立新元件（見「新增元件步驟」）
 - dark 主題只覆寫 Semantic 層，Component 層透過 CSS 變數繼承自動生效
 
 **產出檔案**：
-- `tokens.css` — 四段式：Primitive `:root` → Semantic `:root` → Component `:root` → Themes
+- `tokens.css` — 四段式：Primitive `:root` → Semantic `:root` → Component `:root` → Themes（**只有 CSS 變數**，無裸標籤選擇器，可安全載入到任何站台根層）
+- `typography.css` — 裸標籤排版（`body / h1-h6 / p`）。**Opt-in**：僅獨立 preview HTML 或無自身排版的容器需要時才載入；VitePress 等已有自身排版的站台**不要載入**，會污染 chrome 行高
 - `tailwind.css` — Tailwind v4 `@theme` 整合，`@import './tokens.css'` 後映射至 Tailwind namespace
 
 ### 文件
@@ -119,6 +120,25 @@ pnpm new:component   # 建立新元件（見「新增元件步驟」）
 - `<DemoBlock>` 會監聽 VitePress 的 `.dark` class 變化，同步 `data-theme="dark"` 至 Shadow DOM host
 - 純展示區塊（如互動狀態）使用 `<DemoBlock no-code>` 隱藏原始碼按鈕
 
+### Docs 站 vs 元件 — 兩層獨立 UI
+文件站台的視覺體系**刻意分為兩層**，請勿混用：
+
+| 層 | 在哪 | 樣式來源 |
+|---|---|---|
+| VitePress chrome（nav / sidebar / hero / prose / breadcrumb / search / code block） | light DOM | VitePress 內建 `--vp-*` 變數 + `apps/docs/.vitepress/theme/custom.css` |
+| govtw 元件 demo | DemoBlock 內 Shadow DOM | `--govtw-*` token，由 Vite define 注入 |
+
+**為什麼分開**
+- VitePress prose 樣式（`.vp-doc h2/p` 等）會穿透 light DOM 污染元件外觀；Shadow DOM 阻斷
+- 使用者裝元件到自家 gov.tw 應用時不會帶 VitePress chrome；隔離後 demo 看起來與正式環境完全一致
+
+**選擇性 token 綁定**
+- `tokens.css` 在 `theme/index.ts` 載入到站台根層，讓 chrome 也能用 `--govtw-*`
+- `custom.css` 只把 **品牌色** 變數 (`--vp-c-brand-1/2/3/soft`、`--vp-c-indigo-*`) 別名到 `var(--govtw-color-brand-primary)` + `color-mix()`
+- 文字 / 背景 / divider / prose / code block 保留 VitePress 預設（針對長閱讀調過對比，接 token 反而不利可讀性）
+- dark mode 由 `tokens.css` 的 `.dark` 選擇器自動覆寫；`custom.css` 不重複寫 dark 規則
+- 想改 chrome 配色：改 `tokens.json` 的 `color.brand.primary` → `pnpm build:tokens` → 站台連動
+
 ### 獨立預覽頁面（auto-generated）
 - **唯一來源是 md**：`<DemoBlock variant="xxx">` 裡的 HTML。build 腳本會抽出內容自動生成 `apps/docs/public/preview/<component>/<xxx>.html`（參考 GOV.UK「Open this example in a new tab」）
 - 作者只需在 DemoBlock 加 `variant="xxx"`；DemoBlock 會從當前路由推導預覽 URL，無須寫 `preview="..."`
@@ -126,7 +146,7 @@ pnpm new:component   # 建立新元件（見「新增元件步驟」）
 - 改 md 的 demo 內容後執行 `pnpm build:previews` 重新生成；`pnpm build` 會自動前置跑一次
 - 生成流程：`scripts/build-previews.mjs` + `scripts/preview-template.html`（統一 boilerplate 與 `.demo-layout` flex 版型）
 - preview HTML 是 build 產物但**有 commit**（方便 dev 啟動立即可用、PR 可 review）；編輯器看到它們即可視為「不要手改」
-- `apps/docs/public/tokens.css` 和 `apps/docs/public/gov-tw.iife.js` 是從 packages 複製來的，每次 build 後須同步更新
+- `apps/docs/public/tokens.css`、`typography.css`、`gov-tw.iife.js` 是從 packages 複製來的，每次 build 後由 `sync:public` 同步更新
 
 ## 新增元件步驟
 
