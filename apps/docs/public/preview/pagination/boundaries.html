@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>分頁 — gov.tw Design System</title>
+  <link rel="stylesheet" href="/tokens.css">
+  <script src="/gov-tw.iife.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: var(--govtw-font-sans, system-ui, -apple-system, sans-serif);
+      color: var(--govtw-color-text-primary);
+      background-color: var(--govtw-color-bg-canvas);
+      margin: 0;
+      padding: 40px;
+      line-height: 1.6;
+    }
+    .demo-layout {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-layout">
+    <div>
+      <p style="margin: 0 0 0.5rem; color: var(--vp-c-text-2); font-size: 0.875rem;">當前為第 1 頁</p>
+      <govtw-pagination total="10" current="1" href-template="?page={n}"></govtw-pagination>
+    </div>
+    <div style="margin-top: 1.5rem;">
+      <p style="margin: 0 0 0.5rem; color: var(--vp-c-text-2); font-size: 0.875rem;">當前為第 10 頁</p>
+      <govtw-pagination total="10" current="10" href-template="?page={n}"></govtw-pagination>
+    </div>
+  </div>
+</body>
+</html>

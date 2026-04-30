@@ -243,6 +243,16 @@
   --govtw-link-focus-color: var(--govtw-focus-text);
   --govtw-link-focus-underline-thickness: 3px;
   --govtw-link-focus-underline-color: var(--govtw-focus-text);
+  --govtw-pagination-hover-bg: var(--govtw-color-bg-surface);
+  --govtw-pagination-current-bg: var(--govtw-color-brand-primary);
+  --govtw-pagination-current-color: var(--govtw-color-text-on-primary);
+  --govtw-pagination-current-weight: var(--govtw-primitive-font-weight-bold);
+  --govtw-pagination-ellipsis-color: var(--govtw-color-text-secondary);
+  --govtw-pagination-label-color: var(--govtw-color-text-secondary);
+  --govtw-pagination-label-size: var(--govtw-font-size-sm);
+  --govtw-pagination-gap: var(--govtw-spacing-2);
+  --govtw-pagination-item-min-size: 44px;
+  --govtw-pagination-icon-size: 15px;
 }
 
 /* ==========================================================================

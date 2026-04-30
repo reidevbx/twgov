@@ -21,6 +21,7 @@ export default defineConfig({
         'govtw-textarea': resolve(__dirname, 'src/govtw-textarea.ts'),
         'govtw-link': resolve(__dirname, 'src/govtw-link.ts'),
         'govtw-radio': resolve(__dirname, 'src/govtw-radio.ts'),
+        'govtw-pagination': resolve(__dirname, 'src/govtw-pagination.ts'),
       },
       formats: ['es'],
     },
