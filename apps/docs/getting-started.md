@@ -7,7 +7,7 @@
 ## 本地開發試用
 
 ```bash
-git clone https://github.com/user/govtw.git
+git clone https://github.com/reidevbx/govtw.git
 cd govtw
 pnpm install
 pnpm dev
