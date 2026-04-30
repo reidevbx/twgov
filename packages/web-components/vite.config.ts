@@ -23,6 +23,7 @@ export default defineConfig({
         'govtw-radio': resolve(__dirname, 'src/govtw-radio.ts'),
         'govtw-pagination': resolve(__dirname, 'src/govtw-pagination.ts'),
         'govtw-inset-text': resolve(__dirname, 'src/govtw-inset-text.ts'),
+        'govtw-select': resolve(__dirname, 'src/govtw-select.ts'),
       },
       formats: ['es'],
     },

@@ -129,6 +129,7 @@ export default defineConfig({
           { text: '多行文字輸入 Textarea', link: '/components/textarea' },
           { text: '分頁 Pagination', link: '/components/pagination' },
           { text: '補充說明 Inset Text', link: '/components/inset-text' },
+          { text: '選擇清單 Select', link: '/components/select' },
           // <components-end>
         ],
       },

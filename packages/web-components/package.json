@@ -74,6 +74,11 @@
       "source": "./src/govtw-inset-text.ts",
       "types": "./dist/govtw-inset-text.d.ts",
       "import": "./dist/govtw-inset-text.js"
+    },
+    "./govtw-select": {
+      "source": "./src/govtw-select.ts",
+      "types": "./dist/govtw-select.d.ts",
+      "import": "./dist/govtw-select.js"
     }
   },
   "files": [

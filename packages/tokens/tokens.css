@@ -257,6 +257,17 @@
   --govtw-inset-text-border-width: 8px;
   --govtw-inset-text-padding: var(--govtw-spacing-4);
   --govtw-inset-text-margin-y: var(--govtw-spacing-8);
+  --govtw-select-font-family: var(--govtw-font-sans);
+  --govtw-select-font-size: var(--govtw-font-size-base);
+  --govtw-select-color: var(--govtw-color-text-primary);
+  --govtw-select-bg: var(--govtw-color-bg-canvas);
+  --govtw-select-border-color: var(--govtw-color-text-primary);
+  --govtw-select-border-radius: var(--govtw-radius-sm);
+  --govtw-select-hint-color: var(--govtw-color-text-secondary);
+  --govtw-select-error-color: var(--govtw-color-feedback-error);
+  --govtw-select-disabled-bg: var(--govtw-color-bg-surface);
+  --govtw-select-focus-color: var(--govtw-focus-color);
+  --govtw-select-focus-width: var(--govtw-focus-width);
 }
 
 /* ==========================================================================

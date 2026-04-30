@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Select 選擇清單 — gov.tw Design System</title>
+  <link rel="stylesheet" href="/tokens.css">
+  <script src="/gov-tw.iife.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: var(--govtw-font-sans, system-ui, -apple-system, sans-serif);
+      color: var(--govtw-color-text-primary);
+      background-color: var(--govtw-color-bg-canvas);
+      margin: 0;
+      padding: 40px;
+      line-height: 1.6;
+    }
+    .demo-layout {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-layout">
+    <govtw-select label="申辦類別" hint="不確定要選哪一項時，請參考類別說明" name="category">
+      <option value="">請選擇類別</option>
+      <option value="a">類別 A — 一般申辦</option>
+      <option value="b">類別 B — 加急申辦</option>
+      <option value="c">類別 C — 特殊申辦</option>
+    </govtw-select>
+  </div>
+</body>
+</html>
