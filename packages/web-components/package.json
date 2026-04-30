@@ -69,6 +69,11 @@
       "source": "./src/govtw-pagination.ts",
       "types": "./dist/govtw-pagination.d.ts",
       "import": "./dist/govtw-pagination.js"
+    },
+    "./govtw-inset-text": {
+      "source": "./src/govtw-inset-text.ts",
+      "types": "./dist/govtw-inset-text.d.ts",
+      "import": "./dist/govtw-inset-text.js"
     }
   },
   "files": [

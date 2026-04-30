@@ -10,3 +10,4 @@ export { GovtwTextarea } from './govtw-textarea.js';
 export { GovtwLink } from './govtw-link.js';
 export { GovtwRadio } from './govtw-radio.js';
 export { GovtwPagination } from './govtw-pagination.js';
+export { GovtwInsetText } from './govtw-inset-text.js';

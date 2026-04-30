@@ -128,6 +128,7 @@ export default defineConfig({
           { text: '欄位群組 Fieldset', link: '/components/fieldset' },
           { text: '多行文字輸入 Textarea', link: '/components/textarea' },
           { text: '分頁 Pagination', link: '/components/pagination' },
+          { text: '補充說明 Inset Text', link: '/components/inset-text' },
           // <components-end>
         ],
       },

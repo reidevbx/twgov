@@ -253,6 +253,10 @@
   --govtw-pagination-gap: var(--govtw-spacing-2);
   --govtw-pagination-item-min-size: 44px;
   --govtw-pagination-icon-size: 15px;
+  --govtw-inset-text-border-color: var(--govtw-color-border-default);
+  --govtw-inset-text-border-width: 8px;
+  --govtw-inset-text-padding: var(--govtw-spacing-4);
+  --govtw-inset-text-margin-y: var(--govtw-spacing-8);
 }
 
 /* ==========================================================================
